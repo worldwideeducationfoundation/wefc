@@ -4,11 +4,11 @@
   "framework": "vite",
   "rewrites": [
     {
-      "source": "/blog/category/:slug/?",
+      "source": "/blog/category/:slug{/}?",
       "destination": "/blog/category.html"
     },
     {
-      "source": "/blog/:slug((?!list|standard|index|assets|wp-content|wp-includes)[^/]+)/?",
+      "source": "/blog/:slug((?!list|standard|index|assets|wp-content|wp-includes)[^/]+){/}?",
       "destination": "/blog/post.html"
     }
   ]
