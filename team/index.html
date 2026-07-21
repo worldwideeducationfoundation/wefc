@@ -218,9 +218,9 @@ var giveApiSettings = {"root":"https://donexa.peacefulqode.in/wp-json/give-api/v
 .wef-bio-modal__dialog{position:relative;background:#fff;border-radius:16px;max-width:640px;width:100%;max-height:88vh;overflow-y:auto;box-shadow:0 25px 60px rgba(0,0,0,0.3);transform:scale(.92) translateY(10px);transition:transform .25s ease;display:flex;flex-direction:column}
 .wef-bio-modal.is-open .wef-bio-modal__dialog{transform:scale(1) translateY(0)}
 @media(min-width:576px){.wef-bio-modal__dialog{flex-direction:row}}
-.wef-bio-modal__photo{flex:0 0 auto;width:100%;height:220px;background:#fafafa}
-@media(min-width:576px){.wef-bio-modal__photo{width:220px;height:auto;min-height:100%}}
-.wef-bio-modal__photo img{width:100%;height:100%;object-fit:cover;display:block}
+.wef-bio-modal__photo{flex:0 0 auto;width:100%;height:280px;background:#f0efe9}
+.wef-bio-modal__photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
+@media(min-width:576px){.wef-bio-modal__dialog{align-items:flex-start}.wef-bio-modal__photo{width:240px;height:320px;align-self:flex-start}}
 .wef-bio-modal__body{padding:28px 28px 30px;flex:1 1 auto}
 .wef-bio-modal__body h3{margin:0 0 4px;font-size:1.4rem;font-weight:700;color:#1e1e1e}
 .wef-bio-modal__role{margin:0 0 18px;color:#2F6B45;font-weight:600;font-size:.9rem;text-transform:uppercase;letter-spacing:.4px}
@@ -229,146 +229,33 @@ var giveApiSettings = {"root":"https://donexa.peacefulqode.in/wp-json/give-api/v
 .wef-bio-list{margin:0;display:flex;flex-direction:column;gap:14px}
 .wef-bio-list__item dt{font-size:.78rem;font-weight:700;color:#2F6B45;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
 .wef-bio-list__item dd{margin:0;color:#4a4a4a;line-height:1.55}
+.wef-bio-prose p{margin:0 0 14px;color:#4a4a4a;line-height:1.72;font-size:.97rem}
+.wef-bio-prose p:last-child{margin-bottom:0}
 body.wef-modal-lock{overflow:hidden}
 </style>
+<link href="/content/themes/donexa/assets/css/wef-chrome.css" rel="stylesheet"/>
 </head>
 <body class="wp-singular page-template-default page page-id-3270 wp-custom-logo wp-theme-donexa theme-donexa woocommerce-js give-test-mode give-page mega-menu-primary mega-menu-max-mega-menu-1 page-two-column elementor-default elementor-template-full-width elementor-kit-7 elementor-page elementor-page-3270 e--ua-blink e--ua-webkit" data-elementor-device-mode="desktop">
 <!-- loading -->
 <div class="site" id="page">
 <a class="skip-link screen-reader-text" href="/team/index"></a>
-<header class="pt-has-sticky pt-header-hide"> <div class="elementor elementor-1138" data-elementor-id="1138" data-elementor-type="wp-post">
-<div class="elementor-element elementor-element-372bc26e e-con-full e-flex e-con e-parent e-lazyloaded" data-e-type="container" data-element_type="container" data-id="372bc26e">
-<div class="elementor-element elementor-element-a7848ca e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="a7848ca">
-<div class="elementor-element elementor-element-35ae8e50 elementor-widget__width-initial elementor-widget-tablet_extra__width-initial elementor-widget-mobile__width-initial elementor-widget elementor-widget-custom_logo" data-e-type="widget" data-element_type="widget" data-id="35ae8e50" data-widget_type="custom_logo.default">
-<div class="elementor-widget-container">
-<div class="custom-logo-widget text-left"><a class="navbar-brand" href="/"><img alt="WEFC" decoding="async" loading="eager" src="/content/uploads/wef/WEF%20Logo%202026%20RGB-01.png" style="max-height:60px;"/></a></div> </div>
-</div>
-<div class="elementor-element elementor-element-ff0bbfb elementor-hidden-tablet_extra elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-maxmegamenu" data-e-type="widget" data-element_type="widget" data-id="ff0bbfb" data-widget_type="maxmegamenu.default">
-<div class="elementor-widget-container">
-<div class="mega-menu-wrap" id="mega-menu-wrap-primary"><div class="mega-menu-toggle"><div class="mega-toggle-blocks-left"></div><div class="mega-toggle-blocks-center"></div><div class="mega-toggle-blocks-right"><div class="mega-toggle-block mega-menu-toggle-animated-block mega-toggle-block-1" id="mega-toggle-block-1"><button aria-controls="mega-menu-primary" aria-expanded="false" aria-haspopup="true" aria-label="Toggle Menu" class="mega-toggle-animated mega-toggle-animated-slider" type="button">
-<span class="mega-toggle-animated-box">
-<span class="mega-toggle-animated-inner"></span>
-</span>
-</button></div></div></div>
-<ul class="mega-menu max-mega-menu mega-menu-horizontal" data-breakpoint="1200" data-document-click="collapse" data-effect="fade_up" data-effect-mobile="slide_right" data-effect-speed="200" data-effect-speed-mobile="200" data-event="hover_intent" data-hover-intent-interval="100" data-hover-intent-timeout="300" data-mobile-direction="vertical" data-mobile-force-width="body" data-mobile-state="collapse_all" data-second-click="go" data-unbind="true" data-vertical-behaviour="standard" id="mega-menu-primary">
-<li class="mega-menu-item mega-align-bottom-left" id="mega-menu-item-home">
-<a class="mega-menu-link" href="/">Home</a>
-</li>
-<li class="mega-menu-item mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-dropdown" id="mega-menu-item-about">
-<a aria-expanded="false" class="mega-menu-link" href="#">About <span aria-hidden="true" class="mega-indicator"></span></a>
-<ul class="mega-sub-menu">
-<li class="mega-menu-item" id="mega-menu-item-team">
-<a class="mega-menu-link" href="/team/index">Our Team</a>
-</li>
-<li class="mega-menu-item" id="mega-menu-item-mission">
-<a class="mega-menu-link" href="/pages/about">Our Mission</a>
-</li>
+<header class="wef-header" id="wefHeader">
+<div class="wef-header-inner">
+<a class="wef-brand" href="/" aria-label="Worldwide Education Foundation Canada home"><img class="wef-brand-logo" src="/content/uploads/wef/WEF%20Logo%202026%20RGB-01.png" alt="Worldwide Education Foundation Canada"/></a>
+<nav class="wef-nav" id="wefNav" aria-label="Primary">
+<ul class="wef-menu">
+<li><a class="wef-navlink" href="/">Home</a></li>
+<li class="wef-has-children"><a class="wef-navlink" href="#">About <svg class="wef-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><ul class="wef-submenu"><li><a href="/team/index">Our Team</a></li><li><a href="/pages/about">Our Mission</a></li></ul></li>
+<li class="wef-has-children"><a class="wef-navlink" href="#">Impact <svg class="wef-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><ul class="wef-submenu"><li><a href="/blog/category/success-stories">Success Stories</a></li><li><a href="/blog/category/project-updates">Project Updates</a></li></ul></li>
+<li class="wef-has-children"><a class="wef-navlink" href="#">What We Do <svg class="wef-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><ul class="wef-submenu"><li><a href="/blog/category/active-projects">Active Projects</a></li><li><a href="/blog/category/completed-projects">Completed Projects</a></li></ul></li>
+<li><a class="wef-navlink" href="/pages/gallery">Gallery</a></li>
+<li><a class="wef-navlink" href="/pages/contact">Contact</a></li>
 </ul>
-</li>
-<li class="mega-menu-item mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-dropdown" id="mega-menu-item-impact">
-<a aria-expanded="false" class="mega-menu-link" href="#">Impact <span aria-hidden="true" class="mega-indicator"></span></a>
-<ul class="mega-sub-menu">
-<li class="mega-menu-item" id="mega-menu-item-success-stories">
-<a class="mega-menu-link" href="/blog/category/success-stories">Success Stories</a>
-</li>
-<li class="mega-menu-item" id="mega-menu-item-project-stories">
-<a class="mega-menu-link" href="/blog/category/project-updates">Project Updates</a>
-</li>
-</ul>
-</li>
-<li class="mega-menu-item mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-dropdown" id="mega-menu-item-whatwedo">
-<a aria-expanded="false" class="mega-menu-link" href="#">What We Do <span aria-hidden="true" class="mega-indicator"></span></a>
-<ul class="mega-sub-menu">
-<li class="mega-menu-item" id="mega-menu-item-active-projects">
-<a class="mega-menu-link" href="/blog/category/active-projects">Active Projects</a>
-</li>
-<li class="mega-menu-item" id="mega-menu-item-completed-projects">
-<a class="mega-menu-link" href="/blog/category/completed-projects">Completed Projects</a>
-</li>
-</ul>
-</li>
-<li class="mega-menu-item mega-align-bottom-left" id="mega-menu-item-gallery">
-<a class="mega-menu-link" href="/pages/gallery">Gallery</a>
-</li>
-<li class="mega-menu-item mega-align-bottom-left" id="mega-menu-item-contact">
-<a class="mega-menu-link" href="/pages/contact">Contact</a>
-</li>
-</ul>
-<button aria-controls="mega-menu-primary" aria-label="Close" class="mega-close"></button></div> </div>
+<a class="wef-btn wef-btn-donate" href="https://www.zeffy.com/en-US/donation-form/donate-now-to-support-education-for-underprivileged-children" rel="noopener" target="_blank">Donate</a>
+</nav>
+<button class="wef-nav-toggle" id="wefNavToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </div>
-<div class="elementor-element elementor-element-b852bff e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="b852bff">
-<div class="elementor-element elementor-element-21d3340b elementor-position-inline-start elementor-hidden-mobile pt-icon-animate elementor-view-default elementor-mobile-position-block-start elementor-widget elementor-widget-icon-box" data-e-type="widget" data-element_type="widget" data-id="21d3340b" data-widget_type="icon-box.default">
-<div class="elementor-icon-box-wrapper">
-<div class="elementor-icon-box-icon">
-<a aria-label="+1 (214) 502-8388" class="elementor-icon" href="tel:+12145028388" tabindex="-1">
-<i aria-hidden="true" class="flaticon-phone-call"></i> </a>
-</div>
-<div class="elementor-icon-box-content">
-<span class="elementor-icon-box-title">
-<a href="tel:+12145028388">
-							+1 (214) 502-8388						</a>
-</span>
-</div>
-</div>
-</div>
-<div class="elementor-hidden-mobile wef-header-donate-wrap" style="display:flex;align-items:center;margin-left:18px;"><a class="pt-button pt-button-flat" href="https://www.zeffy.com/en-US/donation-form/donate-now-to-support-education-for-underprivileged-children" rel="noopener" style="font-size:14px;line-height:1;padding:12px 22px;gap:8px;" target="_blank"><span class="pt-button-text">Donate Now</span><i aria-hidden="true" class="fas fa-heart"></i></a></div>
-<div class="elementor-element elementor-element-076d60e elementor-hidden-mobile elementor-widget elementor-widget-cart_WEFC" data-e-type="widget" data-element_type="widget" data-id="076d60e" data-widget_type="cart_WEFC.default">
-<div class="elementor-widget-container">
-<div class="pt-header-info">
-<div class="pt-shop-btn">
-<div class="pt-cart-button">
-<a class="pt-tools-button" data-bs-target="#offcanvascart-076d60e" data-bs-toggle="offcanvas" href="javascript:void(0)" role="button" tabindex="0">
-<div class="pt-icon">
-<i class="fas fa-shopping-basket"></i>
-</div>
-<span class="basket-item-count">
-				0			</span>
-</a>
-<div class="offcanvas offcanvas-end" id="offcanvascart-076d60e" tabindex="-1">
-<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button">
-<i class="ti-close"></i>
-</button>
-<div class="pt-cart-header">
-<h3 class="modal-title">
-					Your Cart					<span class="cart-panel-counter">
-						0					</span>
-</h3>
-</div>
-<div class="widget_shopping_cart_content">
-<p class="woocommerce-mini-cart__empty-message">No products in the cart.</p>
-</div>
-</div>
-</div>
-</div>
-</div> </div>
-</div>
-<div class="elementor-element elementor-element-75b1a54 elementor-hidden-desktop elementor-hidden-laptop elementor-widget elementor-widget-maxmegamenu" data-e-type="widget" data-element_type="widget" data-id="75b1a54" data-widget_type="maxmegamenu.default">
-<div class="elementor-widget-container">
-<div class="mega-menu-wrap" id="mega-menu-wrap-primary"><div class="mega-menu-toggle"><div class="mega-toggle-blocks-left"></div><div class="mega-toggle-blocks-center"></div><div class="mega-toggle-blocks-right"><div class="mega-toggle-block mega-menu-toggle-animated-block mega-toggle-block-1" id="mega-toggle-block-1"><button aria-controls="mega-menu-primary" aria-expanded="false" aria-haspopup="true" aria-label="Toggle Menu" class="mega-toggle-animated mega-toggle-animated-slider" type="button">
-<span class="mega-toggle-animated-box">
-<span class="mega-toggle-animated-inner"></span>
-</span>
-</button></div></div></div><ul class="mega-menu max-mega-menu mega-menu-horizontal" data-breakpoint="1200" data-document-click="collapse" data-effect="fade_up" data-effect-mobile="slide_right" data-effect-speed="200" data-effect-speed-mobile="200" data-event="hover_intent" data-hover-intent-interval="100" data-hover-intent-timeout="300" data-mobile-direction="vertical" data-mobile-force-width="body" data-mobile-state="collapse_all" data-second-click="go" data-unbind="true" data-vertical-behaviour="standard" id="mega-menu-primary"><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-home mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-dropdown mega-menu-item-1763" id="mega-menu-item-1763"><a aria-controls="mega-sub-menu-1763" aria-expanded="false" class="mega-menu-link" href="">Home<span aria-hidden="true" class="mega-indicator"></span></a>
-<ul class="mega-sub-menu" id="mega-sub-menu-1763">
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-home mega-menu-item-1761" id="mega-menu-item-1761"><a class="mega-menu-link" href="/">Main Home</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-1760" id="mega-menu-item-1760"><a class="mega-menu-link" href="/pages/volunteer">Volunteer Home</a></li></ul>
-</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-1758" id="mega-menu-item-1758"><a class="mega-menu-link" href="/pages/about">About Us</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-dropdown mega-menu-item-1757" id="mega-menu-item-1757"><a aria-controls="mega-sub-menu-1757" aria-expanded="false" class="mega-menu-link" href="/team/index">Services<span aria-hidden="true" class="mega-indicator"></span></a>
-<ul class="mega-sub-menu" id="mega-sub-menu-1757">
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-1753" id="mega-menu-item-1753"><a class="mega-menu-link" href="/services/bright-beginnings">Bright Beginnings ECLCs</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-1754" id="mega-menu-item-1754"><a class="mega-menu-link" href="/services/teacher-training">Early Childhood Teacher Training</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-1755" id="mega-menu-item-1755"><a class="mega-menu-link" href="/services/learning-centers">Government School Learning Centers</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-1756" id="mega-menu-item-1756"><a class="mega-menu-link" href="/services/scholarships">Project Updates</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4822" id="mega-menu-item-4822"><a class="mega-menu-link" href="/services/english-labs">All News</a></li></ul>
-</li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-current-menu-ancestor mega-current-menu-parent mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-dropdown mega-menu-item-1764" id="mega-menu-item-1764"><a aria-controls="mega-sub-menu-1764" aria-expanded="false" class="mega-menu-link" href="/team/index">Pages<span aria-hidden="true" class="mega-indicator"></span></a>
-<ul class="mega-sub-menu" id="mega-sub-menu-1764">
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-3164" id="mega-menu-item-3164"><a class="mega-menu-link" href="/blog/category/active-projects">Our Service</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4254" id="mega-menu-item-4254"><a class="mega-menu-link" href="/pages/projects">Projects</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-4255" id="mega-menu-item-4255"><a class="mega-menu-link" href="/portfolio/pest-shield">Projects Details</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-current-menu-item mega-page_item mega-page-item-3270 mega-current_page_item mega-menu-item-3275" id="mega-menu-item-3275"><a aria-current="page" class="mega-menu-link" href="/team/index">Our Team</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5046" id="mega-menu-item-5046"><a class="mega-menu-link" href="/pages/pricing">Pricing Plan</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-item-4242" id="mega-menu-item-4242"><a aria-controls="mega-sub-menu-4242" aria-expanded="false" class="mega-menu-link" href="/team/index">Shop<span aria-hidden="true" class="mega-indicator"></span></a>
-<ul class="mega-sub-menu" id="mega-sub-menu-4242">
-<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-4285" id="mega-menu-item-4285"><a class="mega-menu-link" href="/shop/index">Product List</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4289" id="mega-menu-item-4289"><a class="mega-menu-link" href="/shop/grid">Product Grid</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-4286" id="mega-menu-item-4286"><a class="mega-menu-link" href="/shop/product/insect-repellent-spray">Product Details</a></li> </ul>
-</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4250" id="mega-menu-item-4250"><a class="mega-menu-link" href="/pages/gallery">Gallery</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-3284" id="mega-menu-item-3284"><a class="mega-menu-link" href="/pages/faq">Faq</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-4228" id="mega-menu-item-4228"><a class="mega-menu-link" href="/404">404</a></li></ul>
-</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-dropdown mega-menu-item-1762" id="mega-menu-item-1762"><a aria-controls="mega-sub-menu-1762" aria-expanded="false" class="mega-menu-link" href="/blog/category/completed-projects">blog<span aria-hidden="true" class="mega-indicator"></span></a>
-<ul class="mega-sub-menu" id="mega-sub-menu-1762">
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2567" id="mega-menu-item-2567"><a class="mega-menu-link" href="/blog/category/success-stories">Blog list</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2568" id="mega-menu-item-2568"><a class="mega-menu-link" href="/blog/category/project-updates">Blog Standard</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-2569" id="mega-menu-item-2569"><a class="mega-menu-link" href="/complete-insect-pest-control-guide-for-safe-living">Single post</a></li></ul>
-</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-1759" id="mega-menu-item-1759"><a class="mega-menu-link" href="/pages/contact">Contact Us</a></li></ul><button aria-controls="mega-menu-primary" aria-label="Close" class="mega-close"></button></div> </div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<div class="wef-nav-backdrop" id="wefNavBackdrop"></div>
 </header> <div class="elementor elementor-1708" data-elementor-id="1708" data-elementor-type="wp-post">
 <div class="elementor-element elementor-element-c47e755 e-con-full e-flex e-con e-parent e-lazyloaded" data-e-type="container" data-element_type="container" data-id="c47e755">
 <div class="elementor-element elementor-element-89befad e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="89befad">
@@ -431,6 +318,10 @@ body.wef-modal-lock{overflow:hidden}
 <span class="pt-team-designation">
                                     Co-Founder and CFO
                                 </span>
+<button aria-haspopup="dialog" class="pt-team-more-btn" data-bio-open="bio-connie-daya" data-bio-name="Connie Daya" data-bio-photo="/content/uploads/wef/1-1.png" data-bio-role="Co-Founder and CFO" type="button">
+                                    Know More <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                                </button>
+<template id="bio-connie-daya"><div class="wef-bio-prose"><p>Connie Daya is the Co-Founder and Chief Financial Officer of the Worldwide Education Foundation (WEF). With an MBA in Healthcare Fiscal Management and a strong background in financial accounting, she brings deep expertise in financial oversight and operational management.</p><p>Since co-founding WEF in 2009, Connie has led its financial and administrative functions, supporting the organization’s growth and its impact on thousands of children and youth globally. She is also actively engaged in community service and philanthropy, reflecting a strong commitment to giving back.</p></div></template>
 </div>
 </div>
 </div>
@@ -448,6 +339,10 @@ body.wef-modal-lock{overflow:hidden}
 <span class="pt-team-designation">
                                     Co-Founder and CEO
                                 </span>
+<button aria-haspopup="dialog" class="pt-team-more-btn" data-bio-open="bio-kamal-daya" data-bio-name="Kamal Daya" data-bio-photo="/content/uploads/wef/3-1.png" data-bio-role="Co-Founder and CEO" type="button">
+                                    Know More <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                                </button>
+<template id="bio-kamal-daya"><div class="wef-bio-prose"><p>Kamal Daya is the CEO and Co-Founder of the Worldwide Education Foundation (WEF), which he established in 2009. With over four decades at New York Life Insurance Company—consistently ranking among the top advisors—he brings deep financial expertise alongside a strong commitment to philanthropy.</p><p>Under his leadership, WEF has expanded its impact to reach tens of thousands of children and youth across multiple countries, with a focus on education, skills development, and scholarships. Kamal remains actively engaged in global philanthropy initiatives.</p></div></template>
 </div>
 </div>
 </div>
@@ -465,6 +360,10 @@ body.wef-modal-lock{overflow:hidden}
 <span class="pt-team-designation">
                                     Operational &amp; Fundraising Advisor
                                 </span>
+<button aria-haspopup="dialog" class="pt-team-more-btn" data-bio-open="bio-parvin-dhanji" data-bio-name="Parvin Dhanji" data-bio-photo="/content/uploads/wef/Screenshot-2026-05-01-131445-e1777623328193.webp" data-bio-role="Operational &amp; Fundraising Advisor" type="button">
+                                    Know More <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                                </button>
+<template id="bio-parvin-dhanji"><div class="wef-bio-prose"><p>Parvin Dhanji is a business leader and strategic advisor with extensive experience in advertising, marketing, and corporate management. She has led multiple organizations, including serving as President and CFO of Imagineering, Inc., where she oversees strategy, finance, and operations.</p><p>A Certified Mediator from DePaul University, she brings expertise in conflict resolution and governance, along with an academic background in English Literature and Advertising.</p></div></template>
 </div>
 </div>
 </div>
@@ -482,6 +381,10 @@ body.wef-modal-lock{overflow:hidden}
 <span class="pt-team-designation">
                                     Donor Relations, Gala &amp; Events Advisor
                                 </span>
+<button aria-haspopup="dialog" class="pt-team-more-btn" data-bio-open="bio-shahin-paroo" data-bio-name="Shahin Paroo" data-bio-photo="/content/uploads/wef/WhatsApp-Image-2026-04-27-at-1.37.46-PM-e1777623200176.webp" data-bio-role="Donor Relations, Gala &amp; Events Advisor" type="button">
+                                    Know More <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                                </button>
+<template id="bio-shahin-paroo"><div class="wef-bio-prose"><p>Born in Nairobi, Kenya, Shahin moved to Toronto in 1974 and later to the United States in 1980. She attended the University of Texas, graduating in 1984 with a degree in Arts.</p><p>She began her career at Citibank (1986–1989), working in sales focused on data-capture solutions and credit card processing systems. In 1990, she transitioned into real estate, becoming a licensed agent and investing in multifamily properties in Dallas, Texas.</p><p>Today, she owns and manages a portfolio of approximately 500 units across five residential complexes in Dallas.</p></div></template>
 </div>
 </div>
 </div>
@@ -499,6 +402,10 @@ body.wef-modal-lock{overflow:hidden}
 <span class="pt-team-designation">
                                     Technology and Succession Advisor
                                 </span>
+<button aria-haspopup="dialog" class="pt-team-more-btn" data-bio-open="bio-ahmed-ghulamali" data-bio-name="Ahmed Ghulamali" data-bio-photo="/content/uploads/wef/AG2-scaled-e1776262739560-1024x769.webp" data-bio-role="Technology and Succession Advisor" type="button">
+                                    Know More <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                                </button>
+<template id="bio-ahmed-ghulamali"><div class="wef-bio-prose"><p>Ahmed Ghulamali is a retired management and project professional with extensive experience leading strategic initiatives across the fintech, telecom, and IT consulting sectors. He holds degrees in Computer Information Systems and an MBA.</p><p>Alongside his professional career, he has dedicated over two decades to volunteer service in community institutions.</p></div></template>
 </div>
 </div>
 </div>
@@ -516,6 +423,10 @@ body.wef-modal-lock{overflow:hidden}
 <span class="pt-team-designation">
                                     Advisor to Tajikistan / Kyrgyzstan Projects
                                 </span>
+<button aria-haspopup="dialog" class="pt-team-more-btn" data-bio-open="bio-sadiq-ali" data-bio-name="Sadiq Ali" data-bio-photo="/content/uploads/wef/4-1.png" data-bio-role="Advisor to Tajikistan / Kyrgyzstan Projects" type="button">
+                                    Know More <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                                </button>
+<template id="bio-sadiq-ali"><div class="wef-bio-prose"><p>Sadiq Ali is an entrepreneur and investor with extensive experience in commercial real estate and retail, having grown his business from a single store to over 55 locations across the U.S.</p><p>Beyond his business ventures, he is a dedicated philanthropist and youth advocate, actively supporting community development and education initiatives. He serves on the board of the Worldwide Education Foundation (WEF) and continues to advance global educational opportunities through his work.</p></div></template>
 </div>
 </div>
 </div>
@@ -533,6 +444,10 @@ body.wef-modal-lock{overflow:hidden}
 <span class="pt-team-designation">
                                     Financial Literacy Advisor
                                 </span>
+<button aria-haspopup="dialog" class="pt-team-more-btn" data-bio-open="bio-karishma-ismail" data-bio-name="Karishma Ismail" data-bio-photo="/content/uploads/wef/headshots-2025--scaled-e1776262716289-1024x768.webp" data-bio-role="Financial Literacy Advisor" type="button">
+                                    Know More <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                                </button>
+<template id="bio-karishma-ismail"><div class="wef-bio-prose"><p>Karishma Ismail is an executive coach, speaker, and leadership advisor with over 15 years of experience in leadership development and high-performance coaching. She works with founders, executives, and investors to help them scale with clarity, confidence, and alignment.</p><p>She is also the founder of Live Your Legacy and Empowered Desi, focused on leadership growth, financial independence, and women’s empowerment.</p></div></template>
 </div>
 </div>
 </div>
@@ -550,6 +465,10 @@ body.wef-modal-lock{overflow:hidden}
 <span class="pt-team-designation">
                                     Strategic Advisor
                                 </span>
+<button aria-haspopup="dialog" class="pt-team-more-btn" data-bio-open="bio-ishan-daya" data-bio-name="Ishan Daya" data-bio-photo="/content/uploads/wef/ID-Photo-A-scaled-e1776262684664-1024x768.webp" data-bio-role="Strategic Advisor" type="button">
+                                    Know More <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                                </button>
+<template id="bio-ishan-daya"><div class="wef-bio-prose"><p>A tenured leader with over a decade of experience building organizations and leading high-performing teams of 200+ people toward a shared vision. He has led fundraising, strategic leadership, and operations, managing budgets of over $70M while recruiting top talent and driving organizational performance.</p><p>His core focus is strengthening grassroots power and advancing the public good through community organizing and policy.</p></div></template>
 </div>
 </div>
 </div>
@@ -567,6 +486,10 @@ body.wef-modal-lock{overflow:hidden}
 <span class="pt-team-designation">
                                     Health and Nutrition Advisor
                                 </span>
+<button aria-haspopup="dialog" class="pt-team-more-btn" data-bio-open="bio-alisha-daya" data-bio-name="Alisha Daya" data-bio-photo="/content/uploads/wef/unnamed-scaled-e1776262648870-1024x770.webp" data-bio-role="Health and Nutrition Advisor" type="button">
+                                    Know More <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                                </button>
+<template id="bio-alisha-daya"><div class="wef-bio-prose"><p>Alisha Daya is a nursing leader and change agent focused on transforming nursing education and advancing professional practice excellence. She is a strategic leader and strong communicator with a proven ability to guide interprofessional teams through complex change.</p><p>She has led large-scale programs, aligning education with organizational goals and evidence-based strategies to improve outcomes and impact.</p></div></template>
 </div>
 </div>
 </div>
@@ -584,6 +507,10 @@ body.wef-modal-lock{overflow:hidden}
 <span class="pt-team-designation">
                                     Early Childhood Development Advisor
                                 </span>
+<button aria-haspopup="dialog" class="pt-team-more-btn" data-bio-open="bio-shairoz-mistry" data-bio-name="Shairoz Mistry" data-bio-photo="/content/uploads/wef/Shairoz-Mistry-e1783060930888-1024x867.jpg" data-bio-role="Early Childhood Development Advisor" type="button">
+                                    Know More <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                                </button>
+<template id="bio-shairoz-mistry"><div class="wef-bio-prose"><p>Shairoz Mistry is an education and community impact leader with expertise in early childhood development, parent education, educator coaching, quality improvement systems, and culturally responsive programming. She currently serves as Senior Director of Community Impact at Children’s Museum Houston, where she leads early childhood initiatives, community outreach, and evaluation efforts serving approximately 1 million children and families annually.</p><p>Her career spans leadership roles in the United States and the Gulf Cooperation Council (GCC), including Head of the Aga Khan Education Portfolio for the GCC, Curriculum Developer for the Aga Khan Education Portfolio, Manager of Mentors at Collaborative for Children, and National Project Manager for the Pre-primary Teacher Mentoring and Coaching program at ITREB USA. At Collaborative for Children, she led a team of mentors supporting quality-improvement systems across 13 counties surrounding Greater Houston, primarily serving child care programs in low-income communities.</p><p>Shairoz is passionate about ensuring all children have access to high-quality early learning experiences and enter school ready to thrive, regardless of their socioeconomic, cultural, or linguistic background. As a Worldwide Education Foundation Board Member, she is committed to advancing equitable educational opportunities and strengthening systems that support children, families, and educators worldwide.</p></div></template>
 </div>
 </div>
 </div>
@@ -601,6 +528,10 @@ body.wef-modal-lock{overflow:hidden}
 <span class="pt-team-designation">
                                     Herzing-Daya Research &amp; Learning Hub Advisor
                                 </span>
+<button aria-haspopup="dialog" class="pt-team-more-btn" data-bio-open="bio-anita-mohammad" data-bio-name="Dr. Anita Hasni Mohammad" data-bio-photo="/content/uploads/wef/AnitaHasniMohammad_Headshot-e1782116089384.png" data-bio-role="Herzing-Daya Research &amp; Learning Hub Advisor" type="button">
+                                    Know More <i aria-hidden="true" class="fas fa-arrow-right"></i>
+                                </button>
+<template id="bio-anita-mohammad"><div class="wef-bio-prose"><p>Dr. Anita Hasni Mohammad is a developmental psychologist, researcher, and international development consultant with deep expertise in early childhood development, child psychology, and education systems. She holds a PhD from Georgia State University, where her research examined the cognitive and social foundations of early childhood — including original work on Theory of Mind in preschoolers, investigating how young children develop social awareness and make sense of the world through visual and auditory experience.</p><p>Bridging research and public policy, Dr. Mohammad worked as a Lead Research and Policy Analyst with the Georgia Department of Early Care and Learning (DECAL), where she led continuous quality-improvement initiatives for state-level early education programs and evaluated Early Head Start–Child Care Partnerships, with a focus on sustaining high-quality services for vulnerable families during the COVID-19 pandemic.</p><p>In 2021, she founded Tesseract Global Consulting, a research and evaluation firm dedicated to translating complex data into accessible, actionable knowledge. Through Tesseract Global, she has partnered with multiple United Nations evaluation offices — including system-wide gender-integration evaluations and analysis of global progress toward Sustainable Development Goal 5: Gender Equality. She also serves on Georgia Tech’s College of Sciences Advisory Board and on community advisory committees focused on maternal and infant health.</p></div></template>
 </div>
 </div>
 </div>
@@ -904,178 +835,27 @@ body.wef-modal-lock{overflow:hidden}
 </div>
 </div><!-- #content -->
 <!-- Footer start -->
-<footer id="pt-footer">
-<div class="pt-footer-style-1">
-<div class="elementor elementor-2162" data-elementor-id="2162" data-elementor-type="wp-post">
-<div class="elementor-element elementor-element-d3b4529 e-con-full e-flex e-con e-parent e-lazyloaded" data-e-type="container" data-element_type="container" data-id="d3b4529">
-<div class="elementor-element elementor-element-5f23d05 e-flex e-con-boxed e-con e-child" data-e-type="container" data-element_type="container" data-id="5f23d05" data-settings='{"background_background":"classic"}'>
-<div class="e-con-inner">
-<div class="elementor-element elementor-element-3f2f39a e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="3f2f39a">
-<div class="elementor-element elementor-element-202726b elementor-widget elementor-widget-image" data-e-type="widget" data-element_type="widget" data-id="202726b" data-widget_type="image.default">
-<img alt="Worldwide Education Foundation Canada Classroom and Operations" class="attachment-full size-full wp-image-6944" decoding="async" height="336" loading="lazy" sizes="(max-width: 1050px) 100vw, 1050px" src="/content/uploads/2026/01/01.png" srcset="/content/uploads/2026/01/01.png 1050w, /content/uploads/2026/01/01-300x96.png 300w, /content/uploads/2026/01/01-1024x328.png 1024w, /content/uploads/2026/01/01-768x246.png 768w, /content/uploads/2026/01/01-600x192.png 600w" width="1050"/> </div>
-</div>
-<div class="elementor-element elementor-element-a13e36a e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="a13e36a" data-settings='{"background_background":"classic"}'>
-<div class="elementor-element elementor-element-2d2b613 e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="2d2b613">
-<div class="elementor-element elementor-element-6b17993 e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="6b17993">
-<div class="elementor-element elementor-element-24aaff9 e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="24aaff9">
-<div class="elementor-element elementor-element-0840437 elementor-widget elementor-widget-custom_logo" data-e-type="widget" data-element_type="widget" data-id="0840437" data-widget_type="custom_logo.default">
-<div class="elementor-widget-container">
-<div class="custom-logo-widget text-left"><a class="navbar-brand" href="/"><img alt="WEFC" decoding="async" loading="lazy" src="/content/uploads/wef/WEF%20Logo%202026%20RGB-01.png" style="max-height:60px;"/></a></div> </div>
+<footer class="wef-footer">
+<div class="wef-footer-inner">
+<div class="wef-footer-top">
+<div class="wef-footer-brand">
+<img class="wef-footer-logo" src="/content/uploads/wef/WEF%20Logo%202026%20RGB-01.png" alt="Worldwide Education Foundation Canada"/>
+<p class="wef-footer-about">A 501(c)(3) nonprofit expanding access to quality education for underserved children and youth across Central and South Asia.</p>
+<div class="wef-socials">
+<a href="https://www.instagram.com/" rel="noopener" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+<a href="https://www.facebook.com/" rel="noopener" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
+<a href="https://www.linkedin.com/" rel="noopener" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.5 8A1.5 1.5 0 1 0 5 6.5 1.5 1.5 0 0 0 6.5 8zM5.5 9.5h2v9h-2zM10 9.5h1.9v1.2h.1a2.1 2.1 0 0 1 1.9-1c2 0 2.4 1.3 2.4 3.1v5.7h-2v-5c0-1.2 0-2.7-1.6-2.7s-1.9 1.3-1.9 2.6v5.1h-2z"/></svg></a>
 </div>
 </div>
-<div class="elementor-element elementor-element-64fbf76 e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="64fbf76">
-<div class="elementor-element elementor-element-7297406 elementor-widget__width-initial elementor-widget-tablet__width-inherit elementor-widget elementor-widget-heading" data-e-type="widget" data-element_type="widget" data-id="7297406" data-widget_type="heading.default">
-<h3 class="elementor-heading-title elementor-size-default">Worldwide Education Foundation Canada
-Change Lives Tomorrow</h3> </div>
-<div class="elementor-element elementor-element-d30287b elementor-widget__width-initial elementor-widget-tablet__width-inherit elementor-widget elementor-widget-metform" data-e-type="widget" data-element_type="widget" data-id="d30287b" data-widget_type="metform.default">
-<div class="mf-scroll-top-no" data-editswitchopen="" data-erroricon="fas fa-exclamation-triangle" data-messageposition="top" data-previous-steps-style="" data-response_type="alert" data-successicon="fas fa-check" id="mf-response-props-id-2232">
-<div class="formpicker_warper formpicker_warper_editable" data-metform-formpicker-key="2232">
-<div class="mf-widget-container">
-<div class="mf-form-wrapper" data-action="https://donexa.peacefulqode.in/wp-json/metform/v1/entries/insert/2232" data-form-id="2232" data-form-nonce="19aca035a7" data-form-type="general-form" data-quiz-summery="false" data-save-progress="false" data-stop-vertical-effect="" data-wp-nonce="03501ba34e" id="metform-wrap-d30287b-2232"><form class="metform-form-content"><div class="mf-main-response-wrap mf-response-msg-wrap" data-show="0"><div class="mf-response-msg"><i class="mf-success-icon fas fa-check"></i><p></p></div></div><div class="metform-form-main-wrapper"><div class="elementor elementor-2232" data-elementor-id="2232" data-elementor-type="wp-post"><div class="elementor-element elementor-element-ee8b686 e-con-full e-flex e-con e-parent" data-e-type="container" data-element_type="container" data-id="ee8b686"><div class="elementor-element elementor-element-0483ef1 e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="0483ef1"><div class="elementor-element elementor-element-3512bdd elementor-widget elementor-widget-mf-email" data-e-type="widget" data-element_type="widget" data-id="3512bdd" data-settings='{"mf_input_name":"mf-email"}' data-widget_type="mf-email.default"><div class="mf-input-wrapper"><input aria-invalid="false" class="mf-input" id="mf-input-email-3512bdd" name="mf-email" placeholder="Your email address " type="email" value=""/></div></div><div class="elementor-element elementor-element-e763836 elementor-absolute elementor-widget elementor-widget-Button" data-e-type="widget" data-element_type="widget" data-id="e763836" data-settings='{"_position":"absolute"}' data-widget_type="Button.default"><div class="elementor-widget-container"><a class="pt-button pt-button-rounded" href="/team/index"><i aria-hidden="true" class="flaticon-email"></i></a></div></div></div></div></div></div></form></div>
-<!----------------------------- 
-			* controls_data : find the the props passed indie of data attribute
-			* props.SubmitResponseMarkup : contains the markup of error or success message
-			* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
-		--------------------------- -->
+<div><h4>Explore</h4><ul><li><a href="/team/index">Our Team</a></li><li><a href="/pages/about">Our Mission</a></li><li><a href="/pages/gallery">Gallery</a></li><li><a href="/blog/category/success-stories">Success Stories</a></li></ul></div>
+<div><h4>Get Involved</h4><ul><li><a href="https://www.zeffy.com/en-US/donation-form/donate-now-to-support-education-for-underprivileged-children" rel="noopener" target="_blank">Donate</a></li><li><a href="/pages/contact">Contact Us</a></li><li><a href="/blog/category/active-projects">Active Projects</a></li><li><a href="/blog/category/completed-projects">Completed Projects</a></li></ul></div>
+<div><h4>Contact</h4><ul class="wef-footer-contact">
+<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+12145028388">+1 (214) 502-8388</a></li>
+<li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><a href="mailto:info@wefdallas.org">info@wefdallas.org</a></li>
+<li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><span>W159N4940 Graysland Drive, Menomonee Falls, WI 53051</span></li>
+</ul></div>
 </div>
-</div>
-</div> </div>
-</div>
-</div>
-</div>
-<div class="elementor-element elementor-element-f4d8932 e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="f4d8932">
-<div class="elementor-element elementor-element-3e659e1 e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="3e659e1">
-<div class="elementor-element elementor-element-fecf939 elementor-widget elementor-widget-text-editor" data-e-type="widget" data-element_type="widget" data-id="fecf939" data-widget_type="text-editor.default">
-									WEFC is your all-in-one solution for creating a powerful and trusted charity website.								</div>
-<div class="elementor-element elementor-element-71a1951 elementor-shape-circle elementor-grid-0 e-grid-align-center elementor-widget elementor-widget-social-icons" data-e-type="widget" data-element_type="widget" data-id="71a1951" data-widget_type="social-icons.default">
-<div class="elementor-social-icons-wrapper elementor-grid" role="list">
-<span class="elementor-grid-item" role="listitem">
-<a class="elementor-icon elementor-social-icon elementor-social-icon-ti-facebook elementor-repeater-item-39e2303" href="/team/index" target="_blank">
-<span class="elementor-screen-only">Ti-facebook</span>
-<i aria-hidden="true" class="ti-facebook"></i> </a>
-</span>
-<span class="elementor-grid-item" role="listitem">
-<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-8358496" href="/team/index" target="_blank">
-<span class="elementor-screen-only">Twitter</span>
-<svg aria-hidden="true" class="e-font-icon-svg e-fab-twitter" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg> </a>
-</span>
-<span class="elementor-grid-item" role="listitem">
-<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-b05dbb2" href="/team/index" target="_blank">
-<span class="elementor-screen-only">Instagram</span>
-<svg aria-hidden="true" class="e-font-icon-svg e-fab-instagram" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg> </a>
-</span>
-<span class="elementor-grid-item" role="listitem">
-<a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-85febc2" href="/team/index" target="_blank">
-<span class="elementor-screen-only">Youtube</span>
-<svg aria-hidden="true" class="e-font-icon-svg e-fab-youtube" viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg> </a>
-</span>
-</div>
-</div>
-</div>
-<div class="elementor-element elementor-element-6481c59 e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="6481c59">
-<div class="elementor-element elementor-element-0777259 e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="0777259">
-<div class="elementor-element elementor-element-247a9d0 elementor-widget elementor-widget-heading" data-e-type="widget" data-element_type="widget" data-id="247a9d0" data-widget_type="heading.default">
-<h5 class="elementor-heading-title elementor-size-default">Main Pages</h5> </div>
-<div class="elementor-element elementor-element-cdf351a e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="cdf351a">
-<div class="elementor-element elementor-element-9e653bd elementor-widget elementor-widget-heading" data-e-type="widget" data-element_type="widget" data-id="9e653bd" data-widget_type="heading.default">
-<div class="elementor-heading-title elementor-size-default"><a href="">Home</a></div> </div>
-<div class="elementor-element elementor-element-e0caee5 elementor-widget elementor-widget-heading" data-e-type="widget" data-element_type="widget" data-id="e0caee5" data-widget_type="heading.default">
-<div class="elementor-heading-title elementor-size-default"><a href="/pages/about">About Us</a></div> </div>
-<div class="elementor-element elementor-element-68b739b elementor-widget elementor-widget-heading" data-e-type="widget" data-element_type="widget" data-id="68b739b" data-widget_type="heading.default">
-<div class="elementor-heading-title elementor-size-default"><a href="/blog/category/active-projects">Services</a></div> </div>
-<div class="elementor-element elementor-element-12708b2 elementor-widget elementor-widget-heading" data-e-type="widget" data-element_type="widget" data-id="12708b2" data-widget_type="heading.default">
-<div class="elementor-heading-title elementor-size-default"><a href="/pages/faq">FAQs</a></div> </div>
-<div class="elementor-element elementor-element-e4106f7 elementor-widget elementor-widget-heading" data-e-type="widget" data-element_type="widget" data-id="e4106f7" data-widget_type="heading.default">
-<div class="elementor-heading-title elementor-size-default"><a href="/pages/contact">Contact Us</a></div> </div>
-</div>
-</div>
-<div class="elementor-element elementor-element-2605f0a e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="2605f0a">
-<div class="elementor-element elementor-element-11ed2e9 elementor-widget elementor-widget-heading" data-e-type="widget" data-element_type="widget" data-id="11ed2e9" data-widget_type="heading.default">
-<h5 class="elementor-heading-title elementor-size-default">Quick Links</h5> </div>
-<div class="elementor-element elementor-element-3243e7b e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="3243e7b">
-<div class="elementor-element elementor-element-86237cf elementor-widget elementor-widget-heading" data-e-type="widget" data-element_type="widget" data-id="86237cf" data-widget_type="heading.default">
-<div class="elementor-heading-title elementor-size-default"><a href="/pages/gallery">Gallery
-</a></div> </div>
-<div class="elementor-element elementor-element-2f4bd8b elementor-widget elementor-widget-heading" data-e-type="widget" data-element_type="widget" data-id="2f4bd8b" data-widget_type="heading.default">
-<div class="elementor-heading-title elementor-size-default"><a href="/shop/index">Shop</a></div> </div>
-<div class="elementor-element elementor-element-540e01e elementor-widget elementor-widget-heading" data-e-type="widget" data-element_type="widget" data-id="540e01e" data-widget_type="heading.default">
-<div class="elementor-heading-title elementor-size-default"><a href="/team/index">Our Team</a></div> </div>
-<div class="elementor-element elementor-element-ca59db4 elementor-widget elementor-widget-heading" data-e-type="widget" data-element_type="widget" data-id="ca59db4" data-widget_type="heading.default">
-<div class="elementor-heading-title elementor-size-default"><a href="/pages/projects">Projects</a></div> </div>
-<div class="elementor-element elementor-element-0bbebc2 elementor-widget elementor-widget-heading" data-e-type="widget" data-element_type="widget" data-id="0bbebc2" data-widget_type="heading.default">
-<div class="elementor-heading-title elementor-size-default"><a href="/blog/category/success-stories">Blog</a></div> </div>
-</div>
-</div>
-<div class="elementor-element elementor-element-8bf34a8 e-con-full e-flex e-con e-child" style="padding: 15px; background: transparent; box-sizing: border-box; margin-top: 10px;">
-<h5 class="elementor-heading-title elementor-size-default" style="color: #2F6B45; font-weight: 800; margin-bottom: 12px; text-transform: uppercase; font-size: 1.05rem; letter-spacing: 1px;">Contact Us</h5>
-<div style="font-size: 0.88rem; line-height: 1.55; color: #333333;">
-<p class="mb-2" style="font-weight: 700; color: #111111; margin-bottom: 8px;">W159N4940 Graysland Drive<br/>Menomonee Falls, WI 53051<br/>United States</p>
-<p class="mb-3" style="margin-bottom: 12px;">
-<a href="tel:+12145028388" style="color: #2F6B45; font-weight: 800; text-decoration: none; font-size: 0.95rem;">+1 (214) 502-8388</a><br/>
-<a href="mailto:info@wefdallas.org" style="color: #444444; font-weight: 600; text-decoration: none;">info@wefdallas.org</a>
-</p>
-<!-- Social connections row (high contrast black SVGs) -->
-<div class="footer-social-inner-wrap element-social-inner-wrap social-show-label-false ast-social-color-type-custom ast-social-stack-none ast-social-element-style-filled" style="display: flex; gap: 14px; margin-top: 15px; margin-bottom: 15px; align-items: center;">
-<a aria-label="X" class="ast-builder-social-element ast-inline-flex ast-twitter footer-social-item" href="https://x.com/WEFglobaledu" rel="noopener noreferrer" style="--color: #111111; --background-color: transparent;" target="_blank">
-<span aria-hidden="true" class="ahfb-svg-iconset ast-inline-flex svg-baseline">
-<svg style="width: 18px; height: 18px; fill: #111111; display: inline-block; vertical-align: middle;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25H21.552L14.325 10.51L22.827 21.75H16.17L10.956 14.933L4.99 21.75H1.68L9.41 12.915L1.254 2.25H8.08L12.793 8.481L18.244 2.25ZM17.083 19.77H18.916L7.084 4.126H5.117L17.083 19.77Z"></path></svg>
-</span>
-</a>
-<a aria-label="Facebook" class="ast-builder-social-element ast-inline-flex ast-facebook footer-social-item" href="https://www.facebook.com/WorldwideEducationFoundationWEF" rel="noopener noreferrer" style="--color: #557dbc; --background-color: transparent;" target="_blank">
-<span aria-hidden="true" class="ahfb-svg-iconset ast-inline-flex svg-baseline">
-<svg style="width: 18px; height: 18px; fill: #557dbc; display: inline-block; vertical-align: middle;" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg>
-</span>
-</a>
-<a aria-label="Instagram" class="ast-builder-social-element ast-inline-flex ast-instagram footer-social-item" href="https://www.instagram.com/worldwideeducationfoundation/" rel="noopener noreferrer" style="--color: #8a3ab9; --background-color: transparent;" target="_blank">
-<span aria-hidden="true" class="ahfb-svg-iconset ast-inline-flex svg-baseline">
-<svg style="width: 18px; height: 18px; fill: #8a3ab9; display: inline-block; vertical-align: middle;" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
-</span>
-</a>
-<a aria-label="LinkedIn" class="ast-builder-social-element ast-inline-flex ast-behance footer-social-item" href="https://linkedin.com/company/worldwide-education-foundation" rel="noopener noreferrer" style="--color: #1B64F6; --background-color: transparent;" target="_blank">
-<span aria-hidden="true" class="ahfb-svg-iconset ast-inline-flex svg-baseline">
-<svg style="width: 18px; height: 18px; fill: #1B64F6; display: inline-block; vertical-align: middle;" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg>
-</span>
-</a>
-<a aria-label="YouTube" class="ast-builder-social-element ast-inline-flex ast-youtube footer-social-item" href="https://www.youtube.com/@wefdallasorg" rel="noopener noreferrer" style="--color: #e96651; --background-color: transparent;" target="_blank">
-<span aria-hidden="true" class="ahfb-svg-iconset ast-inline-flex svg-baseline">
-<svg style="width: 22px; height: 22px; fill: #e96651; display: inline-block; vertical-align: middle;" viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg>
-</span>
-</a>
-</div>
-<!-- Trustpilot Rating Badge -->
-<div style="margin-top: 15px; margin-bottom: 20px; padding: 12px 15px; background: rgba(0, 180, 134, 0.05); border: 1.5px solid #00b486; border-radius: 6px; display: inline-flex; align-items: center; gap: 10px; width: 100%; box-sizing: border-box;">
-<svg style="width: 20px; height: 20px; fill: #00b486; flex-shrink: 0;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 9.172l-9.155-.838-3.69-8.334-3.69 8.334-9.155.838 6.945 6.136-2.072 8.924 8.017-4.887 8.017 4.887-2.072-8.924z"></path></svg>
-<div style="font-size: 0.82rem; color: #222222; font-family: 'Inter', sans-serif; line-height: 1.35; flex-grow: 1;">
-<span style="font-weight: 700; color: #111111; display: block;">Rate us on Trustpilot!</span>
-<span style="font-size: 0.72rem; color: #00b486; font-weight: 600;">Trustpilot ★★★★★ Review Desk</span>
-</div>
-<a href="https://www.trustpilot.com/review/wefdallas.org" rel="noopener noreferrer" style="font-size: 0.72rem; font-weight: 700; color: #fff; background-color: #00b486; padding: 5px 12px; border-radius: 4px; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; transition: background-color 0.2s;" target="_blank">
-        Review
-      </a>
-</div>
-<hr style="border-top: 1px solid rgba(0,0,0,0.08); margin: 15px 0; border-bottom: none;"/>
-<p style="font-size: 0.75rem; line-height: 1.45; color: #555555; text-align: justify; margin: 0;">
-      Worldwide Education Foundation is a 501(c)(3). Federal Tax ID 81–2135633. 100% of all dollars raised through your contributions go towards implementation, operation, and maintenance of WEF’s projects and programs. All administrative expenses are paid by the Founders, Connie and Kamal Daya Gift Fund of the Dallas Foundation.
-    </p>
-</div>
-</div>
-</div>
-</div>
-<div class="elementor-element elementor-element-383f9e0 e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="383f9e0">
-<div class="elementor-element elementor-element-b41c453 elementor-widget elementor-widget-heading" data-e-type="widget" data-element_type="widget" data-id="b41c453" data-widget_type="heading.default">
-<span class="elementor-heading-title elementor-size-default">© 2026. All rights reserved.</span> </div>
-<div class="elementor-element elementor-element-07bec39 elementor-widget elementor-widget-heading" data-e-type="widget" data-element_type="widget" data-id="07bec39" data-widget_type="heading.default">
-<span class="elementor-heading-title elementor-size-default"></span> </div>
-</div>
-</div>
-<div class="elementor-element elementor-element-9cc11e4 elementor-absolute elementor-widget elementor-widget-image" data-e-type="widget" data-element_type="widget" data-id="9cc11e4" data-settings='{"_position":"absolute"}' data-widget_type="image.default">
-<img alt="Worldwide Education Foundation Canada Classroom and Operations" class="attachment-full size-full wp-image-6945" decoding="async" height="606" loading="lazy" sizes="(max-width: 518px) 100vw, 518px" src="/content/uploads/2026/01/02-.png" srcset="/content/uploads/2026/01/02-.png 518w, /content/uploads/2026/01/02--256x300.png 256w" width="518"/> </div>
-<div class="elementor-element elementor-element-734f242 elementor-absolute elementor-hidden-laptop elementor-hidden-tablet_extra elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-widget elementor-widget-image" data-e-type="widget" data-element_type="widget" data-id="734f242" data-settings='{"_position":"absolute"}' data-widget_type="image.default">
-<img alt="Worldwide Education Foundation Canada Classroom and Operations" class="attachment-full size-full wp-image-5377" decoding="async" height="196" loading="lazy" src="/content/uploads/2026/03/XMLID_1148_.png" width="235"/> </div>
-</div>
-</div>
-</div>
-</div>
+<div class="wef-footer-bottom"><span>© 2026 Worldwide Education Foundation. All rights reserved.</span><span>501(c)(3) · Federal Tax ID 81-2135633 · 100% of donations go to programs.</span></div>
 </div>
 </footer>
 <!-- Footer stop-->
@@ -1284,4 +1064,4 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 </div>
 </div>
 <script src="/lib/team-bio-modal.js" type="module"></script>
-<script src="/lib/team-loader.js" type="module"></script></body></html>
+<script src="/lib/team-loader.js" type="module"></script><script src="/content/themes/donexa/assets/js/wef-chrome.js" defer></script></body></html>
