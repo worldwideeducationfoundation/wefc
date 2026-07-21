@@ -5787,3 +5787,19 @@ landing
     }
 }
 
+/* Font fallback fix: several Elementor "kit" stylesheets (post-*.css) redeclare
+   the site typography variables as bare "Jost" with no fallback, so if the
+   Google Font ever fails to load the browser drops to its default serif
+   (Times New Roman) instead of a sane sans-serif. Force a safe fallback stack
+   here with !important so it wins regardless of stylesheet load order. */
+:root {
+    --e-global-typography-primary-font-family: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    --e-global-typography-secondary-font-family: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    --e-global-typography-text-font-family: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    --e-global-typography-accent-font-family: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+body {
+    font-family: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+

@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'wefc-blog',
 
-  projectId: 'j65wr9ja',
+  projectId: 'wgy1a1gg',
   dataset: 'production',
 
   plugins: [structureTool(), visionTool()],

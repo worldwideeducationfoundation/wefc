@@ -248,6 +248,114 @@
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="WEFC - Worldwide Education Foundation Canada" name="twitter:title"/>
 <meta content="Empowering youth and children in Central and South Asia through modern learning, teacher training, and scholarships." name="twitter:description"/>
+<link href="/content/themes/donexa/assets/css/wef-modern.css" id="wef-modern-css" media="all" rel="stylesheet"/>
+<style>
+.wef-stories-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;align-items:stretch}
+@media(max-width:767px){.wef-stories-grid{grid-template-columns:1fr}}
+.wef-story-card{position:relative;background:#fff;border-radius:20px;padding:40px 34px 32px;box-shadow:0 4px 18px rgba(30,20,10,0.07);border-top:4px solid #2F6B45;transition:transform .3s ease,box-shadow .3s ease;display:flex;flex-direction:column}
+.wef-story-card:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(30,20,10,0.14)}
+.wef-story-quote{width:34px;height:26px;fill:#2F6B45;opacity:.9;margin-bottom:14px}
+.wef-story-text{font-size:1.02rem;line-height:1.75;color:#4a463f;margin:0 0 22px;flex-grow:1}
+.wef-story-footer{display:flex;flex-direction:column;gap:4px;padding-top:16px;border-top:1px solid #eee9da}
+.wef-story-name{font-weight:700;color:#1e1e1e;font-size:1.05rem}
+.wef-story-role{color:#2F6B45;font-weight:600;font-size:.85rem}
+.wef-story-tag{align-self:flex-start;margin-top:8px;padding:4px 12px;background:#f6f4ec;color:#6b6656;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;border-radius:30px}
+
+.wef-pillars-grid,.wef-purpose-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.wef-values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+@media(max-width:900px){.wef-pillars-grid,.wef-purpose-grid{grid-template-columns:1fr}.wef-values-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.wef-values-grid{grid-template-columns:1fr}}
+
+.wef-pillar-card,.wef-purpose-card,.wef-value-card{background:#fff;border-radius:18px;padding:38px 30px;box-shadow:0 4px 18px rgba(30,20,10,.06);border:1px solid #f1ede0;transition:transform .3s ease,box-shadow .3s ease;height:100%;box-sizing:border-box}
+.wef-pillar-card:hover,.wef-purpose-card:hover,.wef-value-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(30,20,10,.12)}
+
+.wef-pillar-icon,.wef-purpose-icon{width:56px;height:56px;border-radius:50%;background:rgba(47, 107, 69,.08);display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+.wef-pillar-icon svg,.wef-purpose-icon svg{width:26px;height:26px}
+
+.wef-pillar-title,.wef-purpose-title{font-size:1.2rem;font-weight:700;color:#1e1e1e;margin:0 0 12px}
+.wef-pillar-text,.wef-purpose-text{font-size:.95rem;line-height:1.7;color:#54514a;margin:0}
+
+.wef-value-card{padding:32px 22px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.wef-value-icon{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:rgba(47,107,69,.08);margin-bottom:18px}
+.wef-value-icon svg{width:24px;height:24px}
+.wef-value-title{font-size:1.02rem;font-weight:700;color:#1e1e1e;margin:0 0 10px;letter-spacing:.3px}
+.wef-value-text{font-size:.86rem;line-height:1.6;color:#54514a;margin:0}
+
+.wef-donate-wrap{max-width:640px;margin:36px auto 0;padding:0 15px;box-sizing:border-box}
+.wef-donate-cta{background:#fff;border-radius:20px;padding:30px 34px;box-shadow:0 14px 40px rgba(30,20,10,.08);border:1px solid #f1ede0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.wef-donate-cta h3{font-weight:700;font-size:1.2rem;color:#1e1e1e;margin:0 0 6px}
+.wef-donate-cta p{font-size:.9rem;line-height:1.55;color:#666;margin:0;max-width:400px}
+.wef-donate-cta .pt-button{flex-shrink:0}
+
+/* ===================== WEF Beginnings timeline ===================== */
+.wef-timeline{position:relative;max-width:760px;margin:0 auto;padding:10px 0}
+.wef-timeline::before{content:"";position:absolute;left:23px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,#2F6B45,rgba(47,107,69,.15))}
+.wef-timeline-item{position:relative;display:flex;gap:24px;padding-bottom:32px}
+.wef-timeline-item:last-child{padding-bottom:0}
+.wef-timeline-dot{flex:0 0 48px;width:48px;height:48px;border-radius:50%;background:#2F6B45;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1rem;position:relative;z-index:1;box-shadow:0 0 0 6px #faf9f6}
+.wef-timeline-card{background:#fff;border-radius:16px;padding:24px 26px;box-shadow:0 4px 18px rgba(30,20,10,.06);border:1px solid #f1ede0;flex:1;position:relative;min-width:0}
+.wef-timeline-icon{width:26px;height:26px;margin-bottom:10px;display:block}
+.wef-timeline-year{float:right;background:rgba(47,107,69,.08);color:#2F6B45;font-weight:800;font-size:.85rem;padding:4px 12px;border-radius:20px;margin-left:10px}
+.wef-timeline-card p{margin:0;font-size:.95rem;line-height:1.7;color:#54514a}
+@media(max-width:600px){.wef-timeline::before{left:19px}.wef-timeline-dot{width:40px;height:40px;font-size:1rem;flex-basis:40px}.wef-timeline-item{gap:14px}.wef-timeline-card{padding:18px 18px}}
+
+/* ===================== Hero: floating donate card ===================== */
+@keyframes wefFadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes wefPulseRing{0%{box-shadow:0 0 0 0 rgba(47, 107, 69,.35)}70%{box-shadow:0 0 0 14px rgba(47, 107, 69,0)}100%{box-shadow:0 0 0 0 rgba(47, 107, 69,0)}}
+@keyframes wefFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+.elementor-element-46dbc5c{position:relative !important;overflow:hidden;background:#1F4A31 !important;}
+
+/* Full-bleed photo slider background, 1s per slide, with a brand-green scrim on top for legibility */
+.wef-hero-slides{position:absolute;inset:0;z-index:0;overflow:hidden;}
+.wef-hero-slides span{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;animation:wefHeroSlide 5s infinite;}
+.wef-hero-slides span:nth-child(1){animation-delay:0s;}
+.wef-hero-slides span:nth-child(2){animation-delay:1s;}
+.wef-hero-slides span:nth-child(3){animation-delay:2s;}
+.wef-hero-slides span:nth-child(4){animation-delay:3s;}
+.wef-hero-slides span:nth-child(5){animation-delay:4s;}
+@keyframes wefHeroSlide{0%{opacity:0}4%{opacity:1}20%{opacity:1}24%{opacity:0}100%{opacity:0}}
+.wef-hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(31,74,49,.9) 0%,rgba(47,107,69,.82) 55%,rgba(31,74,49,.92) 100%);}
+.wef-hero-scrim::before{content:"";position:absolute;top:-140px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(255,255,255,.1),transparent 70%);filter:blur(6px);pointer-events:none;}
+
+@media(min-width:992px){
+  .elementor-element-46dbc5c{display:flex !important;flex-direction:row !important;align-items:center !important;flex-wrap:nowrap !important;gap:48px !important;}
+  .elementor-element-46dbc5c > .elementor-element-c78574f{flex:1 1 42%;min-width:0;}
+}
+.elementor-element-46dbc5c .pt-title-heading,.elementor-element-46dbc5c .pt-title-subtitle,.elementor-element-46dbc5c .elementor-widget-text-editor{position:relative;z-index:2;}
+
+.wef-hero-donate{position:relative;z-index:2;flex:1 1 460px;max-width:520px;width:100%;background:#fff;border-radius:26px;padding:28px;box-shadow:0 40px 90px rgba(0,0,0,.4);animation:wefFadeUp .9s cubic-bezier(.16,1,.3,1) both;animation-delay:.2s;margin:40px auto 0;}
+@media(min-width:992px){.wef-hero-donate{margin:0;animation-delay:.35s;}}
+.wef-hero-donate-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(47, 107, 69,.1);color:#2F6B45;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.7px;padding:7px 14px;border-radius:30px;margin-bottom:16px;}
+.wef-hero-donate-badge span.dot{width:7px;height:7px;border-radius:50%;background:#2F6B45;animation:wefPulseRing 2s ease-out infinite;}
+.wef-hero-donate h3{font-size:1.4rem;font-weight:800;color:#1e1e1e;margin:0 0 6px;letter-spacing:-.01em;}
+.wef-hero-donate p{font-size:.88rem;color:#666;margin:0 0 18px;line-height:1.5;}
+.wef-hero-donate-form{border-radius:16px;overflow:hidden;background:#faf9f6;min-height:460px;display:flex;justify-content:center;}
+.wef-hero-donate-trust{display:flex;align-items:center;gap:6px;margin-top:14px;font-size:.72rem;color:#8a8779;justify-content:center;}
+.wef-hero-donate-trust svg{width:12px;height:12px;fill:#8a8779;}
+
+.wef-hero-donate-summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 18px;border-radius:14px;background:#2F6B45;color:#fff;font-weight:700;font-size:.92rem;transition:background .2s ease;}
+.wef-hero-donate-summary::-webkit-details-marker{display:none;}
+.wef-hero-donate-summary:hover{background:#1F4A31;}
+.wef-summary-chevron{width:18px;height:18px;flex-shrink:0;transition:transform .25s ease;}
+.wef-hero-donate-details[open] .wef-summary-chevron{transform:rotate(180deg);}
+.wef-hero-donate-details[open] .wef-hero-donate-summary{border-radius:14px 14px 0 0;}
+.wef-hero-donate-details .wef-hero-donate-form{border-radius:0 0 16px 16px;animation:wefFadeUp .35s ease both;}
+.wef-hero-donate-details:not([open]) .wef-hero-donate-form{display:none;}
+
+/* Section reveal-on-scroll (lightweight, no JS dependency issues) */
+.wef-purpose-card,.wef-pillar-card,.wef-value-card,.wef-story-card{animation:wefFadeUp .7s ease both;}
+.wef-purpose-grid .wef-purpose-card:nth-child(2){animation-delay:.08s}
+.wef-purpose-grid .wef-purpose-card:nth-child(3){animation-delay:.16s}
+.wef-pillars-grid .wef-pillar-card:nth-child(2){animation-delay:.08s}
+.wef-pillars-grid .wef-pillar-card:nth-child(3){animation-delay:.16s}
+.wef-values-grid .wef-value-card:nth-child(2){animation-delay:.06s}
+.wef-values-grid .wef-value-card:nth-child(3){animation-delay:.12s}
+.wef-values-grid .wef-value-card:nth-child(4){animation-delay:.18s}
+.wef-stories-grid .wef-story-card:nth-child(2){animation-delay:.08s}
+.wef-stories-grid .wef-story-card:nth-child(3){animation-delay:.16s}
+.wef-stories-grid .wef-story-card:nth-child(4){animation-delay:.24s}
+</style>
 </head>
 <body class="home wp-singular page-template page-template-elementor_header_footer page page-id-8 wp-custom-logo wp-theme-donexa theme-donexa woocommerce-js give-test-mode give-page mega-menu-primary mega-menu-max-mega-menu-1 donexa-front-page page-two-column elementor-default elementor-template-full-width elementor-kit-7 elementor-page elementor-page-8 e--ua-blink e--ua-webkit" data-elementor-device-mode="desktop" style="">
 <!-- loading -->
@@ -369,8 +477,8 @@
 <div class="elementor-element elementor-element-579e1de elementor-position-inline-start elementor-hidden-mobile pt-icon-animate elementor-view-default elementor-mobile-position-block-start elementor-widget elementor-widget-icon-box" data-e-type="widget" data-element_type="widget" data-id="579e1de" data-widget_type="icon-box.default">
 <div class="elementor-icon-box-wrapper">
 <div class="elementor-icon-box-icon" style="margin-right: 12px; display: inline-flex; align-items: center;">
-<span class="elementor-icon" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(184, 59, 29, 0.08); border-radius: 50%;">
-<svg style="width: 14px; height: 14px; fill: #b83b1d; display: inline-block;" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<span class="elementor-icon" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(47, 107, 69, 0.08); border-radius: 50%;">
+<svg style="width: 14px; height: 14px; fill: #2F6B45; display: inline-block;" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
 <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-21.9l-88 33C12.1 42.4 0 58.4 0 76.8C0 316.5 195.5 512 435.2 512c18.4 0 34.4-12.1 41.1-29.5l33-88c6.6-19.4-3.3-39.7-22-47.4l-105-43c-15.5-6.4-33.1-1.3-42.4 12l-37 53c-74.4-37-134.4-111-171-185.3l53-37c13.3-9.3 18.4-26.9 12-42.4L164.9 24.6z">
 </path>
 </svg>
@@ -384,6 +492,12 @@
 </span>
 </div>
 </div>
+</div>
+<div class="elementor-hidden-mobile wef-header-donate-wrap" style="display:flex;align-items:center;margin-left:18px;">
+<a class="pt-button pt-button-flat" href="https://www.zeffy.com/en-US/donation-form/donate-now-to-support-education-for-underprivileged-children" rel="noopener" style="font-size:14px;line-height:1;padding:12px 22px;gap:8px;" target="_blank">
+<span class="pt-button-text">Donate Now</span>
+<i aria-hidden="true" class="fas fa-heart"></i>
+</a>
 </div>
 <div class="elementor-element elementor-element-cbd89fc elementor-hidden-mobile elementor-widget elementor-widget-cart_WEFC" data-e-type="widget" data-element_type="widget" data-id="cbd89fc" data-widget_type="cart_WEFC.default">
 <div class="elementor-widget-container">
@@ -471,14 +585,6 @@
 </div>
 </div>
 </div>
-<div class="pt-toggle-btn">
-<a class="menu-toggle" href="javascript:void(0)" role="button" tabindex="0">
-<svg fill="none" height="50" viewbox="0 0 50 50" width="50" xmlns="http://www.w3.org/2000/svg">
-<path clip-rule="evenodd" d="M22.6708 32.5609C22.6708 31.1728 22.1197 29.8422 21.1379 28.8621C20.1578 27.8803 18.8272 27.3292 17.4391 27.3292C13.9757 27.3292 8.69512 27.3292 5.23172 27.3292C3.84357 27.3292 2.51297 27.8803 1.53289 28.8621C0.551071 29.8422 0 31.1728 0 32.5609V44.7683C0 46.1564 0.551071 47.487 1.53289 48.4671C2.51297 49.4489 3.84357 50 5.23172 50H17.4391C18.8272 50 20.1578 49.4489 21.1379 48.4671C22.1197 47.487 22.6708 46.1564 22.6708 44.7683V32.5609ZM48.8294 32.5609C48.8294 31.1728 48.2783 29.8422 47.2965 28.8621C46.3164 27.8803 44.9858 27.3292 43.5977 27.3292C40.1343 27.3292 34.8537 27.3292 31.3903 27.3292C30.0022 27.3292 28.6716 27.8803 27.6915 28.8621C26.7097 29.8422 26.1586 31.1728 26.1586 32.5609V44.7683C26.1586 46.1564 26.7097 47.487 27.6915 48.4671C28.6716 49.4489 30.0022 50 31.3903 50H43.5977C44.9858 50 46.3164 49.4489 47.2965 48.4671C48.2783 47.487 48.8294 46.1564 48.8294 44.7683V32.5609ZM19.183 32.5609V44.7683C19.183 45.2304 18.9999 45.6751 18.672 46.0012C18.3459 46.3291 17.9012 46.5122 17.4391 46.5122H5.23172C4.76959 46.5122 4.32489 46.3291 3.99878 46.0012C3.67092 45.6751 3.48781 45.2304 3.48781 44.7683V32.5609C3.48781 32.0988 3.67092 31.6541 3.99878 31.328C4.32489 31.0001 4.76959 30.817 5.23172 30.817H17.4391C17.9012 30.817 18.3459 31.0001 18.672 31.328C18.9999 31.6541 19.183 32.0988 19.183 32.5609ZM45.3416 32.5609V44.7683C45.3416 45.2304 45.1585 45.6751 44.8306 46.0012C44.5045 46.3291 44.0598 46.5122 43.5977 46.5122H31.3903C30.9282 46.5122 30.4835 46.3291 30.1574 46.0012C29.8295 45.6751 29.6464 45.2304 29.6464 44.7683V32.5609C29.6464 32.0988 29.8295 31.6541 30.1574 31.328C30.4835 31.0001 30.9282 30.817 31.3903 30.817H43.5977C44.0598 30.817 44.5045 31.0001 44.8306 31.328C45.1585 31.6541 45.3416 32.0988 45.3416 32.5609ZM41.1928 23.4804L48.4684 16.2048C50.5105 14.1627 50.5105 10.8493 48.4684 8.80716L41.1928 1.53159C39.1507 -0.510529 35.8373 -0.510529 33.7952 1.53159L26.5196 8.80716C24.4775 10.8493 24.4775 14.1627 26.5196 16.2048L33.7952 23.4804C35.8373 25.5225 39.1507 25.5225 41.1928 23.4804ZM22.6708 6.40232C22.6708 5.01417 22.1197 3.68356 21.1379 2.70349C20.1578 1.72167 18.8272 1.1706 17.4391 1.1706C13.9757 1.1706 8.69512 1.1706 5.23172 1.1706C3.84357 1.1706 2.51297 1.72167 1.53289 2.70349C0.551071 3.68356 0 5.01417 0 6.40232V18.6097C0 19.9978 0.551071 21.3284 1.53289 22.3085C2.51297 23.2903 3.84357 23.8414 5.23172 23.8414H17.4391C18.8272 23.8414 20.1578 23.2903 21.1379 22.3085C22.1197 21.3284 22.6708 19.9978 22.6708 18.6097V6.40232ZM46.0025 13.7389L38.7269 21.0145C38.0468 21.6946 36.9412 21.6946 36.2611 21.0145L28.9855 13.7389C28.3054 13.0588 28.3054 11.9532 28.9855 11.273L36.2611 3.99747C36.9412 3.31735 38.0468 3.31735 38.7269 3.99747L46.0025 11.273C46.6826 11.9532 46.6826 13.0588 46.0025 13.7389ZM19.183 6.40232V18.6097C19.183 19.0718 18.9999 19.5165 18.672 19.8426C18.3459 20.1705 17.9012 20.3536 17.4391 20.3536H5.23172C4.76959 20.3536 4.32489 20.1705 3.99878 19.8426C3.67092 19.5165 3.48781 19.0718 3.48781 18.6097V6.40232C3.48781 5.94018 3.67092 5.49549 3.99878 5.16937C4.32489 4.84152 4.76959 4.65841 5.23172 4.65841H17.4391C17.9012 4.65841 18.3459 4.84152 18.672 5.16937C18.9999 5.49549 19.183 5.94018 19.183 6.40232Z" fill="#141414" fill-rule="evenodd">
-</path>
-</svg>
-</a>
-</div>
 </div>
 </div>
 </div>
@@ -502,169 +608,76 @@
 </div>
 </div>
 <ul class="mega-menu max-mega-menu mega-menu-horizontal" data-breakpoint="1200" data-document-click="collapse" data-effect="fade_up" data-effect-mobile="slide_right" data-effect-speed="200" data-effect-speed-mobile="200" data-event="hover_intent" data-hover-intent-interval="100" data-hover-intent-timeout="300" data-mobile-direction="vertical" data-mobile-force-width="body" data-mobile-state="collapse_all" data-second-click="go" data-unbind="true" data-vertical-behaviour="standard" id="mega-menu-primary-mobile">
-<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-current-menu-item mega-current_page_item mega-menu-item-home mega-current-menu-ancestor mega-current-menu-parent mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-dropdown mega-menu-item-1763" id="mega-menu-item-1763">
-<a aria-controls="mega-sub-menu-1763" aria-current="page" aria-expanded="false" class="mega-menu-link" href="/">
+<li class="mega-menu-item mega-align-bottom-left" id="mega-menu-item-home-mobile">
+<a class="mega-menu-link" href="/">
               Home
+             </a>
+</li>
+<li class="mega-menu-item mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-dropdown" id="mega-menu-item-about-mobile">
+<a aria-controls="mega-sub-menu-about-mobile" aria-expanded="false" class="mega-menu-link" href="#">
+              About
               <span aria-hidden="true" class="mega-indicator">
 </span>
 </a>
-<ul class="mega-sub-menu" id="mega-sub-menu-1763">
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-home mega-current-menu-item mega-page_item mega-page-item-8 mega-current_page_item mega-menu-item-1761" id="mega-menu-item-1761">
-<a aria-current="page" class="mega-menu-link" href="/">
-                Main Home
+<ul class="mega-sub-menu" id="mega-sub-menu-about-mobile">
+<li class="mega-menu-item" id="mega-menu-item-team-mobile">
+<a class="mega-menu-link" href="/team/index">
+                Our Team
                </a>
 </li>
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-1760" id="mega-menu-item-1760">
-<a class="mega-menu-link" href="/pages/volunteer">
-                Volunteer Home
+<li class="mega-menu-item" id="mega-menu-item-mission-mobile">
+<a class="mega-menu-link" href="/pages/about">
+                Our Mission
                </a>
 </li>
 </ul>
 </li>
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-1758" id="mega-menu-item-1758">
-<a class="mega-menu-link" href="/pages/about">
-              About Us
-             </a>
-</li>
-<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-dropdown mega-menu-item-1757" id="mega-menu-item-1757">
-<a aria-controls="mega-sub-menu-1757" aria-expanded="false" class="mega-menu-link" href="/">
-              Services
+<li class="mega-menu-item mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-dropdown" id="mega-menu-item-impact-mobile">
+<a aria-controls="mega-sub-menu-impact-mobile" aria-expanded="false" class="mega-menu-link" href="#">
+              Impact
               <span aria-hidden="true" class="mega-indicator">
 </span>
 </a>
-<ul class="mega-sub-menu" id="mega-sub-menu-1757">
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-1753" id="mega-menu-item-1753">
-<a class="mega-menu-link" href="/services/bright-beginnings">
-                Bright Beginnings ECLCs
+<ul class="mega-sub-menu" id="mega-sub-menu-impact-mobile">
+<li class="mega-menu-item" id="mega-menu-item-success-stories-mobile">
+<a class="mega-menu-link" href="/blog/category/success-stories">
+                Success Stories
                </a>
 </li>
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-1754" id="mega-menu-item-1754">
-<a class="mega-menu-link" href="/services/teacher-training">
-                Early Childhood Teacher Training
-               </a>
-</li>
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-1755" id="mega-menu-item-1755">
-<a class="mega-menu-link" href="/services/learning-centers">
-                Government School Learning Centers
-               </a>
-</li>
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-1756" id="mega-menu-item-1756">
-<a class="mega-menu-link" href="/services/scholarships">
+<li class="mega-menu-item" id="mega-menu-item-project-updates-mobile">
+<a class="mega-menu-link" href="/blog/category/project-updates">
                 Project Updates
                </a>
 </li>
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4822" id="mega-menu-item-4822">
-<a class="mega-menu-link" href="/services/english-labs">
-                All News
-               </a>
-</li>
 </ul>
 </li>
-<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-dropdown mega-menu-item-1764" id="mega-menu-item-1764">
-<a aria-controls="mega-sub-menu-1764" aria-expanded="false" class="mega-menu-link" href="/">
-              Pages
+<li class="mega-menu-item mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-dropdown" id="mega-menu-item-whatwedo-mobile">
+<a aria-controls="mega-sub-menu-whatwedo-mobile" aria-expanded="false" class="mega-menu-link" href="#">
+              What We Do
               <span aria-hidden="true" class="mega-indicator">
 </span>
 </a>
-<ul class="mega-sub-menu" id="mega-sub-menu-1764">
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-3164" id="mega-menu-item-3164">
+<ul class="mega-sub-menu" id="mega-sub-menu-whatwedo-mobile">
+<li class="mega-menu-item" id="mega-menu-item-active-projects-mobile">
 <a class="mega-menu-link" href="/blog/category/active-projects">
-                Our Service
+                Active Projects
                </a>
 </li>
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4254" id="mega-menu-item-4254">
-<a class="mega-menu-link" href="/pages/projects">
-                Projects
+<li class="mega-menu-item" id="mega-menu-item-completed-projects-mobile">
+<a class="mega-menu-link" href="/blog/category/completed-projects">
+                Completed Projects
                </a>
-</li>
-<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-4255" id="mega-menu-item-4255">
-<a class="mega-menu-link" href="/portfolio/pest-shield">
-                Projects Details
-               </a>
-</li>
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-3275" id="mega-menu-item-3275">
-<a class="mega-menu-link" href="/team/index">
-                Team Member
-               </a>
-</li>
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-3277" id="mega-menu-item-3277">
-<a class="mega-menu-link" href="/team/details">
-                Team Details
-               </a>
-</li>
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-5046" id="mega-menu-item-5046">
-<a class="mega-menu-link" href="/pages/pricing">
-                Pricing Plan
-               </a>
-</li>
-<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-item-4242" id="mega-menu-item-4242">
-<a aria-controls="mega-sub-menu-4242" aria-expanded="false" class="mega-menu-link" href="/">
-                Shop
-                <span aria-hidden="true" class="mega-indicator">
-</span>
-</a>
-<ul class="mega-sub-menu" id="mega-sub-menu-4242">
-<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-4285" id="mega-menu-item-4285">
-<a class="mega-menu-link" href="/shop/index">
-                  Product List
-                 </a>
-</li>
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4289" id="mega-menu-item-4289">
-<a class="mega-menu-link" href="/shop/grid">
-                  Product Grid
-                 </a>
-</li>
-<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-4286" id="mega-menu-item-4286">
-<a class="mega-menu-link" href="/shop/product/insect-repellent-spray">
-                  Product Details
-                 </a>
 </li>
 </ul>
 </li>
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4250" id="mega-menu-item-4250">
+<li class="mega-menu-item mega-align-bottom-left" id="mega-menu-item-gallery-mobile">
 <a class="mega-menu-link" href="/pages/gallery">
-                Gallery
-               </a>
+              Gallery
+             </a>
 </li>
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-3284" id="mega-menu-item-3284">
-<a class="mega-menu-link" href="/pages/faq">
-                Faq
-               </a>
-</li>
-<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-4228" id="mega-menu-item-4228">
-<a class="mega-menu-link" href="/404">
-                404
-               </a>
-</li>
-</ul>
-</li>
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-dropdown mega-menu-item-1762" id="mega-menu-item-1762">
-<a aria-controls="mega-sub-menu-1762" aria-expanded="false" class="mega-menu-link" href="/blog/category/completed-projects">
-              blog
-              <span aria-hidden="true" class="mega-indicator">
-</span>
-</a>
-<ul class="mega-sub-menu" id="mega-sub-menu-1762">
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2567" id="mega-menu-item-2567">
-<a class="mega-menu-link" href="/blog/category/success-stories">
-                Blog list
-               </a>
-</li>
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2568" id="mega-menu-item-2568">
-<a class="mega-menu-link" href="/blog/category/project-updates">
-                Blog Standard
-               </a>
-</li>
-<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-2569" id="mega-menu-item-2569">
-<a class="mega-menu-link" href="/complete-insect-pest-control-guide-for-safe-living">
-                Single post
-               </a>
-</li>
-</ul>
-</li>
-<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-1759" id="mega-menu-item-1759">
+<li class="mega-menu-item mega-align-bottom-left" id="mega-menu-item-contact-mobile">
 <a class="mega-menu-link" href="/pages/contact">
-              Contact Us
+              Contact
              </a>
 </li>
 </ul>
@@ -683,6 +696,14 @@
 <div class="site-content" id="content">
 <div class="elementor elementor-8" data-elementor-id="8" data-elementor-type="wp-page">
 <div class="elementor-element elementor-element-46dbc5c e-con-full e-flex e-con e-parent e-lazyloaded" data-e-type="container" data-element_type="container" data-id="46dbc5c" data-settings='{"background_background":"classic"}'>
+<div class="wef-hero-slides" aria-hidden="true">
+<span style="background-image:url('/content/uploads/wef/Herzing-Scholars-min-1.png');"></span>
+<span style="background-image:url('/content/uploads/wef/in_school_language_lab-1024x683.webp');"></span>
+<span style="background-image:url('/content/uploads/wef/Program-1024x768-2.jpeg');"></span>
+<span style="background-image:url('/content/uploads/wef/download-1-e1783067555914-1024x683.jpg');"></span>
+<span style="background-image:url('/content/uploads/wef/in_school_language_lab-1024x683.webp');"></span>
+</div>
+<div class="wef-hero-scrim"></div>
 <div class="elementor-element elementor-element-1cc76e1 elementor-absolute elementor-widget-laptop__width-initial elementor-widget elementor-widget-image" data-e-type="widget" data-element_type="widget" data-id="1cc76e1" data-settings='{"_position":"absolute"}' data-widget_type="image.default">
 <img alt="Worldwide Education Foundation Canada Classroom and Operations" class="attachment-full size-full wp-image-5377" decoding="async" height="196" loading="eager" src="/content/uploads/2026/03/XMLID_1148_.png" width="235"/>
 </div>
@@ -720,17 +741,38 @@
 </div>
 </div>
 </div>
+<div class="wef-hero-donate">
+<span class="wef-hero-donate-badge"><span class="dot"></span>Live &amp; Secure</span>
+<h3>Give a Child a Brighter Future</h3>
+<p>Your gift funds classrooms, teachers, and scholarships — 100% goes directly to programs.</p>
+<details class="wef-hero-donate-details" id="wefHeroDonateDetails" open="">
+<summary class="wef-hero-donate-summary">
+<span>Donate Securely Online</span>
+<svg class="wef-summary-chevron" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+</summary>
+<div class="wef-hero-donate-form">
+<div data-zeffy-embed data-form-url="/embed/donation-form/donate-now-to-support-education-for-underprivileged-children"></div>
+<div data-zeffy-embed-fallback style="display:none;">
+<div style="position:relative;overflow:hidden;height:450px;width:100%;"><iframe allowpaymentrequest="" allowtransparency="true" data-zeffy-embed-src="https://www.zeffy.com/embed/donation-form/donate-now-to-support-education-for-underprivileged-children" style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%" title="Donation form powered by Zeffy"></iframe></div>
+</div>
+<script onerror="document.querySelectorAll('[data-zeffy-embed-fallback]').forEach(function(el){el.style.display='block';el.querySelectorAll('iframe[data-zeffy-embed-src]').forEach(function(f){f.src=f.getAttribute('data-zeffy-embed-src');});});" src="https://www.zeffy.com/embed/v2/zeffy-embed.js">
+</script>
+</div>
+</details>
+<div class="wef-hero-donate-trust"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"></path></svg>Secured by Zeffy &middot; 501(c)(3)</div>
+</div>
+<script>(function(){var d=document.getElementById('wefHeroDonateDetails');if(d&&window.innerWidth<768){d.removeAttribute('open');}}());</script>
 </div>
 <div class="elementor-element elementor-element-b405852 e-con-full e-flex e-con e-parent e-lazyloaded" data-e-type="container" data-element_type="container" data-id="b405852">
-<div class="elementor-element elementor-element-ae2d4c6 e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="ae2d4c6" data-settings='{"background_background":"slideshow","background_slideshow_gallery":[{"id":6450,"url":"\/content\/uploads\/2026\/04\/Rectangle-scaled.jpg"},{"id":6448,"url":"\/content\/uploads\/2026\/04\/Rectangle-2062-scaled.jpg"},{"id":6447,"url":"\/content\/uploads\/2026\/04\/Rectangle-2063-scaled.jpg"},{"id":6449,"url":"\/content\/uploads\/2026\/04\/Rectangle-2064-scaled.jpg"}],"background_slideshow_ken_burns":"yes","background_slideshow_loop":"yes","background_slideshow_slide_duration":5000,"background_slideshow_slide_transition":"fade","background_slideshow_transition_duration":500,"background_slideshow_ken_burns_zoom_direction":"in"}'>
+<div class="elementor-element elementor-element-ae2d4c6 e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="ae2d4c6" data-settings='{"background_background":"slideshow","background_slideshow_gallery":[{"id":6450,"url":"\/content\/uploads\/2026\/04\/Rectangle-scaled.jpg"},{"id":6448,"url":"\/content\/uploads\/2026\/04\/Rectangle-2062-scaled.jpg"},{"id":6447,"url":"\/content\/uploads\/2026\/04\/Rectangle-2063-scaled.jpg"},{"id":6449,"url":"\/content\/uploads\/wef\/download-1-e1783067555914-1024x683.jpg"}],"background_slideshow_ken_burns":"yes","background_slideshow_loop":"yes","background_slideshow_slide_duration":5000,"background_slideshow_slide_transition":"fade","background_slideshow_transition_duration":500,"background_slideshow_ken_burns_zoom_direction":"in"}'>
 <div class="elementor-background-slideshow swiper swiper-fade swiper-initialized swiper-horizontal swiper-pointer-events swiper-rtl swiper-watch-progress" dir="rtl">
 <div aria-live="off" class="swiper-wrapper" id="swiper-wrapper-c89cc1fb667eb5106" style="transition-duration: 0ms;">
 <div aria-label="1 / 4" class="elementor-background-slideshow__slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="0" role="group" style="width: 1880px; transition-duration: 0ms; opacity: 0; transform: translate3d(0px, 0px, 0px);">
-<div class="elementor-background-slideshow__slide__image elementor-ken-burns elementor-ken-burns--in" style='background-image: url("/content/uploads/wef/ECLC-Lower-Chitral-min-1-1.png");'>
+<div class="elementor-background-slideshow__slide__image elementor-ken-burns elementor-ken-burns--in" style='background-image: url("/content/uploads/wef/Program-1024x768-2.jpeg");'>
 </div>
 </div>
 <div aria-label="2 / 4" class="elementor-background-slideshow__slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="1" role="group" style="width: 1880px; transition-duration: 0ms; opacity: 0; transform: translate3d(1880px, 0px, 0px);">
-<div class="elementor-background-slideshow__slide__image elementor-ken-burns elementor-ken-burns--in" style='background-image: url("/content/uploads/wef/English-Language-Skills-Training-for-Teachers-e1783067655114.webp");'>
+<div class="elementor-background-slideshow__slide__image elementor-ken-burns elementor-ken-burns--in" style='background-image: url("/content/uploads/wef/Herzing-Scholars-min-1.png");'>
 </div>
 </div>
 <div aria-label="3 / 4" class="elementor-background-slideshow__slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="2" role="group" style="width: 1880px; transition-duration: 0ms; opacity: 0; transform: translate3d(3760px, 0px, 0px);">
@@ -738,15 +780,15 @@
 </div>
 </div>
 <div aria-label="4 / 4" class="elementor-background-slideshow__slide swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" role="group" style="width: 1880px; transition-duration: 0ms; opacity: 0; transform: translate3d(5640px, 0px, 0px);">
-<div class="elementor-background-slideshow__slide__image elementor-ken-burns elementor-ken-burns--in" style='background-image: url("/content/uploads/2026/04/Rectangle-2064-scaled.jpg");'>
+<div class="elementor-background-slideshow__slide__image elementor-ken-burns elementor-ken-burns--in" style='background-image: url("/content/uploads/wef/download-1-e1783067555914-1024x683.jpg");'>
 </div>
 </div>
 <div aria-label="1 / 4" class="elementor-background-slideshow__slide swiper-slide swiper-slide-prev" data-swiper-slide-index="0" role="group" style="width: 1880px; transition-duration: 0ms; opacity: 0; transform: translate3d(7520px, 0px, 0px);">
-<div class="elementor-background-slideshow__slide__image elementor-ken-burns elementor-ken-burns--in" style='background-image: url("/content/uploads/wef/ECLC-Lower-Chitral-min-1-1.png");'>
+<div class="elementor-background-slideshow__slide__image elementor-ken-burns elementor-ken-burns--in" style='background-image: url("/content/uploads/wef/Program-1024x768-2.jpeg");'>
 </div>
 </div>
 <div aria-label="2 / 4" class="elementor-background-slideshow__slide swiper-slide swiper-slide-visible swiper-slide-active" data-swiper-slide-index="1" role="group" style="width: 1880px; transition-duration: 0ms; opacity: 1; transform: translate3d(9400px, 0px, 0px);">
-<div class="elementor-background-slideshow__slide__image elementor-ken-burns elementor-ken-burns--in elementor-ken-burns--active" style='background-image: url("/content/uploads/wef/English-Language-Skills-Training-for-Teachers-e1783067655114.webp");'>
+<div class="elementor-background-slideshow__slide__image elementor-ken-burns elementor-ken-burns--in elementor-ken-burns--active" style='background-image: url("/content/uploads/wef/Herzing-Scholars-min-1.png");'>
 </div>
 </div>
 <div aria-label="3 / 4" class="elementor-background-slideshow__slide swiper-slide swiper-slide-next" data-swiper-slide-index="2" role="group" style="width: 1880px; transition-duration: 0ms; opacity: 0; transform: translate3d(11280px, 0px, 0px);">
@@ -754,15 +796,15 @@
 </div>
 </div>
 <div aria-label="4 / 4" class="elementor-background-slideshow__slide swiper-slide" data-swiper-slide-index="3" role="group" style="width: 1880px; transition-duration: 0ms; opacity: 0; transform: translate3d(13160px, 0px, 0px);">
-<div class="elementor-background-slideshow__slide__image elementor-ken-burns elementor-ken-burns--in" style='background-image: url("/content/uploads/2026/04/Rectangle-2064-scaled.jpg");'>
+<div class="elementor-background-slideshow__slide__image elementor-ken-burns elementor-ken-burns--in" style='background-image: url("/content/uploads/wef/download-1-e1783067555914-1024x683.jpg");'>
 </div>
 </div>
 <div aria-label="1 / 4" class="elementor-background-slideshow__slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="0" role="group" style="width: 1880px; transition-duration: 0ms; opacity: 0; transform: translate3d(15040px, 0px, 0px);">
-<div class="elementor-background-slideshow__slide__image elementor-ken-burns elementor-ken-burns--in" style='background-image: url("/content/uploads/wef/ECLC-Lower-Chitral-min-1-1.png");'>
+<div class="elementor-background-slideshow__slide__image elementor-ken-burns elementor-ken-burns--in" style='background-image: url("/content/uploads/wef/Program-1024x768-2.jpeg");'>
 </div>
 </div>
 <div aria-label="2 / 4" class="elementor-background-slideshow__slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="1" role="group" style="width: 1880px; transition-duration: 0ms; opacity: 0; transform: translate3d(16920px, 0px, 0px);">
-<div class="elementor-background-slideshow__slide__image elementor-ken-burns elementor-ken-burns--in" style='background-image: url("/content/uploads/wef/English-Language-Skills-Training-for-Teachers-e1783067655114.webp");'>
+<div class="elementor-background-slideshow__slide__image elementor-ken-burns elementor-ken-burns--in" style='background-image: url("/content/uploads/wef/Herzing-Scholars-min-1.png");'>
 </div>
 </div>
 <div aria-label="3 / 4" class="elementor-background-slideshow__slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="2" role="group" style="width: 1880px; transition-duration: 0ms; opacity: 0; transform: translate3d(18800px, 0px, 0px);">
@@ -770,7 +812,7 @@
 </div>
 </div>
 <div aria-label="4 / 4" class="elementor-background-slideshow__slide swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3" role="group" style="width: 1880px; transition-duration: 0ms; opacity: 0; transform: translate3d(20680px, 0px, 0px);">
-<div class="elementor-background-slideshow__slide__image elementor-ken-burns elementor-ken-burns--in" style='background-image: url("/content/uploads/2026/04/Rectangle-2064-scaled.jpg");'>
+<div class="elementor-background-slideshow__slide__image elementor-ken-burns elementor-ken-burns--in" style='background-image: url("/content/uploads/wef/download-1-e1783067555914-1024x683.jpg");'>
 </div>
 </div>
 </div>
@@ -793,18 +835,6 @@
 </div>
 </div>
 <div class="elementor-element elementor-element-13e2657 e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="13e2657">
-<div class="elementor-element elementor-element-fda83ce elementor-widget elementor-widget-progress" data-e-type="widget" data-element_type="widget" data-id="fda83ce" data-widget_type="progress.default">
-<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" aria-valuetext="100% (huhu)" class="elementor-progress-wrapper" role="progressbar">
-<div class="elementor-progress-bar" data-max="90" style="width: 100%;">
-<span class="elementor-progress-text">
-               huhu
-              </span>
-<span class="elementor-progress-percentage">
-               100%
-              </span>
-</div>
-</div>
-</div>
 <div class="elementor-element elementor-element-11c2a71 e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="11c2a71">
 <div class="elementor-element elementor-element-05631a9 elementor-widget elementor-widget-heading" data-e-type="widget" data-element_type="widget" data-id="05631a9" data-widget_type="heading.default">
 <span class="elementor-heading-title elementor-size-default">
@@ -813,7 +843,7 @@
 </div>
 <div class="elementor-element elementor-element-febec3f elementor-widget elementor-widget-heading" data-e-type="widget" data-element_type="widget" data-id="febec3f" data-widget_type="heading.default">
 <span class="elementor-heading-title elementor-size-default">
-              100%
+              100% of Funds to Programs
              </span>
 </div>
 </div>
@@ -840,10 +870,10 @@
 <div style="max-width: 1200px; margin: 0 auto; padding: 0 15px; width: 100%; box-sizing: border-box;">
 <!-- Section Title Block -->
 <div style="text-align: center; margin-bottom: 50px; max-width: 700px; margin-left: auto; margin-right: auto;">
-<span style="color: #b83b1d; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; display: block; margin-bottom: 10px;">
+<span style="color: #2F6B45; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; display: block; margin-bottom: 10px;">
            Foundational Conviction
           </span>
-<h2 style="font-family: 'Playfair Display', 'Georgia', serif; font-weight: 800; font-size: 2.3rem; color: #111; margin-top: 0; margin-bottom: 15px; line-height: 1.3;">
+<h2 style="font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 800; font-size: 2.3rem; color: #111; margin-top: 0; margin-bottom: 15px; line-height: 1.3;">
            Our Core Purposes
           </h2>
 <p style="font-size: 1rem; line-height: 1.6; color: #666; margin: 0; font-family: 'Inter', sans-serif;">
@@ -851,88 +881,21 @@
           </p>
 </div>
 <!-- 3-Column Core Causes Grid -->
-<div class="row" style="display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px;">
-<!-- Cause 1: Disrupting the Cycle of Poverty -->
-<div style="flex: 1 1 33.333%; min-width: 300px; padding: 0 15px; box-sizing: border-box; margin-bottom: 30px;">
-<div style="background-color: #fdfcf9; border-top: 4px solid #b83b1d; border-radius: 8px; padding: 35px 25px; height: 100%; box-shadow: 0 5px 20px rgba(0,0,0,0.015); text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; transition: all 0.3s ease;">
-<!-- SVG Icon: Broken loop to sprout (Poverty Disrupt) -->
-<svg aria-hidden="true" style="width: 54px; height: 54px; display: block; margin-bottom: 20px;" viewbox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-<circle cx="32" cy="32" fill="rgba(184, 59, 29, 0.05)" r="24">
-</circle>
-<path d="M16 32 C16 23.16 23.16 16 32 16 C39.5 16 45.8 21.1 47.5 28" fill="none" stroke="#222222" stroke-linecap="round" stroke-width="2.2">
-</path>
-<path d="M48 36 C46.5 43.1 40.1 48 32 48 C23.16 48 16 40.84 16 32" fill="none" stroke="#222222" stroke-dasharray="4 2" stroke-linecap="round" stroke-width="2.2">
-</path>
-<path d="M47.5 28 C49 22 53.5 17 56 16 C53.5 20.5 51 26 48 32" fill="none" stroke="#b83b1d" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
-</path>
-<path d="M51.5 20.5 C52.5 19.5 54.5 18 55.5 17.5" fill="none" stroke="#b83b1d" stroke-linecap="round" stroke-width="1.5">
-</path>
-</svg>
-<h3 style="font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.25rem; color: #111; margin-top: 0; margin-bottom: 12px;">
-             Disrupting the Cycle of Poverty
-            </h3>
-<p style="font-size: 0.9rem; line-height: 1.6; color: #555555; margin: 0; text-align: center;">
-             We believe that poverty should not be an inheritance. By equipping children with robust developmental foundations early in life, we interrupt closed cycles of generational hardship and establish sustainable pathways to long-term family prosperity.
-            </p>
+<div class="wef-purpose-grid">
+<div class="wef-purpose-card">
+<div class="wef-purpose-icon"><svg aria-hidden="true" viewbox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M16 32 C16 23.16 23.16 16 32 16 C39.5 16 45.8 21.1 47.5 28" fill="none" stroke="#222222" stroke-linecap="round" stroke-width="2.2"></path><path d="M48 36 C46.5 43.1 40.1 48 32 48 C23.16 48 16 40.84 16 32" fill="none" stroke="#222222" stroke-dasharray="4 2" stroke-linecap="round" stroke-width="2.2"></path><path d="M47.5 28 C49 22 53.5 17 56 16 C53.5 20.5 51 26 48 32" fill="none" stroke="#2F6B45" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path><path d="M51.5 20.5 C52.5 19.5 54.5 18 55.5 17.5" fill="none" stroke="#2F6B45" stroke-linecap="round" stroke-width="1.5"></path></svg></div>
+<h3 class="wef-purpose-title">Disrupting the Cycle of Poverty</h3>
+<p class="wef-purpose-text">We believe that poverty should not be an inheritance. By equipping children with robust developmental foundations early in life, we interrupt closed cycles of generational hardship and establish sustainable pathways to long-term family prosperity.</p>
 </div>
+<div class="wef-purpose-card">
+<div class="wef-purpose-icon"><svg aria-hidden="true" viewbox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><line stroke="#222222" stroke-linecap="round" stroke-width="2.2" x1="32" x2="32" y1="46" y2="22"></line><path d="M20 46 H44" stroke="#222222" stroke-linecap="round" stroke-width="2.2"></path><line stroke="#2F6B45" stroke-linecap="round" stroke-width="2.5" x1="15" x2="25" y1="28" y2="28"></line><line stroke="#2F6B45" stroke-linecap="round" stroke-width="2.5" x1="39" x2="49" y1="28" y2="28"></line><path d="M20 28 L32 22 L44 28" fill="none" stroke="#222222" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path><path d="M20 15 L21.2 18 L24 18.2 L22 20 L22.5 22.8 L20 21.2 L17.5 22.8 L18 20 L16 18.2 L18.8 18 Z" fill="#2F6B45"></path><path d="M44 15 L45.2 18 L48 18.2 L46 20 L46.5 22.8 L44 21.2 L41.5 22.8 L42 20 L40 18.2 L42.8 18 Z" fill="#2F6B45"></path></svg></div>
+<h3 class="wef-purpose-title">Equalizing the Starting Line</h3>
+<p class="wef-purpose-text">Talent is distributed universally, but opportunity is not. We actively dismantle structural barriers of gender, caste, and extreme economic isolation, ensuring that every young mind has the resources to define their own potential.</p>
 </div>
-<!-- Cause 2: Equalizing the Starting Line -->
-<div style="flex: 1 1 33.333%; min-width: 300px; padding: 0 15px; box-sizing: border-box; margin-bottom: 30px;">
-<div style="background-color: #fdfcf9; border-top: 4px solid #b83b1d; border-radius: 8px; padding: 35px 25px; height: 100%; box-shadow: 0 5px 20px rgba(0,0,0,0.015); text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; transition: all 0.3s ease;">
-<!-- SVG Icon: Symmetrical balanced horizons (Equal starting line) -->
-<svg aria-hidden="true" style="width: 54px; height: 54px; display: block; margin-bottom: 20px;" viewbox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-<circle cx="32" cy="32" fill="rgba(184, 59, 29, 0.05)" r="24">
-</circle>
-<line stroke="#222222" stroke-linecap="round" stroke-width="2.2" x1="32" x2="32" y1="46" y2="22">
-</line>
-<path d="M20 46 H44" stroke="#222222" stroke-linecap="round" stroke-width="2.2">
-</path>
-<line stroke="#b83b1d" stroke-linecap="round" stroke-width="2.5" x1="15" x2="25" y1="28" y2="28">
-</line>
-<line stroke="#b83b1d" stroke-linecap="round" stroke-width="2.5" x1="39" x2="49" y1="28" y2="28">
-</line>
-<path d="M20 28 L32 22 L44 28" fill="none" stroke="#222222" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
-</path>
-<!-- Star rising above left scale -->
-<path d="M20 15 L21.2 18 L24 18.2 L22 20 L22.5 22.8 L20 21.2 L17.5 22.8 L18 20 L16 18.2 L18.8 18 Z" fill="#b83b1d">
-</path>
-<!-- Star rising above right scale -->
-<path d="M44 15 L45.2 18 L48 18.2 L46 20 L46.5 22.8 L44 21.2 L41.5 22.8 L42 20 L40 18.2 L42.8 18 Z" fill="#b83b1d">
-</path>
-</svg>
-<h3 style="font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.25rem; color: #111; margin-top: 0; margin-bottom: 12px;">
-             Equalizing the Starting Line
-            </h3>
-<p style="font-size: 0.9rem; line-height: 1.6; color: #555555; margin: 0; text-align: center;">
-             Talent is distributed universally, but opportunity is not. We actively dismantle structural barriers of gender, caste, and extreme economic isolation, ensuring that every young mind has the resources to define their own potential.
-            </p>
-</div>
-</div>
-<!-- Cause 3: Elevating Educational Standards -->
-<div style="flex: 1 1 33.333%; min-width: 300px; padding: 0 15px; box-sizing: border-box; margin-bottom: 30px;">
-<div style="background-color: #fdfcf9; border-top: 4px solid #b83b1d; border-radius: 8px; padding: 35px 25px; height: 100%; box-shadow: 0 5px 20px rgba(0,0,0,0.015); text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; transition: all 0.3s ease;">
-<!-- SVG Icon: Open book base with birds/paths rising (Educational standards) -->
-<svg aria-hidden="true" style="width: 54px; height: 54px; display: block; margin-bottom: 20px;" viewbox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-<circle cx="32" cy="32" fill="rgba(184, 59, 29, 0.05)" r="24">
-</circle>
-<path d="M16 44 C22 41 32 41 32 44 C32 41 42 41 48 44 V24 C42 21 32 21 32 24 C32 21 22 21 16 24 Z" fill="none" stroke="#222222" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2">
-</path>
-<line stroke="#222222" stroke-width="2.2" x1="32" x2="32" y1="24" y2="44">
-</line>
-<path d="M34 19 C36 15 41 12 45 13.5" fill="none" stroke="#b83b1d" stroke-linecap="round" stroke-width="2">
-</path>
-<path d="M30 19 C28 15 23 12 19 13.5" fill="none" stroke="#b83b1d" stroke-linecap="round" stroke-width="2">
-</path>
-<path d="M32 16 C32 11 35 8 39 9" fill="none" stroke="#b83b1d" stroke-linecap="round" stroke-width="2">
-</path>
-</svg>
-<h3 style="font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.25rem; color: #111; margin-top: 0; margin-bottom: 12px;">
-             Elevating Educational Standards
-            </h3>
-<p style="font-size: 0.9rem; line-height: 1.6; color: #555555; margin: 0; text-align: center;">
-             True empowerment requires more than basic literacy. We focus on enriching both the accessibility and the intellectual caliber of classrooms in marginalized territories, bringing world-class educational tools to those who need them most.
-            </p>
-</div>
+<div class="wef-purpose-card">
+<div class="wef-purpose-icon"><svg aria-hidden="true" viewbox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M16 44 C22 41 32 41 32 44 C32 41 42 41 48 44 V24 C42 21 32 21 32 24 C32 21 22 21 16 24 Z" fill="none" stroke="#222222" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path><line stroke="#222222" stroke-width="2.2" x1="32" x2="32" y1="24" y2="44"></line><path d="M34 19 C36 15 41 12 45 13.5" fill="none" stroke="#2F6B45" stroke-linecap="round" stroke-width="2"></path><path d="M30 19 C28 15 23 12 19 13.5" fill="none" stroke="#2F6B45" stroke-linecap="round" stroke-width="2"></path><path d="M32 16 C32 11 35 8 39 9" fill="none" stroke="#2F6B45" stroke-linecap="round" stroke-width="2"></path></svg></div>
+<h3 class="wef-purpose-title">Elevating Educational Standards</h3>
+<p class="wef-purpose-text">True empowerment requires more than basic literacy. We focus on enriching both the accessibility and the intellectual caliber of classrooms in marginalized territories, bringing world-class educational tools to those who need them most.</p>
 </div>
 </div>
 </div>
@@ -957,44 +920,22 @@
 </div>
 </div>
 </div>
-<div class="elementor-element elementor-element-135938d e-con-full e-flex e-con e-parent" style="width: 100%; display: block; margin-top: 30px; margin-bottom: 30px;">
-<div class="row g-4" style="display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px; justify-content: center;">
-<!-- Box 1: Our Vision -->
-<div style="padding-right: 15px; padding-left: 15px; flex: 1 1 30%; min-width: 280px; box-sizing: border-box; margin-bottom: 20px;">
-<div style="background-color: #fcfcfc; border: 1.5px solid #b83b1d; border-radius: 8px; padding: 30px 25px; height: 100%; box-shadow: 0 2px 10px rgba(0,0,0,0.02); display: flex; flex-direction: column; justify-content: space-between; border-top: 4px solid #b83b1d;">
-<h3 style="font-weight: 800; color: #b83b1d; font-size: 1.3rem; margin-top: 0; margin-bottom: 12px; letter-spacing: 0.5px; text-transform: uppercase;">
-               Our Vision
-              </h3>
-<p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin: 0; flex-grow: 1; text-align: left;">
-               We envision a world where every child, regardless of background, has access to quality education that empowers them to break the cycle of poverty and build a brighter, more prosperous future for themselves and their communities.
-              </p>
+<div class="elementor-element elementor-element-135938d e-con-full e-flex e-con e-parent" style="width: 100%; display: block; margin-top: 40px; margin-bottom: 10px;">
+<div class="wef-pillars-grid">
+<div class="wef-pillar-card">
+<div class="wef-pillar-icon"><svg fill="none" stroke="#2F6B45" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
+<h3 class="wef-pillar-title">Our Vision</h3>
+<p class="wef-pillar-text">We envision a world where every child, regardless of background, has access to quality education that empowers them to break the cycle of poverty and build a brighter, more prosperous future for themselves and their communities.</p>
 </div>
+<div class="wef-pillar-card">
+<div class="wef-pillar-icon"><svg fill="none" stroke="#2F6B45" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1"></circle></svg></div>
+<h3 class="wef-pillar-title">Our Mission</h3>
+<p class="wef-pillar-text">We invest in the potential of children and youth across underserved communities in Central and South Asia through early development programs, English language learning, and scholarships that open doors to opportunity and empower them to uplift their lives and communities.</p>
 </div>
-<!-- Box 2: Our Mission -->
-<div style="padding-right: 15px; padding-left: 15px; flex: 1 1 30%; min-width: 280px; box-sizing: border-box; margin-bottom: 20px;">
-<div style="background-color: #fcfcfc; border: 1.5px solid #b83b1d; border-radius: 8px; padding: 30px 25px; height: 100%; box-shadow: 0 2px 10px rgba(0,0,0,0.02); display: flex; flex-direction: column; justify-content: space-between; border-top: 4px solid #b83b1d;">
-<h3 style="font-weight: 800; color: #b83b1d; font-size: 1.3rem; margin-top: 0; margin-bottom: 12px; letter-spacing: 0.5px; text-transform: uppercase;">
-               Our Mission
-              </h3>
-<p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin: 0; flex-grow: 1; text-align: left;">
-               We invest in the potential of children and youth across underserved communities in Central and South Asia through early development programs, English language learning, and scholarships that open doors to opportunity and empower them to uplift their lives and communities.
-              </p>
-</div>
-</div>
-<!-- Box 3: Our Belief -->
-<div style="padding-right: 15px; padding-left: 15px; flex: 1 1 30%; min-width: 280px; box-sizing: border-box; margin-bottom: 20px;">
-<div style="background-color: #fcfcfc; border: 1.5px solid #b83b1d; border-radius: 8px; padding: 30px 25px; height: 100%; box-shadow: 0 2px 10px rgba(0,0,0,0.02); display: flex; flex-direction: column; justify-content: space-between; border-top: 4px solid #b83b1d;">
-<h3 style="font-weight: 800; color: #b83b1d; font-size: 1.3rem; margin-top: 0; margin-bottom: 12px; letter-spacing: 0.5px; text-transform: uppercase;">
-               Our Belief
-              </h3>
-<p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin: 0; flex-grow: 1; text-align: left;">
-               We believe
-               <strong style="font-weight: 800; color: #000;">
-                talent is universal, but opportunity is not.
-               </strong>
-               Every child deserves the chance to learn, grow, and thrive, regardless of financial means, caste, religion, or gender, because education unlocks human potential and creates lasting change.
-              </p>
-</div>
+<div class="wef-pillar-card">
+<div class="wef-pillar-icon"><svg fill="none" stroke="#2F6B45" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>
+<h3 class="wef-pillar-title">Our Belief</h3>
+<p class="wef-pillar-text">We believe <strong style="color:#1e1e1e;font-weight:700;">talent is universal, but opportunity is not.</strong> Every child deserves the chance to learn, grow, and thrive, regardless of financial means, caste, religion, or gender, because education unlocks human potential and creates lasting change.</p>
 </div>
 </div>
 </div>
@@ -1012,10 +953,10 @@
 <div style="max-width: 1200px; margin: 0 auto; padding: 0 15px; width: 100%; box-sizing: border-box;">
 <!-- 1. Section Title Block -->
 <div style="text-align: center; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto;">
-<span style="color: #b83b1d; font-weight: 700; text-transform: uppercase; font-size: 0.95rem; letter-spacing: 2px; display: block; margin-bottom: 12px;">
+<span style="color: #2F6B45; font-weight: 700; text-transform: uppercase; font-size: 0.95rem; letter-spacing: 2px; display: block; margin-bottom: 12px;">
            Strategic Dedication
           </span>
-<h2 style="font-family: 'Playfair Display', 'Georgia', serif; font-weight: 800; font-size: 2.6rem; color: #111; margin-top: 0; margin-bottom: 20px; line-height: 1.25;">
+<h2 style="font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 800; font-size: 2.6rem; color: #111; margin-top: 0; margin-bottom: 20px; line-height: 1.25;">
            WEF Canada Core Focus
           </h2>
 <p style="font-size: 1.05rem; line-height: 1.65; color: #555; margin: 0; font-family: 'Inter', sans-serif;">
@@ -1030,17 +971,17 @@
 <div class="row" style="display: flex; flex-wrap: wrap; margin-right: -20px; margin-left: -20px; margin-bottom: 50px;">
 <!-- COLUMN 1: Bright Beginnings ECLCs -->
 <div style="flex: 1 1 50%; min-width: 320px; padding: 0 20px; box-sizing: border-box; margin-bottom: 30px;">
-<div style="background-color: #ffffff; border: 1.5px solid #b83b1d; border-radius: 10px; padding: 40px 35px; height: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.02); display: flex; flex-direction: column; transition: transform 0.3s ease;">
-<span style="color: #b83b1d; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1.5px; display: block; margin-bottom: 10px;">
+<div style="background-color: #ffffff; border: 1.5px solid #2F6B45; border-radius: 10px; padding: 40px 35px; height: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.02); display: flex; flex-direction: column; transition: transform 0.3s ease;">
+<span style="color: #2F6B45; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1.5px; display: block; margin-bottom: 10px;">
              Pathway 01 — May 2025
             </span>
-<h3 style="font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.8rem; color: #111; margin-top: 0; margin-bottom: 20px; line-height: 1.3;">
+<h3 style="font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 800; font-size: 1.8rem; color: #111; margin-top: 0; margin-bottom: 20px; line-height: 1.3;">
              Transforming Early Childhood Education: Bright Beginnings ECLCs
             </h3>
 <p style="font-size: 0.95rem; line-height: 1.65; color: #444; margin-bottom: 25px; text-align: justify;">
              Bright Beginnings Early Childhood Learning Centers (ECLCs) deliver premier Early Childhood Development (ECD) access to underserved children across remote regions of Chitral, Pakistan. Following a Montessori-inspired pedagogical approach, classrooms encourage exploration, curiosity, and independence.
             </p>
-<h5 style="font-weight: 700; color: #b83b1d; font-size: 0.95rem; margin-top: 0; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">
+<h5 style="font-weight: 700; color: #2F6B45; font-size: 0.95rem; margin-top: 0; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">
              Program Pillar Highlights:
             </h5>
 <ul style="padding-left: 20px; margin-bottom: 30px; font-size: 0.9rem; color: #555; line-height: 1.6;">
@@ -1069,7 +1010,7 @@
              </h6>
 <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
 <div style="flex: 1; min-width: 100px;">
-<span style="font-size: 2.2rem; font-weight: 900; color: #b83b1d; display: block; line-height: 1;">
+<span style="font-size: 2.2rem; font-weight: 900; color: #2F6B45; display: block; line-height: 1;">
                 100
                </span>
 <span style="font-size: 0.75rem; color: #777; text-transform: uppercase;">
@@ -1077,7 +1018,7 @@
                </span>
 </div>
 <div style="flex: 1; min-width: 100px;">
-<span style="font-size: 2.2rem; font-weight: 900; color: #b83b1d; display: block; line-height: 1;">
+<span style="font-size: 2.2rem; font-weight: 900; color: #2F6B45; display: block; line-height: 1;">
                 3,000
                </span>
 <span style="font-size: 0.75rem; color: #777; text-transform: uppercase;">
@@ -1085,7 +1026,7 @@
                </span>
 </div>
 <div style="flex: 1; min-width: 100px;">
-<span style="font-size: 2.2rem; font-weight: 900; color: #b83b1d; display: block; line-height: 1;">
+<span style="font-size: 2.2rem; font-weight: 900; color: #2F6B45; display: block; line-height: 1;">
                 200
                </span>
 <span style="font-size: 0.75rem; color: #777; text-transform: uppercase;">
@@ -1093,7 +1034,7 @@
                </span>
 </div>
 </div>
-<div style="background-color: #fdfdfd; border-left: 3px solid #b83b1d; padding: 12px 15px; border-radius: 0 4px 4px 0; font-size: 0.82rem; line-height: 1.4; color: #666;">
+<div style="background-color: #fdfdfd; border-left: 3px solid #2F6B45; padding: 12px 15px; border-radius: 0 4px 4px 0; font-size: 0.82rem; line-height: 1.4; color: #666;">
 <strong>
                Strategic Vision (2030):
               </strong>
@@ -1104,18 +1045,18 @@
 </div>
 <!-- COLUMN 2: Academic Scholarships -->
 <div style="flex: 1 1 50%; min-width: 320px; padding: 0 20px; box-sizing: border-box; margin-bottom: 30px;">
-<div style="background-color: #ffffff; border: 1.5px solid #b83b1d; border-radius: 10px; padding: 40px 35px; height: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.02); display: flex; flex-direction: column; transition: transform 0.3s ease;">
-<span style="color: #b83b1d; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1.5px; display: block; margin-bottom: 10px;">
+<div style="background-color: #ffffff; border: 1.5px solid #2F6B45; border-radius: 10px; padding: 40px 35px; height: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.02); display: flex; flex-direction: column; transition: transform 0.3s ease;">
+<span style="color: #2F6B45; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1.5px; display: block; margin-bottom: 10px;">
              Pathway 02 — September 2023
             </span>
-<h3 style="font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.8rem; color: #111; margin-top: 0; margin-bottom: 20px; line-height: 1.3;">
+<h3 style="font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 800; font-size: 1.8rem; color: #111; margin-top: 0; margin-bottom: 20px; line-height: 1.3;">
              Unlocking Horizons: Academic Scholarships
             </h3>
 <p style="font-size: 0.95rem; line-height: 1.65; color: #444; margin-bottom: 25px; text-align: justify;">
              We believe higher education is the ultimate catalyst for systemic change. By covering comprehensive academic support for outstanding, civic-minded young leaders from underserved backgrounds, we nurture community change-makers and future professionals.
             </p>
 <!-- Sub-init (a): Rising Stars -->
-<div style="margin-bottom: 25px; background: rgba(184, 59, 29, 0.05); padding: 20px; border-radius: 8px;">
+<div style="margin-bottom: 25px; background: rgba(47, 107, 69, 0.05); padding: 20px; border-radius: 8px;">
 <h5 style="font-weight: 700; color: #111; font-size: 1rem; margin-top: 0; margin-bottom: 8px;">
               1. Rising Stars Undergraduate Program
              </h5>
@@ -1136,13 +1077,13 @@
                14 scholarship recipients supported in Khorog, Tajikistan.
               </li>
 </ul>
-<span style="font-size: 0.85rem; font-weight: 700; color: #b83b1d; display: block;">
+<span style="font-size: 0.85rem; font-weight: 700; color: #2F6B45; display: block;">
               Total Supported: 66 Scholars reaching their full potential.
              </span>
 </div>
 <!-- Sub-init (b): Calgary Placeholder -->
-<div style="background-color: #faf9f5; border: 1px dashed #b83b1d; padding: 20px; border-radius: 8px; margin-top: auto;">
-<span style="background-color: #fff2ee; color: #b83b1d; padding: 2px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; margin-bottom: 8px;">
+<div style="background-color: #faf9f5; border: 1px dashed #2F6B45; padding: 20px; border-radius: 8px; margin-top: auto;">
+<span style="background-color: #e9f2ec; color: #2F6B45; padding: 2px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; margin-bottom: 8px;">
               [ WEFC COLLABORATION PLACEHOLDER ]
              </span>
 <h5 style="font-weight: 700; color: #111; font-size: 1rem; margin-top: 0; margin-bottom: 8px;">
@@ -1162,10 +1103,10 @@
 <!-- 3. Embedded Youtube Impact Spotlight Video -->
 <div style="margin-top: 50px; background-color: #ffffff; padding: 40px 35px; border-radius: 12px; border: 1px solid #eaeaea; box-shadow: 0 10px 40px rgba(0,0,0,0.015);">
 <div style="text-align: center; margin-bottom: 25px;">
-<span style="color: #b83b1d; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1.5px; display: block; margin-bottom: 6px;">
+<span style="color: #2F6B45; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1.5px; display: block; margin-bottom: 6px;">
             Impact Spotlight Video
            </span>
-<h4 style="font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.6rem; color: #111; margin: 0;">
+<h4 style="font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 800; font-size: 1.6rem; color: #111; margin: 0;">
             Watch Our Community Operations Live
            </h4>
 </div>
@@ -1201,47 +1142,27 @@
 </div>
 </div>
 
-<div class="elementor-element elementor-element-d97b51b e-con-full e-flex e-con e-child" style="width: 100%; display: block; margin-top: 40px; margin-bottom: 40px; box-sizing: border-box;">
-<div class="row g-4" style="display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px; justify-content: center;">
-<!-- Value 1: Empowerment -->
-<div style="padding-right: 15px; padding-left: 15px; flex: 1 1 22%; min-width: 250px; box-sizing: border-box; margin-bottom: 25px;">
-<div style="background-color: #fdfcf9; border-top: 4px solid #b83b1d; border-radius: 8px; padding: 35px 20px; height: 100%; box-shadow: 0 4px 15px rgba(0,0,0,0.015); display: flex; flex-direction: column; align-items: center; text-align: center;">
-<span style="font-size: 2.2rem; margin-bottom: 18px; display: block; line-height: 1;">🌱</span>
-<h4 style="font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.15rem; color: #111; margin-top: 0; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Empowerment</h4>
-<p style="font-size: 0.88rem; line-height: 1.6; color: #555555; margin: 0;">
-          We equip local women and educators with professional pedagogical credentials and tools, enabling sustainable livelihoods and local leadership.
-        </p>
+<div class="elementor-element elementor-element-d97b51b e-con-full e-flex e-con e-child" style="width: 100%; display: block; margin-top: 40px; margin-bottom: 10px; box-sizing: border-box;">
+<div class="wef-values-grid">
+<div class="wef-value-card">
+<span class="wef-value-icon"><svg fill="none" stroke="#2F6B45" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M12 22V12"></path><path d="M12 12C12 8 9 5 5 5c0 4 2 7 7 7z"></path><path d="M12 12c0-4 3-7 7-7 0 4-2 7-7 7z"></path></svg></span>
+<h4 class="wef-value-title">Empowerment</h4>
+<p class="wef-value-text">We equip local women and educators with professional pedagogical credentials and tools, enabling sustainable livelihoods and local leadership.</p>
 </div>
+<div class="wef-value-card">
+<span class="wef-value-icon"><svg fill="none" stroke="#2F6B45" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
+<h4 class="wef-value-title">Integrity</h4>
+<p class="wef-value-text">We maintain absolute transparency. Under founder stewardship, 100% of public fundraising is spent directly on ground-level operations.</p>
 </div>
-<!-- Value 2: Complete Integrity -->
-<div style="padding-right: 15px; padding-left: 15px; flex: 1 1 22%; min-width: 250px; box-sizing: border-box; margin-bottom: 25px;">
-<div style="background-color: #fdfcf9; border-top: 4px solid #b83b1d; border-radius: 8px; padding: 35px 20px; height: 100%; box-shadow: 0 4px 15px rgba(0,0,0,0.015); display: flex; flex-direction: column; align-items: center; text-align: center;">
-<span style="font-size: 2.2rem; margin-bottom: 18px; display: block; line-height: 1;">🛡️</span>
-<h4 style="font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.15rem; color: #111; margin-top: 0; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Integrity</h4>
-<p style="font-size: 0.88rem; line-height: 1.6; color: #555555; margin: 0;">
-          We maintain absolute transparency. Under founder stewardship, 100% of public fundraising is spent directly on ground-level operations.
-        </p>
+<div class="wef-value-card">
+<span class="wef-value-icon"><svg fill="none" stroke="#2F6B45" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M12 3v18"></path><path d="M5 7h14"></path><path d="M5 7l-3 6a3 3 0 0 0 6 0z"></path><path d="M19 7l-3 6a3 3 0 0 0 6 0z"></path></svg></span>
+<h4 class="wef-value-title">Equity</h4>
+<p class="wef-value-text">We dismantle socio-economic and geographical isolation, creating class resources for students regardless of gender, class, or region.</p>
 </div>
-</div>
-<!-- Value 3: Uncompromising Equity -->
-<div style="padding-right: 15px; padding-left: 15px; flex: 1 1 22%; min-width: 250px; box-sizing: border-box; margin-bottom: 25px;">
-<div style="background-color: #fdfcf9; border-top: 4px solid #b83b1d; border-radius: 8px; padding: 35px 20px; height: 100%; box-shadow: 0 4px 15px rgba(0,0,0,0.015); display: flex; flex-direction: column; align-items: center; text-align: center;">
-<span style="font-size: 2.2rem; margin-bottom: 18px; display: block; line-height: 1;">⚖️</span>
-<h4 style="font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.15rem; color: #111; margin-top: 0; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Equity</h4>
-<p style="font-size: 0.88rem; line-height: 1.6; color: #555555; margin: 0;">
-          We dismantle socio-economic and geographical isolation, creating class resources for students regardless of gender, class, or region.
-        </p>
-</div>
-</div>
-<!-- Value 4: Collaborative Impact -->
-<div style="padding-right: 15px; padding-left: 15px; flex: 1 1 22%; min-width: 250px; box-sizing: border-box; margin-bottom: 25px;">
-<div style="background-color: #fdfcf9; border-top: 4px solid #b83b1d; border-radius: 8px; padding: 35px 20px; height: 100%; box-shadow: 0 4px 15px rgba(0,0,0,0.015); display: flex; flex-direction: column; align-items: center; text-align: center;">
-<span style="font-size: 2.2rem; margin-bottom: 18px; display: block; line-height: 1;">🤝</span>
-<h4 style="font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.15rem; color: #111; margin-top: 0; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Collaboration</h4>
-<p style="font-size: 0.88rem; line-height: 1.6; color: #555555; margin: 0;">
-          We combine local governmental infrastructure, global college alliances, and peer research to build enduring, scalable models.
-        </p>
-</div>
+<div class="wef-value-card">
+<span class="wef-value-icon"><svg fill="none" stroke="#2F6B45" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="8" cy="12" r="4"></circle><circle cx="16" cy="12" r="4"></circle></svg></span>
+<h4 class="wef-value-title">Collaboration</h4>
+<p class="wef-value-text">We combine local governmental infrastructure, global college alliances, and peer research to build enduring, scalable models.</p>
 </div>
 </div>
 </div>
@@ -1283,28 +1204,28 @@
 <div class="elementor-element elementor-element-13f466c e-con-full e-grid e-con e-child" data-e-type="container" data-element_type="container" data-id="13f466c">
 <div class="elementor-element elementor-element-d8d5333 e-con-full e-flex elementor-invisible e-con e-child" data-e-type="container" data-element_type="container" data-id="d8d5333" data-settings='{"animation":"fadeInUp"}'>
 <div class="elementor-element elementor-element-f4addaf elementor-widget elementor-widget-image" data-e-type="widget" data-element_type="widget" data-id="f4addaf" data-widget_type="image.default">
-<img alt="Worldwide Education Foundation Canada Classroom and Operations" class="attachment-full size-full wp-image-5872" decoding="async" height="545" loading="lazy" sizes="(max-width: 915px) 100vw, 915px" src="/content/uploads/2026/03/our-services-01.jpg" srcset="/content/uploads/2026/03/our-services-01.jpg 915w, /content/uploads/2026/03/our-services-01-300x179.jpg 300w, /content/uploads/2026/03/our-services-01-768x457.jpg 768w, /content/uploads/2026/03/our-services-01-600x357.jpg 600w" width="915"/>
+<img alt="Worldwide Education Foundation Canada Classroom and Operations" class="attachment-full size-full wp-image-5872" decoding="async" height="545" loading="lazy" sizes="(max-width: 915px) 100vw, 915px" src="/content/uploads/wef/Herzing-Scholars-min-1.png" width="915"/>
 </div>
 <div class="elementor-element elementor-element-e38a315 e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="e38a315" data-settings='{"background_background":"classic"}'>
 <div class="elementor-element elementor-element-7ae5095 elementor-widget elementor-widget-counter" data-e-type="widget" data-element_type="widget" data-id="7ae5095" data-widget_type="counter.default">
 <div class="elementor-counter">
 <div class="elementor-counter-title">
-                Healthcare Support
+                Bright Beginnings ECLC
                </div>
 <div class="elementor-counter-number-wrapper">
 <span class="elementor-counter-number-prefix">
-                 $
-                </span>
-<span class="elementor-counter-number" data-delimiter="," data-duration="2000" data-from-value="0" data-to-value="85523">
+</span>
+<span class="elementor-counter-number" data-delimiter="," data-duration="2000" data-from-value="0" data-to-value="100">
                  0
                 </span>
 <span class="elementor-counter-number-suffix">
-</span>
+                 &nbsp;Centers
+                </span>
 </div>
 </div>
 </div>
 <div class="elementor-element elementor-element-29dd48d elementor-widget elementor-widget-text-editor" data-e-type="widget" data-element_type="widget" data-id="29dd48d" data-widget_type="text-editor.default">
-              Providing safe drinking water through wells, medical camps, providing, filtration systems, and sustainable solutions.
+              Montessori-based early learning centers led by trained local women across remote Chitral, Pakistan.
              </div>
 </div>
 </div>
@@ -1313,52 +1234,52 @@
 <div class="elementor-element elementor-element-1ad4bd7 elementor-widget elementor-widget-counter" data-e-type="widget" data-element_type="widget" data-id="1ad4bd7" data-widget_type="counter.default">
 <div class="elementor-counter">
 <div class="elementor-counter-title">
-                Education Support
+                Scholarships Awarded
                </div>
 <div class="elementor-counter-number-wrapper">
 <span class="elementor-counter-number-prefix">
-                 $
-                </span>
-<span class="elementor-counter-number" data-delimiter="," data-duration="2000" data-from-value="0" data-to-value="95523">
+</span>
+<span class="elementor-counter-number" data-delimiter="," data-duration="2000" data-from-value="0" data-to-value="66">
                  0
                 </span>
 <span class="elementor-counter-number-suffix">
-</span>
+                 &nbsp;Scholars
+                </span>
 </div>
 </div>
 </div>
 <div class="elementor-element elementor-element-e1b7da0 elementor-widget elementor-widget-text-editor" data-e-type="widget" data-element_type="widget" data-id="e1b7da0" data-widget_type="text-editor.default">
-              Providing safe drinking water through wells, medical camps, providing, filtration systems, and sustainable solutions.
+              Full-ride university scholarships at AUCA and UCA opening doors to higher education for outstanding students.
              </div>
 </div>
 <div class="elementor-element elementor-element-d1f7fc2 elementor-widget elementor-widget-image" data-e-type="widget" data-element_type="widget" data-id="d1f7fc2" data-widget_type="image.default">
-<img alt="Worldwide Education Foundation Canada Classroom and Operations" class="attachment-full size-full wp-image-5873" decoding="async" height="545" loading="lazy" sizes="(max-width: 915px) 100vw, 915px" src="/content/uploads/2026/03/our-services-02.jpg" srcset="/content/uploads/2026/03/our-services-02.jpg 915w, /content/uploads/2026/03/our-services-02-300x179.jpg 300w, /content/uploads/2026/03/our-services-02-768x457.jpg 768w, /content/uploads/2026/03/our-services-02-600x357.jpg 600w" width="915"/>
+<img alt="Worldwide Education Foundation Canada Classroom and Operations" class="attachment-full size-full wp-image-5873" decoding="async" height="545" loading="lazy" sizes="(max-width: 915px) 100vw, 915px" src="/content/uploads/wef/in_school_language_lab-1024x683.webp" width="915"/>
 </div>
 </div>
 <div class="elementor-element elementor-element-899fdac e-con-full e-flex elementor-invisible e-con e-child" data-e-type="container" data-element_type="container" data-id="899fdac" data-settings='{"animation":"fadeInUp"}'>
 <div class="elementor-element elementor-element-bfb7ab9 elementor-widget elementor-widget-image" data-e-type="widget" data-element_type="widget" data-id="bfb7ab9" data-widget_type="image.default">
-<img alt="Worldwide Education Foundation Canada Classroom and Operations" class="attachment-full size-full wp-image-5871" decoding="async" height="545" loading="lazy" sizes="(max-width: 915px) 100vw, 915px" src="/content/uploads/2026/03/our-services-03.jpg" srcset="/content/uploads/2026/03/our-services-03.jpg 915w, /content/uploads/2026/03/our-services-03-300x179.jpg 300w, /content/uploads/2026/03/our-services-03-768x457.jpg 768w, /content/uploads/2026/03/our-services-03-600x357.jpg 600w" width="915"/>
+<img alt="Worldwide Education Foundation Canada Classroom and Operations" class="attachment-full size-full wp-image-5871" decoding="async" height="545" loading="lazy" sizes="(max-width: 915px) 100vw, 915px" src="/content/uploads/wef/Program-1024x768-2.jpeg" width="915"/>
 </div>
 <div class="elementor-element elementor-element-2507f61 e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="2507f61" data-settings='{"background_background":"classic"}'>
 <div class="elementor-element elementor-element-a8504a6 elementor-widget elementor-widget-counter" data-e-type="widget" data-element_type="widget" data-id="a8504a6" data-widget_type="counter.default">
 <div class="elementor-counter">
 <div class="elementor-counter-title">
-                Food Support
+                Language Labs
                </div>
 <div class="elementor-counter-number-wrapper">
 <span class="elementor-counter-number-prefix">
-                 $
-                </span>
-<span class="elementor-counter-number" data-delimiter="," data-duration="2000" data-from-value="0" data-to-value="50523">
+</span>
+<span class="elementor-counter-number" data-delimiter="," data-duration="2000" data-from-value="0" data-to-value="2000">
                  0
                 </span>
 <span class="elementor-counter-number-suffix">
-</span>
+                 +&nbsp;Students
+                </span>
 </div>
 </div>
 </div>
 <div class="elementor-element elementor-element-4de29b9 elementor-widget elementor-widget-text-editor" data-e-type="widget" data-element_type="widget" data-id="4de29b9" data-widget_type="text-editor.default">
-              Providing safe drinking water through wells, medical camps, providing, filtration systems, and sustainable solutions.
+              Technology-enabled English language labs strengthening speaking and listening skills for students across Chitral.
              </div>
 </div>
 </div>
@@ -1370,6 +1291,18 @@
 </div>
 <div class="elementor-element elementor-element-bec15dc elementor-widget__width-initial elementor-absolute elementor-invisible elementor-widget elementor-widget-image" data-e-type="widget" data-element_type="widget" data-id="bec15dc" data-settings='{"_position":"absolute","_animation":"fadeInUp"}' data-widget_type="image.default">
 <img alt="Worldwide Education Foundation Canada Classroom and Operations" class="attachment-full size-full wp-image-5376" decoding="async" height="155" loading="lazy" sizes="(max-width: 394px) 100vw, 394px" src="/content/uploads/2026/03/image-270.png" srcset="/content/uploads/2026/03/image-270.png 394w, /content/uploads/2026/03/image-270-300x118.png 300w" width="394"/>
+</div>
+<div class="wef-donate-wrap">
+<div class="wef-donate-cta">
+<div>
+<h3>Ready to change a life?</h3>
+<p>Every dollar goes directly toward classrooms, teacher training, and scholarships for children and youth across Central and South Asia.</p>
+</div>
+<a class="pt-button pt-button-flat" href="https://www.zeffy.com/en-US/donation-form/donate-now-to-support-education-for-underprivileged-children" rel="noopener" target="_blank">
+<span class="pt-button-text">Donate Now</span>
+<i aria-hidden="true" class="fas fa-heart"></i>
+</a>
+</div>
 </div>
 </div>
 <div class="elementor-element elementor-element-1ef7745 e-con-full e-flex e-con e-parent" data-e-type="container" data-element_type="container" data-id="1ef7745">
@@ -1388,54 +1321,32 @@
                01
               </h2>
 <h2 class="pt-split-title">
-               Providing reliable elderly support compassion
+               Early Childhood Education
               </h2>
 <p class="pt-split-desc">
-               We expand access to early childhood education, equip local teachers with advanced pedagogical training, and provide scholarships to high-potential youth to break the cycle of poverty and build a brighter, more prosperous future.
+               Our Bright Beginnings Early Childhood Learning Centers deliver Montessori-inspired education to underserved children across remote regions of Chitral, Pakistan, building the developmental foundation every child deserves.
               </p>
 <ul class="pt-icon-list">
 <li>
 <i aria-hidden="true" class="flaticon-checked">
 </i>
-<span>
-</span>
+<span>Montessori-inspired classrooms</span>
 </li>
 <li>
 <i aria-hidden="true" class="flaticon-checked">
 </i>
-<span>
-</span>
+<span>Women-led, locally operated centers</span>
 </li>
 <li>
 <i aria-hidden="true" class="flaticon-checked">
 </i>
-<span>
-</span>
+<span>Serving remote communities in Chitral</span>
 </li>
 </ul>
-<div class="pt-progressbar-box pt-style-1">
-<div class="pt-progressbar-content">
-<h2 class="progress-title">
-</h2>
-<span class="progress-value">
-                 100%
-                </span>
-<div class="pt-progress-bar">
-<div class="sonny_progressbar animate" data-width="90">
-<div class="bar-container" style="height:8px;">
-<span class="backgroundBar">
-</span>
-<span class="bar" style="background-color:#F97352;">
-</span>
-</div>
-</div>
-</div>
-</div>
-</div>
 <a class="pt-button pt-button-flat" href="/pages/about" target="_self">
 <span class="pt-button-text">
 <span>
-                 Contact Us
+                 Learn More
                 </span>
 </span>
 <span class="pt-button-icon">
@@ -1450,54 +1361,32 @@
                02
               </h2>
 <h2 class="pt-split-title">
-               Feed Nutritious Meals to a Poor Rural Child
+               Teacher Training &amp; Development
               </h2>
 <p class="pt-split-desc">
-               We expand access to early childhood education, equip local teachers with advanced pedagogical training, and provide scholarships to high-potential youth to break the cycle of poverty and build a brighter, more prosperous future.
+               We equip local educators with rigorous pedagogical credentials and modern classroom tools, pairing hands-on training with technology-assisted learning to build lasting, community-rooted leadership.
               </p>
 <ul class="pt-icon-list">
 <li>
 <i aria-hidden="true" class="flaticon-checked">
 </i>
-<span>
-</span>
+<span>Rigorous pedagogical credentialing</span>
 </li>
 <li>
 <i aria-hidden="true" class="flaticon-checked">
 </i>
-<span>
-</span>
+<span>Technology-assisted classrooms</span>
 </li>
 <li>
 <i aria-hidden="true" class="flaticon-checked">
 </i>
-<span>
-</span>
+<span>Sustainable local leadership</span>
 </li>
 </ul>
-<div class="pt-progressbar-box pt-style-1">
-<div class="pt-progressbar-content">
-<h2 class="progress-title">
-</h2>
-<span class="progress-value">
-                 70%
-                </span>
-<div class="pt-progress-bar">
-<div class="sonny_progressbar animate" data-width="70">
-<div class="bar-container" style="height:8px;">
-<span class="backgroundBar">
-</span>
-<span class="bar" style="background-color:#F97352;">
-</span>
-</div>
-</div>
-</div>
-</div>
-</div>
 <a class="pt-button pt-button-flat" href="/pages/about" target="_self">
 <span class="pt-button-text">
 <span>
-                 Contact Us
+                 Learn More
                 </span>
 </span>
 <span class="pt-button-icon">
@@ -1512,54 +1401,32 @@
                03
               </h2>
 <h2 class="pt-split-title">
-               Help Differently Abled Person to Feel Confident
+               Academic Scholarships
               </h2>
 <p class="pt-split-desc">
-               We expand access to early childhood education, equip local teachers with advanced pedagogical training, and provide scholarships to high-potential youth to break the cycle of poverty and build a brighter, more prosperous future.
+               Through the Rising Stars Undergraduate Program, we provide fully-funded scholarships to outstanding students at top regional universities, nurturing the next generation of community change-makers.
               </p>
 <ul class="pt-icon-list">
 <li>
 <i aria-hidden="true" class="flaticon-checked">
 </i>
-<span>
-</span>
+<span>Full tuition at top regional universities</span>
 </li>
 <li>
 <i aria-hidden="true" class="flaticon-checked">
 </i>
-<span>
-</span>
+<span>66+ scholars supported to date</span>
 </li>
 <li>
 <i aria-hidden="true" class="flaticon-checked">
 </i>
-<span>
-</span>
+<span>Bishkek, Kyrgyzstan &amp; Khorog, Tajikistan</span>
 </li>
 </ul>
-<div class="pt-progressbar-box pt-style-1">
-<div class="pt-progressbar-content">
-<h2 class="progress-title">
-</h2>
-<span class="progress-value">
-                 75%
-                </span>
-<div class="pt-progress-bar">
-<div class="sonny_progressbar animate" data-width="75">
-<div class="bar-container" style="height:8px;">
-<span class="backgroundBar">
-</span>
-<span class="bar" style="background-color:#F97352;">
-</span>
-</div>
-</div>
-</div>
-</div>
-</div>
 <a class="pt-button pt-button-flat" href="/pages/about" target="_self">
 <span class="pt-button-text">
 <span>
-                 Contact Us
+                 Learn More
                 </span>
 </span>
 <span class="pt-button-icon">
@@ -1639,97 +1506,35 @@
 </div>
 </div>
 </div>
-<div class="elementor-element elementor-element-fa7efbd e-con-full e-grid e-con e-child" data-e-type="container" data-element_type="container" data-id="fa7efbd">
-<div class="elementor-element elementor-element-5038535 elementor-invisible elementor-widget elementor-widget-bu_work_process" data-e-type="widget" data-element_type="widget" data-id="5038535" data-settings='{"_animation":"fadeInUp"}' data-widget_type="bu_work_process.default">
-<div class="elementor-widget-container">
-<div class="pt-work-process pt-style-1">
-<div class="pt-work-process-icon">
-<i aria-hidden="true" class="flaticon-love">
-</i>
-<div class="pt-work-process-number">
-                01
-               </div>
-</div>
-<div class="pt-work-process-info">
-<h5 class="pt-work-process-title">
-                Identify Needs
-               </h5>
-<p class="pt-work-process-des">
-                We analyze community needs and identify areas where support is most required.
-               </p>
+<div class="elementor-element elementor-element-fa7efbd e-con-full e-con e-child" data-e-type="container" data-element_type="container" data-id="fa7efbd">
+<div class="wef-timeline">
+<div class="wef-timeline-item">
+<div class="wef-timeline-dot">1</div>
+<div class="wef-timeline-card">
+<svg class="wef-timeline-icon" fill="none" stroke="#2F6B45" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+<p>For many years, Connie and Kamal Daya provided modest financial support to orphanages, hostels, and schools. A trip to Asia in 2004 brought them face-to-face with urgent institutional needs, leading them to commit to deeper engagement and to do more.</p>
 </div>
 </div>
+<div class="wef-timeline-item">
+<div class="wef-timeline-dot">2</div>
+<div class="wef-timeline-card">
+<svg class="wef-timeline-icon" fill="none" stroke="#2F6B45" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="8" cy="12" r="4"></circle><circle cx="16" cy="12" r="4"></circle></svg>
+<p>The Connie and Kamal Daya Gift Fund of The Dallas Foundation invited others who shared their vision to participate in initiatives designed to benefit underserved children and youth, expanding collective support and strengthening long-term impact.</p>
 </div>
 </div>
-<div class="elementor-element elementor-element-af7b83a elementor-widget-tablet__width-auto elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-invisible elementor-widget elementor-widget-image" data-e-type="widget" data-element_type="widget" data-id="af7b83a" data-settings='{"_animation":"fadeIn"}' data-widget_type="image.default">
-<img alt="Worldwide Education Foundation Canada Classroom and Operations" class="attachment-full size-full wp-image-7079" decoding="async" height="59" loading="lazy" src="/content/uploads/2026/04/vector-3.png" width="63"/>
-</div>
-<div class="elementor-element elementor-element-95c7282 pt-working-direction elementor-invisible elementor-widget elementor-widget-bu_work_process" data-e-type="widget" data-element_type="widget" data-id="95c7282" data-settings='{"_animation":"fadeInUp"}' data-widget_type="bu_work_process.default">
-<div class="elementor-widget-container">
-<div class="pt-work-process pt-style-1">
-<div class="pt-work-process-icon">
-<i aria-hidden="true" class="flaticon-medicine">
-</i>
-<div class="pt-work-process-number">
-                02
-               </div>
-</div>
-<div class="pt-work-process-info">
-<h5 class="pt-work-process-title">
-                Plan &amp; Execute
-               </h5>
-<p class="pt-work-process-des">
-                Our team designs effective programs and them with the help of volunteers and partners.
-               </p>
+<div class="wef-timeline-item">
+<div class="wef-timeline-dot">3</div>
+<div class="wef-timeline-card">
+<span class="wef-timeline-year">2009</span>
+<svg class="wef-timeline-icon" fill="none" stroke="#2F6B45" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
+<p>WEF officially began in 2009 with a generous donation from the Connie &amp; Kamal Daya Gift Fund of The Dallas Foundation, establishing a structured foundation to advance its mission and broaden support for children and youth.</p>
 </div>
 </div>
-</div>
-</div>
-<div class="elementor-element elementor-element-3e77f57 e-transform elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-invisible elementor-widget elementor-widget-image" data-e-type="widget" data-element_type="widget" data-id="3e77f57" data-settings='{"_transform_rotateZ_effect":{"unit":"px","size":-69,"sizes":[]},"_animation":"fadeIn","_transform_rotateZ_effect_widescreen":{"unit":"deg","size":"","sizes":[]},"_transform_rotateZ_effect_laptop":{"unit":"deg","size":"","sizes":[]},"_transform_rotateZ_effect_tablet_extra":{"unit":"deg","size":"","sizes":[]},"_transform_rotateZ_effect_tablet":{"unit":"deg","size":"","sizes":[]},"_transform_rotateZ_effect_mobile_extra":{"unit":"deg","size":"","sizes":[]},"_transform_rotateZ_effect_mobile":{"unit":"deg","size":"","sizes":[]}}' data-widget_type="image.default">
-<img alt="Worldwide Education Foundation Canada Classroom and Operations" class="attachment-full size-full wp-image-7079" decoding="async" height="59" loading="lazy" src="/content/uploads/2026/04/vector-3.png" width="63"/>
-</div>
-<div class="elementor-element elementor-element-f9642db elementor-invisible elementor-widget elementor-widget-bu_work_process" data-e-type="widget" data-element_type="widget" data-id="f9642db" data-settings='{"_animation":"fadeInUp"}' data-widget_type="bu_work_process.default">
-<div class="elementor-widget-container">
-<div class="pt-work-process pt-style-1">
-<div class="pt-work-process-icon">
-<i aria-hidden="true" class="flaticon-water">
-</i>
-<div class="pt-work-process-number">
-                03
-               </div>
-</div>
-<div class="pt-work-process-info">
-<h5 class="pt-work-process-title">
-                Deliver Impact
-               </h5>
-<p class="pt-work-process-des">
-                We ensure resources reach the right people and create measurable, long-term change.
-               </p>
-</div>
-</div>
-</div>
-</div>
-<div class="elementor-element elementor-element-c6d0127 elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile elementor-invisible elementor-widget elementor-widget-image" data-e-type="widget" data-element_type="widget" data-id="c6d0127" data-settings='{"_animation":"fadeIn"}' data-widget_type="image.default">
-<img alt="Worldwide Education Foundation Canada Classroom and Operations" class="attachment-full size-full wp-image-7079" decoding="async" height="59" loading="lazy" src="/content/uploads/2026/04/vector-3.png" width="63"/>
-</div>
-<div class="elementor-element elementor-element-957e4a7 pt-working-direction elementor-invisible elementor-widget elementor-widget-bu_work_process" data-e-type="widget" data-element_type="widget" data-id="957e4a7" data-settings='{"_animation":"fadeInUp"}' data-widget_type="bu_work_process.default">
-<div class="elementor-widget-container">
-<div class="pt-work-process pt-style-1">
-<div class="pt-work-process-icon">
-<i aria-hidden="true" class="flaticon-donation">
-</i>
-<div class="pt-work-process-number">
-                04
-               </div>
-</div>
-<div class="pt-work-process-info">
-<h5 class="pt-work-process-title">
-                Track &amp; Report
-               </h5>
-<p class="pt-work-process-des">
-                We maintain transparency by tracking results and sharing updates with our donors and supporters.
-               </p>
-</div>
+<div class="wef-timeline-item">
+<div class="wef-timeline-dot">4</div>
+<div class="wef-timeline-card">
+<svg class="wef-timeline-icon" fill="none" stroke="#2F6B45" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M3 3v18h18"></path><path d="M7 15l4-5 3 3 6-8"></path></svg>
+<p>Over the years, the organization has supported the poorest communities, and more than 20,000 children and youth have benefited from various WEF projects, reflecting sustained commitment and measurable impact across underserved regions.</p>
 </div>
 </div>
 </div>
@@ -1754,10 +1559,10 @@
 <div class="pt-section-title text-left">
 <div class="pt-title">
 <div class="pt-title-subtitle">
-                  Featured Project: Chitral, Pakistan
+                  The People Behind Our Mission
                  </div>
 <h2 class="pt-title-heading">
-                  Bright Beginnings: Early Childhood Learning Centers (ECLC)
+                  Meet Our Team
                  </h2>
 </div>
 </div>
@@ -1780,51 +1585,19 @@
 <div class="elementor-widget-container">
 <div class="pt-team-box pt-style-1 text-left">
 <div class="pt-team-image-wrapper">
-<a class="pt-team-item-link" href="/team/details">
+<a class="pt-team-item-link" href="/team/index">
 <div class="pt-team-media">
-<img alt="Michael Reed" class="pt-team-img" decoding="async" loading="lazy" src="/content/uploads/2026/04/Rectangle-2.jpg"/>
+<img alt="Kamal Daya" class="pt-team-img" decoding="async" loading="lazy" src="/content/uploads/wef/3-1.png"/>
 </div>
 </a>
-<div class="pt-team-social">
-<a aria-label="Share this page" class="pt-social-icon" href="/">
-<i class="fas fa-share-alt">
-</i>
-</a>
-<ul class="pt-social-icon-wrap">
-<li>
-<a href="/">
-<svg aria-hidden="true" class="e-font-icon-svg e-fab-facebook-square" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-<path d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z">
-</path>
-</svg>
-</a>
-</li>
-<li>
-<a href="/">
-<svg aria-hidden="true" class="e-font-icon-svg e-fab-instagram" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-<path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
-</path>
-</svg>
-</a>
-</li>
-<li>
-<a href="/">
-<svg aria-hidden="true" class="e-font-icon-svg e-fab-linkedin" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-<path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
-</path>
-</svg>
-</a>
-</li>
-</ul>
-</div>
 </div>
 <div class="pt-team-info">
 <span class="pt-team-designation">
-                  Founder &amp; CEO
+                  Co-Founder and CEO
                  </span>
 <h5 class="pt-team-name">
-<a href="/team/details">
-                   Michael Reed
+<a href="/team/index">
+                   Kamal Daya
                   </a>
 </h5>
 </div>
@@ -1835,51 +1608,19 @@
 <div class="elementor-widget-container">
 <div class="pt-team-box pt-style-1 text-left">
 <div class="pt-team-image-wrapper">
-<a class="pt-team-item-link" href="/team/details">
+<a class="pt-team-item-link" href="/team/index">
 <div class="pt-team-media">
-<img alt="John Carter" class="pt-team-img" decoding="async" loading="lazy" src="/content/uploads/2026/04/Rectangle-1.jpg"/>
+<img alt="Connie Daya" class="pt-team-img" decoding="async" loading="lazy" src="/content/uploads/wef/1-1.png"/>
 </div>
 </a>
-<div class="pt-team-social">
-<a aria-label="Share this page" class="pt-social-icon" href="/">
-<i class="fas fa-share-alt">
-</i>
-</a>
-<ul class="pt-social-icon-wrap">
-<li>
-<a href="/">
-<svg aria-hidden="true" class="e-font-icon-svg e-fab-facebook-square" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-<path d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z">
-</path>
-</svg>
-</a>
-</li>
-<li>
-<a href="/">
-<svg aria-hidden="true" class="e-font-icon-svg e-fab-instagram" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-<path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
-</path>
-</svg>
-</a>
-</li>
-<li>
-<a href="/">
-<svg aria-hidden="true" class="e-font-icon-svg e-fab-linkedin" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-<path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
-</path>
-</svg>
-</a>
-</li>
-</ul>
-</div>
 </div>
 <div class="pt-team-info">
 <span class="pt-team-designation">
-                  Managing Director
+                  Co-Founder and CFO
                  </span>
 <h5 class="pt-team-name">
-<a href="/team/details">
-                   John Carter
+<a href="/team/index">
+                   Connie Daya
                   </a>
 </h5>
 </div>
@@ -1894,51 +1635,19 @@
 <div class="elementor-widget-container">
 <div class="pt-team-box pt-style-1 text-left">
 <div class="pt-team-image-wrapper">
-<a class="pt-team-item-link" href="/team/details">
+<a class="pt-team-item-link" href="/team/index">
 <div class="pt-team-media">
-<img alt="David Wilson" class="pt-team-img" decoding="async" loading="lazy" src="/content/uploads/2026/04/Rectangle-4.jpg"/>
+<img alt="Parvin Dhanji" class="pt-team-img" decoding="async" loading="lazy" src="/content/uploads/wef/Screenshot-2026-05-01-131445-e1777623328193.webp"/>
 </div>
 </a>
-<div class="pt-team-social">
-<a aria-label="Share this page" class="pt-social-icon" href="/">
-<i class="fas fa-share-alt">
-</i>
-</a>
-<ul class="pt-social-icon-wrap">
-<li>
-<a href="/">
-<svg aria-hidden="true" class="e-font-icon-svg e-fab-facebook-square" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-<path d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z">
-</path>
-</svg>
-</a>
-</li>
-<li>
-<a href="/">
-<svg aria-hidden="true" class="e-font-icon-svg e-fab-instagram" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-<path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
-</path>
-</svg>
-</a>
-</li>
-<li>
-<a href="/">
-<svg aria-hidden="true" class="e-font-icon-svg e-fab-linkedin" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-<path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
-</path>
-</svg>
-</a>
-</li>
-</ul>
-</div>
 </div>
 <div class="pt-team-info">
 <span class="pt-team-designation">
-                  Program Manager
+                  Operational &amp; Fundraising Advisor
                  </span>
 <h5 class="pt-team-name">
-<a href="/team/details">
-                   David Wilson
+<a href="/team/index">
+                   Parvin Dhanji
                   </a>
 </h5>
 </div>
@@ -1949,51 +1658,19 @@
 <div class="elementor-widget-container">
 <div class="pt-team-box pt-style-1 text-left">
 <div class="pt-team-image-wrapper">
-<a class="pt-team-item-link" href="/team/details">
+<a class="pt-team-item-link" href="/team/index">
 <div class="pt-team-media">
-<img alt="Daniel Brooks" class="pt-team-img" decoding="async" loading="lazy" src="/content/uploads/2026/04/Rectangle-3.jpg"/>
+<img alt="Shahin Paroo" class="pt-team-img" decoding="async" loading="lazy" src="/content/uploads/wef/WhatsApp-Image-2026-04-27-at-1.37.46-PM-e1777623200176.webp"/>
 </div>
 </a>
-<div class="pt-team-social">
-<a aria-label="Share this page" class="pt-social-icon" href="/">
-<i class="fas fa-share-alt">
-</i>
-</a>
-<ul class="pt-social-icon-wrap">
-<li>
-<a href="/">
-<svg aria-hidden="true" class="e-font-icon-svg e-fab-facebook-square" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-<path d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z">
-</path>
-</svg>
-</a>
-</li>
-<li>
-<a href="/">
-<svg aria-hidden="true" class="e-font-icon-svg e-fab-instagram" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-<path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
-</path>
-</svg>
-</a>
-</li>
-<li>
-<a href="/">
-<svg aria-hidden="true" class="e-font-icon-svg e-fab-linkedin" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-<path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
-</path>
-</svg>
-</a>
-</li>
-</ul>
-</div>
 </div>
 <div class="pt-team-info">
 <span class="pt-team-designation">
-                  Fundraising Manager
+                  Donor Relations, Gala &amp; Events Advisor
                  </span>
 <h5 class="pt-team-name">
-<a href="/team/details">
-                   Daniel Brooks
+<a href="/team/index">
+                   Shahin Paroo
                   </a>
 </h5>
 </div>
@@ -2025,51 +1702,19 @@
 <div class="elementor-widget-container">
 <div class="pt-team-box pt-style-1 text-left">
 <div class="pt-team-image-wrapper">
-<a class="pt-team-item-link" href="/team/details">
+<a class="pt-team-item-link" href="/team/index">
 <div class="pt-team-media">
-<img alt="Kevin Martin" class="pt-team-img" decoding="async" loading="lazy" src="/content/uploads/2026/04/Rectangle-6.jpg"/>
+<img alt="Ahmed Ghulamali" class="pt-team-img" decoding="async" loading="lazy" src="/content/uploads/wef/AG2-scaled-e1776262739560-1024x769.webp"/>
 </div>
 </a>
-<div class="pt-team-social">
-<a aria-label="Share this page" class="pt-social-icon" href="/">
-<i class="fas fa-share-alt">
-</i>
-</a>
-<ul class="pt-social-icon-wrap">
-<li>
-<a href="/">
-<svg aria-hidden="true" class="e-font-icon-svg e-fab-facebook-square" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-<path d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z">
-</path>
-</svg>
-</a>
-</li>
-<li>
-<a href="/">
-<svg aria-hidden="true" class="e-font-icon-svg e-fab-instagram" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-<path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
-</path>
-</svg>
-</a>
-</li>
-<li>
-<a href="/">
-<svg aria-hidden="true" class="e-font-icon-svg e-fab-linkedin" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-<path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
-</path>
-</svg>
-</a>
-</li>
-</ul>
-</div>
 </div>
 <div class="pt-team-info">
 <span class="pt-team-designation">
-                  Campaign Manager
+                  Technology and Succession Advisor
                  </span>
 <h5 class="pt-team-name">
-<a href="/team/details">
-                   Kevin Martin
+<a href="/team/index">
+                   Ahmed Ghulamali
                   </a>
 </h5>
 </div>
@@ -2091,10 +1736,10 @@
 <div class="pt-section-title text-center">
 <div class="pt-title">
 <div class="pt-title-subtitle">
-                OUR IMPACT
+                Real Stories, Real Change
                </div>
 <h2 class="pt-title-heading">
-                WEFC Core Footprint
+                Success Stories
                </h2>
 </div>
 </div>
@@ -2104,133 +1749,41 @@
 <div class="elementor-element elementor-element-3ea02de e-con-full e-flex e-con e-child" data-e-type="container" data-element_type="container" data-id="3ea02de">
 <div class="elementor-element elementor-element-4247927 elementor-invisible elementor-widget elementor-widget-testi_monial" data-e-type="widget" data-element_type="widget" data-id="4247927" data-settings='{"_animation":"fadeInUp"}' data-widget_type="testi_monial.default">
 <div class="elementor-widget-container">
-<div class="pt-testimonial-box-list pt-hover-active">
-<div class="pt-testimonial-box pt-style-1 pt-hover-item text-left">
-<div class="pt-testimonial-content">
-<div class="pt-testimonial-star">
-<i class="fas fa-star">
-</i>
-<i class="fas fa-star">
-</i>
-<i class="fas fa-star">
-</i>
-<i class="fas fa-star">
-</i>
-<i class="fas fa-star">
-</i>
-</div>
-<p class="pt-testimonial-description">
-                 I’ve supported many charities, but this organization truly stands out. Their transparency and real impact inspired me to contribute regularly. Volunteering here has been a life-changing experience. The team is dedicated, and the work we do genuinely helps people in need.
-                </p>
-</div>
-<div class="pt-testimonial-media">
-<div class="pt-testimonial-author-img">
-<img alt="testimonial-img" decoding="async" loading="lazy" src="/content/uploads/2026/04/Rectangle-1-1.jpg"/>
-</div>
-<div class="pt-testimonial-author-details">
-<h5 class="pt-testimonial-author-name">
-                  Kevin Smith
-                 </h5>
-<span class="pt-testimonial-author-designation">
-                  Volunteer
-                 </span>
+<div class="wef-stories-grid">
+<div class="wef-story-card">
+<svg class="wef-story-quote" viewbox="0 0 32 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.352 24c-1.744 0-3.256-.688-4.536-2.064C3.536 20.56 2.896 18.72 2.896 16.44c0-2.16.608-4.352 1.824-6.576C5.936 7.64 7.6 5.552 9.712 3.624 11.824 1.696 14.16.616 16.72.384l.784 2.688c-2.096.464-3.936 1.472-5.52 3.024C10.4 7.648 9.36 9.28 8.88 10.992c.56-.208 1.152-.312 1.776-.312 1.68 0 3.088.6 4.224 1.8 1.136 1.2 1.704 2.664 1.704 4.392 0 1.84-.616 3.4-1.848 4.68-1.232 1.264-2.752 1.896-4.56 1.896zm17.088 0c-1.744 0-3.256-.688-4.536-2.064-1.28-1.376-1.92-3.216-1.92-5.496 0-2.16.608-4.352 1.824-6.576C23.024 7.64 24.688 5.552 26.8 3.624 28.912 1.696 31.248.616 33.808.384" transform="translate(-2.896 0)"></path></svg>
+<p class="wef-story-text">A year ago, our son wouldn't speak or make eye contact. Today he plays with classmates, talks to his teachers, and is finally part of the world around him. We never imagined this kind of progress was possible, and we're endlessly grateful to the teachers who believed in him.</p>
+<div class="wef-story-footer">
+<span class="wef-story-name">Parent of Yawar</span>
+<span class="wef-story-role">ECD Learning Center, Chitral</span>
+<span class="wef-story-tag">Chitral, Pakistan</span>
 </div>
 </div>
-</div>
-<div class="pt-testimonial-box pt-style-1 pt-hover-item text-left">
-<div class="pt-testimonial-content">
-<div class="pt-testimonial-star">
-<i class="fas fa-star">
-</i>
-<i class="fas fa-star">
-</i>
-<i class="fas fa-star">
-</i>
-<i class="fas fa-star">
-</i>
-<i class="fas fa-star">
-</i>
-</div>
-<p class="pt-testimonial-description">
-                 Because of their support, my children  Because of their support, my children can now go to school and have a better future. I am truly grateful. Volunteering here has been a life-changing experience. The team is dedicated, and the work we do genuinely helps people in need.
-                </p>
-</div>
-<div class="pt-testimonial-media">
-<div class="pt-testimonial-author-img">
-<img alt="testimonial-img" decoding="async" loading="lazy" src="/content/uploads/2026/04/Rectangle-2-1.jpg"/>
-</div>
-<div class="pt-testimonial-author-details">
-<h5 class="pt-testimonial-author-name">
-                  Daniel Brooks
-                 </h5>
-<span class="pt-testimonial-author-designation">
-                  Beneficiary
-                 </span>
+<div class="wef-story-card">
+<svg class="wef-story-quote" viewbox="0 0 32 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.352 24c-1.744 0-3.256-.688-4.536-2.064C3.536 20.56 2.896 18.72 2.896 16.44c0-2.16.608-4.352 1.824-6.576C5.936 7.64 7.6 5.552 9.712 3.624 11.824 1.696 14.16.616 16.72.384l.784 2.688c-2.096.464-3.936 1.472-5.52 3.024C10.4 7.648 9.36 9.28 8.88 10.992c.56-.208 1.152-.312 1.776-.312 1.68 0 3.088.6 4.224 1.8 1.136 1.2 1.704 2.664 1.704 4.392 0 1.84-.616 3.4-1.848 4.68-1.232 1.264-2.752 1.896-4.56 1.896zm17.088 0c-1.744 0-3.256-.688-4.536-2.064-1.28-1.376-1.92-3.216-1.92-5.496 0-2.16.608-4.352 1.824-6.576C23.024 7.64 24.688 5.552 26.8 3.624 28.912 1.696 31.248.616 33.808.384" transform="translate(-2.896 0)"></path></svg>
+<p class="wef-story-text">The WEF Scholarship gave me the courage to pursue my MBA in the US. It's been a year of growth, gratitude, and lifelong friendships — I'll always be grateful to my WEF family. This experience has shaped who I am, both academically and personally, in ways I never expected.</p>
+<div class="wef-story-footer">
+<span class="wef-story-name">Asad</span>
+<span class="wef-story-role">MBA Scholar, Herzing University</span>
+<span class="wef-story-tag">Hunza, Pakistan &rarr; Atlanta, USA</span>
 </div>
 </div>
-</div>
-<div class="pt-testimonial-box pt-style-1 pt-hover-item text-left">
-<div class="pt-testimonial-content">
-<div class="pt-testimonial-star">
-<i class="fas fa-star">
-</i>
-<i class="fas fa-star">
-</i>
-<i class="fas fa-star">
-</i>
-<i class="fas fa-star">
-</i>
-<i class="fas fa-star">
-</i>
-</div>
-<p class="pt-testimonial-description">
-                 Their regular updates and transparency show how every contribution is used effectively. I highly recommend supporting them. We received food and medical help during a very difficult time. This organization gave us hope. We received food and medical help during a very difficult time.
-                </p>
-</div>
-<div class="pt-testimonial-media">
-<div class="pt-testimonial-author-img">
-<img alt="testimonial-img" decoding="async" loading="lazy" src="/content/uploads/2026/04/Rectangle-5-1.jpg"/>
-</div>
-<div class="pt-testimonial-author-details">
-<h5 class="pt-testimonial-author-name">
-                  Robert Miller
-                 </h5>
-<span class="pt-testimonial-author-designation">
-                  Donor
-                 </span>
+<div class="wef-story-card">
+<svg class="wef-story-quote" viewbox="0 0 32 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.352 24c-1.744 0-3.256-.688-4.536-2.064C3.536 20.56 2.896 18.72 2.896 16.44c0-2.16.608-4.352 1.824-6.576C5.936 7.64 7.6 5.552 9.712 3.624 11.824 1.696 14.16.616 16.72.384l.784 2.688c-2.096.464-3.936 1.472-5.52 3.024C10.4 7.648 9.36 9.28 8.88 10.992c.56-.208 1.152-.312 1.776-.312 1.68 0 3.088.6 4.224 1.8 1.136 1.2 1.704 2.664 1.704 4.392 0 1.84-.616 3.4-1.848 4.68-1.232 1.264-2.752 1.896-4.56 1.896zm17.088 0c-1.744 0-3.256-.688-4.536-2.064-1.28-1.376-1.92-3.216-1.92-5.496 0-2.16.608-4.352 1.824-6.576C23.024 7.64 24.688 5.552 26.8 3.624 28.912 1.696 31.248.616 33.808.384" transform="translate(-2.896 0)"></path></svg>
+<p class="wef-story-text">This scholarship changed my life. My host family and university became family to me, and living abroad taught me what it means to truly grow up. I carry these lessons with me every day, and I'm thankful for a journey that reshaped how I see the world.</p>
+<div class="wef-story-footer">
+<span class="wef-story-name">Mehrunissa Barkatali</span>
+<span class="wef-story-role">WEF-HU MBA Scholar</span>
+<span class="wef-story-tag">Karachi, Pakistan &rarr; Atlanta, USA</span>
 </div>
 </div>
-</div>
-<div class="pt-testimonial-box pt-style-1 pt-hover-item text-left">
-<div class="pt-testimonial-content">
-<div class="pt-testimonial-star">
-<i class="fas fa-star">
-</i>
-<i class="fas fa-star">
-</i>
-<i class="fas fa-star">
-</i>
-<i class="fas fa-star">
-</i>
-<i class="fas fa-star">
-</i>
-</div>
-<p class="pt-testimonial-description">
-                 The coordination and support provided by the team make volunteering easy and impactful. Proud to be part of this mission. Volunteering here has been a life-changing experience. The team is dedicated, and the work we do genuinely helps people in need.
-</p>
-</div>
-<div class="pt-testimonial-media">
-<div class="pt-testimonial-author-img">
-<img alt="testimonial-img" decoding="async" loading="lazy" src="/content/uploads/2026/04/Rectangle-4-1.jpg"/>
-</div>
-<div class="pt-testimonial-author-details">
-<h5 class="pt-testimonial-author-name">
-                  David Johnson
-                 </h5>
-<span class="pt-testimonial-author-designation">
-                  Manager
-                 </span>
-</div>
+<div class="wef-story-card">
+<svg class="wef-story-quote" viewbox="0 0 32 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.352 24c-1.744 0-3.256-.688-4.536-2.064C3.536 20.56 2.896 18.72 2.896 16.44c0-2.16.608-4.352 1.824-6.576C5.936 7.64 7.6 5.552 9.712 3.624 11.824 1.696 14.16.616 16.72.384l.784 2.688c-2.096.464-3.936 1.472-5.52 3.024C10.4 7.648 9.36 9.28 8.88 10.992c.56-.208 1.152-.312 1.776-.312 1.68 0 3.088.6 4.224 1.8 1.136 1.2 1.704 2.664 1.704 4.392 0 1.84-.616 3.4-1.848 4.68-1.232 1.264-2.752 1.896-4.56 1.896zm17.088 0c-1.744 0-3.256-.688-4.536-2.064-1.28-1.376-1.92-3.216-1.92-5.496 0-2.16.608-4.352 1.824-6.576C23.024 7.64 24.688 5.552 26.8 3.624 28.912 1.696 31.248.616 33.808.384" transform="translate(-2.896 0)"></path></svg>
+<p class="wef-story-text">As a girl from a village in Gilgit, I always knew education was my only path forward. WEF made it possible for me to pursue an MBA in Technology Management at Herzing University and take a real step toward my dream of becoming an entrepreneur. This journey has sharpened my leadership and decision-making skills, and I hope to bring what I've learned back home to open doors for other women in business.</p>
+<div class="wef-story-footer">
+<span class="wef-story-name">Saima Shaheen</span>
+<span class="wef-story-role">WEF-HU MBA Scholar</span>
+<span class="wef-story-tag">Gilgit, Pakistan &rarr; Atlanta, USA</span>
 </div>
 </div>
 </div>
@@ -2473,7 +2026,7 @@ Change Lives Tomorrow
 </div>
 </div>
 <div class="elementor-element elementor-element-8bf34a8 e-con-full e-flex e-con e-child" style="padding: 15px; background: transparent; box-sizing: border-box; margin-top: 10px;">
-<h5 class="elementor-heading-title elementor-size-default" style="color: #b83b1d; font-weight: 800; margin-bottom: 12px; text-transform: uppercase; font-size: 1.05rem; letter-spacing: 1px;">
+<h5 class="elementor-heading-title elementor-size-default" style="color: #2F6B45; font-weight: 800; margin-bottom: 12px; text-transform: uppercase; font-size: 1.05rem; letter-spacing: 1px;">
                 Contact Us
                </h5>
 <div style="font-size: 0.88rem; line-height: 1.55; color: #333333;">
@@ -2485,7 +2038,7 @@ Change Lives Tomorrow
                  United States
                 </p>
 <p class="mb-3" style="margin-bottom: 12px;">
-<a href="tel:+12145028388" style="color: #b83b1d; font-weight: 800; text-decoration: none; font-size: 0.95rem;">
+<a href="tel:+12145028388" style="color: #2F6B45; font-weight: 800; text-decoration: none; font-size: 0.95rem;">
                   +1 (214) 502-8388
                  </a>
 <br/>
