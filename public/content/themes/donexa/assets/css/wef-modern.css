@@ -346,6 +346,16 @@
   flex-shrink: 0;
 }
 
+/* The transparent header sits directly on the dark hero with no background
+   of its own — the phone number text had no color override (unlike the nav
+   links, which already force white), so it inherited dark body text and
+   nearly disappeared against the hero. */
+.transparent-header .elementor-icon-box-title,
+.transparent-header .elementor-icon-box-title a {
+  color: #ffffff !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
 @media (max-width: 1300px) {
   .pt-icon-animate {
     display: none !important;
