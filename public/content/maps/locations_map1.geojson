@@ -1,0 +1,1501 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.791154,
+          35.838845
+        ]
+      },
+      "properties": {
+        "name": "Irum Nasir",
+        "sponsor": "Amin Chagani / Global Financial & Insurance Services",
+        "village": "Dawashish Jughoor Lower Chitral",
+        "centerModel": "Private School",
+        "sno": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.784357,
+          35.826166
+        ]
+      },
+      "properties": {
+        "name": "Nimra Karim",
+        "sponsor": "Amin Chagani / Global Financial & Insurance Services",
+        "village": "Jughoor khas Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.77711,
+          35.81996
+        ]
+      },
+      "properties": {
+        "name": "Jana Khalil",
+        "sponsor": "Amin Chagani / Global Financial & Insurance Services",
+        "village": "Shot Jughoor Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.805382,
+          35.875052
+        ]
+      },
+      "properties": {
+        "name": "Safia Haider",
+        "sponsor": "Connie & Kamal Daya Family",
+        "village": "Danin Lasht Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.802044,
+          35.901455
+        ]
+      },
+      "properties": {
+        "name": "Laiba Firdouz",
+        "sponsor": "Connie & Kamal Daya Family",
+        "village": "Singoor Lot dah Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.794415,
+          35.893902
+        ]
+      },
+      "properties": {
+        "name": "Samina Naz",
+        "sponsor": "Connie & Kamal Daya Family",
+        "village": "Singoor Shahmiran dah Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.7873268,
+          35.8473527
+        ]
+      },
+      "properties": {
+        "name": "Iffat Zia",
+        "sponsor": "Connie & Kamal Daya Family",
+        "village": "Muldeh Lower Chitral",
+        "centerModel": "Private School",
+        "sno": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.794415,
+          35.893902
+        ]
+      },
+      "properties": {
+        "name": "Nahid Wasim",
+        "sponsor": "Connie & Kamal Daya Family",
+        "village": "Kari thing Lower Chitral",
+        "centerModel": "Elementary School",
+        "sno": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.845931,
+          35.91699
+        ]
+      },
+      "properties": {
+        "name": "Nuzhat Azeem",
+        "sponsor": "Connie & Kamal Daya Family",
+        "village": "Kari Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.879666,
+          35.932454
+        ]
+      },
+      "properties": {
+        "name": "Saima Bibi",
+        "sponsor": "Connie & Kamal Daya Family",
+        "village": "Ragh Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 10
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.898565,
+          35.940024
+        ]
+      },
+      "properties": {
+        "name": "Bushra Hayat",
+        "sponsor": "Ray & Susan Triplett Family",
+        "village": "Kuju Bala Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 11
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.932539,
+          35.942661
+        ]
+      },
+      "properties": {
+        "name": "Amara bibi",
+        "sponsor": "Ray & Susan Triplett Family",
+        "village": "Koghuzi Muldah Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.942197,
+          35.946976
+        ]
+      },
+      "properties": {
+        "name": "Naila Naz",
+        "sponsor": "Ray & Susan Triplett Family",
+        "village": "Koghuzi Lower Chitral",
+        "centerModel": "Private School",
+        "sno": 13
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.96581,
+          35.9781
+        ]
+      },
+      "properties": {
+        "name": "Samina Parveen",
+        "sponsor": "Ray & Susan Triplett Family",
+        "village": "Mori Lash Bala Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 14
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.997803,
+          36.016189
+        ]
+      },
+      "properties": {
+        "name": "Gul Chamman",
+        "sponsor": "Ray & Susan Triplett Family",
+        "village": "Maroi Payeen Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 15
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.217448,
+          36.053914
+        ]
+      },
+      "properties": {
+        "name": "Name",
+        "sponsor": "Ray & Susan Triplett Family",
+        "village": "GGPS Prayet Lower Chitral",
+        "centerModel": "Government School",
+        "sno": 16
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.791926,
+          35.849805
+        ]
+      },
+      "properties": {
+        "name": "Dilshad jabeen",
+        "sponsor": "Ray & Susan Triplett Family",
+        "village": "Zargaran Deh Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 17
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.760333,
+          35.787094
+        ]
+      },
+      "properties": {
+        "name": "Fahima neelam",
+        "sponsor": "Ray & Susan Triplett Family",
+        "village": "Orghoch Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 18
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.785403,
+          35.740297
+        ]
+      },
+      "properties": {
+        "name": "Bibi Atika",
+        "sponsor": "Ray & Susan Triplett Family",
+        "village": "Broze Duom Lower Chitral",
+        "centerModel": "Private School",
+        "sno": 19
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.793134,
+          35.560553
+        ]
+      },
+      "properties": {
+        "name": "Saiqa Andalib",
+        "sponsor": "Ray & Susan Triplett Family",
+        "village": "Drosh Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 20
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.787254,
+          35.87297
+        ]
+      },
+      "properties": {
+        "name": "Taslima Haider",
+        "sponsor": "Parvin & Ramzan Dhanji Family Foundation",
+        "village": "Balach Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 21
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.81501,
+          35.97507
+        ]
+      },
+      "properties": {
+        "name": "Shahnaz and saba",
+        "sponsor": "Parvin & Ramzan Dhanji Family Foundation",
+        "village": "Bohtuli Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 22
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.693385,
+          35.697463
+        ]
+      },
+      "properties": {
+        "name": "Nooria",
+        "sponsor": "Parvin & Ramzan Dhanji Family Foundation",
+        "village": "Batrik Bumburate Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 23
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.7031617,
+          35.7582783
+        ]
+      },
+      "properties": {
+        "name": "Alisiyah",
+        "sponsor": "Parvin & Ramzan Dhanji Family Foundation",
+        "village": "Rumbur Koldesh Kalash Gram Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 24
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.691541,
+          35.702021
+        ]
+      },
+      "properties": {
+        "name": "Reshma",
+        "sponsor": "Parvin & Ramzan Dhanji Family Foundation",
+        "village": "Anish Bumburate Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.819887,
+          35.999837
+        ]
+      },
+      "properties": {
+        "name": "Shaheena",
+        "sponsor": "Parvin & Ramzan Dhanji Family Foundation",
+        "village": "Pitagram KA Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 26
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.769626,
+          35.715851
+        ]
+      },
+      "properties": {
+        "name": "Shahzadi Barira",
+        "sponsor": "Helping Hands Ladies Group of Dallas",
+        "village": "Ayun Lower Chitral",
+        "centerModel": "Private School",
+        "sno": 27
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.32486,
+          35.57553
+        ]
+      },
+      "properties": {
+        "name": "Zubina",
+        "sponsor": "ILM Endowment by Amir Tarmohamed And Dr. Noor Kabani",
+        "village": "Thonick Lower Chitral",
+        "centerModel": "Other",
+        "sno": 28
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.553293,
+          35.969741
+        ]
+      },
+      "properties": {
+        "name": "Nazrana Bibi",
+        "sponsor": "Helping Hands Ladies Group of Dallas",
+        "village": "Munoor Puhman Garam chahma Lower Chitral",
+        "centerModel": "Other",
+        "sno": 29
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.763781,
+          36.014254
+        ]
+      },
+      "properties": {
+        "name": "Saima jabeen",
+        "sponsor": "Helping Hands Ladies Group of Dallas",
+        "village": "Shoghor Lower Chitral",
+        "centerModel": "Private School",
+        "sno": 30
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.819887,
+          35.999837
+        ]
+      },
+      "properties": {
+        "name": "Shahina",
+        "sponsor": "ILM Endowment by Amir Tarmohamed And Dr. Noor Kabani",
+        "village": "Bohtogol Gol Lower Chitral",
+        "centerModel": "Other",
+        "sno": 32
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.4876317,
+          35.9921504
+        ]
+      },
+      "properties": {
+        "name": "Banat Gul",
+        "sponsor": "Helping Hands Ladies Group of Dallas",
+        "village": "Gufti Garam chahma Lower Chitral",
+        "centerModel": "Other",
+        "sno": 33
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.775037,
+          36.031294
+        ]
+      },
+      "properties": {
+        "name": "Bibi Safia",
+        "sponsor": "Farheen & Danish Charanya Family",
+        "village": "Galeh Karim abad Lower Chitral",
+        "centerModel": "Other",
+        "sno": 34
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.7680203,
+          35.8250351
+        ]
+      },
+      "properties": {
+        "name": "Sahiba bibi",
+        "sponsor": "Herzing Foundation",
+        "village": "Bakamak Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 35
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.783707,
+          35.748992
+        ]
+      },
+      "properties": {
+        "name": "Naima Yousira",
+        "sponsor": "Herzing Foundation",
+        "village": "Broze birbolack Near bazar Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 36
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.030705,
+          35.775837
+        ]
+      },
+      "properties": {
+        "name": "Rukhsana",
+        "sponsor": "Herzing Foundation",
+        "village": "Madak lasht Lower Chitral",
+        "centerModel": "Elementary School",
+        "sno": 37
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.7424,
+          35.4819
+        ]
+      },
+      "properties": {
+        "name": "Anita jalil",
+        "sponsor": "Herzing Foundation",
+        "village": "Nagar Fort School Lower Chitral",
+        "centerModel": "Private School",
+        "sno": 39
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.8171,
+          35.6007
+        ]
+      },
+      "properties": {
+        "name": "Zaiba Ahmed",
+        "sponsor": "Connie & Kamal Daya Family",
+        "village": "GGPS Lawi Lower Chitral",
+        "centerModel": "Government School",
+        "sno": 40
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.743553,
+          35.478197
+        ]
+      },
+      "properties": {
+        "name": "Fatima bibi",
+        "sponsor": "Connie & Kamal Daya Family",
+        "village": "GGPS Pati nagar Lower Chitral",
+        "centerModel": "Government School",
+        "sno": 41
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.7511,
+          35.517
+        ]
+      },
+      "properties": {
+        "name": "Nahid Noor",
+        "sponsor": "Connie & Kamal Daya Family",
+        "village": "GGPS kalkatak Lower Chitral",
+        "centerModel": "Government School",
+        "sno": 42
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.814327,
+          35.582829
+        ]
+      },
+      "properties": {
+        "name": "Aneela Sarwat",
+        "sponsor": "Connie & Kamal Daya Family",
+        "village": "GGPS Shanigar Lower Chitral",
+        "centerModel": "Government School",
+        "sno": 43
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.794832,
+          35.559449
+        ]
+      },
+      "properties": {
+        "name": "Afifa Ghafar",
+        "sponsor": "Herzing Foundation",
+        "village": "GGPS Drosh Lower Chitral",
+        "centerModel": "Government School",
+        "sno": 45
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.763175,
+          35.525916
+        ]
+      },
+      "properties": {
+        "name": "Sohana Siddique",
+        "sponsor": "Herzing Foundation",
+        "village": "GGMS Jindirate Lower Chitral",
+        "centerModel": "Government School",
+        "sno": 46
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.741333,
+          35.516675
+        ]
+      },
+      "properties": {
+        "name": "Rida Fida",
+        "sponsor": "Herzing Foundation",
+        "village": "GGPS Sweer Lower Chitral",
+        "centerModel": "Government School",
+        "sno": 47
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.804283,
+          35.572336
+        ]
+      },
+      "properties": {
+        "name": "Nadia Khalil",
+        "sponsor": "Farheen & Danish Charanya Family",
+        "village": "GGCMS Dargideni Lower Chitral",
+        "centerModel": "Government School",
+        "sno": 48
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.795099,
+          35.745277
+        ]
+      },
+      "properties": {
+        "name": "Sidra Aman",
+        "sponsor": "Farheen & Danish Charanya Family",
+        "village": "GGPS Broze Domoon Lower Chitral",
+        "centerModel": "Government School",
+        "sno": 49
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.7842919,
+          35.8408252
+        ]
+      },
+      "properties": {
+        "name": "Nimra Muhd",
+        "sponsor": "Ray & Susan Triplett Family",
+        "village": "GGPS Aryaan Lower Chitral",
+        "centerModel": "Government School",
+        "sno": 50
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.978381,
+          35.99877
+        ]
+      },
+      "properties": {
+        "name": "Shamim Sahar",
+        "sponsor": "Helping Hands Ladies Group of Dallas",
+        "village": "GGPS Mori Bala Lower Chitral",
+        "centerModel": "Government School",
+        "sno": 52
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.557131,
+          35.986093
+        ]
+      },
+      "properties": {
+        "name": "Nigar",
+        "sponsor": "Jooma Family",
+        "village": "GGCMS Garum Chashma Lower Chitral",
+        "centerModel": "Government School",
+        "sno": 53
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.766722,
+          35.701871
+        ]
+      },
+      "properties": {
+        "name": "Anila Rehman",
+        "sponsor": "Austin and Debra Ferland, in loving Memory of their son, Alan",
+        "village": "GGCMS Ayun Lower Chitral",
+        "centerModel": "Government School",
+        "sno": 54
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.927664,
+          35.939843
+        ]
+      },
+      "properties": {
+        "name": "Uzma Azadd",
+        "sponsor": "Austin and Debra Ferland, in loving Memory of their son, Alan",
+        "village": "GGPS Koghuzi Payeen Lower Chitral",
+        "centerModel": "Government School",
+        "sno": 55
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.7783,
+          35.835
+        ]
+      },
+      "properties": {
+        "name": "Gazala Umar",
+        "sponsor": "Austin and Debra Ferland, in loving Memory of their son, Alan",
+        "village": "GGPS Hone Dehar Lower Chitral",
+        "centerModel": "Government School",
+        "sno": 56
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.772442,
+          35.837037
+        ]
+      },
+      "properties": {
+        "name": "Bibi Suhila",
+        "sponsor": "Semin & Mheraj-Jumabhagat Family Foundation",
+        "village": "GGPS Khurkashandeh Lower Chitral",
+        "centerModel": "Government School",
+        "sno": 57
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.504029,
+          36.503004
+        ]
+      },
+      "properties": {
+        "name": "Malika Rahim",
+        "sponsor": "Semin & Mheraj-Jumabhagat Family Foundation",
+        "village": "Gesu Khot Upper Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 58
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.517364,
+          36.492027
+        ]
+      },
+      "properties": {
+        "name": "Shahzadi",
+        "sponsor": "Semin & Mheraj-Jumabhagat Family Foundation",
+        "village": "Andraghach Khot Upper Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 59
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.53398,
+          36.502926
+        ]
+      },
+      "properties": {
+        "name": "Nafisa Begum",
+        "sponsor": "Semin & Mheraj-Jumabhagat Family Foundation",
+        "village": "Chatgaaz Khot Upper Chitral",
+        "centerModel": "Elementary School",
+        "sno": 60
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.28268,
+          36.30209
+        ]
+      },
+      "properties": {
+        "name": "Hajima Bibi",
+        "sponsor": "Semin & Mheraj-Jumabhagat Family Foundation",
+        "village": "Puchung Khot Upper Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 61
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.432064,
+          36.476377
+        ]
+      },
+      "properties": {
+        "name": "Shahzia Bibi",
+        "sponsor": "Semin & Mheraj-Jumabhagat Family Foundation",
+        "village": "Shotkhar Torkhow Upper Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 63
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.423625,
+          36.457533
+        ]
+      },
+      "properties": {
+        "name": "Sheroza Arfeen",
+        "sponsor": "Semin & Mheraj-Jumabhagat Family Foundation",
+        "village": "Shagram Upper Chitral",
+        "centerModel": "Private School",
+        "sno": 64
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.25759,
+          36.27523
+        ]
+      },
+      "properties": {
+        "name": "Sadia Basheer",
+        "sponsor": "Semin & Mheraj-Jumabhagat Family Foundation",
+        "village": "Teklasht Booni Upper Chitral",
+        "centerModel": "Elementary School",
+        "sno": 65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.25689,
+          36.267469
+        ]
+      },
+      "properties": {
+        "name": "Sabiha Bibi",
+        "sponsor": "Semin & Mheraj-Jumabhagat Family Foundation",
+        "village": "Bozheer Khotekan - Mlkhow Upper Chitral",
+        "centerModel": "Elementary School",
+        "sno": 66
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.280469,
+          36.273367
+        ]
+      },
+      "properties": {
+        "name": "Anila Ikram",
+        "sponsor": "Farheen & Danish Charanya Family",
+        "village": "Kruijunali Booni Upper Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 67
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.253821,
+          36.282211
+        ]
+      },
+      "properties": {
+        "name": "Shakila Bibi",
+        "sponsor": "Farheen & Danish Charanya Family",
+        "village": "Gahli Booni Upper Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 68
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.211514,
+          36.228575
+        ]
+      },
+      "properties": {
+        "name": "Rehana Sultan",
+        "sponsor": "Farheen & Danish Charanya Family",
+        "village": "Charun Ovir Upper Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 69
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.159966,
+          36.218659
+        ]
+      },
+      "properties": {
+        "name": "Huzaira Bibi",
+        "sponsor": "Farheen & Danish Charanya Family",
+        "village": "Kuragh Upper Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 70
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.125282,
+          36.176808
+        ]
+      },
+      "properties": {
+        "name": "Atika Nadir",
+        "sponsor": "Farheen & Danish Charanya Family",
+        "village": "Zayit Upper Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 71
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.095885,
+          36.1521
+        ]
+      },
+      "properties": {
+        "name": "Samigha Sartaj",
+        "sponsor": "Farheen & Danish Charanya Family",
+        "village": "Reshun Upper Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 72
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.12261,
+          36.14555
+        ]
+      },
+      "properties": {
+        "name": "Saira Bibi",
+        "sponsor": "Farheen & Danish Charanya Family",
+        "village": "Reshun Gole Upper Chitral",
+        "centerModel": "Elementary School",
+        "sno": 73
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.147809,
+          36.244188
+        ]
+      },
+      "properties": {
+        "name": "Sonia Kawsar",
+        "sponsor": "Sheila Kowalewski",
+        "village": "Hushi Kosht Upper Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 74
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.218798,
+          36.304277
+        ]
+      },
+      "properties": {
+        "name": "Ashraf Gul",
+        "sponsor": "Sheila Kowalewski",
+        "village": "Awnader Kosht Upper Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.218428,
+          36.302252
+        ]
+      },
+      "properties": {
+        "name": "Akhtar Nissa",
+        "sponsor": "Jerry and Terri Timmerman Family",
+        "village": "Warijune Upper Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 76
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.541809,
+          36.244188
+        ]
+      },
+      "properties": {
+        "name": "Mashooda Murad",
+        "sponsor": "Jerry and Terri Timmerman Family",
+        "village": "Pindorgaaz Warijune Upper Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.198578,
+          36.308849
+        ]
+      },
+      "properties": {
+        "name": "Asma Wazir",
+        "sponsor": "Jerry and Terri Timmerman Family",
+        "village": "Zaini Mulkhow Upper Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 78
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.2110665,
+          36.3141653
+        ]
+      },
+      "properties": {
+        "name": "Naila Samad",
+        "sponsor": "Jerry and Terri Timmerman Family",
+        "village": "Gaht Mulkhow Upper Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 79
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.919322,
+          36.493032
+        ]
+      },
+      "properties": {
+        "name": "Sumaira Shaheen",
+        "sponsor": "Jerry and Terri Timmerman Family",
+        "village": "Riri Lot Ovir Upper Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 80
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.03581,
+          36.12399
+        ]
+      },
+      "properties": {
+        "name": "Shahnila Gulab",
+        "sponsor": "Jerry and Terri Timmerman Family",
+        "village": "Gohkir Upper Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 81
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.77,
+          35.83547
+        ]
+      },
+      "properties": {
+        "name": "Hasanat Jamal",
+        "sponsor": "Bahadur Kurji, in loving memory of his wife, Roshan and son Shamez",
+        "village": "Khorkashandeh Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 82
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.02303,
+          35.7681
+        ]
+      },
+      "properties": {
+        "name": "Shaista Bibi",
+        "sponsor": "Tom Jones Family Fund",
+        "village": "GGPS Madak Lasht Lower Chitral",
+        "centerModel": "Government School",
+        "sno": 83
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.48194,
+          35.52302
+        ]
+      },
+      "properties": {
+        "name": "Name",
+        "sponsor": "Rotary Club of Edmonton South, Canada",
+        "village": "GPS Jughoor Lower Chitral",
+        "centerModel": "Government School",
+        "sno": 84
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.795145,
+          35.868323
+        ]
+      },
+      "properties": {
+        "name": "Shahzia kosar",
+        "sponsor": "Amin Chagani / Global Financial & Insurance Services",
+        "village": "Danin 1 Lower Chitral",
+        "centerModel": "Private School",
+        "sno": 87
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.779787,
+          35.843316
+        ]
+      },
+      "properties": {
+        "name": "Nafisa kanwal",
+        "sponsor": "Connie & Kamal Daya Family",
+        "village": "Jamuzhi - Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 88
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.778673,
+          35.81633
+        ]
+      },
+      "properties": {
+        "name": "Ismail",
+        "sponsor": "Ray & Susan Triplett Family",
+        "village": "Bakrabad Lower Chitral",
+        "centerModel": "Private School",
+        "sno": 89
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.782229,
+          35.8000609
+        ]
+      },
+      "properties": {
+        "name": "Fariha Intikhab",
+        "sponsor": "Herzing Foundation",
+        "village": "Chumurkhoon Lower Chitral",
+        "centerModel": "Private School",
+        "sno": 92
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.81385,
+          35.911264
+        ]
+      },
+      "properties": {
+        "name": "Sadaf",
+        "sponsor": "Farheen & Danish Charanya Family",
+        "village": "Seenlasht Lower Chitral",
+        "centerModel": "Private School",
+        "sno": 93
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.791309,
+          35.836666
+        ]
+      },
+      "properties": {
+        "name": "Nazneen",
+        "sponsor": "Sheila Kowalewski",
+        "village": "Jughoor Lower Chitral",
+        "centerModel": "Private School",
+        "sno": 94
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.806042,
+          35.913751
+        ]
+      },
+      "properties": {
+        "name": "Shamim",
+        "sponsor": "Jerry and Terri Timmerman Family",
+        "village": "Dolomuch Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.802519,
+          35.893568
+        ]
+      },
+      "properties": {
+        "name": "Musharfa bibi",
+        "sponsor": "Andy and Yasmin Sunderji Family",
+        "village": "Singoor Lower Chitral",
+        "centerModel": "Entrepreneurial Model",
+        "sno": 96
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.373844,
+          36.385636
+        ]
+      },
+      "properties": {
+        "name": "Amna Gul",
+        "sponsor": "Jerry and Terri Timmerman Family",
+        "village": "Rayeen Khot Upper Chitral",
+        "centerModel": "Private School",
+        "sno": 97
+      }
+    }
+  ]
+}

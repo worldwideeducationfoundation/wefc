@@ -23,6 +23,7 @@
     :root { --display: "Fraunces", Georgia, serif; --sans: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
     * { box-sizing: border-box; }
     body { margin: 0; font-family: var(--sans); color: var(--ink-900); background: var(--cream); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
     h1, h2, h3 { font-family: var(--display); font-weight: 500; letter-spacing: -.01em; line-height: 1.12; margin: 0; }
     .cx { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
     .eyebrow { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .15em; font-size: .74rem; color: var(--sage-200); margin: 0 0 16px; }
@@ -45,8 +46,9 @@
     a.ct-line:hover { border-color: var(--sage-200); transform: translateY(-2px); }
     .ct-ic { width: 42px; height: 42px; flex-shrink: 0; border-radius: 11px; background: var(--sage-50); display: flex; align-items: center; justify-content: center; }
     .ct-ic svg { width: 20px; height: 20px; color: var(--pine-700); }
-    .ct-line .k { font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: .64rem; color: var(--ink-600); }
-    .ct-line .v { font-size: 1rem; color: var(--ink-900); margin-top: 3px; line-height: 1.4; }
+    .ct-line > span:last-child { display: flex; flex-direction: column; min-width: 0; }
+    .ct-line .k { display: block; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: .64rem; color: var(--ink-600); }
+    .ct-line .v { display: block; font-size: 1rem; color: var(--ink-900); margin-top: 3px; line-height: 1.4; word-break: break-word; }
 
     .ct-social-label { font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: .68rem; color: var(--pine-700); margin: 0 0 12px; }
     .ct-socials { display: flex; gap: 11px; flex-wrap: wrap; }

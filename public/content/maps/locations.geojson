@@ -1,0 +1,991 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.791154,
+          35.838845
+        ]
+      },
+      "properties": {
+        "fid": 1,
+        "name": "Irum Nasir",
+        "village": "Dawashish Jughoor",
+        "latitude": 35.838845,
+        "longitude": 71.791154
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.784357,
+          35.826166
+        ]
+      },
+      "properties": {
+        "fid": 2,
+        "name": "Nimra Karim",
+        "village": "Jughoor khas",
+        "latitude": 35.826166,
+        "longitude": 71.784357
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.77711,
+          35.81996
+        ]
+      },
+      "properties": {
+        "fid": 3,
+        "name": "Jana Khalil",
+        "village": "Shot Jughoor",
+        "latitude": 35.81996,
+        "longitude": 71.77711
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.805382,
+          35.875052
+        ]
+      },
+      "properties": {
+        "fid": 4,
+        "name": "Safia Haider",
+        "village": "Danin Lasht",
+        "latitude": 35.875052,
+        "longitude": 71.805382
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.802044,
+          35.901455
+        ]
+      },
+      "properties": {
+        "fid": 5,
+        "name": "Laiba Firdouz",
+        "village": "Singoor Lot dah",
+        "latitude": 35.901455,
+        "longitude": 71.802044
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.794415,
+          35.893902
+        ]
+      },
+      "properties": {
+        "fid": 6,
+        "name": "Samina Naz",
+        "village": "Singoor Shahmiran dah",
+        "latitude": 35.893902,
+        "longitude": 71.794415
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.7873268,
+          35.8473527
+        ]
+      },
+      "properties": {
+        "fid": 7,
+        "name": "Iffat Zia",
+        "village": "Muldeh",
+        "latitude": 35.8473527,
+        "longitude": 71.7873268
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.794415,
+          35.893902
+        ]
+      },
+      "properties": {
+        "fid": 8,
+        "name": "Nahid Wasim",
+        "village": "Kari thing",
+        "latitude": 35.893902,
+        "longitude": 71.794415
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.845931,
+          35.91699
+        ]
+      },
+      "properties": {
+        "fid": 9,
+        "name": "Nuzhat Azeem",
+        "village": "Kari",
+        "latitude": 35.91699,
+        "longitude": 71.845931
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.879666,
+          35.932454
+        ]
+      },
+      "properties": {
+        "fid": 10,
+        "name": "Saima Bibi",
+        "village": "Ragh",
+        "latitude": 35.932454,
+        "longitude": 71.879666
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.932539,
+          35.942661
+        ]
+      },
+      "properties": {
+        "fid": 12,
+        "name": "Amara bibi",
+        "village": "Koghuzi Muldah",
+        "latitude": 35.942661,
+        "longitude": 71.932539
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.942197,
+          35.946976
+        ]
+      },
+      "properties": {
+        "fid": 13,
+        "name": "Naila Naz",
+        "village": "Koghuzi",
+        "latitude": 35.946976,
+        "longitude": 71.942197
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.96581,
+          35.9781
+        ]
+      },
+      "properties": {
+        "fid": 14,
+        "name": "Samina Parveen",
+        "village": "Mori Lash Bala",
+        "latitude": 35.9781,
+        "longitude": 71.96581
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.997803,
+          36.016189
+        ]
+      },
+      "properties": {
+        "fid": 15,
+        "name": "Gul Chamman",
+        "village": "Maroi Payeen",
+        "latitude": 36.016189,
+        "longitude": 71.997803
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.217448,
+          36.053914
+        ]
+      },
+      "properties": {
+        "fid": 16,
+        "name": "Atia Zulfi",
+        "village": "Prayet Bala",
+        "latitude": 36.053914,
+        "longitude": 72.217448
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.791926,
+          35.849805
+        ]
+      },
+      "properties": {
+        "fid": 17,
+        "name": "Dilshad jabeen",
+        "village": "Zargaran Deh",
+        "latitude": 35.849805,
+        "longitude": 71.791926
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.760333,
+          35.787094
+        ]
+      },
+      "properties": {
+        "fid": 18,
+        "name": "Fahima neelam",
+        "village": "Orghoch",
+        "latitude": 35.787094,
+        "longitude": 71.760333
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.785403,
+          35.740297
+        ]
+      },
+      "properties": {
+        "fid": 19,
+        "name": "Bibi Atika",
+        "village": "Broze Duom",
+        "latitude": 35.740297,
+        "longitude": 71.785403
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.793134,
+          35.560553
+        ]
+      },
+      "properties": {
+        "fid": 20,
+        "name": "Saiqa Andalib",
+        "village": "Drosh",
+        "latitude": 35.560553,
+        "longitude": 71.793134
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.787254,
+          35.87297
+        ]
+      },
+      "properties": {
+        "fid": 21,
+        "name": "Taslima Haider",
+        "village": "Balach",
+        "latitude": 35.87297,
+        "longitude": 71.787254
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.693385,
+          35.697463
+        ]
+      },
+      "properties": {
+        "fid": 23,
+        "name": "Nooria",
+        "village": "Batrik Bumburate",
+        "latitude": 35.697463,
+        "longitude": 71.693385
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.7031617,
+          35.7582783
+        ]
+      },
+      "properties": {
+        "fid": 24,
+        "name": "Alisiyah",
+        "village": "Rumbur Koldesh Kalash Gram",
+        "latitude": 35.7582783,
+        "longitude": 71.7031617
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.769626,
+          35.715851
+        ]
+      },
+      "properties": {
+        "fid": 27,
+        "name": "Shahzadi Barira",
+        "village": "Ayun",
+        "latitude": 35.715851,
+        "longitude": 71.769626
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.763781,
+          36.014254
+        ]
+      },
+      "properties": {
+        "fid": 30,
+        "name": "Saima jabeen",
+        "village": "Shoghor",
+        "latitude": 36.014254,
+        "longitude": 71.763781
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.4876317,
+          35.9921504
+        ]
+      },
+      "properties": {
+        "fid": 33,
+        "name": "Banat Gul",
+        "village": "Gufti Garam chahma",
+        "latitude": 35.9921504,
+        "longitude": 71.4876317
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.7680203,
+          35.8250351
+        ]
+      },
+      "properties": {
+        "fid": 36,
+        "name": "Sahiba bibi",
+        "village": "Bakamak",
+        "latitude": 35.8250351,
+        "longitude": 71.7680203
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.783707,
+          35.748992
+        ]
+      },
+      "properties": {
+        "fid": 37,
+        "name": "Naima Yousira",
+        "village": "Broze birbolack Near bazar",
+        "latitude": 35.748992,
+        "longitude": 71.783707
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.030705,
+          35.775837
+        ]
+      },
+      "properties": {
+        "fid": 38,
+        "name": "Rukhsana",
+        "village": "Madak lasht",
+        "latitude": 35.775837,
+        "longitude": 72.030705
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.769226,
+          35.715851
+        ]
+      },
+      "properties": {
+        "fid": 39,
+        "name": "Huma Hyder",
+        "village": "GGPS Tar Shishikuh",
+        "latitude": 35.715851,
+        "longitude": 71.769226
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.7424,
+          35.4819
+        ]
+      },
+      "properties": {
+        "fid": 40,
+        "name": "Anita jalil",
+        "village": "Nagar Fort School",
+        "latitude": 35.4819,
+        "longitude": 71.7424
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.8171,
+          35.6007
+        ]
+      },
+      "properties": {
+        "fid": 41,
+        "name": "Zaiba Ahmed",
+        "village": "GGPS Lawi",
+        "latitude": 35.6007,
+        "longitude": 71.8171
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.743553,
+          35.478197
+        ]
+      },
+      "properties": {
+        "fid": 42,
+        "name": "Fatima bibi",
+        "village": "GGPS Pati nagar",
+        "latitude": 35.478197,
+        "longitude": 71.743553
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.7511,
+          35.517
+        ]
+      },
+      "properties": {
+        "fid": 43,
+        "name": "Nahid Noor",
+        "village": "GGPS kalkatak",
+        "latitude": 35.517,
+        "longitude": 71.7511
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.814327,
+          35.582829
+        ]
+      },
+      "properties": {
+        "fid": 44,
+        "name": "Aneela Sarwat",
+        "village": "GGPS Shanigar",
+        "latitude": 35.582829,
+        "longitude": 71.814327
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.794832,
+          35.559449
+        ]
+      },
+      "properties": {
+        "fid": 45,
+        "name": "Afifa Ghafar",
+        "village": "GGPS Drosh",
+        "latitude": 35.559449,
+        "longitude": 71.794832
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.763175,
+          35.525916
+        ]
+      },
+      "properties": {
+        "fid": 46,
+        "name": "Sohana Siddique",
+        "village": "GGMS Jindirate",
+        "latitude": 35.525916,
+        "longitude": 71.763175
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.741333,
+          35.516675
+        ]
+      },
+      "properties": {
+        "fid": 47,
+        "name": "Rida Fida",
+        "village": "GGPS Sweer",
+        "latitude": 35.516675,
+        "longitude": 71.741333
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.804283,
+          35.572336
+        ]
+      },
+      "properties": {
+        "fid": 48,
+        "name": "Nadia Khalil",
+        "village": "GGCMS Dargideni",
+        "latitude": 35.572336,
+        "longitude": 71.804283
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.795099,
+          35.745277
+        ]
+      },
+      "properties": {
+        "fid": 49,
+        "name": "Sidra Aman",
+        "village": "GGPS Broze Domoon",
+        "latitude": 35.745277,
+        "longitude": 71.795099
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.7842919,
+          35.8408252
+        ]
+      },
+      "properties": {
+        "fid": 50,
+        "name": "Nimra Muhd",
+        "village": "GGPS Aryaan",
+        "latitude": 35.8408252,
+        "longitude": 71.7842919
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.978381,
+          35.99877
+        ]
+      },
+      "properties": {
+        "fid": 52,
+        "name": "Shamim Sahar",
+        "village": "GGPS Mori Bala",
+        "latitude": 35.99877,
+        "longitude": 71.978381
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.766722,
+          35.701871
+        ]
+      },
+      "properties": {
+        "fid": 54,
+        "name": "Anila Rehman",
+        "village": "GGCMS Ayun",
+        "latitude": 35.701871,
+        "longitude": 71.766722
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.927664,
+          35.939843
+        ]
+      },
+      "properties": {
+        "fid": 55,
+        "name": "Uzma Azadd",
+        "village": "GGPS Koghuzi Payeen",
+        "latitude": 35.939843,
+        "longitude": 71.927664
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.7783,
+          35.835
+        ]
+      },
+      "properties": {
+        "fid": 56,
+        "name": "Gazala Umar",
+        "village": "GGPS Hone Dehar",
+        "latitude": 35.835,
+        "longitude": 71.7783
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.504029,
+          36.503004
+        ]
+      },
+      "properties": {
+        "fid": 58,
+        "name": "Malika Rahim",
+        "village": "Gesu Khot",
+        "latitude": 36.503004,
+        "longitude": 72.504029
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.53398,
+          36.502926
+        ]
+      },
+      "properties": {
+        "fid": 60,
+        "name": "Nafisa Begum",
+        "village": "Chatgaaz Khot",
+        "latitude": 36.502926,
+        "longitude": 72.53398
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.28268,
+          36.30209
+        ]
+      },
+      "properties": {
+        "fid": 61,
+        "name": "Hajima Bibi",
+        "village": "Puchung Khot",
+        "latitude": 36.30209,
+        "longitude": 72.28268
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.25759,
+          36.27523
+        ]
+      },
+      "properties": {
+        "fid": 65,
+        "name": "Sadia Basheer",
+        "village": "Teklasht Booni",
+        "latitude": 36.27523,
+        "longitude": 72.25759
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.25689,
+          36.267469
+        ]
+      },
+      "properties": {
+        "fid": 66,
+        "name": "Imrana Khisraw",
+        "village": "Bozheer Booni",
+        "latitude": 36.267469,
+        "longitude": 72.25689
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.280469,
+          36.273367
+        ]
+      },
+      "properties": {
+        "fid": 67,
+        "name": "Anila Ikram",
+        "village": "Kruijunali Booni",
+        "latitude": 36.273367,
+        "longitude": 72.280469
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.211514,
+          36.228575
+        ]
+      },
+      "properties": {
+        "fid": 69,
+        "name": "Rehana Sultan",
+        "village": "Charun Ovir",
+        "latitude": 36.228575,
+        "longitude": 72.211514
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.159966,
+          36.218659
+        ]
+      },
+      "properties": {
+        "fid": 70,
+        "name": "Huzaira Bibi",
+        "village": "Kuragh",
+        "latitude": 36.218659,
+        "longitude": 72.159966
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.125282,
+          36.176808
+        ]
+      },
+      "properties": {
+        "fid": 71,
+        "name": "Atika Nadir",
+        "village": "Zayit",
+        "latitude": 36.176808,
+        "longitude": 72.125282
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.095885,
+          36.1521
+        ]
+      },
+      "properties": {
+        "fid": 72,
+        "name": "Samigha Sartaj",
+        "village": "Reshun",
+        "latitude": 36.1521,
+        "longitude": 72.095885
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.12261,
+          36.14555
+        ]
+      },
+      "properties": {
+        "fid": 73,
+        "name": "Saira Bibi",
+        "village": "Reshun Gole",
+        "latitude": 36.14555,
+        "longitude": 72.12261
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.218428,
+          36.302252
+        ]
+      },
+      "properties": {
+        "fid": 76,
+        "name": "Akhtar Nissa",
+        "village": "Warijune",
+        "latitude": 36.302252,
+        "longitude": 72.218428
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.198578,
+          36.308849
+        ]
+      },
+      "properties": {
+        "fid": 78,
+        "name": "Asma Wazir",
+        "village": "Zaini Mulkhow",
+        "latitude": 36.308849,
+        "longitude": 72.198578
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.2110665,
+          36.3141653
+        ]
+      },
+      "properties": {
+        "fid": 79,
+        "name": "Naila Samad Gaht",
+        "village": "Gaht Mulkhow",
+        "latitude": 36.3141653,
+        "longitude": 72.2110665
+      }
+    }
+  ]
+}
