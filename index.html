@@ -4,12 +4,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Worldwide Education Foundation — Nurturing Minds, Growing Futures</title>
+  <title>Worldwide Education Foundation Canada (WEFC)</title>
   <meta name="description"
-    content="Worldwide Education Foundation (WEF) is a 501(c)(3) nonprofit breaking the cycle of generational poverty through early childhood education, teacher training, and scholarships across Chitral, Pakistan and Central & South Asia." />
-  <meta property="og:title" content="Worldwide Education Foundation — Every Child Deserves a Bright Beginning" />
+    content="Worldwide Education Foundation Canada (WEFC) is a 501(c)(3) nonprofit breaking the cycle of generational poverty through early childhood education, teacher training, and scholarships across Chitral, Pakistan and Central & South Asia." />
+  <meta property="og:title" content="Worldwide Education Foundation Canada — Every Child Deserves a Bright Beginning" />
   <meta property="og:description"
-    content="Breaking the cycle of generational poverty through education in Central and South Asia. 100% of donations go directly to programs." />
+    content="Breaking the cycle of generational poverty through education in Central and South Asia." />
   <meta property="og:image" content="/content/uploads/wef/logo-social-share.png" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -22,6 +22,9 @@
     rel="stylesheet" />
   <link href="/content/themes/donexa/assets/css/wef-chrome.css" rel="stylesheet" />
   <link href="/content/themes/donexa/assets/css/wef-home.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link href="/content/themes/donexa/assets/css/wef-centers.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -50,6 +53,7 @@
                 <path d="M6 9l6 6 6-6" />
               </svg></a>
             <ul class="wef-submenu">
+              <li><a href="/pages/centers">Learning Centers Map</a></li>
               <li><a href="/blog/category/success-stories">Success Stories</a></li>
               <li><a href="/blog/category/project-updates">Project Updates</a></li>
             </ul>
@@ -82,7 +86,7 @@
     <!-- ===================== HERO ===================== -->
     <section class="hero">
       <div class="hero-panel">
-        <p class="eyebrow on-dark">Worldwide Education Foundation · 501(c)(3)</p>
+        <p class="eyebrow on-dark">Worldwide Education Foundation Canada</p>
         <h1>Every child deserves a <em>bright beginning.</em></h1>
         <p class="hero-lead">We break the cycle of generational poverty through early childhood education, teacher
           training, and scholarships across Chitral, Pakistan and Central &amp; South Asia.</p>
@@ -105,23 +109,25 @@
             <path d="M12 2 4 5v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V5l-8-3z" />
             <path d="M9 12l2 2 4-4" />
           </svg>
-          501(c)(3) nonprofit · 100% of donations go directly to programs
+          501(c)(3) nonprofit · Federal Tax ID 81-2135633
         </p>
       </div>
       <div class="hero-media">
         <div class="hero-carousel" id="heroCarousel">
           <div class="hero-slide is-active"
-            style="background-image:url('/content/uploads/wef/bright-beginnings-classroom-learning.jpeg')"
-            role="img" aria-label="Children learning together at a WEF early childhood learning center"></div>
-          <div class="hero-slide" style="background-image:url('/content/uploads/wef/bright-beginnings-counting-activity.jpeg')"
-            role="img" aria-label="A young child practicing counting with hands-on learning materials"></div>
-          <div class="hero-slide" style="background-image:url('/content/uploads/wef/bright-beginnings-group-photo.jpg')" role="img"
-            aria-label="Students and teachers at a WEF Bright Beginnings early childhood center"></div>
-          <div class="hero-slide" style="background-image:url('/content/uploads/wef/teacher-training-language-labs-program-thumb.webp')"
-            role="img" aria-label="University of Chitral scholarship recipients holding their certificates"></div>
+            style="background-image:url('/content/uploads/wef/bright-beginnings-classroom-learning.jpeg')" role="img"
+            aria-label="Children learning together at a WEF early childhood learning center"></div>
           <div class="hero-slide"
-            style="background-image:url('/content/uploads/wef/academic-scholarships-program.jpeg')"
-            role="img" aria-label="Students reviewing coursework together in a classroom"></div>
+            style="background-image:url('/content/uploads/wef/bright-beginnings-montessori-teacher.jpg')" role="img"
+            aria-label="A Montessori teacher working with a child at a WEF Bright Beginnings center"></div>
+          <div class="hero-slide" style="background-image:url('/content/uploads/wef/bright-beginnings-group-photo.jpg')"
+            role="img" aria-label="Students and teachers at a WEF Bright Beginnings early childhood center"></div>
+          <div class="hero-slide"
+            style="background-image:url('/content/uploads/wef/teacher-training-language-labs-program.jpg')"
+            role="img" aria-label="Teacher training and English language program participants in Chitral"></div>
+          <div class="hero-slide"
+            style="background-image:url('/content/uploads/wef/academic-scholarships-program.jpeg')" role="img"
+            aria-label="Students reviewing coursework together in a classroom"></div>
         </div>
         <button class="hero-nav prev" id="heroPrev" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -155,7 +161,7 @@
           </svg>20,000+ children reached</span>
         <span class="ticker-item"><svg viewBox="0 0 8 8">
             <circle cx="4" cy="4" r="3" />
-          </svg>100% of donations to programs</span>
+          </svg>501(c)(3) nonprofit organization</span>
         <span class="ticker-item"><svg viewBox="0 0 8 8">
             <circle cx="4" cy="4" r="3" />
           </svg>100 women-led learning centers</span>
@@ -173,7 +179,7 @@
           </svg>20,000+ children reached</span>
         <span class="ticker-item"><svg viewBox="0 0 8 8">
             <circle cx="4" cy="4" r="3" />
-          </svg>100% of donations to programs</span>
+          </svg>501(c)(3) nonprofit organization</span>
       </div>
     </div>
 
@@ -478,13 +484,12 @@
             <h3>Connie Daya</h3><span>Co-Founder &amp; CFO</span>
           </a>
           <a class="member reveal" href="/team/index">
-            <div class="member-photo"><img src="/content/uploads/wef/parvin-dhanji.webp"
-                alt="Parvin Dhanji" /></div>
+            <div class="member-photo"><img src="/content/uploads/wef/parvin-dhanji.webp" alt="Parvin Dhanji" /></div>
             <h3>Parvin Dhanji</h3><span>Operational &amp; Fundraising Advisor</span>
           </a>
           <a class="member reveal" href="/team/index">
-            <div class="member-photo"><img src="/content/uploads/wef/ahmed-ghulamali.webp"
-                alt="Ahmed Ghulamali" /></div>
+            <div class="member-photo"><img src="/content/uploads/wef/ahmed-ghulamali.webp" alt="Ahmed Ghulamali" />
+            </div>
             <h3>Ahmed Ghulamali</h3><span>Technology &amp; Succession Advisor</span>
           </a>
         </div>
@@ -542,7 +547,7 @@
           <p class="eyebrow on-dark">Make a gift today</p>
           <h2>$8 gives a child a decade of learning</h2>
           <p>A $2,400 gift establishes a Bright Beginnings center that reaches 300 children over ten years — about $8
-            per child. Every dollar you give goes directly to programs on the ground.</p>
+            per child. Your gift funds early education, teacher training, and scholarships on the ground.</p>
           <div class="trust-badges">
             <span class="badge"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -553,11 +558,7 @@
                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <rect x="3" y="11" width="18" height="11" rx="2" />
                 <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-              </svg>Secured by Zeffy</span>
-            <span class="badge"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-              </svg>100% to programs</span>
+              </svg>Secure online giving</span>
           </div>
         </div>
         <div class="donate-form reveal">
@@ -578,6 +579,54 @@
       </div>
     </section>
 
+    <!-- ===================== CENTERS MAP ===================== -->
+    <section class="section" id="centers" style="background:var(--paper);border-top:1px solid var(--line)">
+      <div class="container">
+        <div class="section-head center reveal">
+          <p class="eyebrow">Transparency you can see</p>
+          <h2>See where your support goes</h2>
+          <p>Every learning center we run across Chitral, Pakistan — on one map. Filter by funding partner to find the
+            centers your gift made possible, and click any point to see the community it serves.</p>
+        </div>
+
+        <div class="reveal">
+          <div class="wef-centers" data-size="compact" data-wef-centers>
+            <div class="wef-centers-controls">
+              <div class="wef-centers-count">
+                <span class="wef-count-num" data-count>0</span>
+                <span class="wef-count-total"><span data-count-label>centers</span> shown</span>
+              </div>
+              <label class="wef-centers-field">
+                <span>Find your centers — filter by funding partner</span>
+                <span class="wef-select-wrap">
+                  <select data-sponsor aria-label="Filter centers by funding partner">
+                    <option value="">All funding partners</option>
+                  </select>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </span>
+              </label>
+            </div>
+            <div class="wef-centers-mapwrap">
+              <div class="wef-centers-map" data-map tabindex="0" role="application"
+                aria-label="Interactive map of WEF learning centers in Chitral, Pakistan"></div>
+              <div class="wef-centers-legend" data-legend aria-label="Center types"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal" style="text-align:center;margin-top:34px">
+          <a class="btn btn-ghost" href="/pages/centers">Explore the full centers map
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg></a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ===================== FOOTER ===================== -->
@@ -589,7 +638,31 @@
             alt="Worldwide Education Foundation Canada" />
           <p class="wef-footer-about">A 501(c)(3) nonprofit expanding access to quality education for underserved
             children and youth across Central and South Asia.</p>
-          <div class="wef-socials"><a href="https://x.com/WEFglobaledu" rel="noopener" target="_blank" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25H21.552L14.325 10.51L22.827 21.75H16.17L10.956 14.933L4.99 21.75H1.68L9.41 12.915L1.254 2.25H8.08L12.793 8.481L18.244 2.25ZM17.083 19.77H18.916L7.084 4.126H5.117L17.083 19.77Z"/></svg></a><a href="https://www.facebook.com/WorldwideEducationFoundationWEF" rel="noopener" target="_blank" aria-label="Facebook"><svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a><a href="https://www.instagram.com/worldwideeducationfoundation/" rel="noopener" target="_blank" aria-label="Instagram"><svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a><a href="https://linkedin.com/company/worldwide-education-foundation" rel="noopener" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a><a href="https://www.youtube.com/@wefdallasorg" rel="noopener" target="_blank" aria-label="YouTube"><svg viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg></a><a href="https://www.trustpilot.com/review/wefdallas.org" rel="noopener" target="_blank" aria-label="Trustpilot Reviews"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.77 6.62 7.15.62-5.43 4.71 1.64 6.98L12 17.5l-6.13 3.93 1.64-6.98-5.43-4.71 7.15-.62z"/></svg></a></div>
+          <div class="wef-socials"><a href="https://x.com/WEFglobaledu" rel="noopener" target="_blank"
+              aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M18.244 2.25H21.552L14.325 10.51L22.827 21.75H16.17L10.956 14.933L4.99 21.75H1.68L9.41 12.915L1.254 2.25H8.08L12.793 8.481L18.244 2.25ZM17.083 19.77H18.916L7.084 4.126H5.117L17.083 19.77Z" />
+              </svg></a><a href="https://www.facebook.com/WorldwideEducationFoundationWEF" rel="noopener"
+              target="_blank" aria-label="Facebook"><svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+              </svg></a><a href="https://www.instagram.com/worldwideeducationfoundation/" rel="noopener" target="_blank"
+              aria-label="Instagram"><svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+              </svg></a><a href="https://linkedin.com/company/worldwide-education-foundation" rel="noopener"
+              target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" />
+              </svg></a><a href="https://www.youtube.com/@wefdallasorg" rel="noopener" target="_blank"
+              aria-label="YouTube"><svg viewBox="0 0 576 512" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" />
+              </svg></a><a href="https://www.trustpilot.com/review/wefdallas.org" rel="noopener" target="_blank"
+              aria-label="Trustpilot Reviews"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 2.5l2.77 6.62 7.15.62-5.43 4.71 1.64 6.98L12 17.5l-6.13 3.93 1.64-6.98-5.43-4.71 7.15-.62z" />
+              </svg></a></div>
         </div>
         <div>
           <h4>Explore</h4>
@@ -630,7 +703,7 @@
         </div>
       </div>
       <div class="wef-footer-bottom"><span>© 2026 Worldwide Education Foundation. All rights
-          reserved.</span><span>501(c)(3) · Federal Tax ID 81-2135633 · 100% of donations go to programs.</span></div>
+          reserved.</span><span>501(c)(3) nonprofit · Federal Tax ID 81-2135633</span></div>
     </div>
   </footer>
 
@@ -694,6 +767,10 @@
       reset();
     }());
   </script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="/content/maps/centers-data.js"></script>
+  <script src="/content/themes/donexa/assets/js/wef-centers.js" defer></script>
   <script src="/content/themes/donexa/assets/js/wef-chrome.js" defer></script>
 </body>
 
