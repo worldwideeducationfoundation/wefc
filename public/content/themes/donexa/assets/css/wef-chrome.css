@@ -18,8 +18,8 @@
 .wef-header-inner{max-width:1200px;margin:0 auto;padding:11px 28px;display:flex;align-items:center;gap:24px}
 
 .wef-brand{display:flex;align-items:center;flex-shrink:0}
-.wef-brand-logo{height:38px;width:auto;display:block;background:#fff;border-radius:10px;padding:6px 13px;box-shadow:0 2px 11px rgba(0,0,0,.14)}
-.wef-header:not(.wef-header--overlay) .wef-brand-logo{box-shadow:0 2px 8px rgba(20,20,10,.08)}
+.wef-brand-logo{height:48px;width:48px;display:block;object-fit:cover;object-position:0 50%;border-radius:50%;filter:drop-shadow(0 2px 8px rgba(0,0,0,.28))}
+.wef-header:not(.wef-header--overlay) .wef-brand-logo{filter:drop-shadow(0 2px 6px rgba(20,20,10,.18))}
 
 .wef-nav{margin-left:auto;display:flex;align-items:center}
 .wef-menu{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:2px}
