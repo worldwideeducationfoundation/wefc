@@ -36,6 +36,15 @@
       '</div>';
   }
 
+  var SCHOOL_PATH = 'M12 3 1 9l11 6 9-4.909V17h2V9L12 3zm6.82 9L12 15.72 5.18 12 3.6 12.87 12 17.46l8.4-4.59L18.82 12z';
+  function schoolIcon(color) {
+    return L.divIcon({
+      className: 'wef-pin-icon',
+      html: '<div class="wef-pin" style="--c:' + color + '"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="' + SCHOOL_PATH + '"/></svg></div>',
+      iconSize: [30, 30], iconAnchor: [15, 30], popupAnchor: [0, -28]
+    });
+  }
+
   function buildOne(root) {
     var mapEl = root.querySelector('[data-map]');
     var legendEl = root.querySelector('[data-legend]');
@@ -48,21 +57,29 @@
 
     var sat = L.tileLayer(
       'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-      { maxZoom: 18, attribution: 'Imagery &copy; Esri' }
+      { maxZoom: 18, attribution: 'Imagery &copy; Esri, Maxar, Earthstar Geographics' }
     );
     var labels = L.tileLayer(
       'https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',
       { maxZoom: 18, opacity: 0.9 }
     );
-    var satGroup = L.layerGroup([sat, labels]);
     var street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19, attribution: '&copy; OpenStreetMap'
+      maxZoom: 19, attribution: '&copy; OpenStreetMap contributors'
     });
+    var satGroup = L.layerGroup([sat, labels]);
     satGroup.addTo(map);
-    L.control.layers(
+    var layersCtl = L.control.layers(
       { 'Satellite': satGroup, 'Street map': street },
       {}, { position: 'topright', collapsed: true }
     ).addTo(map);
+
+    /* Safety net: if the satellite tiles ever fail to load (blocked/offline on a
+       given host), fall back to the street basemap so the map is never blank. */
+    var fellBack = false;
+    sat.on('tileerror', function () {
+      if (fellBack) return; fellBack = true;
+      if (map.hasLayer(satGroup)) { map.removeLayer(satGroup); street.addTo(map); }
+    });
 
     /* Enable scroll-zoom only after the map is clicked/focused, so the page still scrolls past it. */
     map.on('focus', function () { map.scrollWheelZoom.enable(); });
@@ -79,13 +96,12 @@
     /* Markers */
     var markersLayer = L.layerGroup().addTo(map);
     var entries = DATA.centers.map(function (c) {
-      var m = L.circleMarker([c.lat, c.lon], {
-        radius: 6.5, color: '#ffffff', weight: 1.6, opacity: 1,
-        fillColor: colorFor(c.model), fillOpacity: 0.92, className: 'wef-marker-hit'
+      var m = L.marker([c.lat, c.lon], {
+        icon: schoolIcon(colorFor(c.model)),
+        title: (c.village || c.name || 'Learning center'),
+        riseOnHover: true
       });
       m.bindPopup(popupHtml(c), { closeButton: true, maxWidth: 280 });
-      m.on('mouseover', function () { m.setRadius(9); m.setStyle({ weight: 2.2 }); });
-      m.on('mouseout', function () { m.setRadius(6.5); m.setStyle({ weight: 1.6 }); });
       return { marker: m, sponsor: c.sponsor || '', model: c.model, latlng: [c.lat, c.lon] };
     });
 
@@ -155,8 +171,19 @@
     map.fitBounds(initBounds, { padding: [20, 20] });
     render(false);
 
-    setTimeout(function () { map.invalidateSize(); }, 200);
-    window.addEventListener('resize', function () { map.invalidateSize(); });
+    /* Tiles can render blank if the map is measured before it is actually
+       visible (e.g. inside a scroll-reveal / transformed ancestor). Recompute
+       size on load, on resize, and the first time it scrolls into view. */
+    function refresh() { map.invalidateSize(); }
+    setTimeout(refresh, 200);
+    window.addEventListener('load', refresh);
+    window.addEventListener('resize', refresh);
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (ents) {
+        ents.forEach(function (e) { if (e.isIntersecting) { refresh(); } });
+      }, { threshold: 0.05 });
+      io.observe(mapEl);
+    }
   }
 
   function init() {

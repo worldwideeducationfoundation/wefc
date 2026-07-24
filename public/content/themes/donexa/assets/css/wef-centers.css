@@ -100,8 +100,23 @@
 .wef-pop dd{margin:0;font-size:.92rem;color:var(--ink-900)}
 .wef-pop dd.wef-pop-enroll{font-family:"Fraunces",Georgia,serif;font-weight:600;color:var(--pine-700)}
 
-.wef-marker-hit{cursor:pointer}
 .leaflet-interactive:focus{outline:none}
+
+/* ---- School-cap markers (divIcon) ---- */
+.wef-pin{
+  width:30px;height:30px;border-radius:50% 50% 50% 0;
+  background:var(--c,#2F6B45);border:2.5px solid #fff;
+  box-shadow:0 3px 8px rgba(20,20,10,.4);
+  transform:rotate(-45deg);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .15s ease,box-shadow .15s ease;cursor:pointer;
+}
+.wef-pin svg{transform:rotate(45deg);width:15px;height:15px;fill:#fff;display:block}
+.wef-pin:hover,.wef-pin.is-active{
+  transform:rotate(-45deg) scale(1.22);
+  box-shadow:0 6px 16px rgba(20,20,10,.5);z-index:1000
+}
+.wef-pin-icon{background:none;border:0}
 
 /* attribution tidy */
 .wef-centers .leaflet-control-attribution{
