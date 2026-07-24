@@ -18,7 +18,7 @@
 .wef-header-inner{max-width:1200px;margin:0 auto;padding:11px 28px;display:flex;align-items:center;gap:24px}
 
 .wef-brand{display:flex;align-items:center;flex-shrink:0}
-.wef-brand-logo{height:48px;width:auto;display:block;transition:background .35s ease,padding .35s ease}
+.wef-brand-logo{height:62px;width:auto;display:block;transition:background .35s ease,padding .35s ease}
 .wef-header:not(.wef-header--overlay) .wef-brand-logo,
 .wef-header--overlay.wef-scrolled .wef-brand-logo{background:var(--forest-900);border-radius:10px;padding:8px 14px;box-shadow:0 4px 16px rgba(0,0,0,.2)}
 
@@ -73,7 +73,7 @@
 .wef-footer a:hover{color:#fff}
 .wef-footer-inner{max-width:1200px;margin:0 auto;padding:0 28px}
 .wef-footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:40px;padding-bottom:42px;border-bottom:1px solid rgba(255,255,255,.12)}
-.wef-footer-logo{height:56px;width:auto;display:inline-block}
+.wef-footer-logo{height:73px;width:auto;display:inline-block}
 .wef-footer-about{margin:18px 0 20px;font-size:.92rem;line-height:1.65;max-width:34ch;color:rgba(255,255,255,.7)}
 .wef-footer h4{font-family:inherit;font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.76rem;color:#fff;margin:0 0 18px}
 .wef-footer ul{list-style:none;padding:0;margin:0;display:grid;gap:11px}
