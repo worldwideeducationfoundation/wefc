@@ -136,7 +136,7 @@
       var vis = visibleEntries();
       if (!vis.length) return;
       var center = L.latLngBounds(vis.map(function (e) { return e.latlng; })).getCenter();
-      var targetZoom = Math.min(Math.max(map.getZoom() + 1.4, 10), 13);
+      var targetZoom = Math.min(Math.max(map.getZoom() + 1.6, 11), 14);
       map.flyTo(center, targetZoom, { duration: 1.1 });
     }
 
