@@ -113,16 +113,31 @@
         return (!activeSponsor || e.sponsor === activeSponsor) && !hiddenModels[e.model];
       });
     }
-    function render(fit) {
+    function render() {
       markersLayer.clearLayers();
       var vis = visibleEntries();
       vis.forEach(function (e) { markersLayer.addLayer(e.marker); });
       if (countEl) countEl.textContent = vis.length;
       if (countLabel) countLabel.textContent = vis.length === 1 ? 'center' : 'centers';
-      if (fit && vis.length) {
-        var b = L.latLngBounds(vis.map(function (e) { return e.latlng; }));
-        map.fitBounds(b, { padding: [42, 42], maxZoom: 12 });
+    }
+
+    /* A gentle "something changed" nudge: zoom in a little on the filtered
+       group's centre rather than snapping hard to its exact bounds (which
+       would jump wildly depending on how spread out that sponsor's centers
+       are). Clearing the filter eases back out to the full district view. */
+    var fullBounds = (DATA.border && DATA.border.length)
+      ? L.latLngBounds(DATA.border)
+      : L.latLngBounds(entries.map(function (e) { return e.latlng; }));
+    function focusOn(sponsor) {
+      if (!sponsor) {
+        map.flyToBounds(fullBounds, { padding: [20, 20], duration: 1.1, maxZoom: 11 });
+        return;
       }
+      var vis = visibleEntries();
+      if (!vis.length) return;
+      var center = L.latLngBounds(vis.map(function (e) { return e.latlng; })).getCenter();
+      var targetZoom = Math.min(Math.max(map.getZoom() + 1.4, 10), 13);
+      map.flyTo(center, targetZoom, { duration: 1.1 });
     }
 
     /* Sponsor filter */
@@ -136,7 +151,8 @@
       });
       sponsorSel.addEventListener('change', function () {
         activeSponsor = sponsorSel.value;
-        render(true);
+        render();
+        focusOn(activeSponsor);
       });
     }
 
@@ -159,17 +175,14 @@
           var m = btn.getAttribute('data-model');
           hiddenModels[m] = !hiddenModels[m];
           btn.classList.toggle('is-off', !!hiddenModels[m]);
-          render(false);
+          render();
         });
       });
     }
 
-    /* Initial view + render */
-    var initBounds = DATA.border && DATA.border.length
-      ? L.latLngBounds(DATA.border)
-      : L.latLngBounds(entries.map(function (e) { return e.latlng; }));
-    map.fitBounds(initBounds, { padding: [20, 20] });
-    render(false);
+    /* Initial view + render — shows every center by default */
+    map.fitBounds(fullBounds, { padding: [20, 20] });
+    render();
 
     /* Tiles can render blank if the map is measured before it is actually
        visible (e.g. inside a scroll-reveal / transformed ancestor). Recompute
