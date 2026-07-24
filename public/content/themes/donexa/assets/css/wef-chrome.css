@@ -18,8 +18,7 @@
 .wef-header-inner{max-width:1200px;margin:0 auto;padding:11px 28px;display:flex;align-items:center;gap:24px}
 
 .wef-brand{display:flex;align-items:center;flex-shrink:0}
-.wef-brand-logo{height:48px;width:48px;display:block;object-fit:cover;object-position:0 50%;border-radius:50%;filter:drop-shadow(0 2px 8px rgba(0,0,0,.28))}
-.wef-header:not(.wef-header--overlay) .wef-brand-logo{filter:drop-shadow(0 2px 6px rgba(20,20,10,.18))}
+.wef-brand-logo{height:36px;width:auto;display:block;background:var(--forest-900);border-radius:10px;padding:9px 16px;box-shadow:0 4px 16px rgba(0,0,0,.24)}
 
 .wef-nav{margin-left:auto;display:flex;align-items:center}
 .wef-menu{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:2px}
@@ -72,7 +71,7 @@
 .wef-footer a:hover{color:#fff}
 .wef-footer-inner{max-width:1200px;margin:0 auto;padding:0 28px}
 .wef-footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:40px;padding-bottom:42px;border-bottom:1px solid rgba(255,255,255,.12)}
-.wef-footer-logo{height:34px;width:auto;background:#fff;border-radius:9px;padding:6px 12px;display:inline-block}
+.wef-footer-logo{height:42px;width:auto;display:inline-block}
 .wef-footer-about{margin:18px 0 20px;font-size:.92rem;line-height:1.65;max-width:34ch;color:rgba(255,255,255,.7)}
 .wef-footer h4{font-family:inherit;font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.76rem;color:#fff;margin:0 0 18px}
 .wef-footer ul{list-style:none;padding:0;margin:0;display:grid;gap:11px}
