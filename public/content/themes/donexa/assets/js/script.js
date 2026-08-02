@@ -3,7 +3,7 @@
 Template: Donexa - Charity & Donation WordPress Theme
 Author: peacefulqode.com
 Version: 1.0
-Worldwide Education Foundation Canada
+Worldwide Education Fund Canada
 
 NOTE: This is main javasctipt file of template.
 
