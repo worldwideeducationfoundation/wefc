@@ -296,11 +296,14 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.01em;lin
 .pstrip-nav button:disabled{opacity:.32;pointer-events:none;box-shadow:none}
 .pstrip-nav button svg{width:20px;height:20px}
 
-.pstrip{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(300px,44vw,580px);gap:var(--rail-gap);overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px var(--rail-pad) 4px var(--rail-pad);-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.pstrip{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(300px,44vw,580px);gap:var(--rail-gap);overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px var(--rail-pad) 4px var(--rail-pad);-webkit-overflow-scrolling:touch;scrollbar-width:none;
+  /* snap-align:start aligns to the scrollport edge, not the padding box, so
+     without this every card after the first snaps flush to the screen edge */
+  scroll-padding-inline:var(--rail-pad)}
 .pstrip::-webkit-scrollbar{display:none}
 .pstrip:focus-visible{outline:2px solid var(--leaf-600);outline-offset:4px;border-radius:8px}
 
-.pstrip-item{position:relative;scroll-snap-align:start;border-radius:22px;overflow:hidden;background:var(--sage-50);box-shadow:0 16px 40px rgba(20,20,10,.10);transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s cubic-bezier(.16,1,.3,1);isolation:isolate}
+.pstrip-item{position:relative;scroll-snap-align:start;scroll-snap-stop:always;border-radius:22px;overflow:hidden;background:var(--sage-50);box-shadow:0 16px 40px rgba(20,20,10,.10);transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s cubic-bezier(.16,1,.3,1);isolation:isolate}
 .pstrip-item:hover{transform:translateY(-6px);box-shadow:0 28px 60px rgba(20,20,10,.18)}
 .pstrip-fig{position:relative;aspect-ratio:3/2;overflow:hidden;background:var(--sage-50)}
 .pstrip-fig img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s cubic-bezier(.16,1,.3,1)}
@@ -319,7 +322,22 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.01em;lin
 .pstrip-item:has(.pstrip-ph):hover{transform:none;box-shadow:0 16px 40px rgba(20,20,10,.10)}
 
 @media(max-width:900px){.photostrip-head{flex-direction:column;align-items:flex-start;gap:16px}}
-@media(max-width:760px){.photostrip{--rail-gap:14px;--rail-pad:20px}.pstrip{grid-auto-columns:min(84vw,420px)}.pstrip-nav{display:none}.pstrip-cap{padding:18px 20px}}
+/* Position dots — mobile only, where the arrow buttons are hidden */
+.pstrip-dots{display:none}
+@media(max-width:760px){
+  .photostrip{--rail-gap:14px;--rail-pad:28px}
+  /* Card width leaves a deliberate 46px of the next card visible, so the rail
+     always reads as scrollable without needing arrows. */
+  .pstrip{grid-auto-columns:min(420px,calc(100vw - var(--rail-pad) - 46px))}
+  .pstrip-fig{aspect-ratio:4/3}
+  .pstrip-nav{display:none}
+  .pstrip-cap{padding:18px 20px}
+  .pstrip-cap p{font-size:.88rem}
+  .pstrip-dots{display:flex;justify-content:center;align-items:center;gap:6px;margin-top:16px;padding:0 28px}
+  .pstrip-dots button{width:26px;height:26px;padding:0;border:0;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .pstrip-dots button::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--sage-200);transition:width .28s cubic-bezier(.16,1,.3,1),background .28s ease}
+  .pstrip-dots button.is-active::before{width:22px;border-radius:6px;background:var(--pine-700)}
+}
 @media(prefers-reduced-motion:reduce){.pstrip{scroll-behavior:auto}.pstrip-item,.pstrip-fig img{transition:none}.pstrip-item:hover{transform:none}.pstrip-item:hover .pstrip-fig img{transform:none}}
 
 /* ============ Homepage tagline ============ */

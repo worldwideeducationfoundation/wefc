@@ -297,6 +297,8 @@
         </figure>
 
       </div>
+
+      <div class="pstrip-dots" id="pstripDots" aria-hidden="true"></div>
     </section>
 
     <!-- ===================== TAGLINE ===================== -->
@@ -1052,10 +1054,45 @@
         var gap = parseFloat(getComputedStyle(strip).columnGap) || 20;
         return first.getBoundingClientRect().width + gap;
       }
+      var items = [].slice.call(strip.querySelectorAll('.pstrip-item'));
+
+      /* Position dots — shown on mobile, where the arrows are hidden */
+      var dotsWrap = document.getElementById('pstripDots'), dots = [];
+      if (dotsWrap && items.length > 1) {
+        items.forEach(function (item, i) {
+          var b = document.createElement('button');
+          b.type = 'button';
+          b.setAttribute('aria-label', 'Show photo ' + (i + 1) + ' of ' + items.length);
+          b.addEventListener('click', function () {
+            // scrollIntoView honours scroll-padding; block:nearest stops the
+            // page itself from scrolling vertically
+            item.scrollIntoView({ inline: 'start', block: 'nearest', behavior: 'smooth' });
+          });
+          dotsWrap.appendChild(b);
+          dots.push(b);
+        });
+      }
+
+      function nearest() {
+        // index of the card whose left edge sits closest to the rail's
+        // padded start edge (rects, so it works regardless of offsetParent)
+        var left = strip.getBoundingClientRect().left +
+          (parseFloat(getComputedStyle(strip).scrollPaddingLeft) || 0);
+        var best = 0, dist = Infinity;
+        items.forEach(function (item, i) {
+          var d = Math.abs(item.getBoundingClientRect().left - left);
+          if (d < dist) { dist = d; best = i; }
+        });
+        return best;
+      }
       function sync() {
         var max = strip.scrollWidth - strip.clientWidth;
         if (pv) pv.disabled = strip.scrollLeft <= 2;
         if (nx) nx.disabled = strip.scrollLeft >= max - 2;
+        if (dots.length) {
+          var a = nearest();
+          dots.forEach(function (d, i) { d.classList.toggle('is-active', i === a); });
+        }
       }
       if (pv) pv.addEventListener('click', function () { strip.scrollBy({ left: -step(), behavior: 'smooth' }); });
       if (nx) nx.addEventListener('click', function () { strip.scrollBy({ left: step(), behavior: 'smooth' }); });
