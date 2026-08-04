@@ -94,6 +94,7 @@
 .wef-brand {
   display: flex;
   align-items: center;
+  gap: 12px;
   flex-shrink: 0
 }
 
@@ -101,15 +102,44 @@
   height: var(--logo-h);
   width: auto;
   display: block;
-  transition: background .35s ease, padding .35s ease, height .3s ease
+  transition: height .3s ease
 }
 
-.wef-header:not(.wef-header--overlay) .wef-brand-logo,
-.wef-header--overlay.wef-scrolled .wef-brand-logo {
-  background: var(--forest-900);
-  border-radius: 10px;
-  padding: 8px 14px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, .2)
+/* Wordmark — sits beside the mark so the two read as one lockup. The <a>
+   carries the accessible name, so this text is presentational. */
+.wef-brand-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  line-height: 1.1;
+  color: #fff;
+  transition: color .35s ease
+}
+
+.wef-brand-line {
+  font-weight: 700;
+  font-size: clamp(.88rem, 1.1vw, 1.02rem);
+  white-space: nowrap
+}
+
+.wef-brand-sub {
+  font-weight: 600;
+  font-size: .62rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .74);
+  transition: color .35s ease
+}
+
+.wef-header:not(.wef-header--overlay) .wef-brand-name,
+.wef-header--overlay.wef-scrolled .wef-brand-name {
+  color: var(--forest-900)
+}
+
+.wef-header:not(.wef-header--overlay) .wef-brand-sub,
+.wef-header--overlay.wef-scrolled .wef-brand-sub {
+  color: var(--pine-700)
 }
 
 .wef-nav {
@@ -140,6 +170,7 @@
   color: var(--ink-900);
   padding: 8px 14px;
   border-radius: 8px;
+  white-space: nowrap;
   cursor: pointer;
   transition: color .2s ease, background .2s ease
 }
@@ -423,7 +454,22 @@
 .wef-footer-logo {
   height: 73px;
   width: auto;
-  display: inline-block
+  display: inline-block;
+  flex-shrink: 0
+}
+
+/* Same mark + wordmark lockup as the header, on the footer's dark ground */
+.wef-footer-lockup {
+  display: flex;
+  align-items: center;
+  gap: 13px
+}
+
+.wef-footer-lockup .wef-brand-line {
+  font-size: 1rem;
+  white-space: normal;
+  text-wrap: balance;
+  max-width: 15ch
 }
 
 .wef-footer-about {
@@ -518,5 +564,47 @@
   .wef-footer-top {
     grid-template-columns: 1fr;
     gap: 30px
+  }
+}
+
+/* ---------------- Brand lockup, narrower screens ---------------- */
+/* 961-1020px is the tightest band: full nav, no burger yet. */
+@media(max-width:1020px) {
+  .wef-brand-line {
+    font-size: .86rem
+  }
+
+  .wef-navlink {
+    padding: 8px 9px
+  }
+
+  .wef-brand-sub {
+    font-size: .56rem;
+    letter-spacing: .2em
+  }
+}
+
+@media(max-width:560px) {
+  .wef-brand {
+    gap: 9px
+  }
+
+  .wef-brand-name {
+    gap: 3px
+  }
+
+  .wef-brand-line {
+    font-size: .74rem
+  }
+
+  .wef-brand-sub {
+    font-size: .52rem;
+    letter-spacing: .22em
+  }
+}
+
+@media(max-width:340px) {
+  .wef-brand-name {
+    display: none
   }
 }
