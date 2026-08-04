@@ -28,7 +28,7 @@
     .cx { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
     .eyebrow { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .15em; font-size: .74rem; color: var(--sage-200); margin: 0 0 16px; }
 
-    .gl-hero { position: relative; overflow: hidden; color: #fff; background: linear-gradient(152deg, var(--forest-900) 0%, var(--forest-800) 48%, var(--pine-700) 100%); padding: calc(76px + 58px) 0 56px; }
+    .gl-hero { position: relative; overflow: hidden; color: #fff; background: linear-gradient(152deg, var(--forest-900) 0%, var(--forest-800) 48%, var(--pine-700) 100%); padding: calc(var(--header-h) + 40px) 0 56px; }
     .gl-hero::before { content: ""; position: absolute; top: -170px; right: -120px; width: 520px; height: 520px; background: radial-gradient(circle, rgba(62, 139, 90, .4), transparent 70%); }
     .gl-hero-inner { position: relative; z-index: 1; max-width: 680px; }
     .gl-hero h1 { color: #fff; font-size: clamp(2.4rem, 4.6vw, 3.8rem); margin: 0 0 18px; }
@@ -48,7 +48,7 @@
     .gl-open:hover img { transform: scale(1.06); }
     .gl-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 4px; padding: 18px; background: linear-gradient(to top, rgba(20, 33, 22, .82) 0%, rgba(20, 33, 22, .1) 55%, transparent 100%); opacity: 0; transition: opacity .28s ease; text-align: left; }
     .gl-open:hover .gl-overlay, .gl-open:focus-visible .gl-overlay { opacity: 1; }
-    .gl-cat { font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: .62rem; color: var(--sage-200); }
+    .gl-cat { font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: .7rem; color: var(--sage-200); }
     .gl-title { font-family: var(--display); font-weight: 600; font-size: 1.15rem; color: #fff; line-height: 1.2; }
     .gl-item.is-hidden { display: none; }
     @media (max-width: 520px) { .gl-grid { columns: 1; } .gl-overlay { opacity: 1; background: linear-gradient(to top, rgba(20, 33, 22, .82) 0%, transparent 70%); } }

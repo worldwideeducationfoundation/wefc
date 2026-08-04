@@ -37,7 +37,7 @@
     .centers-hero {
       background: linear-gradient(150deg, var(--forest-900) 0%, var(--forest-800) 45%, var(--pine-700) 100%);
       color: #fff; position: relative; overflow: hidden;
-      padding: calc(76px + 58px) 0 60px;
+      padding: calc(var(--header-h) + 40px) 0 60px;
     }
     .centers-hero::before {
       content: ""; position: absolute; top: -160px; right: -120px; width: 520px; height: 520px;
@@ -83,7 +83,7 @@
     }
 
     /* Map section */
-    .centers-body { padding: clamp(48px, 7vw, 84px) 0; }
+    .centers-body { padding: var(--sec-y) 0; }
     .centers-intro { max-width: 640px; margin: 0 0 30px; }
     .centers-intro h2 { font-family: var(--display); font-weight: 500; font-size: clamp(1.7rem, 3vw, 2.4rem); margin: 0 0 12px; color: var(--ink-900); }
     .centers-intro p { font-size: 1.1rem; line-height: 1.65; color: var(--ink-600); margin: 0; }
@@ -95,7 +95,7 @@
     .centers-note svg { width: 16px; height: 16px; color: var(--pine-700); flex-shrink: 0; margin-top: 2px; }
 
     /* Closing CTA */
-    .centers-cta { background: var(--sage-50); border-top: 1px solid var(--line); padding: clamp(48px, 7vw, 80px) 0; }
+    .centers-cta { background: var(--sage-50); border-top: 1px solid var(--line); padding: var(--sec-y) 0; }
     .centers-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
     .centers-cta h2 { font-family: var(--display); font-weight: 500; font-size: clamp(1.7rem, 3vw, 2.4rem); margin: 0 0 10px; color: var(--ink-900); max-width: 20ch; }
     .centers-cta p { font-size: 1.08rem; color: var(--ink-600); margin: 0; max-width: 48ch; line-height: 1.6; }

@@ -61,7 +61,7 @@
 }
 .wef-centers-legend h4{
   margin:0 0 8px;font-family:inherit;font-weight:700;text-transform:uppercase;
-  letter-spacing:.1em;font-size:.64rem;color:var(--ink-600)
+  letter-spacing:.1em;font-size: .7rem;color:var(--ink-600)
 }
 .wef-legend-items{display:flex;flex-direction:column;gap:3px}
 .wef-legend-item{
@@ -86,7 +86,7 @@
 
 .wef-pop-model{
   display:inline-flex;align-items:center;gap:6px;font-weight:700;text-transform:uppercase;
-  letter-spacing:.07em;font-size:.64rem;color:#fff;background:var(--c,#2F6B45);
+  letter-spacing:.07em;font-size: .7rem;color:#fff;background:var(--c,#2F6B45);
   padding:4px 9px;border-radius:100px;margin-bottom:9px
 }
 .wef-pop h3{
@@ -96,7 +96,7 @@
 .wef-pop-region{font-size:.8rem;color:var(--pine-700);font-weight:600;margin-bottom:12px}
 .wef-pop dl{margin:0;display:grid;gap:9px;border-top:1px solid var(--line);padding-top:11px}
 .wef-pop dl>div{display:flex;flex-direction:column;gap:1px}
-.wef-pop dt{font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-600)}
+.wef-pop dt{font-size: .7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-600)}
 .wef-pop dd{margin:0;font-size:.92rem;color:var(--ink-900)}
 .wef-pop dd.wef-pop-enroll{font-family:"Fraunces",Georgia,serif;font-weight:600;color:var(--pine-700)}
 

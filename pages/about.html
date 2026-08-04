@@ -38,7 +38,7 @@
     .mhero {
       position: relative; overflow: hidden; color: #fff;
       background: linear-gradient(152deg, var(--forest-900) 0%, var(--forest-800) 48%, var(--pine-700) 100%);
-      padding: calc(76px + 62px) 0 66px;
+      padding: calc(var(--header-h) + 44px) 0 66px;
     }
     .mhero-orb1 { position: absolute; top: -170px; right: -120px; width: 540px; height: 540px; background: radial-gradient(circle, rgba(62, 139, 90, .4), transparent 70%); pointer-events: none; }
     .mhero-orb2 { position: absolute; left: -150px; bottom: -190px; width: 480px; height: 480px; background: radial-gradient(circle, rgba(255, 255, 255, .06), transparent 70%); pointer-events: none; }
@@ -51,7 +51,7 @@
     .mhero p { font-size: clamp(1.06rem, 1.5vw, 1.24rem); line-height: 1.62; color: rgba(255, 255, 255, .88); max-width: 60ch; margin: 0; }
 
     /* ---- Vision / Mission / Belief ---- */
-    .vmb { padding: clamp(56px, 8vw, 96px) 0; background: var(--paper); border-bottom: 1px solid var(--line); }
+    .vmb { padding: var(--sec-y) 0; background: var(--paper); border-bottom: 1px solid var(--line); }
     .vmb-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .vmb-card { background: var(--cream); border: 1px solid var(--line); border-radius: 20px; padding: 32px 30px; position: relative; overflow: hidden; }
     .vmb-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--pine-700); }
@@ -64,7 +64,7 @@
     @media (max-width: 900px) { .vmb-grid { grid-template-columns: 1fr; } }
 
     /* ---- At a glance ---- */
-    .glance { padding: clamp(48px, 6vw, 72px) 0; background: var(--forest-800); color: #fff; position: relative; overflow: hidden; }
+    .glance { padding: var(--sec-y-sm) 0; background: var(--forest-800); color: #fff; position: relative; overflow: hidden; }
     .glance::before { content: ""; position: absolute; top: -140px; right: -100px; width: 440px; height: 440px; background: radial-gradient(circle, rgba(62, 139, 90, .38), transparent 70%); pointer-events: none; }
     .glance .cx { position: relative; z-index: 1; }
     .glance-head { text-align: center; max-width: 640px; margin: 0 auto 40px; }
@@ -79,7 +79,7 @@
     @media (max-width: 900px) { .glance-grid { grid-template-columns: 1fr 1fr; } .glance-item:nth-child(2) { border-right: 0; } .glance-item { border-bottom: 1px solid rgba(255, 255, 255, .14); } .glance-item:nth-child(5) { border-bottom: 0; } }
 
     /* ---- Projects ---- */
-    .projects { padding: clamp(56px, 8vw, 96px) 0; }
+    .projects { padding: var(--sec-y) 0; }
     .projects-head { max-width: 680px; margin: 0 0 44px; }
     .projects-head h2 { font-size: clamp(2rem, 3.6vw, 2.9rem); color: var(--ink-900); margin: 0 0 14px; }
     .projects-head p { font-size: 1.12rem; line-height: 1.6; color: var(--ink-600); margin: 0; }
@@ -92,26 +92,26 @@
     .pcard-top { padding: 26px 28px 22px; border-bottom: 1px solid var(--line); position: relative; }
     .pcard-top::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--accent); }
     .pcard-tags { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
-    .pcard-cat { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .09em; font-size: .64rem; color: #fff; background: var(--accent); padding: 4px 10px; border-radius: 100px; }
+    .pcard-cat { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .09em; font-size: .7rem; color: #fff; background: var(--accent); padding: 4px 10px; border-radius: 100px; }
     .pcard-year { font-family: var(--sans); font-weight: 600; font-size: .74rem; color: var(--ink-600); background: var(--sage-50); border: 1px solid var(--line); padding: 4px 10px; border-radius: 100px; }
     .pcard h3 { font-size: 1.32rem; color: var(--ink-900); margin: 0 0 8px; line-height: 1.18; }
     .pcard-model { font-size: .96rem; line-height: 1.55; color: var(--ink-600); margin: 0; }
 
     .pcard-body { padding: 22px 28px; display: grid; gap: 18px; }
-    .pcol h4 { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: .66rem; color: var(--accent); margin: 0 0 9px; }
+    .pcol h4 { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: .7rem; color: var(--accent); margin: 0 0 9px; }
     .pcol ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
     .pcol li { position: relative; padding-left: 17px; font-size: .93rem; line-height: 1.5; color: var(--ink-900); }
     .pcol li::before { content: ""; position: absolute; left: 0; top: .5em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); opacity: .55; }
 
     .pcard-notes { margin-top: auto; padding: 18px 28px 24px; background: var(--sage-50); border-top: 1px solid var(--line); }
-    .pcard-notes h4 { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: .66rem; color: var(--ink-600); margin: 0 0 9px; }
+    .pcard-notes h4 { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: .7rem; color: var(--ink-600); margin: 0 0 9px; }
     .pcard-notes ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
     .pcard-notes li { position: relative; padding-left: 16px; font-size: .86rem; line-height: 1.5; color: var(--ink-600); }
     .pcard-notes li::before { content: "\2192"; position: absolute; left: 0; top: 0; color: var(--accent); font-size: .8rem; }
     .pcard-notes .invest { color: var(--ink-900); font-weight: 600; }
 
     /* ---- Transparency callout ---- */
-    .transp { padding: clamp(52px, 7vw, 84px) 0; background: var(--paper); border-top: 1px solid var(--line); }
+    .transp { padding: var(--sec-y) 0; background: var(--paper); border-top: 1px solid var(--line); }
     .transp-card { background: linear-gradient(150deg, var(--forest-800), var(--pine-700)); color: #fff; border-radius: 24px; padding: clamp(34px, 5vw, 52px); position: relative; overflow: hidden; }
     .transp-card::before { content: ""; position: absolute; right: -120px; bottom: -140px; width: 420px; height: 420px; background: radial-gradient(circle, rgba(255, 255, 255, .08), transparent 70%); pointer-events: none; }
     .transp-inner { position: relative; z-index: 1; max-width: 760px; }

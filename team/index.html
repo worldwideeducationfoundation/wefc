@@ -35,7 +35,7 @@
     .eyebrow { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .15em; font-size: .74rem; color: var(--pine-700); margin: 0 0 16px; }
 
     /* ---- Hero ---- */
-    .tm-hero { position: relative; overflow: hidden; color: #fff; background: linear-gradient(152deg, var(--forest-900) 0%, var(--forest-800) 48%, var(--pine-700) 100%); padding: calc(76px + 62px) 0 62px; }
+    .tm-hero { position: relative; overflow: hidden; color: #fff; background: linear-gradient(152deg, var(--forest-900) 0%, var(--forest-800) 48%, var(--pine-700) 100%); padding: calc(var(--header-h) + 44px) 0 62px; }
     .tm-orb1 { position: absolute; top: -170px; right: -120px; width: 540px; height: 540px; background: radial-gradient(circle, rgba(62, 139, 90, .4), transparent 70%); pointer-events: none; }
     .tm-orb2 { position: absolute; left: -150px; bottom: -190px; width: 480px; height: 480px; background: radial-gradient(circle, rgba(255, 255, 255, .06), transparent 70%); pointer-events: none; }
     .tm-hero-inner { position: relative; z-index: 1; max-width: 720px; }
@@ -49,7 +49,7 @@
     .tm-hero-stats span { margin-top: 6px; font-size: .84rem; color: var(--sage-200); }
 
     /* ---- Sections ---- */
-    .tm-section { padding: clamp(52px, 7vw, 90px) 0; }
+    .tm-section { padding: var(--sec-y) 0; }
     .tm-alt { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
     .tm-head { max-width: 640px; margin: 0 0 40px; }
     .tm-head h2 { font-size: clamp(1.9rem, 3.4vw, 2.7rem); color: var(--ink-900); margin: 0 0 12px; }
@@ -72,7 +72,7 @@
     .tm-bio-btn:hover { color: var(--pine-700); gap: 10px; }
 
     /* ---- CTA ---- */
-    .tm-cta { background: var(--forest-800); color: #fff; padding: clamp(44px, 6vw, 72px) 0; position: relative; overflow: hidden; }
+    .tm-cta { background: var(--forest-800); color: #fff; padding: var(--sec-y-sm) 0; position: relative; overflow: hidden; }
     .tm-cta::before { content: ""; position: absolute; right: -120px; top: -120px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(62, 139, 90, .4), transparent 70%); pointer-events: none; }
     .tm-cta-inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
     .tm-cta h2 { color: #fff; font-size: clamp(1.6rem, 2.8vw, 2.3rem); margin: 0 0 8px; }
