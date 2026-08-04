@@ -9,16 +9,39 @@
 
   var DATA = window.WEF_CENTERS_DATA;
 
-  /* Brand-adjacent categorical palette, fixed order for the legend. */
+  /* Categorical palette, fixed order for the legend.
+     Chosen so the five stay separable for red-green colour blindness, which the
+     previous green/gold/terracotta set did not: simulated under deuteranopia and
+     protanopia the closest pair was ~16 RGB units apart (Private vs Other were
+     effectively the same colour). This set is Okabe-Ito derived, keeps the brand
+     green for the flagship model, and holds a worst-pair distance of ~57 while
+     also spreading lightness (L* 33-71) so it survives greyscale.
+
+     Colour is still never the ONLY cue — every model also carries its own glyph
+     below, on the marker, in the legend key and in the popup chip (WCAG 1.4.1). */
   var MODEL_ORDER = ['Entrepreneurial Model', 'Government School', 'Private School', 'Elementary School', 'Other'];
   var MODEL_COLORS = {
-    'Entrepreneurial Model': '#2F6B45',
-    'Government School': '#C6923E',
-    'Private School': '#2C6E7A',
-    'Elementary School': '#B4553B',
-    'Other': '#7C8A80'
+    'Entrepreneurial Model': '#125740',
+    'Government School': '#E69F00',
+    'Private School': '#56B4E9',
+    'Elementary School': '#CC79A7',
+    'Other': '#6B6B6B'
+  };
+
+  /* Distinct silhouettes, readable at the 15px the marker renders them at. */
+  var MODEL_GLYPHS = {
+    'Entrepreneurial Model': 'M12 3 1 9l11 6 9-4.909V17h2V9L12 3zm6.82 9L12 15.72 5.18 12 3.6 12.87 12 17.46l8.4-4.59L18.82 12z',
+    'Government School': 'M12 3 3 8v2h18V8l-9-5zM5 12h2.6v5H5v-5zm5.7 0h2.6v5h-2.6v-5zm5.7 0H19v5h-2.6v-5zM3 19h18v2H3v-2z',
+    'Private School': 'M6 2h13v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2H6zm0 2a.5.5 0 0 0-.5.5V17c.3-.1.6-.2 1-.2H17V4H6z',
+    'Elementary School': 'M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z',
+    'Other': 'M12 5a7 7 0 1 0 0 14 7 7 0 0 0 0-14z'
   };
   function colorFor(m) { return MODEL_COLORS[m] || MODEL_COLORS.Other; }
+  function glyphFor(m) { return MODEL_GLYPHS[m] || MODEL_GLYPHS.Other; }
+  function glyphSvg(m, cls) {
+    return '<svg class="' + cls + '" viewBox="0 0 24 24" aria-hidden="true"><path d="' +
+      glyphFor(m) + '"/></svg>';
+  }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
 
   function popupHtml(c) {
@@ -29,18 +52,19 @@
     var title = c.village || c.name || 'Learning center';
     var region = [c.region, 'Chitral, Pakistan'].filter(Boolean).join(' · ');
     return '<div class="wef-pop">' +
-      '<span class="wef-pop-model" style="--c:' + colorFor(c.model) + '">' + esc(c.model) + '</span>' +
+      '<span class="wef-pop-model" style="--c:' + colorFor(c.model) + '">' +
+      glyphSvg(c.model, 'wef-pop-model-glyph') + esc(c.model) + '</span>' +
       '<h3>' + esc(title) + '</h3>' +
       '<div class="wef-pop-region">' + esc(region) + '</div>' +
       (rows ? '<dl>' + rows + '</dl>' : '') +
       '</div>';
   }
 
-  var SCHOOL_PATH = 'M12 3 1 9l11 6 9-4.909V17h2V9L12 3zm6.82 9L12 15.72 5.18 12 3.6 12.87 12 17.46l8.4-4.59L18.82 12z';
-  function schoolIcon(color) {
+  function schoolIcon(model) {
     return L.divIcon({
       className: 'wef-pin-icon',
-      html: '<div class="wef-pin" style="--c:' + color + '"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="' + SCHOOL_PATH + '"/></svg></div>',
+      html: '<div class="wef-pin" style="--c:' + colorFor(model) + '">' +
+        glyphSvg(model, '') + '</div>',
       iconSize: [30, 30], iconAnchor: [15, 30], popupAnchor: [0, -28]
     });
   }
@@ -97,7 +121,7 @@
     var markersLayer = L.layerGroup().addTo(map);
     var entries = DATA.centers.map(function (c) {
       var m = L.marker([c.lat, c.lon], {
-        icon: schoolIcon(colorFor(c.model)),
+        icon: schoolIcon(c.model),
         title: (c.village || c.name || 'Learning center'),
         riseOnHover: true
       });
@@ -164,7 +188,8 @@
       var html = '<h4>Center type — tap to filter</h4><div class="wef-legend-items">';
       items.forEach(function (m) {
         html += '<button type="button" class="wef-legend-item" data-model="' + esc(m) + '">' +
-          '<span class="wef-legend-dot" style="background:' + colorFor(m) + '"></span>' +
+          '<span class="wef-legend-dot" style="background:' + colorFor(m) + '">' +
+          glyphSvg(m, 'wef-legend-glyph') + '</span>' +
           '<span class="wef-legend-label">' + esc(m) + '</span>' +
           '<span class="wef-legend-count">' + counts[m] + '</span></button>';
       });
