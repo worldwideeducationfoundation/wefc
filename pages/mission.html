@@ -89,11 +89,16 @@
        detail on the other, sides alternating down the page. */
     .prows { display: grid; gap: clamp(26px, 3.4vw, 44px); }
 
-    .prow { --accent: var(--pine-700); display: grid; grid-template-columns: minmax(0, .84fr) minmax(0, 1.16fr); background: var(--paper); border: 1px solid var(--line); border-top: 4px solid var(--accent); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(20, 20, 10, .05); }
+    /* align-items:start (not the grid default stretch) is what keeps every
+       photo the same shape — otherwise a project with more body copy makes
+       its row taller, and the media column would stretch to match it. */
+    .prow { --accent: var(--pine-700); display: grid; grid-template-columns: minmax(0, .84fr) minmax(0, 1.16fr); align-items: start; background: var(--paper); border: 1px solid var(--line); border-top: 4px solid var(--accent); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(20, 20, 10, .05); }
     /* Every other row puts the photo on the right instead. */
     .prow:nth-child(even) .prow-media { order: 2; }
 
-    .prow-media { position: relative; min-height: 280px; background: var(--sage-50); }
+    /* Fixed aspect-ratio (not min-height) is what makes every project's photo
+       a consistent size and crop, independent of how long its body text runs. */
+    .prow-media { position: relative; aspect-ratio: 16 / 12; width: 100%; background: var(--sage-50); }
     .prow-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     .prow-media::after { content: ""; position: absolute; inset: 0; background: var(--accent); mix-blend-mode: multiply; opacity: .09; }
     .prow-year { position: absolute; z-index: 2; top: 16px; left: 16px; font-family: var(--sans); font-weight: 600; font-size: .74rem; color: var(--ink-900); background: rgba(255, 253, 248, .92); border: 1px solid var(--line); padding: 5px 12px; border-radius: 100px; }
@@ -135,7 +140,7 @@
     @media (max-width: 900px) {
       .prow { grid-template-columns: 1fr; }
       .prow:nth-child(even) .prow-media { order: 0; }
-      .prow-media { min-height: 0; height: 56vw; max-height: 340px; }
+      .prow-media { aspect-ratio: auto; height: 56vw; max-height: 340px; }
     }
 
     /* ---- Transparency callout ---- */
@@ -177,7 +182,7 @@
               </svg></a>
             <ul class="wef-submenu">
               <li><a href="/team/index">Our Team</a></li>
-              <li><a href="/pages/about">Our Mission</a></li>
+              <li><a href="/pages/mission">Our Mission</a></li>
             </ul>
           </li>
           <li class="wef-has-children"><a class="wef-navlink" href="#">Impact <svg class="wef-caret" viewBox="0 0 24 24"
@@ -356,146 +361,6 @@
           </article>
 
           <!-- 2 -->
-          <article class="prow" style="--accent:#2C6E7A">
-            <div class="prow-media">
-              <img src="/content/uploads/wef/government-school-learning-center.jpg"
-                alt="A government school learning center in Upper Chitral" loading="lazy" />
-              <span class="prow-year">Launched 2024</span>
-            </div>
-            <div class="prow-body">
-              <span class="prow-cat">Early Childhood + Language</span>
-              <h3>Government School Learning Centers</h3>
-              <p class="prow-model">Integrating early childhood development with technology-assisted English language
-                labs inside government primary schools.</p>
-              <div class="pcols">
-                <div class="pcol">
-                  <h4>Where</h4>
-                  <ul>
-                    <li>Primary schools in Upper Chitral</li>
-                  </ul>
-                </div>
-                <div class="pcol">
-                  <h4>Who</h4>
-                  <ul>
-                    <li>Ages 3–5 (early childhood development)</li>
-                    <li>Ages 6–11 (English language lab)</li>
-                  </ul>
-                </div>
-                <div class="pcol">
-                  <h4>Impact</h4>
-                  <ul>
-                    <li>10 centers</li>
-                    <li>2,000 students</li>
-                    <li>10 teachers</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="pnotes">
-                <div class="pnotes-inner">
-                  <h4>Notes</h4>
-                  <ul>
-                    <li>Envisioning 600 more learning centers by 2035</li>
-                    <li class="invest">Projected investment ≈ US$2M (60 crore PKR)</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 3 -->
-          <article class="prow" style="--accent:#C6923E">
-            <div class="prow-media">
-              <img src="/content/uploads/wef/technology-assisted-classroom-learning.jpg"
-                alt="A technology-enabled classroom at a government model school" loading="lazy" />
-              <span class="prow-year">Launched 2025</span>
-            </div>
-            <div class="prow-body">
-              <span class="prow-cat">Model Schools</span>
-              <h3>Government Model Schools</h3>
-              <p class="prow-model">Transforming existing classrooms into modern, technology-enabled learning spaces.</p>
-              <div class="pcols">
-                <div class="pcol">
-                  <h4>Where</h4>
-                  <ul>
-                    <li>Primary schools in Upper Chitral, where our learning centers are already established</li>
-                  </ul>
-                </div>
-                <div class="pcol">
-                  <h4>Who</h4>
-                  <ul>
-                    <li>Children aged 6–11</li>
-                  </ul>
-                </div>
-                <div class="pcol">
-                  <h4>Impact</h4>
-                  <ul>
-                    <li>10 centers</li>
-                    <li>2,000 students</li>
-                    <li>25 teachers</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="pnotes">
-                <div class="pnotes-inner">
-                  <h4>Notes</h4>
-                  <ul>
-                    <li>Envisioning 600 more model schools by 2035</li>
-                    <li class="invest">Projected investment ≈ US$2M (60 crore PKR)</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 4 -->
-          <article class="prow" style="--accent:#B4553B">
-            <div class="prow-media">
-              <img src="/content/uploads/wef/in-school-language-lab.webp"
-                alt="Students in an in-school English language lab in Chitral" loading="lazy" />
-              <span class="prow-year">Launched 2021</span>
-            </div>
-            <div class="prow-body">
-              <span class="prow-cat">Language Labs</span>
-              <h3>In-School Language Labs</h3>
-              <p class="prow-model">A structured English learning environment that strengthens students' speaking and
-                listening through facilitated, technology-enabled instruction.</p>
-              <div class="pcols">
-                <div class="pcol">
-                  <h4>Where</h4>
-                  <ul>
-                    <li>Low-income private schools in Upper Chitral</li>
-                  </ul>
-                </div>
-                <div class="pcol">
-                  <h4>Who</h4>
-                  <ul>
-                    <li>Ages 6–16</li>
-                    <li>Primary &amp; secondary school students</li>
-                  </ul>
-                </div>
-                <div class="pcol">
-                  <h4>Impact</h4>
-                  <ul>
-                    <li>5 English language labs</li>
-                    <li>2,000+ students</li>
-                    <li>5 English language facilitators</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="pnotes">
-                <div class="pnotes-inner">
-                  <h4>Notes</h4>
-                  <ul>
-                    <li>WEF successfully transitioned ownership &amp; ongoing management in April 2026</li>
-                    <li>Continues to provide teacher training, English resources &amp; scholarships to underserved
-                      students</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 5 -->
           <article class="prow" style="--accent:#244B1B">
             <div class="prow-media">
               <img src="/content/uploads/wef/Emerging-technology-hub-min.png"
@@ -545,11 +410,11 @@
             </div>
           </article>
 
-          <!-- 6 -->
+          <!-- 3 -->
           <article class="prow" style="--accent:#6B7A33">
             <div class="prow-media">
-              <img src="/content/uploads/wef/herzing-university-scholars.png"
-                alt="Students in the Herzing Training &amp; Skills Development Program" loading="lazy" />
+              <img src="/content/uploads/wef/WhatsApp-Image-2017-05-02-at-3.03.09-PM-1064x669-1-1024x644.webp"
+                alt="The Herzing Training Center at the University of Chitral" loading="lazy" />
               <span class="prow-year">Launched 2026</span>
             </div>
             <div class="prow-body">
@@ -598,52 +463,7 @@
             </div>
           </article>
 
-          <!-- 7 -->
-          <article class="prow" style="--accent:#4F8C3D">
-            <div class="prow-media">
-              <img src="/content/uploads/wef/teacher-training-uoc-1400.webp"
-                alt="Teachers in a WEF training session at the University of Chitral" loading="lazy" />
-              <span class="prow-year">Launched 2026</span>
-            </div>
-            <div class="prow-body">
-              <span class="prow-cat">Teacher Training</span>
-              <h3>Teachers' Training Program</h3>
-              <p class="prow-model">Builds teachers' capacity to improve learning outcomes.</p>
-              <div class="pcols">
-                <div class="pcol">
-                  <h4>Where</h4>
-                  <ul>
-                    <li>Low-income private schools in Upper Chitral</li>
-                  </ul>
-                </div>
-                <div class="pcol">
-                  <h4>Who</h4>
-                  <ul>
-                    <li>ECD practitioners</li>
-                    <li>Primary school teachers</li>
-                  </ul>
-                </div>
-                <div class="pcol">
-                  <h4>Impact</h4>
-                  <ul>
-                    <li>5 schools</li>
-                    <li>115 students</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="pnotes">
-                <div class="pnotes-inner">
-                  <h4>Notes</h4>
-                  <ul>
-                    <li>Student numbers &amp; investment increase every year</li>
-                    <li class="invest">Invested to date ≈ US$7,000 (6.29 lakh PKR)</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 8 — both scholarship tracks live here, each one expandable -->
+          <!-- 4 — both scholarship tracks live here, each one expandable -->
           <article class="prow" style="--accent:#8A5A2B">
             <div class="prow-media">
               <img src="/content/uploads/wef/academic-scholarships-program.jpeg"
@@ -745,6 +565,191 @@
             </div>
           </article>
 
+          <!-- 5 -->
+          <article class="prow" style="--accent:#2C6E7A">
+            <div class="prow-media">
+              <img src="/content/uploads/wef/government-school-learning-center.jpg"
+                alt="A government school learning center in Upper Chitral" loading="lazy" />
+              <span class="prow-year">Launched 2024</span>
+            </div>
+            <div class="prow-body">
+              <span class="prow-cat">Early Childhood + Language</span>
+              <h3>Government School Learning Centers</h3>
+              <p class="prow-model">Integrating early childhood development with technology-assisted English language
+                labs inside government primary schools.</p>
+              <div class="pcols">
+                <div class="pcol">
+                  <h4>Where</h4>
+                  <ul>
+                    <li>Primary schools in Upper Chitral</li>
+                  </ul>
+                </div>
+                <div class="pcol">
+                  <h4>Who</h4>
+                  <ul>
+                    <li>Ages 3–5 (early childhood development)</li>
+                    <li>Ages 6–11 (English language lab)</li>
+                  </ul>
+                </div>
+                <div class="pcol">
+                  <h4>Impact</h4>
+                  <ul>
+                    <li>10 centers</li>
+                    <li>2,000 students</li>
+                    <li>10 teachers</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="pnotes">
+                <div class="pnotes-inner">
+                  <h4>Notes</h4>
+                  <ul>
+                    <li>Envisioning 600 more learning centers by 2035</li>
+                    <li class="invest">Projected investment ≈ US$2M (60 crore PKR)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6 -->
+          <article class="prow" style="--accent:#C6923E">
+            <div class="prow-media">
+              <img src="/content/uploads/wef/technology-assisted-classroom-learning.jpg"
+                alt="A technology-enabled classroom at a government model school" loading="lazy" />
+              <span class="prow-year">Launched 2025</span>
+            </div>
+            <div class="prow-body">
+              <span class="prow-cat">Model Schools</span>
+              <h3>Government Model Schools</h3>
+              <p class="prow-model">Transforming existing classrooms into modern, technology-enabled learning spaces.</p>
+              <div class="pcols">
+                <div class="pcol">
+                  <h4>Where</h4>
+                  <ul>
+                    <li>Primary schools in Upper Chitral, where our learning centers are already established</li>
+                  </ul>
+                </div>
+                <div class="pcol">
+                  <h4>Who</h4>
+                  <ul>
+                    <li>Children aged 6–11</li>
+                  </ul>
+                </div>
+                <div class="pcol">
+                  <h4>Impact</h4>
+                  <ul>
+                    <li>10 centers</li>
+                    <li>2,000 students</li>
+                    <li>25 teachers</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="pnotes">
+                <div class="pnotes-inner">
+                  <h4>Notes</h4>
+                  <ul>
+                    <li>Envisioning 600 more model schools by 2035</li>
+                    <li class="invest">Projected investment ≈ US$2M (60 crore PKR)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7 -->
+          <article class="prow" style="--accent:#B4553B">
+            <div class="prow-media">
+              <img src="/content/uploads/wef/in-school-language-lab.webp"
+                alt="Students in an in-school English language lab in Chitral" loading="lazy" />
+              <span class="prow-year">Launched 2021</span>
+            </div>
+            <div class="prow-body">
+              <span class="prow-cat">Language Labs</span>
+              <h3>In-School Language Labs</h3>
+              <p class="prow-model">A structured English learning environment that strengthens students' speaking and
+                listening through facilitated, technology-enabled instruction.</p>
+              <div class="pcols">
+                <div class="pcol">
+                  <h4>Where</h4>
+                  <ul>
+                    <li>Low-income private schools in Upper Chitral</li>
+                  </ul>
+                </div>
+                <div class="pcol">
+                  <h4>Who</h4>
+                  <ul>
+                    <li>Ages 6–16</li>
+                    <li>Primary &amp; secondary school students</li>
+                  </ul>
+                </div>
+                <div class="pcol">
+                  <h4>Impact</h4>
+                  <ul>
+                    <li>5 English language labs</li>
+                    <li>2,000+ students</li>
+                    <li>5 English language facilitators</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="pnotes">
+                <div class="pnotes-inner">
+                  <h4>Notes</h4>
+                  <ul>
+                    <li>WEF successfully transitioned ownership &amp; ongoing management in April 2026</li>
+                    <li>Continues to provide teacher training, English resources &amp; scholarships to underserved
+                      students</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8 -->
+          <article class="prow" style="--accent:#4F8C3D">
+            <div class="prow-media">
+              <img src="/content/uploads/wef/teacher-training-uoc-1400.webp"
+                alt="Teachers in a WEF training session at the University of Chitral" loading="lazy" />
+              <span class="prow-year">Launched 2026</span>
+            </div>
+            <div class="prow-body">
+              <span class="prow-cat">Teacher Training</span>
+              <h3>Teachers' Training Program</h3>
+              <p class="prow-model">Builds teachers' capacity to improve learning outcomes.</p>
+              <div class="pcols">
+                <div class="pcol">
+                  <h4>Where</h4>
+                  <ul>
+                    <li>Low-income private schools in Upper Chitral</li>
+                  </ul>
+                </div>
+                <div class="pcol">
+                  <h4>Who</h4>
+                  <ul>
+                    <li>ECD practitioners</li>
+                    <li>Primary school teachers</li>
+                  </ul>
+                </div>
+                <div class="pcol">
+                  <h4>Impact</h4>
+                  <ul>
+                    <li>5 schools</li>
+                    <li>115 students</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="pnotes">
+                <div class="pnotes-inner">
+                  <h4>Notes</h4>
+                  <ul>
+                    <li>Student numbers &amp; investment increase every year</li>
+                    <li class="invest">Invested to date ≈ US$7,000 (6.29 lakh PKR)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -821,7 +826,7 @@
           <h4>Explore</h4>
           <ul>
             <li><a href="/team/index">Our Team</a></li>
-            <li><a href="/pages/about">Our Mission</a></li>
+            <li><a href="/pages/mission">Our Mission</a></li>
             <li><a href="/pages/gallery">Gallery</a></li>
             <li><a href="/pages/centers">Learning Centers Map</a></li>
           </ul>
