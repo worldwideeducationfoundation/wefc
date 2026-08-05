@@ -1,18 +1,11 @@
 {
+  "version": 2,
   "cleanUrls": true,
   "trailingSlash": true,
   "framework": "vite",
   "rewrites": [
     { "source": "/blog/category/:slug", "destination": "/blog/category.html" },
     { "source": "/blog/category/:slug/", "destination": "/blog/category.html" },
-    { "source": "/blog/list", "destination": "/blog/list.html" },
-    { "source": "/blog/list/", "destination": "/blog/list.html" },
-    { "source": "/blog/standard", "destination": "/blog/standard.html" },
-    { "source": "/blog/standard/", "destination": "/blog/standard.html" },
-    { "source": "/blog", "destination": "/blog/index.html" },
-    { "source": "/blog/", "destination": "/blog/index.html" },
-    { "source": "/blog/index", "destination": "/blog/index.html" },
-    { "source": "/blog/index/", "destination": "/blog/index.html" },
     { "source": "/blog/:slug", "destination": "/blog/post.html" },
     { "source": "/blog/:slug/", "destination": "/blog/post.html" }
   ],
