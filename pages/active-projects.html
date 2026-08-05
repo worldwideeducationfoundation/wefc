@@ -4,12 +4,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Our Learning Centers — Worldwide Education Fund</title>
+  <title>Active Projects — Worldwide Education Fund</title>
   <meta name="description"
-    content="A live map of every Worldwide Education Fund learning center across Chitral, Pakistan. Filter by funding partner to see exactly where your support goes and the children it reaches." />
-  <meta property="og:title" content="See Where Your Support Goes — WEF Learning Centers" />
+    content="The programs Worldwide Education Fund is running right now across Chitral, Pakistan and Central Asia — from early childhood centers to research hubs and training programs." />
+  <meta property="og:title" content="Active Projects — Worldwide Education Fund" />
   <meta property="og:description"
-    content="Every WEF learning center in Chitral, Pakistan, plotted on the map. Filter by funding partner and explore the reach of your gift." />
+    content="See what WEF is building right now — and the community it reaches — in each active project." />
   <meta property="og:image" content="/content/uploads/wef/logo-social-share.png" />
   <meta property="og:type" content="website" />
   <link href="/content/uploads/wef/favico.png" rel="icon" />
@@ -19,10 +19,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Jost:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <link href="/content/themes/donexa/assets/css/wef-chrome.css?v=9" rel="stylesheet" />
-  <link href="/content/themes/donexa/assets/css/wef-centers.css?v=9" rel="stylesheet" />
   <style>
     :root {
       --display: "Fraunces", Georgia, serif;
@@ -30,82 +27,65 @@
     }
 
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: var(--sans); color: var(--ink-900); background: var(--cream); -webkit-font-smoothing: antialiased; }
-    .cx { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+    body { margin: 0; font-family: var(--sans); color: var(--ink-900); background: var(--cream); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; letter-spacing: -.01em; line-height: 1.12; margin: 0; }
+    .cx { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+    .eyebrow { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .15em; font-size: .74rem; color: var(--pine-ink); margin: 0 0 16px; }
 
-    /* Hero band */
-    .centers-hero {
-      background: linear-gradient(150deg, var(--pine-800) 0%, var(--pine-700) 45%, var(--leaf-600) 100%);
-      color: var(--forest-900); position: relative; overflow: hidden;
-      padding: calc(var(--header-h) + 40px) 0 60px;
-    }
-    .centers-hero::before {
-      content: ""; position: absolute; top: -160px; right: -120px; width: 520px; height: 520px;
-      background: radial-gradient(circle, rgba(160, 228, 139, .38), transparent 70%); pointer-events: none;
-    }
-    .centers-hero::after {
-      content: ""; position: absolute; left: -140px; bottom: -180px; width: 460px; height: 460px;
-      background: radial-gradient(circle, rgba(255, 255, 255, .06), transparent 70%); pointer-events: none;
-    }
-    .centers-hero .cx { position: relative; z-index: 1; }
-    .centers-eyebrow {
-      display: inline-flex; align-items: center; gap: 9px; font-weight: 700; text-transform: uppercase;
-      letter-spacing: .16em; font-size: .74rem; color: var(--sage-200); margin: 0 0 18px;
-    }
-    .centers-eyebrow svg { width: 16px; height: 16px; }
-    .centers-hero h1 {
-      font-family: var(--display); font-weight: 500; letter-spacing: -.01em; line-height: 1.08;
-      font-size: clamp(2.3rem, 4.4vw, 3.7rem); margin: 0 0 20px; max-width: 15ch;
-    }
-    .centers-hero h1 em { font-style: italic; color: var(--forest-900); }
-    .centers-hero .lead {
-      font-size: clamp(1.05rem, 1.5vw, 1.24rem); line-height: 1.6; color: rgba(23, 50, 16, .88);
-      max-width: 60ch; margin: 0;
-    }
+    /* ---- Hero ---- */
+    .ap-hero { position: relative; overflow: hidden; color: var(--forest-900); background: linear-gradient(152deg, var(--pine-800) 0%, var(--pine-700) 46%, var(--leaf-600) 100%); padding: calc(var(--header-h) + 44px) 0 62px; }
+    .ap-orb1 { position: absolute; top: -170px; right: -120px; width: 540px; height: 540px; background: radial-gradient(circle, rgba(255, 255, 255, .4), transparent 70%); pointer-events: none; }
+    .ap-orb2 { position: absolute; left: -150px; bottom: -190px; width: 480px; height: 480px; background: radial-gradient(circle, rgba(255, 255, 255, .1), transparent 70%); pointer-events: none; }
+    .ap-hero-inner { position: relative; z-index: 1; max-width: 720px; }
+    .ap-hero .eyebrow { color: var(--forest-900); }
+    .ap-hero h1 { color: var(--forest-900); font-size: clamp(2.4rem, 4.8vw, 4rem); margin: 0 0 20px; }
+    .ap-hero p { font-size: clamp(1.05rem, 1.5vw, 1.22rem); line-height: 1.62; color: rgba(23, 50, 16, .88); max-width: 60ch; margin: 0; }
 
-    .centers-stats {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 40px;
-      border: 1px solid rgba(23, 50, 16, .22); border-radius: 18px; overflow: hidden;
-      background: rgba(255, 255, 255, .38); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
-    }
-    .centers-stat { padding: 22px 24px; border-right: 1px solid rgba(23, 50, 16, .18); }
-    .centers-stat:last-child { border-right: 0; }
-    .centers-stat .n {
-      font-family: var(--display); font-weight: 600; font-size: clamp(1.9rem, 3vw, 2.6rem);
-      line-height: 1; color: var(--forest-900);
-    }
-    .centers-stat .n .u { color: var(--forest-900); font-size: .55em; vertical-align: super; margin-left: 1px; }
-    .centers-stat .l { margin-top: 8px; font-size: .84rem; color: rgba(23, 50, 16, .78); line-height: 1.35; }
-    @media (max-width: 760px) {
-      .centers-stats { grid-template-columns: 1fr 1fr; }
-      .centers-stat:nth-child(2) { border-right: 0; }
-      .centers-stat:nth-child(1), .centers-stat:nth-child(2) { border-bottom: 1px solid rgba(255, 255, 255, .14); }
-    }
+    /* ---- Section ---- */
+    .ap-section { padding: var(--sec-y) 0; }
+    .ap-head { max-width: 640px; margin: 0 0 40px; }
+    .ap-head h2 { font-size: clamp(1.9rem, 3.4vw, 2.7rem); color: var(--ink-900); margin: 0 0 12px; }
+    .ap-head p { font-size: 1.08rem; line-height: 1.6; color: var(--ink-600); margin: 0; }
 
-    /* Map section */
-    .centers-body { padding: var(--sec-y) 0; }
-    .centers-intro { max-width: 640px; margin: 0 0 30px; }
-    .centers-intro h2 { font-family: var(--display); font-weight: 500; font-size: clamp(1.7rem, 3vw, 2.4rem); margin: 0 0 12px; color: var(--ink-900); }
-    .centers-intro p { font-size: 1.1rem; line-height: 1.65; color: var(--ink-600); margin: 0; }
+    /* ---- Grid ---- */
+    .ap-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 26px; }
+    .ap-card { display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(20, 20, 10, .05); transition: transform .25s ease, box-shadow .25s ease; }
+    .ap-card:hover { transform: translateY(-4px); box-shadow: 0 22px 50px rgba(20, 20, 10, .12); }
+    .ap-card-media { aspect-ratio: 16 / 11; overflow: hidden; background: var(--sage-50); position: relative; }
+    .ap-card-media::after { content: ""; position: absolute; inset: 0; background: var(--pine-700); mix-blend-mode: multiply; opacity: .05; }
+    .ap-card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .ap-card:hover .ap-card-media img { transform: scale(1.05); }
+    .ap-card-body { padding: 24px 24px 26px; display: flex; flex-direction: column; flex-grow: 1; }
+    .ap-card-body h3 { font-size: 1.22rem; color: var(--ink-900); margin: 0 0 10px; line-height: 1.24; }
+    .ap-card-body p { font-size: .95rem; line-height: 1.58; color: var(--ink-600); margin: 0 0 18px; flex-grow: 1; }
+    .ap-card-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: .88rem; color: var(--pine-ink); margin-top: auto; transition: gap .18s ease; }
+    .ap-card-link svg { width: 16px; height: 16px; flex-shrink: 0; }
+    .ap-card:hover .ap-card-link { gap: 12px; }
 
-    .centers-note {
-      margin-top: 20px; font-size: .82rem; color: var(--ink-600); line-height: 1.6;
-      display: flex; gap: 9px; align-items: flex-start; max-width: 720px;
-    }
-    .centers-note svg { width: 16px; height: 16px; color: var(--pine-ink); flex-shrink: 0; margin-top: 2px; }
+    /* ---- Loading / empty state ---- */
+    .ap-loader { display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 60px 20px; color: var(--ink-600); }
+    .ap-spin { width: 34px; height: 34px; border-radius: 50%; border: 3px solid var(--sage-50); border-top-color: var(--pine-700); animation: ap-spin 0.8s linear infinite; }
+    @keyframes ap-spin { to { transform: rotate(360deg); } }
+    .ap-empty { text-align: center; padding: 60px 20px; border: 2px dashed var(--line); border-radius: 20px; background: var(--paper); }
+    .ap-empty h3 { font-size: 1.3rem; color: var(--ink-900); margin: 0 0 8px; }
+    .ap-empty p { color: var(--ink-600); margin: 0; }
 
-    /* Closing CTA */
-    .centers-cta { background: var(--sage-50); border-top: 1px solid var(--line); padding: var(--sec-y) 0; }
-    .centers-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
-    .centers-cta h2 { font-family: var(--display); font-weight: 500; font-size: clamp(1.7rem, 3vw, 2.4rem); margin: 0 0 10px; color: var(--ink-900); max-width: 20ch; }
-    .centers-cta p { font-size: 1.08rem; color: var(--ink-600); margin: 0; max-width: 48ch; line-height: 1.6; }
-    .centers-cta-btn {
-      display: inline-flex; align-items: center; gap: 10px; background: var(--pine-700); color: var(--ink-900);
-      font-weight: 600; font-size: 1rem; border-radius: 100px; padding: 16px 32px; white-space: nowrap;
-      box-shadow: 0 12px 30px rgba(36, 75, 27, .26); transition: transform .2s ease, background .2s ease;
-    }
-    .centers-cta-btn:hover { background: var(--forest-800); transform: translateY(-2px); }
-    .centers-cta-btn svg { width: 18px; height: 18px; }
+    /* ---- CTA ---- */
+    .ap-cta { background: var(--pine-700); color: var(--forest-900); padding: var(--sec-y-sm) 0; position: relative; overflow: hidden; }
+    .ap-cta::before { content: ""; position: absolute; right: -120px; top: -120px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(160, 228, 139, .4), transparent 70%); pointer-events: none; }
+    .ap-cta-inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
+    .ap-cta h2 { color: var(--forest-900); font-size: clamp(1.6rem, 2.8vw, 2.3rem); margin: 0 0 8px; }
+    .ap-cta p { color: rgba(23, 50, 16, .85); font-size: 1.05rem; margin: 0; }
+    .ap-cta-actions { display: flex; gap: 13px; flex-wrap: wrap; }
+    .ap-btn-solid, .ap-btn-line { display: inline-flex; align-items: center; gap: 9px; font-weight: 600; font-size: 1rem; border-radius: 100px; padding: 14px 28px; transition: transform .2s ease, background .2s ease; white-space: nowrap; }
+    .ap-btn-solid { background: var(--forest-900); color: #fff; }
+    .ap-btn-solid:hover { background: var(--cream); color: var(--forest-900); transform: translateY(-2px); }
+    .ap-btn-line { border: 1.5px solid rgba(23, 50, 16, .3); color: var(--forest-900); }
+    .ap-btn-line:hover { background: rgba(255, 255, 255, .42); border-color: var(--forest-900); transform: translateY(-2px); }
+
+    @media (prefers-reduced-motion: reduce) { .ap-card, .ap-card-media img, .ap-btn-solid, .ap-btn-line, .ap-card-link, .ap-spin { transition: none; animation: none; } }
   </style>
 </head>
 
@@ -164,102 +144,52 @@
 
   <main>
     <!-- ===================== HERO ===================== -->
-    <section class="centers-hero">
-      <div class="cx">
-        <p class="centers-eyebrow">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 2 4 5v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V5l-8-3z" />
-            <path d="M9 12l2 2 4-4" />
-          </svg>
-          Transparency you can see
-        </p>
-        <h1>See exactly where your <em>support</em> goes</h1>
-        <p class="lead">Every learning center we run across Chitral, Pakistan — plotted on one map. Filter by funding
-          partner to find the centers your gift made possible, and tap any point to see the community it serves.</p>
-
-        <div class="centers-stats">
-          <div class="centers-stat">
-            <div class="n">88</div>
-            <div class="l">Learning centers mapped</div>
-          </div>
-          <div class="centers-stat">
-            <div class="n">1,232<span class="u">+</span></div>
-            <div class="l">Children enrolled at reporting centers</div>
-          </div>
-          <div class="centers-stat">
-            <div class="n">17</div>
-            <div class="l">Funding partners &amp; sponsors</div>
-          </div>
-          <div class="centers-stat">
-            <div class="n">2</div>
-            <div class="l">Regions — Upper &amp; Lower Chitral</div>
-          </div>
-        </div>
+    <section class="ap-hero">
+      <span class="ap-orb1"></span><span class="ap-orb2"></span>
+      <div class="cx ap-hero-inner">
+        <p class="eyebrow">What We Do</p>
+        <h1>Our active projects</h1>
+        <p>These are the programs WEF is running right now — from early childhood learning centers to research hubs
+          and training programs across Chitral, Pakistan and Central Asia. Open any project to see who it reaches
+          and how you can support it.</p>
       </div>
     </section>
 
-    <!-- ===================== MAP ===================== -->
-    <section class="centers-body">
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="ap-section">
       <div class="cx">
-        <div class="centers-intro">
-          <h2>Explore our centers network</h2>
-          <p>By default the map shows all of our active learning centers. Use the filter to isolate a single funding
-            partner, tap the keys in the legend to focus on a type of center, and click any marker for its details.</p>
+        <div class="ap-head">
+          <p class="eyebrow">Active Projects</p>
+          <h2>Pathways currently underway</h2>
+          <p>Every project below is live today. Click through for the full story, the community it serves, and how
+            to give directly toward it.</p>
         </div>
 
-        <div class="wef-centers" data-wef-centers>
-          <div class="wef-centers-controls">
-            <div class="wef-centers-count">
-              <span class="wef-count-num" data-count>0</span>
-              <span class="wef-count-total"><span data-count-label>centers</span> shown</span>
-            </div>
-            <label class="wef-centers-field">
-              <span>Find your centers — filter by funding partner</span>
-              <span class="wef-select-wrap">
-                <select data-sponsor aria-label="Filter centers by funding partner">
-                  <option value="">All funding partners</option>
-                </select>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" aria-hidden="true">
-                  <path d="M6 9l6 6 6-6" />
-                </svg>
-              </span>
-            </label>
-          </div>
-          <div class="wef-centers-mapwrap">
-            <div class="wef-centers-map" data-map tabindex="0" role="application"
-              aria-label="Interactive map of WEF learning centers in Chitral, Pakistan"></div>
-            <div class="wef-centers-legend" data-legend aria-label="Center types"></div>
-          </div>
+        <div class="ap-loader" id="ap-loader">
+          <span class="ap-spin" aria-hidden="true"></span>
+          <span>Loading active projects…</span>
         </div>
 
-        <p class="centers-note">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="10" />
-            <path d="M12 16v-4M12 8h.01" />
-          </svg>
-          <span>Center locations are drawn from our own program records for Chitral, Pakistan. A small number of centers
-            still being surveyed are not yet plotted. Scroll to zoom once the map is focused, or use the + / − controls.</span>
-        </p>
+        <div class="ap-empty" id="ap-empty" hidden>
+          <h3 data-empty-title>No active projects listed yet</h3>
+          <p data-empty-desc>Check back soon — we're adding projects to this page as they launch.</p>
+        </div>
+
+        <div class="ap-grid" id="ap-grid"></div>
       </div>
     </section>
 
-    <!-- ===================== CLOSING CTA ===================== -->
-    <section class="centers-cta">
-      <div class="cx centers-cta-inner">
+    <!-- ===================== CTA ===================== -->
+    <section class="ap-cta">
+      <div class="cx ap-cta-inner">
         <div>
-          <h2>Put your name on the map</h2>
-          <p>Sponsor a learning center and you'll see it appear here — reaching real children in a named village, every
-            year it stays open.</p>
+          <h2>Want to help move one of these forward?</h2>
+          <p>Give directly, or get in touch to learn how you can support a specific project.</p>
         </div>
-        <a class="centers-cta-btn"
-          href="https://www.zeffy.com/en-US/donation-form/donate-now-to-support-education-for-underprivileged-children"
-          rel="noopener" target="_blank">Sponsor a center
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 21s-8-5.3-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.7-8 11-8 11z" />
-          </svg></a>
+        <div class="ap-cta-actions">
+          <a class="ap-btn-solid" href="https://www.zeffy.com/en-US/donation-form/donate-now-to-support-education-for-underprivileged-children" rel="noopener" target="_blank">Support our work</a>
+          <a class="ap-btn-line" href="/pages/contact">Get in touch</a>
+        </div>
       </div>
     </section>
   </main>
@@ -340,11 +270,8 @@
     </div>
   </footer>
 
+  <script src="/lib/active-projects-loader.js" type="module"></script>
   <script src="/content/themes/donexa/assets/js/wef-chrome.js?v=9" defer></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="/content/maps/centers-data.js?v=3"></script>
-  <script src="/content/themes/donexa/assets/js/wef-centers.js?v=9" defer></script>
 </body>
 
 </html>
