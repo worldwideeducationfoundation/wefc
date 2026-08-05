@@ -83,7 +83,10 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.01em;lin
    tied to viewport WIDTH (58vw) rather than being a flat number, so the frame
    keeps roughly a 1.7:1 shape as the screen widens instead of stretching to
    2.4:1 and cropping the tops and bottoms off 3:2 photos. */
-.hero{position:relative;background:var(--pine-700)}
+/* padding-top pushes the photo down to start exactly where the fixed
+   header ends — without it the header (position:fixed) sits on top of
+   whatever's at the very top of the photo, which is usually faces. */
+.hero{position:relative;background:var(--pine-700);padding-top:var(--header-h)}
 .hero-media{position:relative;width:100%;height:min(86svh,58vw);min-height:430px;overflow:hidden}
 .hero-carousel{position:absolute;inset:0;overflow:hidden}
 .hero-slide{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 1.1s ease}
