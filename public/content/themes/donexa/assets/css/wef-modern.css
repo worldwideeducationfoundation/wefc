@@ -8,14 +8,15 @@
    ========================================================================== */
 
 :root {
-  /* Brand palette — green-only accent system (no red/terracotta), deepened
-     from the Elementor kit's primary green for better contrast and fewer
-     near-duplicate shades across the site. */
-  --wef-green: #2F6B45;
-  --wef-green-dark: #1F4A31;
-  --wef-terracotta: #2F6B45;
-  --wef-terracotta-dark: #1F4A31;
-  --wef-terracotta-tint: #E3EEE6;
+  /* Brand palette — green-only accent system (no red/terracotta), built on the
+     brand green #61AF54. Every other green on the site is a lighter or darker
+     step of that same hue so no near-duplicate shades creep back in.
+     -dark is one step down, reserved for hover/pressed states. */
+  --wef-green: #61AF54;
+  --wef-green-dark: #4E8F43;
+  --wef-terracotta: #61AF54;
+  --wef-terracotta-dark: #4E8F43;
+  --wef-terracotta-tint: #E4F2E1;
   --wef-ink: #1E1E1E;
   --wef-body: #524F47;
   --wef-muted: #8A8779;
@@ -124,7 +125,7 @@
    -------------------------------------------------------------------------- */
 .pt-breadcrumb-style-1::before {
   opacity: 1 !important;
-  background: linear-gradient(135deg, rgba(31, 74, 49, 0.88), rgba(47, 107, 69, 0.78)) !important;
+  background: linear-gradient(135deg, rgba(42, 82, 35, 0.88), rgba(97, 175, 84, 0.78)) !important;
 }
 
 .pt-breadcrumb-style-1 .pt-breadcrumb-title h1 {

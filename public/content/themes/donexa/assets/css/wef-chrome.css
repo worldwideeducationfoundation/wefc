@@ -4,12 +4,14 @@
    Loaded on the bespoke homepage and injected into all legacy theme pages.
    ========================================================================== */
 :root {
-  --forest-900: #14331F;
-  --forest-800: #1F4A31;
-  --pine-700: #2F6B45;
-  --leaf-600: #3E8B5A;
-  --sage-200: #CFE2D3;
-  --sage-50: #EAF2EC;
+  --forest-900: #1B3616;
+  --forest-800: #2A5223;
+  /* One step below the brand green — hover/pressed state for green fills. */
+  --pine-800: #4E8F43;
+  --pine-700: #61AF54;
+  --leaf-600: #82C775;
+  --sage-200: #C6E1C1;
+  --sage-50: #ECF5EA;
   --cream: #F7F3EA;
   --paper: #FFFDF8;
   --ink-900: #23201A;
@@ -69,7 +71,7 @@
   position: fixed;
   left: 0;
   right: 0;
-  background: rgba(20, 51, 31, .34);
+  background: rgba(27, 54, 22, .34);
   -webkit-backdrop-filter: blur(16px) saturate(1.4);
   backdrop-filter: blur(16px) saturate(1.4);
   border-bottom-color: rgba(255, 255, 255, .13);
@@ -180,7 +182,7 @@
 }
 
 .wef-navlink:hover {
-  background: rgba(47, 107, 69, .09)
+  background: rgba(97, 175, 84, .09)
 }
 
 .wef-header--overlay:not(.wef-scrolled) .wef-navlink:hover {
@@ -255,7 +257,7 @@
 .wef-btn-donate {
   background: var(--pine-700);
   color: #fff;
-  box-shadow: 0 8px 22px rgba(31, 74, 49, .26);
+  box-shadow: 0 8px 22px rgba(42, 82, 35, .26);
   margin-left: 14px
 }
 

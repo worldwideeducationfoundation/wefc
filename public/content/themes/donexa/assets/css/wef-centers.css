@@ -41,7 +41,7 @@
   padding:12px 40px 12px 16px;cursor:pointer;transition:border-color .2s ease,box-shadow .2s ease;
 }
 .wef-centers-field select:hover{border-color:var(--sage-200)}
-.wef-centers-field select:focus{outline:none;border-color:var(--pine-700);box-shadow:0 0 0 3px rgba(47,107,69,.15)}
+.wef-centers-field select:focus{outline:none;border-color:var(--pine-700);box-shadow:0 0 0 3px rgba(97,175,84,.15)}
 
 /* ---- Map frame ---- */
 .wef-centers-mapwrap{
