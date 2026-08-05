@@ -19,7 +19,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Jost:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link href="/content/themes/donexa/assets/css/wef-chrome.css?v=5" rel="stylesheet" />
+  <link href="/content/themes/donexa/assets/css/wef-chrome.css?v=6" rel="stylesheet" />
   <style>
     :root {
       --display: "Fraunces", Georgia, serif;
@@ -32,20 +32,20 @@
     a { color: inherit; }
     h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; letter-spacing: -.01em; line-height: 1.12; margin: 0; }
     .cx { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
-    .eyebrow { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .15em; font-size: .74rem; color: var(--pine-700); margin: 0 0 16px; }
+    .eyebrow { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .15em; font-size: .74rem; color: var(--pine-ink); margin: 0 0 16px; }
 
     /* ---- Hero ---- */
     .mhero {
       position: relative; overflow: hidden; color: #fff;
-      background: linear-gradient(152deg, var(--forest-900) 0%, var(--forest-800) 48%, var(--pine-700) 100%);
+      background: linear-gradient(152deg, var(--forest-900) 0%, var(--forest-800) 48%, var(--pine-ink) 100%);
       padding: calc(var(--header-h) + 44px) 0 66px;
     }
-    .mhero-orb1 { position: absolute; top: -170px; right: -120px; width: 540px; height: 540px; background: radial-gradient(circle, rgba(130, 199, 117, .4), transparent 70%); pointer-events: none; }
+    .mhero-orb1 { position: absolute; top: -170px; right: -120px; width: 540px; height: 540px; background: radial-gradient(circle, rgba(160, 228, 139, .4), transparent 70%); pointer-events: none; }
     .mhero-orb2 { position: absolute; left: -150px; bottom: -190px; width: 480px; height: 480px; background: radial-gradient(circle, rgba(255, 255, 255, .06), transparent 70%); pointer-events: none; }
     .mhero-inner { position: relative; z-index: 1; max-width: 720px; }
     .mhero .eyebrow { color: var(--sage-200); }
     .mhero .tag { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-style: italic; font-size: 1.05rem; color: var(--sage-200); margin: 0 0 14px; }
-    .mhero .tag::before, .mhero .tag::after { content: ""; width: 26px; height: 1px; background: rgba(198, 225, 193, .5); }
+    .mhero .tag::before, .mhero .tag::after { content: ""; width: 26px; height: 1px; background: rgba(210, 237, 201, .5); }
     .mhero h1 { color: #fff; font-size: clamp(2.4rem, 4.8vw, 4rem); margin: 0 0 22px; max-width: 16ch; }
     .mhero h1 em { font-style: italic; color: var(--sage-200); }
     .mhero p { font-size: clamp(1.06rem, 1.5vw, 1.24rem); line-height: 1.62; color: rgba(255, 255, 255, .88); max-width: 60ch; margin: 0; }
@@ -58,14 +58,14 @@
     .vmb-card:nth-child(2)::before { background: var(--wheat); }
     .vmb-card:nth-child(3)::before { background: var(--leaf-600); }
     .vmb-ic { width: 50px; height: 50px; border-radius: 14px; background: var(--sage-50); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-    .vmb-ic svg { width: 26px; height: 26px; color: var(--pine-700); }
+    .vmb-ic svg { width: 26px; height: 26px; color: var(--pine-ink); }
     .vmb-card h2 { font-size: 1.5rem; margin: 0 0 12px; color: var(--ink-900); }
     .vmb-card p { font-size: 1.02rem; line-height: 1.66; color: var(--ink-600); margin: 0; }
     @media (max-width: 900px) { .vmb-grid { grid-template-columns: 1fr; } }
 
     /* ---- At a glance ---- */
     .glance { padding: var(--sec-y-sm) 0; background: var(--forest-800); color: #fff; position: relative; overflow: hidden; }
-    .glance::before { content: ""; position: absolute; top: -140px; right: -100px; width: 440px; height: 440px; background: radial-gradient(circle, rgba(130, 199, 117, .38), transparent 70%); pointer-events: none; }
+    .glance::before { content: ""; position: absolute; top: -140px; right: -100px; width: 440px; height: 440px; background: radial-gradient(circle, rgba(160, 228, 139, .38), transparent 70%); pointer-events: none; }
     .glance .cx { position: relative; z-index: 1; }
     .glance-head { text-align: center; max-width: 640px; margin: 0 auto 40px; }
     .glance-head .eyebrow { color: var(--sage-200); }
@@ -140,7 +140,7 @@
 
     /* ---- Transparency callout ---- */
     .transp { padding: var(--sec-y) 0; background: var(--paper); border-top: 1px solid var(--line); }
-    .transp-card { background: linear-gradient(150deg, var(--forest-800), var(--pine-700)); color: #fff; border-radius: 24px; padding: clamp(34px, 5vw, 52px); position: relative; overflow: hidden; }
+    .transp-card { background: linear-gradient(150deg, var(--forest-800), var(--pine-ink)); color: #fff; border-radius: 24px; padding: clamp(34px, 5vw, 52px); position: relative; overflow: hidden; }
     .transp-card::before { content: ""; position: absolute; right: -120px; bottom: -140px; width: 420px; height: 420px; background: radial-gradient(circle, rgba(255, 255, 255, .08), transparent 70%); pointer-events: none; }
     .transp-inner { position: relative; z-index: 1; max-width: 760px; }
     .transp .badge { display: inline-flex; align-items: center; gap: 9px; background: rgba(255, 255, 255, .12); border: 1px solid rgba(255, 255, 255, .2); border-radius: 100px; padding: 8px 16px; font-weight: 600; font-size: .8rem; margin-bottom: 20px; }
@@ -309,7 +309,7 @@
         <div class="prows">
 
           <!-- 1 -->
-          <article class="prow" style="--accent:#61AF54">
+          <article class="prow" style="--accent:#3C762E">
             <div class="prow-media">
               <img src="/content/uploads/wef/eclc-classroom-1400.webp"
                 alt="Children at an Early Childhood Learning Center in Chitral" loading="lazy" />
@@ -496,7 +496,7 @@
           </article>
 
           <!-- 5 -->
-          <article class="prow" style="--accent:#2A5223">
+          <article class="prow" style="--accent:#244B1B">
             <div class="prow-media">
               <img src="/content/uploads/wef/Emerging-technology-hub-min.png"
                 alt="The Herzing–Daya Research &amp; Learning Hub at the University of Chitral" loading="lazy" />
@@ -599,7 +599,7 @@
           </article>
 
           <!-- 7 -->
-          <article class="prow" style="--accent:#82C775">
+          <article class="prow" style="--accent:#4F8C3D">
             <div class="prow-media">
               <img src="/content/uploads/wef/teacher-training-uoc-1400.webp"
                 alt="Teachers in a WEF training session at the University of Chitral" loading="lazy" />
@@ -860,7 +860,7 @@
     </div>
   </footer>
 
-  <script src="/content/themes/donexa/assets/js/wef-chrome.js?v=5" defer></script>
+  <script src="/content/themes/donexa/assets/js/wef-chrome.js?v=6" defer></script>
 </body>
 
 </html>

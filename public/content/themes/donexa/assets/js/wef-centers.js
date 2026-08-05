@@ -113,7 +113,7 @@
     if (DATA.border && DATA.border.length) {
       L.polygon(DATA.border, {
         color: '#F7F3EA', weight: 1.5, opacity: 0.9, dashArray: '3 6',
-        fill: true, fillColor: '#61AF54', fillOpacity: 0.05, interactive: false
+        fill: true, fillColor: '#77D161', fillOpacity: 0.05, interactive: false
       }).addTo(map);
     }
 

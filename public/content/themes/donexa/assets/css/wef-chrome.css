@@ -4,14 +4,24 @@
    Loaded on the bespoke homepage and injected into all legacy theme pages.
    ========================================================================== */
 :root {
-  --forest-900: #1B3616;
-  --forest-800: #2A5223;
+  --forest-900: #173210;
+  --forest-800: #244B1B;
+  /* --pine-ink is the green that carries TEXT: green words on a light
+     background, and green fills that keep white text on them. The bright
+     brand green below is far too light for either (1.9:1) — this is 5.4:1.
+     Do not use --pine-700 for text. */
+  --pine-ink: #3C762E;
   /* One step below the brand green — hover/pressed state for green fills. */
-  --pine-800: #4E8F43;
-  --pine-700: #61AF54;
-  --leaf-600: #82C775;
-  --sage-200: #C6E1C1;
-  --sage-50: #ECF5EA;
+  --pine-800: #5EC445;
+  /* The bright brand green. Fills, bars, tints and graphics only; anything
+     sitting ON it must be --ink-900, which reads 8.6:1 against it. Chosen
+     bright on purpose: under red-green colour blindness it simulates to a
+     pale yellow, so it separates from every dark surface by lightness
+     alone rather than by hue. */
+  --pine-700: #77D161;
+  --leaf-600: #A0E48B;
+  --sage-200: #D2EDC9;
+  --sage-50: #EFF8EC;
   --cream: #F7F3EA;
   --paper: #FFFDF8;
   --ink-900: #23201A;
@@ -141,7 +151,7 @@
 
 .wef-header:not(.wef-header--overlay) .wef-brand-sub,
 .wef-header--overlay.wef-scrolled .wef-brand-sub {
-  color: var(--pine-700)
+  color: var(--pine-ink)
 }
 
 .wef-nav {
@@ -182,7 +192,7 @@
 }
 
 .wef-navlink:hover {
-  background: rgba(97, 175, 84, .09)
+  background: rgba(119, 209, 97, .16)
 }
 
 .wef-header--overlay:not(.wef-scrolled) .wef-navlink:hover {
@@ -235,7 +245,7 @@
 
 .wef-submenu a:hover {
   background: var(--sage-50);
-  color: var(--pine-700)
+  color: var(--pine-ink)
 }
 
 .wef-btn {
@@ -256,13 +266,13 @@
 
 .wef-btn-donate {
   background: var(--pine-700);
-  color: #fff;
-  box-shadow: 0 8px 22px rgba(42, 82, 35, .26);
+  color: var(--ink-900);
+  box-shadow: 0 8px 22px rgba(36, 75, 27, .26);
   margin-left: 14px
 }
 
 .wef-btn-donate:hover {
-  background: var(--forest-800);
+  background: var(--pine-800);
   transform: translateY(-2px)
 }
 
@@ -536,7 +546,7 @@
 }
 
 .wef-socials a:hover {
-  background: var(--pine-700);
+  background: var(--pine-ink);
   transform: translateY(-2px)
 }
 

@@ -8,15 +8,16 @@
    ========================================================================== */
 
 :root {
-  /* Brand palette — green-only accent system (no red/terracotta), built on the
-     brand green #61AF54. Every other green on the site is a lighter or darker
-     step of that same hue so no near-duplicate shades creep back in.
-     -dark is one step down, reserved for hover/pressed states. */
-  --wef-green: #61AF54;
-  --wef-green-dark: #4E8F43;
-  --wef-terracotta: #61AF54;
-  --wef-terracotta-dark: #4E8F43;
-  --wef-terracotta-tint: #E4F2E1;
+  /* Brand palette for the LEGACY theme pages (blog, WooCommerce, Elementor).
+     These pages reuse one token for both green text on white and white text
+     on a green button, so it has to clear 4.5:1 in both directions — that
+     caps it at this darker green. The bright brand green (#77D161) is used
+     on the bespoke pages, where fills and text have separate tokens. */
+  --wef-green: #3C762E;
+  --wef-green-dark: #244B1B;
+  --wef-terracotta: #3C762E;
+  --wef-terracotta-dark: #244B1B;
+  --wef-terracotta-tint: #EFF8EC;
   --wef-ink: #1E1E1E;
   --wef-body: #524F47;
   --wef-muted: #8A8779;
@@ -125,7 +126,7 @@
    -------------------------------------------------------------------------- */
 .pt-breadcrumb-style-1::before {
   opacity: 1 !important;
-  background: linear-gradient(135deg, rgba(42, 82, 35, 0.88), rgba(97, 175, 84, 0.78)) !important;
+  background: linear-gradient(135deg, rgba(36, 75, 27, 0.9), rgba(60, 118, 46, 0.8)) !important;
 }
 
 .pt-breadcrumb-style-1 .pt-breadcrumb-title h1 {
