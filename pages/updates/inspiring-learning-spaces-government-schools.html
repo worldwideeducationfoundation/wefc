@@ -4,14 +4,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Active Projects — Worldwide Education Fund</title>
-  <meta name="description"
-    content="The programs Worldwide Education Fund is running right now across Chitral, Pakistan and Central Asia — from early childhood centers to research hubs and training programs." />
-  <meta property="og:title" content="Active Projects — Worldwide Education Fund" />
-  <meta property="og:description"
-    content="See what WEF is building right now — and the community it reaches — in each active project." />
-  <meta property="og:image" content="/content/uploads/wef/logo-social-share.png" />
-  <meta property="og:type" content="website" />
+  <title>Creating Inspiring Learning Spaces at Government Schools in Chitral, Pakistan — Worldwide Education Fund</title>
+  <meta name="description" content="WEF and Foundation to Empower Students (FES) are transforming government primary schools in Chitral Valley into technology-enabled learning environments." />
+  <meta property="og:title" content="Creating Inspiring Learning Spaces at Government Schools in Chitral, Pakistan — Worldwide Education Fund" />
+  <meta property="og:description" content="WEF and Foundation to Empower Students (FES) are transforming government primary schools in Chitral Valley into technology-enabled learning environments." />
+  <meta property="og:image" content="/content/uploads/wef/update-inspiring-spaces-after.jpg" />
+  <meta property="og:type" content="article" />
   <link href="/content/uploads/wef/favico.png" rel="icon" />
   <link href="/content/uploads/wef/favico.png" rel="apple-touch-icon" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,67 +29,55 @@
     img { max-width: 100%; display: block; }
     a { color: inherit; }
     h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; letter-spacing: -.01em; line-height: 1.12; margin: 0; }
-    .cx { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+    .cx { max-width: 880px; margin: 0 auto; padding: 0 28px; }
     .eyebrow { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .15em; font-size: .74rem; color: var(--pine-ink); margin: 0 0 16px; }
 
     /* ---- Hero ---- */
-    .ap-hero { position: relative; overflow: hidden; color: var(--forest-900); background: linear-gradient(152deg, var(--pine-800) 0%, var(--pine-700) 46%, var(--leaf-600) 100%); padding: calc(var(--header-h) + 44px) 0 62px; }
-    .ap-orb1 { position: absolute; top: -170px; right: -120px; width: 540px; height: 540px; background: radial-gradient(circle, rgba(255, 255, 255, .4), transparent 70%); pointer-events: none; }
-    .ap-orb2 { position: absolute; left: -150px; bottom: -190px; width: 480px; height: 480px; background: radial-gradient(circle, rgba(255, 255, 255, .1), transparent 70%); pointer-events: none; }
-    .ap-hero-inner { position: relative; z-index: 1; max-width: 720px; }
-    .ap-hero .eyebrow { color: var(--forest-900); }
-    .ap-hero h1 { color: var(--forest-900); font-size: clamp(2.4rem, 4.8vw, 4rem); margin: 0 0 20px; }
-    .ap-hero p { font-size: clamp(1.05rem, 1.5vw, 1.22rem); line-height: 1.62; color: rgba(23, 50, 16, .88); max-width: 60ch; margin: 0; }
+    .proj-hero { position: relative; overflow: hidden; color: var(--forest-900); background: linear-gradient(152deg, var(--pine-800) 0%, var(--pine-700) 46%, var(--leaf-600) 100%); padding: calc(var(--header-h) + 40px) 0 50px; }
+    .proj-orb1 { position: absolute; top: -170px; right: -120px; width: 540px; height: 540px; background: radial-gradient(circle, rgba(255, 255, 255, .4), transparent 70%); pointer-events: none; }
+    .proj-back { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 7px; font-weight: 600; font-size: .86rem; color: var(--forest-900); margin-bottom: 18px; opacity: .82; transition: opacity .18s ease; }
+    .proj-back svg { width: 15px; height: 15px; }
+    .proj-back:hover { opacity: 1; }
+    .proj-hero-inner { position: relative; z-index: 1; }
+    .proj-hero .eyebrow { color: var(--forest-900); }
+    .proj-hero h1 { color: var(--forest-900); font-size: clamp(2.1rem, 4.2vw, 3.3rem); margin: 0 0 18px; max-width: 24ch; }
+    .proj-meta { display: flex; flex-wrap: wrap; gap: 10px 24px; font-size: .92rem; color: rgba(23, 50, 16, .85); font-weight: 500; }
+    .proj-meta span { display: inline-flex; align-items: center; gap: 7px; }
+    .proj-meta svg { width: 16px; height: 16px; flex-shrink: 0; }
 
-    /* ---- Section ---- */
-    .ap-section { padding: var(--sec-y) 0; }
-    .ap-head { max-width: 640px; margin: 0 0 40px; }
-    .ap-head h2 { font-size: clamp(1.9rem, 3.4vw, 2.7rem); color: var(--ink-900); margin: 0 0 12px; }
-    .ap-head p { font-size: 1.08rem; line-height: 1.6; color: var(--ink-600); margin: 0; }
-
-    /* ---- Grid ---- */
-    .ap-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 26px; }
-    .ap-card { display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(20, 20, 10, .05); transition: transform .25s ease, box-shadow .25s ease; }
-    .ap-card:hover { transform: translateY(-4px); box-shadow: 0 22px 50px rgba(20, 20, 10, .12); }
-    .ap-card-media { aspect-ratio: 16 / 11; overflow: hidden; background: var(--sage-50); position: relative; }
-    .ap-card-media::after { content: ""; position: absolute; inset: 0; background: var(--pine-700); mix-blend-mode: multiply; opacity: .05; }
-    .ap-card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
-    .ap-card:hover .ap-card-media img { transform: scale(1.05); }
-    .ap-card-body { padding: 24px 24px 26px; display: flex; flex-direction: column; flex-grow: 1; }
-    .ap-card-body h3 { font-size: 1.22rem; color: var(--ink-900); margin: 0 0 10px; line-height: 1.24; }
-    .ap-card-body p { font-size: .95rem; line-height: 1.58; color: var(--ink-600); margin: 0 0 18px; flex-grow: 1; }
-    .ap-card-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: .88rem; color: var(--pine-ink); margin-top: auto; transition: gap .18s ease; }
-    .ap-card-link svg { width: 16px; height: 16px; flex-shrink: 0; }
-    .ap-card:hover .ap-card-link { gap: 12px; }
-
-    /* ---- Loading / empty state ---- */
-    .ap-loader { display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 60px 20px; color: var(--ink-600); }
-    .ap-spin { width: 34px; height: 34px; border-radius: 50%; border: 3px solid var(--sage-50); border-top-color: var(--pine-700); animation: ap-spin 0.8s linear infinite; }
-    @keyframes ap-spin { to { transform: rotate(360deg); } }
-    .ap-empty { text-align: center; padding: 60px 20px; border: 2px dashed var(--line); border-radius: 20px; background: var(--paper); }
-    .ap-empty h3 { font-size: 1.3rem; color: var(--ink-900); margin: 0 0 8px; }
-    .ap-empty p { color: var(--ink-600); margin: 0; }
+    /* ---- Article ---- */
+    .proj-article { padding: var(--sec-y) 0; }
+    .proj-article .cx { max-width: 760px; }
+    .proj-article p { font-size: 1.08rem; line-height: 1.72; color: var(--ink-600); margin: 0 0 22px; }
+    .proj-article h2 { font-size: clamp(1.4rem, 2.4vw, 1.8rem); color: var(--ink-900); margin: 40px 0 16px; }
+    .proj-article h2:first-child { margin-top: 0; }
+    .proj-article ul { list-style: none; margin: 0 0 22px; padding: 0; display: grid; gap: 10px; }
+    .proj-article li { position: relative; padding-left: 22px; font-size: 1.05rem; line-height: 1.6; color: var(--ink-600); }
+    .proj-article li::before { content: ""; position: absolute; left: 0; top: .6em; width: 7px; height: 7px; border-radius: 50%; background: var(--pine-700); }
+    .proj-article figure { margin: 32px 0; }
+    .proj-article figure img { width: 100%; aspect-ratio: 16/10; object-fit: cover; border-radius: 16px; box-shadow: 0 16px 40px rgba(20, 20, 10, .12); }
+    .proj-article blockquote { margin: 28px 0; padding: 22px 26px; border-left: 3px solid var(--pine-700); background: var(--paper); border-radius: 0 14px 14px 0; }
+    .proj-article blockquote p { margin: 0; font-style: italic; color: var(--ink-900); }
 
     /* ---- CTA ---- */
-    .ap-cta { background: var(--pine-700); color: var(--forest-900); padding: var(--sec-y-sm) 0; position: relative; overflow: hidden; }
-    .ap-cta::before { content: ""; position: absolute; right: -120px; top: -120px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(160, 228, 139, .4), transparent 70%); pointer-events: none; }
-    .ap-cta-inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
-    .ap-cta h2 { color: var(--forest-900); font-size: clamp(1.6rem, 2.8vw, 2.3rem); margin: 0 0 8px; }
-    .ap-cta p { color: rgba(23, 50, 16, .85); font-size: 1.05rem; margin: 0; }
-    .ap-cta-actions { display: flex; gap: 13px; flex-wrap: wrap; }
-    .ap-btn-solid, .ap-btn-line { display: inline-flex; align-items: center; gap: 9px; font-weight: 600; font-size: 1rem; border-radius: 100px; padding: 14px 28px; transition: transform .2s ease, background .2s ease; white-space: nowrap; }
-    .ap-btn-solid { background: var(--forest-900); color: #fff; }
-    .ap-btn-solid:hover { background: var(--cream); color: var(--forest-900); transform: translateY(-2px); }
-    .ap-btn-line { border: 1.5px solid rgba(23, 50, 16, .3); color: var(--forest-900); }
-    .ap-btn-line:hover { background: rgba(255, 255, 255, .42); border-color: var(--forest-900); transform: translateY(-2px); }
+    .proj-cta { background: var(--pine-700); color: var(--forest-900); padding: var(--sec-y-sm) 0; position: relative; overflow: hidden; }
+    .proj-cta::before { content: ""; position: absolute; right: -120px; top: -120px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(160, 228, 139, .4), transparent 70%); pointer-events: none; }
+    .proj-cta-inner { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
+    .proj-cta h2 { color: var(--forest-900); font-size: clamp(1.6rem, 2.8vw, 2.3rem); margin: 0 0 8px; }
+    .proj-cta p { color: rgba(23, 50, 16, .85); font-size: 1.05rem; margin: 0; }
+    .proj-cta-actions { display: flex; gap: 13px; flex-wrap: wrap; }
+    .proj-btn-solid, .proj-btn-line { display: inline-flex; align-items: center; gap: 9px; font-weight: 600; font-size: 1rem; border-radius: 100px; padding: 14px 28px; transition: transform .2s ease, background .2s ease; white-space: nowrap; }
+    .proj-btn-solid { background: var(--forest-900); color: #fff; }
+    .proj-btn-solid:hover { background: var(--cream); color: var(--forest-900); transform: translateY(-2px); }
+    .proj-btn-line { border: 1.5px solid rgba(23, 50, 16, .3); color: var(--forest-900); }
+    .proj-btn-line:hover { background: rgba(255, 255, 255, .42); border-color: var(--forest-900); transform: translateY(-2px); }
 
-    @media (prefers-reduced-motion: reduce) { .ap-card, .ap-card-media img, .ap-btn-solid, .ap-btn-line, .ap-card-link, .ap-spin { transition: none; animation: none; } }
+    @media (prefers-reduced-motion: reduce) { .proj-btn-solid, .proj-btn-line, .proj-back { transition: none; } }
   </style>
 </head>
 
 <body>
 
-  <!-- ===================== HEADER ===================== -->
   <header class="wef-header wef-header--overlay" id="wefHeader">
     <div class="wef-header-inner">
       <a class="wef-brand" href="/" aria-label="Worldwide Education Fund Canada home"><img class="wef-brand-logo" src="/content/uploads/wef/WEFC%20Logo.png" alt="" /><span class="wef-brand-name" aria-hidden="true"><span class="wef-brand-line">Worldwide Education Fund</span><span class="wef-brand-sub">Canada</span></span></a>
@@ -143,88 +129,56 @@
   </header>
 
   <main>
-    <!-- ===================== HERO ===================== -->
-    <section class="ap-hero">
-      <span class="ap-orb1"></span><span class="ap-orb2"></span>
-      <div class="cx ap-hero-inner">
-        <p class="eyebrow">What We Do</p>
-        <h1>Our active projects</h1>
-        <p>These are the programs WEF is running right now — from early childhood learning centers to research hubs
-          and training programs across Chitral, Pakistan and Central Asia. Open any project to see who it reaches
-          and how you can support it.</p>
+    <section class="proj-hero">
+      <span class="proj-orb1"></span>
+      <div class="cx proj-hero-inner">
+        <a class="proj-back" href="/pages/project-updates">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+          Project Updates
+        </a>
+        <p class="eyebrow">Project Update</p>
+        <h1>Creating Inspiring Learning Spaces at Government Schools in Chitral, Pakistan</h1>
+        <div class="proj-meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" /><circle cx="12" cy="10" r="3" /></svg>Chitral, Pakistan</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>June 14, 2026</span>
+        </div>
       </div>
     </section>
 
-    <!-- ===================== PROJECTS ===================== -->
-    <section class="ap-section">
+    <article class="proj-article">
       <div class="cx">
-        <div class="ap-head">
-          <p class="eyebrow">Active Projects</p>
-          <h2>Pathways currently underway</h2>
-          <p>Every project below is live today. Click through for the full story, the community it serves, and how
-            to give directly toward it.</p>
-        </div>
+        <p>In the heart of Chitral Valley, Worldwide Education Foundation (WEF), USA, in partnership with Foundation to Empower Students (FES), Pakistan, is transforming government primary schools into technology-enabled learning environments. <em>Every child deserves a classroom that sparks joy and curiosity.</em></p>
 
-        <div class="ap-grid">
-          <a class="ap-card" href="/pages/projects/bright-beginnings-eclc">
-            <div class="ap-card-media">
-              <img src="/content/uploads/wef/bright-beginnings-eclc-classroom.jpeg" alt="" loading="lazy" />
-            </div>
-            <div class="ap-card-body">
-              <h3>Bright Beginnings: Early Childhood Learning Centers (ECLC)</h3>
-              <p>A women-led social entrepreneurial model bringing Montessori-based early childhood education to
-                remote and underserved communities in Chitral, Pakistan.</p>
-              <span class="ap-card-link">Read more
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </span>
-            </div>
-          </a>
-          <a class="ap-card" href="/pages/projects/herzing-daya-research-hub">
-            <div class="ap-card-media">
-              <img src="/content/uploads/wef/herzing-daya-university-of-chitral.jpg" alt="" loading="lazy" />
-            </div>
-            <div class="ap-card-body">
-              <h3>Herzing–Daya Research &amp; Learning Hub</h3>
-              <p>One of Pakistan's first Early Childhood Development research hubs, hosted at the University of
-                Chitral and led by WEF, USA.</p>
-              <span class="ap-card-link">Read more
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </span>
-            </div>
-          </a>
-          <a class="ap-card" href="/pages/projects/herzing-training-skills-development">
-            <div class="ap-card-media">
-              <img src="/content/uploads/wef/herzing-training-program-tracks.jpg" alt="" loading="lazy" />
-            </div>
-            <div class="ap-card-body">
-              <h3>Herzing Training &amp; Skills Development Program</h3>
-              <p>Building capacity, developing leaders, and creating workforce-ready talent through degree, diploma
-                and short-course pathways at the University of Chitral.</p>
-              <span class="ap-card-link">Read more
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </span>
-            </div>
-          </a>
-        </div>
+        <p>The organization operates through two initiatives providing Montessori-based development for ages 3–5, English language instruction for ages 6–11, and modern technology-equipped classrooms across 10 government schools serving over 2,000 students with 25 trained teachers.</p>
+
+        <figure>
+          <img src="/content/uploads/wef/update-inspiring-spaces-before.jpg" alt="Before: A basic classroom with limited learning opportunities." loading="lazy" />
+        </figure>
+
+        <p>Building on this success, WEF aims to expand this model to 600 centers by 2035, creating greater access to quality education for children in underserved communities. The combined investment for both initiatives launched in 2024–2025 is projected at USD 4 million (PKR 120 crore).</p>
+
+        <figure>
+          <img src="/content/uploads/wef/update-inspiring-spaces-after.jpg" alt="After: A vibrant learning space designed to inspire and engage young learners." loading="lazy" />
+        </figure>
+
+        <p>See this transformation in action and experience the impact firsthand. We extend our gratitude to the donors and supporters who are enabling educational access in remote communities.</p>
       </div>
-    </section>
+    </article>
 
-    <!-- ===================== CTA ===================== -->
-    <section class="ap-cta">
-      <div class="cx ap-cta-inner">
+    <section class="proj-cta">
+      <div class="proj-cta-inner">
         <div>
-          <h2>Want to help move one of these forward?</h2>
-          <p>Give directly, or get in touch to learn how you can support a specific project.</p>
+          <h2>Help transform more classrooms</h2>
+          <p>Your gift funds technology-enabled learning spaces in government schools across Chitral.</p>
         </div>
-        <div class="ap-cta-actions">
-          <a class="ap-btn-solid" href="https://www.zeffy.com/en-US/donation-form/donate-now-to-support-education-for-underprivileged-children" rel="noopener" target="_blank">Support our work</a>
-          <a class="ap-btn-line" href="/pages/contact">Get in touch</a>
+        <div class="proj-cta-actions">
+          <a class="proj-btn-solid" href="https://www.zeffy.com/en-US/donation-form/donate-now-to-support-education-for-underprivileged-children" rel="noopener" target="_blank">Support our work</a>
+          <a class="proj-btn-line" href="/pages/project-updates">See other updates</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
   <footer class="wef-footer">
     <div class="wef-footer-inner">
       <div class="wef-footer-top">
@@ -274,7 +228,7 @@
                 rel="noopener" target="_blank">Donate</a></li>
             <li><a href="/pages/contact">Contact Us</a></li>
             <li><a href="/pages/active-projects">Active Projects</a></li>
-            <li><a href="/blog/category/completed-projects">Completed Projects</a></li>
+            <li><a href="/pages/project-updates">Project Updates</a></li>
           </ul>
         </div>
         <div>
