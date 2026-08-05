@@ -333,7 +333,7 @@
     height: 100vh;
     height: 100dvh;
     width: min(330px, 84vw);
-    background: var(--forest-800);
+    background: var(--pine-700);
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
@@ -362,16 +362,16 @@
   }
 
   .wef-navlink {
-    color: #fff !important;
+    color: var(--forest-900) !important;
     font-size: 1.06rem;
     padding: 14px 4px;
     justify-content: space-between;
     border-radius: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, .1)
+    border-bottom: 1px solid rgba(23, 50, 16, .16)
   }
 
   .wef-navlink:hover {
-    background: rgba(255, 255, 255, .05)
+    background: rgba(255, 255, 255, .4)
   }
 
   .wef-submenu {
@@ -394,13 +394,13 @@
   }
 
   .wef-submenu a {
-    color: rgba(255, 255, 255, .82);
+    color: rgba(23, 50, 16, .82);
     padding: 10px 4px
   }
 
   .wef-submenu a:hover {
     background: transparent;
-    color: #fff
+    color: var(--forest-900)
   }
 
   .wef-has-children.wef-sub-open .wef-caret {
@@ -411,8 +411,8 @@
   .wef-header--overlay:not(.wef-scrolled) .wef-btn-donate {
     margin: 18px 0 0;
     justify-content: center;
-    background: #fff;
-    color: var(--forest-800)
+    background: var(--forest-900);
+    color: #fff
   }
 
   .wef-nav-backdrop {
@@ -434,8 +434,8 @@
 
 /* ---------------- Footer ---------------- */
 .wef-footer {
-  background: var(--forest-900);
-  color: rgba(255, 255, 255, .7);
+  background: var(--pine-700);
+  color: rgba(23, 50, 16, .8);
   font-family: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   padding: 66px 0 26px;
   font-size: 16px;
@@ -443,12 +443,12 @@
 }
 
 .wef-footer a {
-  color: rgba(255, 255, 255, .7);
+  color: rgba(23, 50, 16, .8);
   transition: color .2s ease
 }
 
 .wef-footer a:hover {
-  color: #fff
+  color: var(--forest-900)
 }
 
 .wef-footer-inner {
@@ -462,7 +462,7 @@
   grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
   gap: 40px;
   padding-bottom: 42px;
-  border-bottom: 1px solid rgba(255, 255, 255, .12)
+  border-bottom: 1px solid rgba(23, 50, 16, .2)
 }
 
 .wef-footer-logo {
@@ -491,7 +491,7 @@
   font-size: .92rem;
   line-height: 1.65;
   max-width: 34ch;
-  color: rgba(255, 255, 255, .7)
+  color: rgba(23, 50, 16, .8)
 }
 
 .wef-footer h4 {
@@ -500,7 +500,7 @@
   text-transform: uppercase;
   letter-spacing: .1em;
   font-size: .76rem;
-  color: #fff;
+  color: var(--forest-900);
   margin: 0 0 18px
 }
 
@@ -540,7 +540,7 @@
   width: 38px;
   height: 38px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, .08);
+  background: rgba(255, 255, 255, .45);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -548,14 +548,14 @@
 }
 
 .wef-socials a:hover {
-  background: var(--pine-ink);
+  background: var(--forest-900);
   transform: translateY(-2px)
 }
 
 .wef-socials svg {
   width: 18px;
   height: 18px;
-  fill: #fff
+  fill: var(--forest-900)
 }
 
 .wef-footer-bottom {
@@ -565,7 +565,7 @@
   flex-wrap: wrap;
   padding-top: 22px;
   font-size: .82rem;
-  color: rgba(255, 255, 255, .5)
+  color: rgba(23, 50, 16, .62)
 }
 
 @media(max-width:820px) {

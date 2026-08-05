@@ -18,7 +18,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Jost:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link href="/content/themes/donexa/assets/css/wef-chrome.css?v=8" rel="stylesheet" />
+  <link href="/content/themes/donexa/assets/css/wef-chrome.css?v=9" rel="stylesheet" />
   <style>
     :root { --display: "Fraunces", Georgia, serif; --sans: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
     * { box-sizing: border-box; }
@@ -28,12 +28,12 @@
     .cx { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
     .eyebrow { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .15em; font-size: .74rem; color: var(--sage-200); margin: 0 0 16px; }
 
-    .ct-hero { position: relative; overflow: hidden; color: #fff; background: linear-gradient(152deg, var(--forest-900) 0%, var(--forest-800) 48%, var(--pine-ink) 100%); padding: calc(var(--header-h) + 40px) 0 56px; }
+    .ct-hero { position: relative; overflow: hidden; color: var(--forest-900); background: linear-gradient(152deg, var(--pine-800) 0%, var(--pine-700) 46%, var(--leaf-600) 100%); padding: calc(var(--header-h) + 40px) 0 56px; }
     .ct-hero::before { content: ""; position: absolute; top: -170px; right: -120px; width: 520px; height: 520px; background: radial-gradient(circle, rgba(160, 228, 139, .4), transparent 70%); }
     .ct-hero-inner { position: relative; z-index: 1; max-width: 680px; }
-    .ct-hero h1 { color: #fff; font-size: clamp(2.3rem, 4.4vw, 3.6rem); margin: 0 0 18px; }
-    .ct-hero h1 em { font-style: italic; color: var(--sage-200); }
-    .ct-hero p { font-size: clamp(1.05rem, 1.5vw, 1.2rem); line-height: 1.6; color: rgba(255, 255, 255, .88); margin: 0; }
+    .ct-hero h1 { color: var(--forest-900); font-size: clamp(2.3rem, 4.4vw, 3.6rem); margin: 0 0 18px; }
+    .ct-hero h1 em { font-style: italic; color: var(--forest-900); }
+    .ct-hero p { font-size: clamp(1.05rem, 1.5vw, 1.2rem); line-height: 1.6; color: rgba(23, 50, 16, .88); margin: 0; }
 
     .ct-body { padding: var(--sec-y) 0; }
     .ct-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(28px, 4vw, 56px); align-items: start; }
@@ -80,11 +80,11 @@
 
     /* Review CTA */
     .ct-review { background: var(--pine-ink); padding: clamp(48px, 6vw, 64px) 24px; }
-    .ct-review-inner { max-width: 720px; margin: 0 auto; text-align: center; color: #fff; }
+    .ct-review-inner { max-width: 720px; margin: 0 auto; text-align: center; color: var(--forest-900); }
     .ct-stars { display: inline-flex; gap: 4px; margin-bottom: 18px; }
     .ct-stars svg { width: 26px; height: 26px; fill: #F5C94E; }
-    .ct-review h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); color: #fff; margin: 0 0 12px; }
-    .ct-review p { font-size: 1.05rem; line-height: 1.6; color: rgba(255, 255, 255, .92); margin: 0 0 26px; }
+    .ct-review h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); color: var(--forest-900); margin: 0 0 12px; }
+    .ct-review p { font-size: 1.05rem; line-height: 1.6; color: rgba(23, 50, 16, .92); margin: 0 0 26px; }
     .ct-review a { display: inline-flex; align-items: center; gap: 9px; background: #fff; color: var(--pine-ink); font-weight: 600; padding: 14px 28px; border-radius: 100px; transition: transform .2s ease; }
     .ct-review a:hover { transform: translateY(-2px); }
     .ct-review a svg { width: 18px; height: 18px; }
@@ -333,7 +333,7 @@
   </footer>
 
 
-  <script src="/content/themes/donexa/assets/js/wef-chrome.js?v=8" defer></script>
+  <script src="/content/themes/donexa/assets/js/wef-chrome.js?v=9" defer></script>
   <script>
     (function () {
       var form = document.getElementById('ctForm');

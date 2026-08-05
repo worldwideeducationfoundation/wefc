@@ -21,8 +21,8 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <link href="/content/themes/donexa/assets/css/wef-chrome.css?v=8" rel="stylesheet" />
-  <link href="/content/themes/donexa/assets/css/wef-centers.css?v=8" rel="stylesheet" />
+  <link href="/content/themes/donexa/assets/css/wef-chrome.css?v=9" rel="stylesheet" />
+  <link href="/content/themes/donexa/assets/css/wef-centers.css?v=9" rel="stylesheet" />
   <style>
     :root {
       --display: "Fraunces", Georgia, serif;
@@ -35,8 +35,8 @@
 
     /* Hero band */
     .centers-hero {
-      background: linear-gradient(150deg, var(--forest-900) 0%, var(--forest-800) 45%, var(--pine-700) 100%);
-      color: #fff; position: relative; overflow: hidden;
+      background: linear-gradient(150deg, var(--pine-800) 0%, var(--pine-700) 45%, var(--leaf-600) 100%);
+      color: var(--forest-900); position: relative; overflow: hidden;
       padding: calc(var(--header-h) + 40px) 0 60px;
     }
     .centers-hero::before {
@@ -57,25 +57,25 @@
       font-family: var(--display); font-weight: 500; letter-spacing: -.01em; line-height: 1.08;
       font-size: clamp(2.3rem, 4.4vw, 3.7rem); margin: 0 0 20px; max-width: 15ch;
     }
-    .centers-hero h1 em { font-style: italic; color: var(--sage-200); }
+    .centers-hero h1 em { font-style: italic; color: var(--forest-900); }
     .centers-hero .lead {
-      font-size: clamp(1.05rem, 1.5vw, 1.24rem); line-height: 1.6; color: rgba(255, 255, 255, .88);
+      font-size: clamp(1.05rem, 1.5vw, 1.24rem); line-height: 1.6; color: rgba(23, 50, 16, .88);
       max-width: 60ch; margin: 0;
     }
 
     .centers-stats {
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 40px;
-      border: 1px solid rgba(255, 255, 255, .16); border-radius: 18px; overflow: hidden;
-      background: rgba(255, 255, 255, .05); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      border: 1px solid rgba(23, 50, 16, .22); border-radius: 18px; overflow: hidden;
+      background: rgba(255, 255, 255, .38); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
     }
-    .centers-stat { padding: 22px 24px; border-right: 1px solid rgba(255, 255, 255, .14); }
+    .centers-stat { padding: 22px 24px; border-right: 1px solid rgba(23, 50, 16, .18); }
     .centers-stat:last-child { border-right: 0; }
     .centers-stat .n {
       font-family: var(--display); font-weight: 600; font-size: clamp(1.9rem, 3vw, 2.6rem);
-      line-height: 1; color: #fff;
+      line-height: 1; color: var(--forest-900);
     }
-    .centers-stat .n .u { color: var(--sage-200); font-size: .55em; vertical-align: super; margin-left: 1px; }
-    .centers-stat .l { margin-top: 8px; font-size: .84rem; color: rgba(255, 255, 255, .82); line-height: 1.35; }
+    .centers-stat .n .u { color: var(--forest-900); font-size: .55em; vertical-align: super; margin-left: 1px; }
+    .centers-stat .l { margin-top: 8px; font-size: .84rem; color: rgba(23, 50, 16, .78); line-height: 1.35; }
     @media (max-width: 760px) {
       .centers-stats { grid-template-columns: 1fr 1fr; }
       .centers-stat:nth-child(2) { border-right: 0; }
@@ -340,11 +340,11 @@
     </div>
   </footer>
 
-  <script src="/content/themes/donexa/assets/js/wef-chrome.js?v=8" defer></script>
+  <script src="/content/themes/donexa/assets/js/wef-chrome.js?v=9" defer></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="/content/maps/centers-data.js?v=3"></script>
-  <script src="/content/themes/donexa/assets/js/wef-centers.js?v=8" defer></script>
+  <script src="/content/themes/donexa/assets/js/wef-centers.js?v=9" defer></script>
 </body>
 
 </html>

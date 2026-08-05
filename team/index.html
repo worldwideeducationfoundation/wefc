@@ -19,7 +19,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Jost:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link href="/content/themes/donexa/assets/css/wef-chrome.css?v=8" rel="stylesheet" />
+  <link href="/content/themes/donexa/assets/css/wef-chrome.css?v=9" rel="stylesheet" />
   <style>
     :root {
       --display: "Fraunces", Georgia, serif;
@@ -35,18 +35,18 @@
     .eyebrow { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .15em; font-size: .74rem; color: var(--pine-ink); margin: 0 0 16px; }
 
     /* ---- Hero ---- */
-    .tm-hero { position: relative; overflow: hidden; color: #fff; background: linear-gradient(152deg, var(--forest-900) 0%, var(--forest-800) 48%, var(--pine-ink) 100%); padding: calc(var(--header-h) + 44px) 0 62px; }
+    .tm-hero { position: relative; overflow: hidden; color: var(--forest-900); background: linear-gradient(152deg, var(--pine-800) 0%, var(--pine-700) 46%, var(--leaf-600) 100%); padding: calc(var(--header-h) + 44px) 0 62px; }
     .tm-orb1 { position: absolute; top: -170px; right: -120px; width: 540px; height: 540px; background: radial-gradient(circle, rgba(160, 228, 139, .4), transparent 70%); pointer-events: none; }
     .tm-orb2 { position: absolute; left: -150px; bottom: -190px; width: 480px; height: 480px; background: radial-gradient(circle, rgba(255, 255, 255, .06), transparent 70%); pointer-events: none; }
     .tm-hero-inner { position: relative; z-index: 1; max-width: 720px; }
-    .tm-hero .eyebrow { color: var(--sage-200); }
-    .tm-hero h1 { color: #fff; font-size: clamp(2.4rem, 4.8vw, 4rem); margin: 0 0 20px; }
-    .tm-hero h1 em { font-style: italic; color: var(--sage-200); }
-    .tm-hero p { font-size: clamp(1.05rem, 1.5vw, 1.22rem); line-height: 1.62; color: rgba(255, 255, 255, .88); max-width: 58ch; margin: 0; }
+    .tm-hero .eyebrow { color: var(--forest-900); }
+    .tm-hero h1 { color: var(--forest-900); font-size: clamp(2.4rem, 4.8vw, 4rem); margin: 0 0 20px; }
+    .tm-hero h1 em { font-style: italic; color: var(--forest-900); }
+    .tm-hero p { font-size: clamp(1.05rem, 1.5vw, 1.22rem); line-height: 1.62; color: rgba(23, 50, 16, .88); max-width: 58ch; margin: 0; }
     .tm-hero-stats { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 36px; }
     .tm-hero-stats div { display: flex; flex-direction: column; }
-    .tm-hero-stats strong { font-family: var(--display); font-weight: 600; font-size: 2.2rem; line-height: 1; color: #fff; }
-    .tm-hero-stats span { margin-top: 6px; font-size: .84rem; color: var(--sage-200); }
+    .tm-hero-stats strong { font-family: var(--display); font-weight: 600; font-size: 2.2rem; line-height: 1; color: var(--forest-900); }
+    .tm-hero-stats span { margin-top: 6px; font-size: .84rem; color: var(--forest-900); }
 
     /* ---- Sections ---- */
     .tm-section { padding: var(--sec-y) 0; }
@@ -62,8 +62,8 @@
     .tm-photo { aspect-ratio: 1 / 1; overflow: hidden; background: var(--sage-50); position: relative; }
     .tm-photo-img { width: 100%; height: 100%; object-fit: cover; filter: saturate(1.03) contrast(1.02); }
     .tm-photo::after { content: ""; position: absolute; inset: 0; background: var(--pine-700); mix-blend-mode: multiply; opacity: .06; }
-    .tm-initials { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(150deg, var(--forest-800), var(--pine-ink)); }
-    .tm-initials span { font-family: var(--display); font-weight: 600; font-size: 2.4rem; color: rgba(255, 255, 255, .92); letter-spacing: .02em; }
+    .tm-initials { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(150deg, var(--pine-800), var(--pine-700)); }
+    .tm-initials span { font-family: var(--display); font-weight: 600; font-size: 2.4rem; color: var(--forest-900); letter-spacing: .02em; }
     .tm-info { padding: 18px 20px 20px; }
     .tm-info h3 { font-size: 1.14rem; color: var(--ink-900); margin: 0 0 4px; line-height: 1.2; }
     .tm-role { font-size: .88rem; color: var(--pine-ink); font-weight: 600; line-height: 1.4; margin: 0; }
@@ -72,17 +72,17 @@
     .tm-bio-btn:hover { color: var(--pine-ink); gap: 10px; }
 
     /* ---- CTA ---- */
-    .tm-cta { background: var(--forest-800); color: #fff; padding: var(--sec-y-sm) 0; position: relative; overflow: hidden; }
+    .tm-cta { background: var(--pine-700); color: var(--forest-900); padding: var(--sec-y-sm) 0; position: relative; overflow: hidden; }
     .tm-cta::before { content: ""; position: absolute; right: -120px; top: -120px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(160, 228, 139, .4), transparent 70%); pointer-events: none; }
     .tm-cta-inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
-    .tm-cta h2 { color: #fff; font-size: clamp(1.6rem, 2.8vw, 2.3rem); margin: 0 0 8px; }
-    .tm-cta p { color: rgba(255, 255, 255, .85); font-size: 1.05rem; margin: 0; }
+    .tm-cta h2 { color: var(--forest-900); font-size: clamp(1.6rem, 2.8vw, 2.3rem); margin: 0 0 8px; }
+    .tm-cta p { color: rgba(23, 50, 16, .85); font-size: 1.05rem; margin: 0; }
     .tm-cta-actions { display: flex; gap: 13px; flex-wrap: wrap; }
     .tm-btn-solid, .tm-btn-line { display: inline-flex; align-items: center; gap: 9px; font-weight: 600; font-size: 1rem; border-radius: 100px; padding: 14px 28px; transition: transform .2s ease, background .2s ease; white-space: nowrap; }
-    .tm-btn-solid { background: #fff; color: var(--forest-800); }
+    .tm-btn-solid { background: var(--forest-900); color: var(--forest-900); }
     .tm-btn-solid:hover { background: var(--cream); transform: translateY(-2px); }
-    .tm-btn-line { border: 1.5px solid rgba(255, 255, 255, .55); color: #fff; }
-    .tm-btn-line:hover { background: rgba(255, 255, 255, .12); border-color: #fff; transform: translateY(-2px); }
+    .tm-btn-line { border: 1.5px solid rgba(23, 50, 16, .3); color: var(--forest-900); }
+    .tm-btn-line:hover { background: rgba(255, 255, 255, .42); border-color: var(--forest-900); transform: translateY(-2px); }
 
     /* ---- Bio modal ---- */
     .tm-modal[hidden] { display: none; }
@@ -320,7 +320,7 @@
 
 
   <script>window.__TEAM_BIOS = {"abdul-remtulla":{"name":"Abdul Remtulla","role":"Advisor for Education","photo":"/content/uploads/wef/abdul-remtulla.JPG","bio":["Retired CPA / CA with a successful consulting career.","Married 60 years, with 2 children and 2 grandchildren. Volunteering has been a lifelong passion, alongside sports, reading, the gym, and enjoying different cuisines."]},"anil-mawani":{"name":"Anil Mawani","role":"Advisory Board Member","photo":"/content/uploads/wef/anil_mawani.jpeg","bio":["Retired Professional Engineer with a career spanning telecommunications, service development, marketing, project management, and humanitarian assistance. Worked across both technical and management roles, gaining broad experience in engineering and organizational development.","Also contributed to humanitarian efforts supporting returning refugees in Afghanistan. Continues to value collaboration, lifelong learning, and using professional experience to make a positive contribution."]}};</script>
-  <script src="/content/themes/donexa/assets/js/wef-chrome.js?v=8" defer></script>
+  <script src="/content/themes/donexa/assets/js/wef-chrome.js?v=9" defer></script>
   <script>
     (function () {
       var modal = document.getElementById('tmModal');
