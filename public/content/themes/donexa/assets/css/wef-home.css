@@ -95,7 +95,9 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.01em;lin
 
 /* Caption — says what the photo is showing, over a scrim so it stays readable
    whatever the photo underneath is doing. Sits clear of the dots and arrows. */
-.hero-caption{position:absolute;z-index:3;left:clamp(16px,2.6vw,32px);right:clamp(16px,2.6vw,32px);bottom:clamp(62px,7vw,80px);margin:0;max-width:60ch;color:#fff;font-size:clamp(.92rem,1.15vw,1.08rem);line-height:1.45;font-weight:500;text-shadow:0 1px 14px rgba(0,0,0,.5)}
+/* Bigger, centred, and set in the display serif (Fraunces) rather than the
+   thin sans — reads as a proper caption/subtitle instead of fine print. */
+.hero-caption{position:absolute;z-index:3;left:clamp(16px,2.6vw,32px);right:clamp(16px,2.6vw,32px);bottom:clamp(62px,7vw,80px);margin:0 auto;max-width:52ch;text-align:center;color:#fff;font-family:var(--display);font-size:clamp(1.2rem,2.2vw,1.7rem);line-height:1.4;font-weight:600;text-shadow:0 2px 16px rgba(0,0,0,.55)}
 .hero-carousel::before{content:"";position:absolute;inset:0;background:var(--pine-700);mix-blend-mode:multiply;opacity:.08;z-index:1;pointer-events:none}
 /* Bottom scrim carries the caption and the controls; top corner keeps the
    overlay header legible against a bright photo. */
@@ -134,7 +136,7 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.01em;lin
 }
 @media(max-width:600px){
   .hero-media{height:min(68svh,118vw)}
-  .hero-caption{bottom:58px;font-size:.9rem}
+  .hero-caption{bottom:58px;font-size:1.05rem;max-width:none}
   .hero-nav{width:38px;height:38px}
   .hero-nav svg{width:17px;height:17px}
   .hero-nav.prev{right:62px}
