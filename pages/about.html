@@ -84,31 +84,59 @@
     .projects-head h2 { font-size: clamp(2rem, 3.6vw, 2.9rem); color: var(--ink-900); margin: 0 0 14px; }
     .projects-head p { font-size: 1.12rem; line-height: 1.6; color: var(--ink-600); margin: 0; }
 
-    .pgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(370px, 1fr)); gap: 26px; }
-    @media (max-width: 520px) { .pgrid { grid-template-columns: 1fr; } }
+    /* ---- Project rows ----
+       Each project is a full-width horizontal section: photo on one side,
+       detail on the other, sides alternating down the page. */
+    .prows { display: grid; gap: clamp(26px, 3.4vw, 44px); }
 
-    .pcard { --accent: var(--pine-700); background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 0; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 30px rgba(20, 20, 10, .05); transition: transform .25s ease, box-shadow .25s ease; }
-    .pcard:hover { transform: translateY(-4px); box-shadow: 0 22px 50px rgba(20, 20, 10, .12); }
-    .pcard-top { padding: 26px 28px 22px; border-bottom: 1px solid var(--line); position: relative; }
-    .pcard-top::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--accent); }
-    .pcard-tags { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
-    .pcard-cat { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .09em; font-size: .7rem; color: #fff; background: var(--accent); padding: 4px 10px; border-radius: 100px; }
-    .pcard-year { font-family: var(--sans); font-weight: 600; font-size: .74rem; color: var(--ink-600); background: var(--sage-50); border: 1px solid var(--line); padding: 4px 10px; border-radius: 100px; }
-    .pcard h3 { font-size: 1.32rem; color: var(--ink-900); margin: 0 0 8px; line-height: 1.18; }
-    .pcard-model { font-size: .96rem; line-height: 1.55; color: var(--ink-600); margin: 0; }
+    .prow { --accent: var(--pine-700); display: grid; grid-template-columns: minmax(0, .84fr) minmax(0, 1.16fr); background: var(--paper); border: 1px solid var(--line); border-top: 4px solid var(--accent); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(20, 20, 10, .05); }
+    /* Every other row puts the photo on the right instead. */
+    .prow:nth-child(even) .prow-media { order: 2; }
 
-    .pcard-body { padding: 22px 28px; display: grid; gap: 18px; }
+    .prow-media { position: relative; min-height: 280px; background: var(--sage-50); }
+    .prow-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .prow-media::after { content: ""; position: absolute; inset: 0; background: var(--accent); mix-blend-mode: multiply; opacity: .09; }
+    .prow-year { position: absolute; z-index: 2; top: 16px; left: 16px; font-family: var(--sans); font-weight: 600; font-size: .74rem; color: var(--ink-900); background: rgba(255, 253, 248, .92); border: 1px solid var(--line); padding: 5px 12px; border-radius: 100px; }
+
+    .prow-body { padding: clamp(24px, 2.6vw, 34px); display: flex; flex-direction: column; }
+    .prow-cat { align-self: flex-start; font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .09em; font-size: .7rem; color: #fff; background: var(--accent); padding: 4px 11px; border-radius: 100px; margin-bottom: 13px; }
+    .prow-body h3 { font-size: clamp(1.34rem, 2vw, 1.68rem); color: var(--ink-900); margin: 0 0 9px; line-height: 1.18; }
+    .prow-model { font-size: 1rem; line-height: 1.6; color: var(--ink-600); margin: 0; }
+
+    .pcols { display: grid; grid-template-columns: repeat(auto-fit, minmax(178px, 1fr)); gap: 20px 26px; margin-top: 22px; padding-top: 21px; border-top: 1px solid var(--line); }
     .pcol h4 { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: .7rem; color: var(--accent); margin: 0 0 9px; }
     .pcol ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
     .pcol li { position: relative; padding-left: 17px; font-size: .93rem; line-height: 1.5; color: var(--ink-900); }
     .pcol li::before { content: ""; position: absolute; left: 0; top: .5em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); opacity: .55; }
 
-    .pcard-notes { margin-top: auto; padding: 18px 28px 24px; background: var(--sage-50); border-top: 1px solid var(--line); }
-    .pcard-notes h4 { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: .7rem; color: var(--ink-600); margin: 0 0 9px; }
-    .pcard-notes ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
-    .pcard-notes li { position: relative; padding-left: 16px; font-size: .86rem; line-height: 1.5; color: var(--ink-600); }
-    .pcard-notes li::before { content: "\2192"; position: absolute; left: 0; top: 0; color: var(--accent); font-size: .8rem; }
-    .pcard-notes .invest { color: var(--ink-900); font-weight: 600; }
+    .pnotes { margin-top: auto; padding-top: 20px; }
+    .pnotes-inner { background: var(--sage-50); border: 1px solid var(--line); border-radius: 14px; padding: 15px 18px; }
+    .pnotes h4 { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: .7rem; color: var(--ink-600); margin: 0 0 9px; }
+    .pnotes ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+    .pnotes li { position: relative; padding-left: 16px; font-size: .86rem; line-height: 1.5; color: var(--ink-600); }
+    .pnotes li::before { content: "\2192"; position: absolute; left: 0; top: 0; color: var(--accent); font-size: .8rem; }
+    .pnotes .invest { color: var(--ink-900); font-weight: 600; }
+
+    /* ---- Collapsible sub-programs (used by the merged Scholarships row) ---- */
+    .pacc { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--paper); }
+    .paccs { display: grid; gap: 12px; margin-top: 22px; padding-top: 21px; border-top: 1px solid var(--line); }
+    .pacc > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 15px 18px; font-family: var(--sans); font-weight: 600; font-size: 1rem; color: var(--ink-900); background: var(--sage-50); transition: background .18s ease; }
+    .pacc > summary::-webkit-details-marker { display: none; }
+    .pacc > summary:hover { background: var(--cream); }
+    .pacc > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+    .pacc-meta { font-weight: 500; font-size: .84rem; color: var(--ink-600); }
+    .pacc-chev { margin-left: auto; flex-shrink: 0; width: 18px; height: 18px; color: var(--accent); transition: transform .22s ease; }
+    .pacc[open] > summary { background: var(--cream); border-bottom: 1px solid var(--line); }
+    .pacc[open] .pacc-chev { transform: rotate(180deg); }
+    .pacc-panel { padding: 4px 18px 18px; }
+    .pacc-panel .pcols { margin-top: 16px; padding-top: 0; border-top: 0; }
+    .pacc-panel .pnotes { padding-top: 16px; }
+
+    @media (max-width: 900px) {
+      .prow { grid-template-columns: 1fr; }
+      .prow:nth-child(even) .prow-media { order: 0; }
+      .prow-media { min-height: 0; height: 56vw; max-height: 340px; }
+    }
 
     /* ---- Transparency callout ---- */
     .transp { padding: var(--sec-y) 0; background: var(--paper); border-top: 1px solid var(--line); }
@@ -129,7 +157,7 @@
     .btn-line:hover { background: rgba(255, 255, 255, .12); border-color: #fff; transform: translateY(-2px); }
     .btn-solid svg, .btn-line svg { width: 18px; height: 18px; }
 
-    @media (prefers-reduced-motion: reduce) { .pcard, .btn-solid, .btn-line { transition: none; } }
+    @media (prefers-reduced-motion: reduce) { .btn-solid, .btn-line, .pacc > summary, .pacc-chev { transition: none; } }
   </style>
 </head>
 
@@ -278,365 +306,442 @@
             that the right support, in the right place, changes a child's whole trajectory.</p>
         </div>
 
-        <div class="pgrid">
+        <div class="prows">
 
           <!-- 1 -->
-          <article class="pcard" style="--accent:#61AF54">
-            <div class="pcard-top">
-              <div class="pcard-tags"><span class="pcard-cat">Early Childhood</span><span class="pcard-year">Launched
-                  2025</span></div>
+          <article class="prow" style="--accent:#61AF54">
+            <div class="prow-media">
+              <img src="/content/uploads/wef/eclc-classroom-1400.webp"
+                alt="Children at an Early Childhood Learning Center in Chitral" loading="lazy" />
+              <span class="prow-year">Launched 2025</span>
+            </div>
+            <div class="prow-body">
+              <span class="prow-cat">Early Childhood</span>
               <h3>Early Childhood Learning Centers (ECLC)</h3>
-              <p class="pcard-model">A women-led social entrepreneurial model — WEF transforms dedicated spaces into
+              <p class="prow-model">A women-led social entrepreneurial model — WEF transforms dedicated spaces into
                 technology-driven, Montessori-based learning environments.</p>
-            </div>
-            <div class="pcard-body">
-              <div class="pcol">
-                <h4>Where</h4>
-                <ul>
-                  <li>Private homes, community centers &amp; government schools</li>
-                </ul>
+              <div class="pcols">
+                <div class="pcol">
+                  <h4>Where</h4>
+                  <ul>
+                    <li>Private homes, community centers &amp; government schools</li>
+                  </ul>
+                </div>
+                <div class="pcol">
+                  <h4>Who</h4>
+                  <ul>
+                    <li>Children aged 3–5</li>
+                  </ul>
+                </div>
+                <div class="pcol">
+                  <h4>Impact</h4>
+                  <ul>
+                    <li>100 centers operational</li>
+                    <li>3,000 students</li>
+                    <li>200 Montessori-trained teachers &amp; aides</li>
+                  </ul>
+                </div>
               </div>
-              <div class="pcol">
-                <h4>Who</h4>
-                <ul>
-                  <li>Children aged 3–5</li>
-                </ul>
+              <div class="pnotes">
+                <div class="pnotes-inner">
+                  <h4>Notes</h4>
+                  <ul>
+                    <li>By 2030: 500 centers, 15,000 students &amp; 1,000 local women benefited</li>
+                    <li>By 2035: 1,200 centers, 36,000 students &amp; 2,400 women empowered</li>
+                    <li class="invest">Projected investment ≈ US$4M (120 crore PKR)</li>
+                  </ul>
+                </div>
               </div>
-              <div class="pcol">
-                <h4>Impact</h4>
-                <ul>
-                  <li>100 centers operational</li>
-                  <li>3,000 students</li>
-                  <li>200 Montessori-trained teachers &amp; aides</li>
-                </ul>
-              </div>
-            </div>
-            <div class="pcard-notes">
-              <h4>Notes</h4>
-              <ul>
-                <li>By 2030: 500 centers, 15,000 students &amp; 1,000 local women benefited</li>
-                <li>By 2035: 1,200 centers, 36,000 students &amp; 2,400 women empowered</li>
-                <li class="invest">Projected investment ≈ US$4M (120 crore PKR)</li>
-              </ul>
             </div>
           </article>
 
           <!-- 2 -->
-          <article class="pcard" style="--accent:#2C6E7A">
-            <div class="pcard-top">
-              <div class="pcard-tags"><span class="pcard-cat">Early Childhood + Language</span><span
-                  class="pcard-year">Launched 2024</span></div>
+          <article class="prow" style="--accent:#2C6E7A">
+            <div class="prow-media">
+              <img src="/content/uploads/wef/government-school-learning-center.jpg"
+                alt="A government school learning center in Upper Chitral" loading="lazy" />
+              <span class="prow-year">Launched 2024</span>
+            </div>
+            <div class="prow-body">
+              <span class="prow-cat">Early Childhood + Language</span>
               <h3>Government School Learning Centers</h3>
-              <p class="pcard-model">Integrating early childhood development with technology-assisted English language
+              <p class="prow-model">Integrating early childhood development with technology-assisted English language
                 labs inside government primary schools.</p>
-            </div>
-            <div class="pcard-body">
-              <div class="pcol">
-                <h4>Where</h4>
-                <ul>
-                  <li>Primary schools in Upper Chitral</li>
-                </ul>
+              <div class="pcols">
+                <div class="pcol">
+                  <h4>Where</h4>
+                  <ul>
+                    <li>Primary schools in Upper Chitral</li>
+                  </ul>
+                </div>
+                <div class="pcol">
+                  <h4>Who</h4>
+                  <ul>
+                    <li>Ages 3–5 (early childhood development)</li>
+                    <li>Ages 6–11 (English language lab)</li>
+                  </ul>
+                </div>
+                <div class="pcol">
+                  <h4>Impact</h4>
+                  <ul>
+                    <li>10 centers</li>
+                    <li>2,000 students</li>
+                    <li>10 teachers</li>
+                  </ul>
+                </div>
               </div>
-              <div class="pcol">
-                <h4>Who</h4>
-                <ul>
-                  <li>Ages 3–5 (early childhood development)</li>
-                  <li>Ages 6–11 (English language lab)</li>
-                </ul>
+              <div class="pnotes">
+                <div class="pnotes-inner">
+                  <h4>Notes</h4>
+                  <ul>
+                    <li>Envisioning 600 more learning centers by 2035</li>
+                    <li class="invest">Projected investment ≈ US$2M (60 crore PKR)</li>
+                  </ul>
+                </div>
               </div>
-              <div class="pcol">
-                <h4>Impact</h4>
-                <ul>
-                  <li>10 centers</li>
-                  <li>2,000 students</li>
-                  <li>10 teachers</li>
-                </ul>
-              </div>
-            </div>
-            <div class="pcard-notes">
-              <h4>Notes</h4>
-              <ul>
-                <li>Envisioning 600 more learning centers by 2035</li>
-                <li class="invest">Projected investment ≈ US$2M (60 crore PKR)</li>
-              </ul>
             </div>
           </article>
 
           <!-- 3 -->
-          <article class="pcard" style="--accent:#C6923E">
-            <div class="pcard-top">
-              <div class="pcard-tags"><span class="pcard-cat">Model Schools</span><span class="pcard-year">Launched
-                  2025</span></div>
+          <article class="prow" style="--accent:#C6923E">
+            <div class="prow-media">
+              <img src="/content/uploads/wef/technology-assisted-classroom-learning.jpg"
+                alt="A technology-enabled classroom at a government model school" loading="lazy" />
+              <span class="prow-year">Launched 2025</span>
+            </div>
+            <div class="prow-body">
+              <span class="prow-cat">Model Schools</span>
               <h3>Government Model Schools</h3>
-              <p class="pcard-model">Transforming existing classrooms into modern, technology-enabled learning spaces.</p>
-            </div>
-            <div class="pcard-body">
-              <div class="pcol">
-                <h4>Where</h4>
-                <ul>
-                  <li>Primary schools in Upper Chitral, where our learning centers are already established</li>
-                </ul>
+              <p class="prow-model">Transforming existing classrooms into modern, technology-enabled learning spaces.</p>
+              <div class="pcols">
+                <div class="pcol">
+                  <h4>Where</h4>
+                  <ul>
+                    <li>Primary schools in Upper Chitral, where our learning centers are already established</li>
+                  </ul>
+                </div>
+                <div class="pcol">
+                  <h4>Who</h4>
+                  <ul>
+                    <li>Children aged 6–11</li>
+                  </ul>
+                </div>
+                <div class="pcol">
+                  <h4>Impact</h4>
+                  <ul>
+                    <li>10 centers</li>
+                    <li>2,000 students</li>
+                    <li>25 teachers</li>
+                  </ul>
+                </div>
               </div>
-              <div class="pcol">
-                <h4>Who</h4>
-                <ul>
-                  <li>Children aged 6–11</li>
-                </ul>
+              <div class="pnotes">
+                <div class="pnotes-inner">
+                  <h4>Notes</h4>
+                  <ul>
+                    <li>Envisioning 600 more model schools by 2035</li>
+                    <li class="invest">Projected investment ≈ US$2M (60 crore PKR)</li>
+                  </ul>
+                </div>
               </div>
-              <div class="pcol">
-                <h4>Impact</h4>
-                <ul>
-                  <li>10 centers</li>
-                  <li>2,000 students</li>
-                  <li>25 teachers</li>
-                </ul>
-              </div>
-            </div>
-            <div class="pcard-notes">
-              <h4>Notes</h4>
-              <ul>
-                <li>Envisioning 600 more model schools by 2035</li>
-                <li class="invest">Projected investment ≈ US$2M (60 crore PKR)</li>
-              </ul>
             </div>
           </article>
 
           <!-- 4 -->
-          <article class="pcard" style="--accent:#B4553B">
-            <div class="pcard-top">
-              <div class="pcard-tags"><span class="pcard-cat">Language Labs</span><span class="pcard-year">Launched
-                  2021</span></div>
+          <article class="prow" style="--accent:#B4553B">
+            <div class="prow-media">
+              <img src="/content/uploads/wef/in-school-language-lab.webp"
+                alt="Students in an in-school English language lab in Chitral" loading="lazy" />
+              <span class="prow-year">Launched 2021</span>
+            </div>
+            <div class="prow-body">
+              <span class="prow-cat">Language Labs</span>
               <h3>In-School Language Labs</h3>
-              <p class="pcard-model">A structured English learning environment that strengthens students' speaking and
+              <p class="prow-model">A structured English learning environment that strengthens students' speaking and
                 listening through facilitated, technology-enabled instruction.</p>
-            </div>
-            <div class="pcard-body">
-              <div class="pcol">
-                <h4>Where</h4>
-                <ul>
-                  <li>Low-income private schools in Upper Chitral</li>
-                </ul>
+              <div class="pcols">
+                <div class="pcol">
+                  <h4>Where</h4>
+                  <ul>
+                    <li>Low-income private schools in Upper Chitral</li>
+                  </ul>
+                </div>
+                <div class="pcol">
+                  <h4>Who</h4>
+                  <ul>
+                    <li>Ages 6–16</li>
+                    <li>Primary &amp; secondary school students</li>
+                  </ul>
+                </div>
+                <div class="pcol">
+                  <h4>Impact</h4>
+                  <ul>
+                    <li>5 English language labs</li>
+                    <li>2,000+ students</li>
+                    <li>5 English language facilitators</li>
+                  </ul>
+                </div>
               </div>
-              <div class="pcol">
-                <h4>Who</h4>
-                <ul>
-                  <li>Ages 6–16</li>
-                  <li>Primary &amp; secondary school students</li>
-                </ul>
+              <div class="pnotes">
+                <div class="pnotes-inner">
+                  <h4>Notes</h4>
+                  <ul>
+                    <li>WEF successfully transitioned ownership &amp; ongoing management in April 2026</li>
+                    <li>Continues to provide teacher training, English resources &amp; scholarships to underserved
+                      students</li>
+                  </ul>
+                </div>
               </div>
-              <div class="pcol">
-                <h4>Impact</h4>
-                <ul>
-                  <li>5 English language labs</li>
-                  <li>2,000+ students</li>
-                  <li>5 English language facilitators</li>
-                </ul>
-              </div>
-            </div>
-            <div class="pcard-notes">
-              <h4>Notes</h4>
-              <ul>
-                <li>WEF successfully transitioned ownership &amp; ongoing management in April 2026</li>
-                <li>Continues to provide teacher training, English resources &amp; scholarships to underserved students</li>
-              </ul>
             </div>
           </article>
 
           <!-- 5 -->
-          <article class="pcard" style="--accent:#2A5223">
-            <div class="pcard-top">
-              <div class="pcard-tags"><span class="pcard-cat">Research</span><span class="pcard-year">Launched
-                  2026</span></div>
+          <article class="prow" style="--accent:#2A5223">
+            <div class="prow-media">
+              <img src="/content/uploads/wef/Emerging-technology-hub-min.png"
+                alt="The Herzing–Daya Research &amp; Learning Hub at the University of Chitral" loading="lazy" />
+              <span class="prow-year">Launched 2026</span>
+            </div>
+            <div class="prow-body">
+              <span class="prow-cat">Research</span>
               <h3>Herzing–Daya Research &amp; Learning Hub</h3>
-              <p class="pcard-model">One of Pakistan's first early-childhood-development research hubs in a remote
-                mountainous region — producing locally grounded evidence, informing policy, and enabling scalable impact.</p>
-            </div>
-            <div class="pcard-body">
-              <div class="pcol">
-                <h4>Where</h4>
-                <ul>
-                  <li>Hosted at the University of Chitral</li>
-                  <li>Serving a region home to 52,000 children aged 3–5</li>
-                  <li>40,000+ primary school students</li>
-                </ul>
+              <p class="prow-model">One of Pakistan's first early-childhood-development research hubs in a remote
+                mountainous region — producing locally grounded evidence, informing policy, and enabling scalable
+                impact.</p>
+              <div class="pcols">
+                <div class="pcol">
+                  <h4>Where</h4>
+                  <ul>
+                    <li>Hosted at the University of Chitral</li>
+                    <li>Serving a region home to 52,000 children aged 3–5</li>
+                    <li>40,000+ primary school students</li>
+                  </ul>
+                </div>
+                <div class="pcol">
+                  <h4>Who</h4>
+                  <ul>
+                    <li>ECD practitioners &amp; primary school teachers</li>
+                    <li>Researchers &amp; academic partners</li>
+                    <li>Policymakers &amp; education stakeholders</li>
+                  </ul>
+                </div>
+                <div class="pcol">
+                  <h4>Impact</h4>
+                  <ul>
+                    <li>Smoother transition from ECD to primary education</li>
+                    <li>A scalable, validated rural ECD model</li>
+                    <li>Evidence informing national policy</li>
+                  </ul>
+                </div>
               </div>
-              <div class="pcol">
-                <h4>Who</h4>
-                <ul>
-                  <li>ECD practitioners &amp; primary school teachers</li>
-                  <li>Researchers &amp; academic partners</li>
-                  <li>Policymakers &amp; education stakeholders</li>
-                </ul>
+              <div class="pnotes">
+                <div class="pnotes-inner">
+                  <h4>Notes</h4>
+                  <ul>
+                    <li>Led by WEF (USA) and funded by the Herzing and Daya families</li>
+                  </ul>
+                </div>
               </div>
-              <div class="pcol">
-                <h4>Impact</h4>
-                <ul>
-                  <li>Smoother transition from ECD to primary education</li>
-                  <li>A scalable, validated rural ECD model</li>
-                  <li>Evidence informing national policy</li>
-                </ul>
-              </div>
-            </div>
-            <div class="pcard-notes">
-              <h4>Notes</h4>
-              <ul>
-                <li>Led by WEF (USA) and funded by the Herzing and Daya families</li>
-              </ul>
             </div>
           </article>
 
           <!-- 6 -->
-          <article class="pcard" style="--accent:#6B7A33">
-            <div class="pcard-top">
-              <div class="pcard-tags"><span class="pcard-cat">Training &amp; Skills</span><span
-                  class="pcard-year">Launched 2026</span></div>
+          <article class="prow" style="--accent:#6B7A33">
+            <div class="prow-media">
+              <img src="/content/uploads/wef/herzing-university-scholars.png"
+                alt="Students in the Herzing Training &amp; Skills Development Program" loading="lazy" />
+              <span class="prow-year">Launched 2026</span>
+            </div>
+            <div class="prow-body">
+              <span class="prow-cat">Training &amp; Skills</span>
               <h3>Herzing Training &amp; Skills Development Program</h3>
-              <p class="pcard-model">An integrated platform for professional development, teacher training, vocational
+              <p class="prow-model">An integrated platform for professional development, teacher training, vocational
                 skills, and degree &amp; diploma programs.</p>
-            </div>
-            <div class="pcard-body">
-              <div class="pcol">
-                <h4>Where</h4>
-                <ul>
-                  <li>Hosted at the University of Chitral &amp; regional hubs in Lower/Upper Chitral</li>
-                  <li>Digital &amp; smart-TV delivery for teachers in low/no-internet settings</li>
-                </ul>
+              <div class="pcols">
+                <div class="pcol">
+                  <h4>Where</h4>
+                  <ul>
+                    <li>Hosted at the University of Chitral &amp; regional hubs in Lower/Upper Chitral</li>
+                    <li>Digital &amp; smart-TV delivery for teachers in low/no-internet settings</li>
+                  </ul>
+                </div>
+                <div class="pcol">
+                  <h4>Who</h4>
+                  <ul>
+                    <li>Youth &amp; job seekers</li>
+                    <li>Educators &amp; trainers</li>
+                    <li>ECD practitioners &amp; primary school teachers</li>
+                  </ul>
+                </div>
+                <div class="pcol">
+                  <h4>Impact</h4>
+                  <ul>
+                    <li>Workforce-ready talent for high-demand sectors</li>
+                    <li>Certification, hands-on training &amp; job placement</li>
+                    <li>A resource platform for scholarships, employment &amp; entrepreneurship</li>
+                    <li>300+ teachers trained in 2026</li>
+                  </ul>
+                </div>
               </div>
-              <div class="pcol">
-                <h4>Who</h4>
-                <ul>
-                  <li>Youth &amp; job seekers</li>
-                  <li>Educators &amp; trainers</li>
-                  <li>ECD practitioners &amp; primary school teachers</li>
-                </ul>
+              <div class="pnotes">
+                <div class="pnotes-inner">
+                  <h4>Notes</h4>
+                  <ul>
+                    <li>Funded by a Herzing family grant</li>
+                    <li>Diplomas in ECD, hospitality, travel &amp; tourism, technology &amp; higher-education pathways
+                    </li>
+                    <li>By 2030: 1,000 teachers trained · By 2035: 2,400 teachers trained</li>
+                    <li class="invest">Projected investment ≈ US$500,000 (15 crore PKR)</li>
+                  </ul>
+                </div>
               </div>
-              <div class="pcol">
-                <h4>Impact</h4>
-                <ul>
-                  <li>Workforce-ready talent for high-demand sectors</li>
-                  <li>Certification, hands-on training &amp; job placement</li>
-                  <li>A resource platform for scholarships, employment &amp; entrepreneurship</li>
-                  <li>300+ teachers trained in 2026</li>
-                </ul>
-              </div>
-            </div>
-            <div class="pcard-notes">
-              <h4>Notes</h4>
-              <ul>
-                <li>Funded by a Herzing family grant</li>
-                <li>Diplomas in ECD, hospitality, travel &amp; tourism, technology &amp; higher-education pathways</li>
-                <li>By 2030: 1,000 teachers trained · By 2035: 2,400 teachers trained</li>
-                <li class="invest">Projected investment ≈ US$500,000 (15 crore PKR)</li>
-              </ul>
             </div>
           </article>
 
           <!-- 7 -->
-          <article class="pcard" style="--accent:#82C775">
-            <div class="pcard-top">
-              <div class="pcard-tags"><span class="pcard-cat">Teacher Training</span><span class="pcard-year">Launched
-                  2026</span></div>
+          <article class="prow" style="--accent:#82C775">
+            <div class="prow-media">
+              <img src="/content/uploads/wef/teacher-training-uoc-1400.webp"
+                alt="Teachers in a WEF training session at the University of Chitral" loading="lazy" />
+              <span class="prow-year">Launched 2026</span>
+            </div>
+            <div class="prow-body">
+              <span class="prow-cat">Teacher Training</span>
               <h3>Teachers' Training Program</h3>
-              <p class="pcard-model">Builds teachers' capacity to improve learning outcomes.</p>
-            </div>
-            <div class="pcard-body">
-              <div class="pcol">
-                <h4>Where</h4>
-                <ul>
-                  <li>Low-income private schools in Upper Chitral</li>
-                </ul>
+              <p class="prow-model">Builds teachers' capacity to improve learning outcomes.</p>
+              <div class="pcols">
+                <div class="pcol">
+                  <h4>Where</h4>
+                  <ul>
+                    <li>Low-income private schools in Upper Chitral</li>
+                  </ul>
+                </div>
+                <div class="pcol">
+                  <h4>Who</h4>
+                  <ul>
+                    <li>ECD practitioners</li>
+                    <li>Primary school teachers</li>
+                  </ul>
+                </div>
+                <div class="pcol">
+                  <h4>Impact</h4>
+                  <ul>
+                    <li>5 schools</li>
+                    <li>115 students</li>
+                  </ul>
+                </div>
               </div>
-              <div class="pcol">
-                <h4>Who</h4>
-                <ul>
-                  <li>ECD practitioners</li>
-                  <li>Primary school teachers</li>
-                </ul>
+              <div class="pnotes">
+                <div class="pnotes-inner">
+                  <h4>Notes</h4>
+                  <ul>
+                    <li>Student numbers &amp; investment increase every year</li>
+                    <li class="invest">Invested to date ≈ US$7,000 (6.29 lakh PKR)</li>
+                  </ul>
+                </div>
               </div>
-              <div class="pcol">
-                <h4>Impact</h4>
-                <ul>
-                  <li>5 schools</li>
-                  <li>115 students</li>
-                </ul>
-              </div>
-            </div>
-            <div class="pcard-notes">
-              <h4>Notes</h4>
-              <ul>
-                <li>Student numbers &amp; investment increase every year</li>
-                <li class="invest">Invested to date ≈ US$7,000 (6.29 lakh PKR)</li>
-              </ul>
             </div>
           </article>
 
-          <!-- 8 -->
-          <article class="pcard" style="--accent:#8A5A2B">
-            <div class="pcard-top">
-              <div class="pcard-tags"><span class="pcard-cat">Scholarship</span><span class="pcard-year">Launched
-                  2025</span></div>
-              <h3>Secondary School Scholarships</h3>
-              <p class="pcard-model">Removes financial barriers for underserved secondary students.</p>
+          <!-- 8 — both scholarship tracks live here, each one expandable -->
+          <article class="prow" style="--accent:#8A5A2B">
+            <div class="prow-media">
+              <img src="/content/uploads/wef/academic-scholarships-program.jpeg"
+                alt="WEF scholarship recipients studying together" loading="lazy" />
+              <span class="prow-year">Launched 2025</span>
             </div>
-            <div class="pcard-body">
-              <div class="pcol">
-                <h4>Who</h4>
-                <ul>
-                  <li>Ages 14–16</li>
-                  <li>Grade 9 &amp; 10 students</li>
-                </ul>
-              </div>
-              <div class="pcol">
-                <h4>Focus</h4>
-                <ul>
-                  <li>Keeping promising students in school through the critical secondary years</li>
-                </ul>
-              </div>
-            </div>
-            <div class="pcard-notes">
-              <h4>Notes</h4>
-              <ul>
-                <li>Student numbers grow each year as new recipients are onboarded</li>
-              </ul>
-            </div>
-          </article>
+            <div class="prow-body">
+              <span class="prow-cat">Scholarships</span>
+              <h3>Scholarships</h3>
+              <p class="prow-model">Two tracks that keep promising students moving — through the critical secondary
+                years, and on to university. Open either one for the full detail.</p>
+              <div class="paccs">
 
-          <!-- 9 -->
-          <article class="pcard" style="--accent:#2C6E7A">
-            <div class="pcard-top">
-              <div class="pcard-tags"><span class="pcard-cat">Scholarship</span><span class="pcard-year">Launched
-                  2025</span></div>
-              <h3>Rising Stars Undergraduate Scholarship</h3>
-              <p class="pcard-model">Removes financial barriers to higher education for talented students from the region.</p>
-            </div>
-            <div class="pcard-body">
-              <div class="pcol">
-                <h4>Where</h4>
-                <ul>
-                  <li>American University of Central Asia (AUCA), Bishkek, Kyrgyzstan</li>
-                  <li>University of Central Asia (UCA), Khorog, Tajikistan</li>
-                </ul>
+                <details class="pacc" open>
+                  <summary>
+                    Secondary School Scholarships
+                    <span class="pacc-meta">Ages 14–16</span>
+                    <svg class="pacc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M6 9l6 6 6-6" />
+                    </svg>
+                  </summary>
+                  <div class="pacc-panel">
+                    <p class="prow-model">Removes financial barriers for underserved secondary students at low-income
+                      private schools in Chitral.</p>
+                    <div class="pcols">
+                      <div class="pcol">
+                        <h4>Who</h4>
+                        <ul>
+                          <li>Ages 14–16</li>
+                          <li>Grade 9 &amp; 10 students</li>
+                        </ul>
+                      </div>
+                      <div class="pcol">
+                        <h4>Focus</h4>
+                        <ul>
+                          <li>Keeping promising students in school through the critical secondary years</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="pnotes">
+                      <div class="pnotes-inner">
+                        <h4>Notes</h4>
+                        <ul>
+                          <li>Student numbers grow each year as new recipients are onboarded</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+
+                <details class="pacc">
+                  <summary>
+                    Rising Stars Undergraduate Scholarship
+                    <span class="pacc-meta">66 recipients</span>
+                    <svg class="pacc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M6 9l6 6 6-6" />
+                    </svg>
+                  </summary>
+                  <div class="pacc-panel">
+                    <p class="prow-model">Removes financial barriers to higher education for talented students from the
+                      region.</p>
+                    <div class="pcols">
+                      <div class="pcol">
+                        <h4>Where</h4>
+                        <ul>
+                          <li>American University of Central Asia (AUCA), Bishkek, Kyrgyzstan</li>
+                          <li>University of Central Asia (UCA), Khorog, Tajikistan</li>
+                        </ul>
+                      </div>
+                      <div class="pcol">
+                        <h4>Who</h4>
+                        <ul>
+                          <li>Selected students, including from Tajikistan</li>
+                        </ul>
+                      </div>
+                      <div class="pcol">
+                        <h4>Impact</h4>
+                        <ul>
+                          <li>AUCA: 52 scholarship recipients</li>
+                          <li>UCA: 14 scholarship recipients</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="pnotes">
+                      <div class="pnotes-inner">
+                        <h4>Notes</h4>
+                        <ul>
+                          <li>Hosted by WEF; funded by the Sadiq Ali Family</li>
+                          <li class="invest">Total investment to date ≈ US$120,000 (11 million TJS)</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+
               </div>
-              <div class="pcol">
-                <h4>Who</h4>
-                <ul>
-                  <li>Selected students, including from Tajikistan</li>
-                </ul>
-              </div>
-              <div class="pcol">
-                <h4>Impact</h4>
-                <ul>
-                  <li>AUCA: 52 scholarship recipients</li>
-                  <li>UCA: 14 scholarship recipients</li>
-                </ul>
-              </div>
-            </div>
-            <div class="pcard-notes">
-              <h4>Notes</h4>
-              <ul>
-                <li>Hosted by WEF; funded by the Sadiq Ali Family</li>
-                <li class="invest">Total investment to date ≈ US$120,000 (11 million TJS)</li>
-              </ul>
             </div>
           </article>
 
