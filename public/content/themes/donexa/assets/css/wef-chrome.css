@@ -34,9 +34,11 @@
   --logo-h: 72px;
 
   /* Shared vertical rhythm. Use these instead of ad-hoc clamps so sections
-     stack consistently across pages. */
-  --sec-y: clamp(48px, 6.5vw, 88px);
-  --sec-y-sm: clamp(36px, 5vw, 62px);
+     stack consistently across pages. Tightened ~30% — the previous 88px top
+     and bottom put ~176px of dead space between neighbouring sections, which
+     read as gaps rather than separation. */
+  --sec-y: clamp(38px, 4.4vw, 60px);
+  --sec-y-sm: clamp(28px, 3.4vw, 44px);
 }
 
 @media (max-width: 960px) {

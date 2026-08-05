@@ -111,7 +111,7 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.01em;lin
 .hero-dot.is-active{background:#fff;width:26px;border-radius:6px}
 
 /* ---- Hero intro — the headline block, now on paper instead of a dark panel ---- */
-.hero-intro{background:var(--paper);padding:clamp(38px,4.6vw,60px) 0 clamp(42px,5.2vw,68px);border-bottom:1px solid var(--line)}
+.hero-intro{background:var(--paper);padding:clamp(30px,3.6vw,46px) 0 clamp(32px,4vw,50px);border-bottom:1px solid var(--line)}
 .hero-intro h1{font-size:clamp(2.4rem,4.4vw,3.9rem);color:var(--ink-900);margin:0 0 20px;font-weight:500;max-width:19ch}
 .hero-intro h1 em{font-style:italic;color: var(--pine-ink)}
 .hero-lead{font-size:clamp(1.06rem,1.5vw,1.24rem);line-height:1.62;color:var(--ink-600);max-width:60ch;margin:0 0 30px}
@@ -146,13 +146,13 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.01em;lin
 
 /* ---- Section scaffolding ---- */
 .section{padding:var(--sec-y) 0}
-.section-head{max-width:660px;margin:0 0 clamp(36px,5vw,52px)}
+.section-head{max-width:660px;margin:0 0 clamp(24px,3vw,36px)}
 .section-head h2{font-size:clamp(2rem,3.6vw,3rem);color:var(--ink-900);margin:0 0 16px}
 .section-head p{font-size:1.15rem;line-height:1.6;color:var(--ink-600);margin:0}
 
 /* ---- Impact stats ---- */
 .impact{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.impact .container{padding-top:clamp(46px,6vw,64px);padding-bottom:clamp(46px,6vw,64px)}
+.impact .container{padding-top:clamp(32px,3.8vw,46px);padding-bottom:clamp(32px,3.8vw,46px)}
 .impact-grid{display:grid;grid-template-columns:repeat(4,1fr)}
 .impact-item{padding:12px 24px;border-right:1px solid var(--line)}
 .impact-item:first-child{padding-left:0}
@@ -168,8 +168,8 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.01em;lin
 }
 
 /* ---- Program pathways (editorial, alternating) ---- */
-.programs .section-head{margin-bottom:clamp(40px,6vw,64px)}
-.program{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,72px);align-items:center;margin-bottom:clamp(52px,8vw,96px)}
+.programs .section-head{margin-bottom:clamp(26px,3.4vw,42px)}
+.program{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:center;margin-bottom:clamp(38px,5vw,62px)}
 .program:last-child{margin-bottom:0}
 .program.flip .program-media{order:2}
 .program-media{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:5/4;box-shadow:0 26px 64px rgba(20,20,10,.16)}
