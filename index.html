@@ -20,11 +20,11 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Jost:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link href="/content/themes/donexa/assets/css/wef-chrome.css?v=4" rel="stylesheet" />
-  <link href="/content/themes/donexa/assets/css/wef-home.css?v=4" rel="stylesheet" />
+  <link href="/content/themes/donexa/assets/css/wef-chrome.css?v=5" rel="stylesheet" />
+  <link href="/content/themes/donexa/assets/css/wef-home.css?v=5" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <link href="/content/themes/donexa/assets/css/wef-centers.css?v=4" rel="stylesheet" />
+  <link href="/content/themes/donexa/assets/css/wef-centers.css?v=5" rel="stylesheet" />
 </head>
 
 <body>
@@ -83,34 +83,7 @@
   <main>
 
     <!-- ===================== HERO ===================== -->
-    <section class="hero">
-      <div class="hero-panel">
-        <p class="eyebrow on-dark">Worldwide Education Fund Canada</p>
-        <h1>Every child deserves a <em>bright beginning.</em></h1>
-        <p class="hero-lead">We break the cycle of generational poverty through early childhood education, teacher
-          training, and scholarships across Chitral, Pakistan and Central &amp; South Asia.</p>
-        <div class="hero-cta">
-          <a class="btn btn-donate on-dark"
-            href="https://www.zeffy.com/en-US/donation-form/donate-now-to-support-education-for-underprivileged-children"
-            rel="noopener" target="_blank">Donate Now
-            <svg viewbox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12 21s-8-5.3-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.7-8 11-8 11z" />
-            </svg></a>
-          <a class="btn btn-ghost on-dark" href="#programs">Explore our programs
-            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg></a>
-        </div>
-        <p class="hero-trust">
-          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 2 4 5v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V5l-8-3z" />
-            <path d="M9 12l2 2 4-4" />
-          </svg>
-          501(c)(3) nonprofit · Federal Tax ID 81-2135633
-        </p>
-      </div>
+    <section class="hero" aria-label="Photos from our programs">
       <div class="hero-media">
         <div class="hero-carousel" id="heroCarousel">
           <div class="hero-slide is-active"
@@ -137,6 +110,37 @@
             <path d="M9 6l6 6-6 6" />
           </svg></button>
         <div class="hero-dots" id="heroDots"></div>
+      </div>
+    </section>
+
+    <!-- ===================== HERO INTRO ===================== -->
+    <section class="hero-intro">
+      <div class="container">
+        <p class="eyebrow">Worldwide Education Fund Canada</p>
+        <h1>Every child deserves a <em>bright beginning.</em></h1>
+        <p class="hero-lead">We break the cycle of generational poverty through early childhood education, teacher
+          training, and scholarships across Chitral, Pakistan and Central &amp; South Asia.</p>
+        <div class="hero-cta">
+          <a class="btn btn-donate"
+            href="https://www.zeffy.com/en-US/donation-form/donate-now-to-support-education-for-underprivileged-children"
+            rel="noopener" target="_blank">Donate Now
+            <svg viewbox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 21s-8-5.3-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.7-8 11-8 11z" />
+            </svg></a>
+          <a class="btn btn-ghost" href="#programs">Explore our programs
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg></a>
+        </div>
+        <p class="hero-trust">
+          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2 4 5v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V5l-8-3z" />
+            <path d="M9 12l2 2 4-4" />
+          </svg>
+          501(c)(3) nonprofit · Federal Tax ID 81-2135633
+        </p>
       </div>
     </section>
 
@@ -1106,8 +1110,8 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="/content/maps/centers-data.js?v=3"></script>
-  <script src="/content/themes/donexa/assets/js/wef-centers.js?v=4" defer></script>
-  <script src="/content/themes/donexa/assets/js/wef-chrome.js?v=4" defer></script>
+  <script src="/content/themes/donexa/assets/js/wef-centers.js?v=5" defer></script>
+  <script src="/content/themes/donexa/assets/js/wef-chrome.js?v=5" defer></script>
 </body>
 
 </html>
