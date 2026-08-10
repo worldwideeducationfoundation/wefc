@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from 'vite';
 import { resolve, extname, relative } from 'path';
 import fs from 'fs';
+import { seoPlugin } from './build/seo.js';
 
 // Helper to recursively find all HTML files
 function getHtmlInputFiles(dir, files = {}) {
@@ -192,7 +193,10 @@ export default defineConfig(({ mode }) => {
 
   return {
     root: './',
-    plugins: [cleanUrlsPlugin, cleanUrlsBuildPlugin()],
+    // Order matters: cleanUrlsBuildPlugin writes the blog directory routes in
+    // its closeBundle, and seoPlugin's closeBundle reads them to build the
+    // sitemap, so it has to come after.
+    plugins: [cleanUrlsPlugin, cleanUrlsBuildPlugin(), seoPlugin()],
     // Only these two names are ever inlined into the bundle — an explicit
     // allowlist rather than an `envPrefix`, so a stray SUPABASE_SERVICE_ROLE_KEY
     // in the environment can never leak into client-side JavaScript.

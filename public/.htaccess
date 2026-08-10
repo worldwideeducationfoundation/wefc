@@ -1,0 +1,96 @@
+# =============================================================================
+# Worldwide Education Fund Canada — Apache/LiteSpeed configuration
+#
+# Hostinger serves this site as static files, so there is no server code to set
+# response headers. This file is the only place they can be configured. It is
+# in public/ so Vite copies it into dist/ verbatim on every build.
+#
+# Anything here is a no-op on a host that does not read .htaccess (the site
+# still works, it just loses these headers), which is why nothing functional
+# depends on it — routing is handled by real directory-index files instead.
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# Canonical host: send www to the apex so one hostname serves the site.
+# Without this the whole site answers on both, which splits ranking signals.
+# The canonical tags in each page state the same preference.
+# ---------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Photographs that had been saved as PNG (2-3 MB each) were re-encoded to JPEG.
+# Nothing on the site points at the old files any more, but they may be in
+# Google Images or in a shared link, so redirect rather than 404.
+# ---------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteRule ^content/uploads/wef/(bright-beginnings-program|herzing\ hospitatlity|herzing-daya-research-hub-classroom|herzing-training-computer-lab|herzing-training-data-analysis|eclc-teacher-storytime-mountains|update-herzing-gift)\.png$ /content/uploads/wef/$1.jpg [L,R=301,NC]
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Security headers
+# ---------------------------------------------------------------------------
+<IfModule mod_headers.c>
+  # Two years, preload-eligible. The site is already HTTPS-only and redirects
+  # HTTP, so this only removes the first unprotected request.
+  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+
+  # Stop MIME sniffing turning an uploaded file into an executable script.
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Do not leak the full URL to third parties; keep same-origin analytics useful.
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # No page here needs a camera, microphone, or location.
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=()"
+
+  # Clickjacking. frame-ancestors in the CSP below is the modern equivalent and
+  # takes precedence in browsers that support it; this covers the rest.
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # -------------------------------------------------------------------------
+  # Content Security Policy
+  #
+  # Scoped to the origins this site genuinely uses, verified against the built
+  # bundle and page markup:
+  #   unpkg.com          Leaflet (the centers map), loaded with SRI
+  #   zeffy.com          donation form embed + its iframe
+  #   fonts.googleapis   stylesheet / fonts.gstatic  font files
+  #   cdn.sanity.io      CMS images;  *.sanity.io  CMS API reads
+  #   *.supabase.co      contact form and newsletter writes
+  #   openstreetmap /
+  #   arcgisonline       map tiles
+  #
+  # 'unsafe-inline' is present for scripts and styles because the pages carry
+  # inline <script> and <style> blocks throughout. That weakens the XSS benefit
+  # and is an honest limitation, not an oversight: removing it means hashing or
+  # nonce-ing every inline block, which a static host cannot do per-request.
+  # The policy still blocks script loading from any unlisted origin, and
+  # object-src/base-uri close the two most abused injection vectors outright.
+  # -------------------------------------------------------------------------
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://www.zeffy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://cdn.sanity.io https://*.tile.openstreetmap.org https://server.arcgisonline.com https://unpkg.com https://www.zeffy.com; connect-src 'self' https://*.sanity.io https://*.supabase.co; frame-src https://www.zeffy.com; frame-ancestors 'self'; form-action 'self' https://www.zeffy.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+</IfModule>
+
+# ---------------------------------------------------------------------------
+# Caching. Fingerprinted build assets are immutable; HTML must revalidate so a
+# redeploy is picked up immediately.
+# ---------------------------------------------------------------------------
+<IfModule mod_headers.c>
+  <FilesMatch "\.(?:css|js|woff2?|ttf|eot|otf|jpg|jpeg|png|gif|webp|svg|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(?:html|xml|txt|pdf)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json image/svg+xml
+</IfModule>
+
+# Directory listings are off; assets/ returning 403 already suggests this, but
+# state it rather than rely on the host default.
+Options -Indexes

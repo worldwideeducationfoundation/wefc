@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Worldwide Education Fund Canada (WEFC)</title>
+  <title>Worldwide Education Fund Canada — Education Nonprofit for Underprivileged Children</title>
   <meta name="description"
-    content="Worldwide Education Fund Canada (WEFC) is a registered Canadian charity breaking the cycle of generational poverty through early childhood education, teacher training, and scholarships across Chitral, Pakistan and Central & South Asia." />
+    content="Worldwide Education Fund Canada (WEFC) is a registered Canadian charity expanding early childhood education, teacher training, and scholarships for underprivileged children in Chitral, Pakistan and across Central & South Asia." />
   <meta property="og:title" content="Worldwide Education Fund Canada — Every Child Deserves a Bright Beginning" />
   <meta property="og:description"
     content="Breaking the cycle of generational poverty through education in Central and South Asia." />
@@ -26,6 +26,63 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <link href="/content/themes/donexa/assets/css/wef-centers.css?v=9" rel="stylesheet" />
+  <!-- Structured data. Every value below is stated elsewhere on this page or in
+       the footer — the charity number, address, phone, email and social
+       profiles — so the markup describes the page rather than adding claims. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "NGO",
+        "@id": "https://wefcanada.org/#organization",
+        "name": "Worldwide Education Fund Canada",
+        "alternateName": ["WEFC", "Worldwide Education Fund", "Worldwide Education Foundation"],
+        "url": "https://wefcanada.org/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://wefcanada.org/content/uploads/wef/WEFC%20Logo.png"
+        },
+        "description": "A registered Canadian charity expanding access to quality education for underserved children and youth across Central and South Asia, through early childhood learning centers, teacher training, and scholarships.",
+        "email": "info@wefcanada.org",
+        "telephone": "+1-214-502-8388",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "4423 White Mud Road",
+          "addressLocality": "Edmonton",
+          "addressRegion": "AB",
+          "postalCode": "T6H 5W7",
+          "addressCountry": "CA"
+        },
+        "identifier": {
+          "@type": "PropertyValue",
+          "name": "Canadian charity registration number",
+          "value": "709257208"
+        },
+        "areaServed": [
+          { "@type": "Country", "name": "Pakistan" },
+          { "@type": "Country", "name": "Kyrgyzstan" },
+          { "@type": "Country", "name": "Tajikistan" }
+        ],
+        "sameAs": [
+          "https://x.com/WEFglobaledu",
+          "https://www.facebook.com/WorldwideEducationFundWEF",
+          "https://www.instagram.com/worldwideeducationfund/",
+          "https://linkedin.com/company/worldwide-education-fund",
+          "https://www.youtube.com/@wefdallasorg"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://wefcanada.org/#website",
+        "url": "https://wefcanada.org/",
+        "name": "Worldwide Education Fund Canada",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://wefcanada.org/#organization" }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -284,7 +341,7 @@
         <!-- 2 · Virtual Diploma Program for Technology at Herzing College -->
         <figure class="pstrip-item">
           <div class="pstrip-fig">
-            <img src="/content/uploads/wef/herzing-training-data-analysis.png" loading="lazy" decoding="async"
+            <img src="/content/uploads/wef/herzing-training-data-analysis.jpg" loading="lazy" decoding="async"
               width="1536" height="1024"
               alt="Herzing College virtual technology training data analysis session" />
           </div>
@@ -312,7 +369,7 @@
         <!-- 4 · Hospitality, Travel and Tourism Diploma Program -->
         <figure class="pstrip-item">
           <div class="pstrip-fig">
-            <img src="/content/uploads/wef/herzing%20hospitatlity.png" loading="lazy" decoding="async" width="1536"
+            <img src="/content/uploads/wef/herzing%20hospitatlity.jpg" loading="lazy" decoding="async" width="1536"
               height="1024" alt="Hospitality, Travel and Tourism training program" />
           </div>
           <span class="pstrip-num">04</span>
@@ -338,7 +395,7 @@
         <!-- 6 · Herzing–Daya Research & Learning Hub, University of Chitral -->
         <figure class="pstrip-item">
           <div class="pstrip-fig">
-            <img src="/content/uploads/wef/herzing-daya-research-hub-classroom.png" loading="lazy" decoding="async"
+            <img src="/content/uploads/wef/herzing-daya-research-hub-classroom.jpg" loading="lazy" decoding="async"
               width="1536" height="1024"
               alt="Inside the Herzing–Daya Research and Learning Hub at the University of Chitral" />
           </div>
@@ -515,7 +572,7 @@
         <div class="program reveal">
           <div class="program-media">
             <span class="program-badge">Launched 2025</span>
-            <img src="/content/uploads/wef/bright-beginnings-program.png"
+            <img src="/content/uploads/wef/bright-beginnings-program.jpg"
               alt="A Montessori teacher working with young children at a Bright Beginnings learning center, Chitral" />
           </div>
           <div class="program-body">
@@ -547,7 +604,7 @@
         <div class="program flip reveal">
           <div class="program-media">
             <span class="program-badge">Give directly</span>
-            <img src="/content/uploads/wef/herzing-training-data-analysis.png"
+            <img src="/content/uploads/wef/herzing-training-data-analysis.jpg"
               alt="Herzing College virtual technology training data analysis session" />
           </div>
           <div class="program-body">
@@ -600,7 +657,7 @@
         <div class="program flip reveal">
           <div class="program-media">
             <span class="program-badge">Give directly</span>
-            <img src="/content/uploads/wef/herzing%20hospitatlity.png"
+            <img src="/content/uploads/wef/herzing%20hospitatlity.jpg"
               alt="Hospitality, Travel and Tourism training program" />
           </div>
           <div class="program-body">
