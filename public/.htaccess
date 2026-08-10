@@ -56,6 +56,10 @@
   #
   # Scoped to the origins this site genuinely uses, verified against the built
   # bundle and page markup:
+  #   'self' in frame-src  the ECLC brochure PDF, embedded in an iframe on the
+  #                        homepage. Omitting it blocked the brochure outright
+  #                        ("This content is blocked") while the download link
+  #                        still worked, since that is not a frame.
   #   unpkg.com          Leaflet (the centers map), loaded with SRI
   #   zeffy.com          donation form embed + its iframe
   #   fonts.googleapis   stylesheet / fonts.gstatic  font files
@@ -71,7 +75,7 @@
   # The policy still blocks script loading from any unlisted origin, and
   # object-src/base-uri close the two most abused injection vectors outright.
   # -------------------------------------------------------------------------
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://www.zeffy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://cdn.sanity.io https://*.tile.openstreetmap.org https://server.arcgisonline.com https://unpkg.com https://www.zeffy.com; connect-src 'self' https://*.sanity.io https://*.supabase.co; frame-src https://www.zeffy.com; frame-ancestors 'self'; form-action 'self' https://www.zeffy.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://www.zeffy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://cdn.sanity.io https://*.tile.openstreetmap.org https://server.arcgisonline.com https://unpkg.com https://www.zeffy.com; connect-src 'self' https://*.sanity.io https://*.supabase.co; frame-src 'self' https://www.zeffy.com; frame-ancestors 'self'; form-action 'self' https://www.zeffy.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
 </IfModule>
 
 # ---------------------------------------------------------------------------
