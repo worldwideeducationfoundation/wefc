@@ -37,15 +37,21 @@
 # WordPress theme; 410 tells search engines it is intentionally gone rather than
 # temporarily missing, which drops it from the index faster than a 404.
 # ---------------------------------------------------------------------------
+#
+# All of this lives in one mod_rewrite block on purpose. An earlier version put
+# the catch-all in mod_alias (RedirectMatch 410), which silently beat the
+# specific 301s below it: mod_alias resolves before mod_rewrite, so the three
+# real posts returned 410 instead of redirecting. Keeping every rule in the same
+# module means they are evaluated top to bottom as written.
 <IfModule mod_rewrite.c>
   RewriteRule ^blog/bright-beginnings-early-childhood-centers/?$ /pages/projects/bright-beginnings-eclc/ [L,R=301]
   RewriteRule ^blog/herzing-daya-research-learning-hub-at-university-of-chitral/?$ /pages/projects/herzing-daya-research-hub/ [L,R=301]
   RewriteRule ^blog/herzing-training-skills-development-program-at-university-of-chitral/?$ /pages/projects/herzing-training-skills-development/ [L,R=301]
-  RewriteRule ^blog/category/?.*$ /pages/project-updates/ [L,R=301]
+  RewriteRule ^blog/category(/.*)?$ /pages/project-updates/ [L,R=301]
   RewriteRule ^blog/?$ /pages/project-updates/ [L,R=301]
-</IfModule>
-<IfModule mod_alias.c>
-  RedirectMatch 410 ^/blog/.+$
+
+  # Anything else that was under /blog/ is intentionally gone.
+  RewriteRule ^blog/.+$ - [G,L]
 </IfModule>
 
 # ---------------------------------------------------------------------------
