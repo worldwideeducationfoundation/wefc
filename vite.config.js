@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import { resolve, extname, relative } from 'path';
 import fs from 'fs';
 
@@ -74,14 +74,31 @@ const cleanUrlsPlugin = {
   }
 };
 
-export default defineConfig({
-  root: './',
-  plugins: [cleanUrlsPlugin],
-  build: {
-    outDir: 'dist',
-    emptyOutDir: true,
-    rollupOptions: {
-      input: getHtmlInputFiles(resolve())
+export default defineConfig(({ mode }) => {
+  // Load every env var (no prefix filter) so we can pick out the Supabase
+  // credentials Hostinger injects at build time under their own names.
+  const env = loadEnv(mode, process.cwd(), '');
+
+  return {
+    root: './',
+    plugins: [cleanUrlsPlugin],
+    // Only these two names are ever inlined into the bundle — an explicit
+    // allowlist rather than an `envPrefix`, so a stray SUPABASE_SERVICE_ROLE_KEY
+    // in the environment can never leak into client-side JavaScript.
+    define: {
+      'import.meta.env.SUPABASE_URL': JSON.stringify(
+        env.SUPABASE_URL || env.VITE_SUPABASE_URL || ''
+      ),
+      'import.meta.env.SUPABASE_ANON_KEY': JSON.stringify(
+        env.SUPABASE_API_KEY || env.SUPABASE_ANON_KEY || env.VITE_SUPABASE_ANON_KEY || ''
+      )
+    },
+    build: {
+      outDir: 'dist',
+      emptyOutDir: true,
+      rollupOptions: {
+        input: getHtmlInputFiles(resolve())
+      }
     }
-  }
+  };
 });

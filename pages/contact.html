@@ -19,6 +19,7 @@
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Jost:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
   <link href="/content/themes/donexa/assets/css/wef-chrome.css?v=9" rel="stylesheet" />
+  <link href="/content/themes/donexa/assets/css/wef-forms.css?v=1" rel="stylesheet" />
   <style>
     :root { --display: "Fraunces", Georgia, serif; --sans: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
     * { box-sizing: border-box; }
@@ -77,6 +78,14 @@
     .ct-msg { display: none; align-items: flex-start; gap: 10px; background: var(--sage-50); border: 1px solid var(--sage-200); border-radius: 12px; padding: 14px 16px; font-size: .92rem; color: var(--forest-800); line-height: 1.5; }
     .ct-msg.show { display: flex; }
     .ct-msg svg { width: 18px; height: 18px; color: var(--pine-ink); flex-shrink: 0; margin-top: 1px; }
+    .ct-msg.is-error { background: #FCEFEA; border-color: #E9C3B4; color: #8A3A22; }
+    .ct-msg.is-error svg { color: #B4553B; }
+    .ct-submit:disabled { opacity: .6; cursor: progress; transform: none; }
+
+    .ct-optin { display: flex; align-items: flex-start; gap: 10px; background: var(--sage-50); border: 1px solid var(--sage-200); border-radius: 12px; padding: 13px 15px; cursor: pointer; }
+    .ct-optin input { width: 18px; height: 18px; flex-shrink: 0; margin: 1px 0 0; accent-color: var(--pine-ink); cursor: pointer; }
+    .ct-optin span { font-size: .9rem; line-height: 1.5; color: var(--ink-600); }
+    .ct-optin span strong { display: block; font-weight: 600; font-size: .95rem; color: var(--ink-900); }
 
     /* Review CTA */
     .ct-review { background: var(--pine-ink); padding: clamp(48px, 6vw, 64px) 24px; }
@@ -191,8 +200,9 @@
         <!-- Form -->
         <div class="ct-form-wrap">
           <h2>Send us a message</h2>
-          <p class="sub">Fill this in and your email app will open with the details ready to send to our team.</p>
-          <form class="ct-form" id="ctForm" novalidate>
+          <p class="sub">Send this through and it lands straight with our team — we'll reply by email.</p>
+          <form class="ct-form" id="ctForm" data-supabase-form="contact" data-source="contact page"
+            data-mailto-fallback="info@wefcanada.org" novalidate>
             <div class="ct-row">
               <div class="ct-field">
                 <label for="ctName">Name <span class="req">*</span></label>
@@ -222,10 +232,18 @@
               <label for="ctMessage">Message <span class="req">*</span></label>
               <textarea id="ctMessage" name="message" placeholder="How can we help?" required></textarea>
             </div>
+            <label class="ct-optin" for="ctSubscribe">
+              <input type="checkbox" id="ctSubscribe" name="subscribe" />
+              <span><strong>Keep me updated</strong>Send me the WEF newsletter — a few emails a year on new learning
+                centers, scholarships, and stories from the field.</span>
+            </label>
+            <div class="wef-hp" aria-hidden="true">
+              <label>Leave this field empty<input type="text" name="wef_hp" tabindex="-1" autocomplete="off" /></label>
+            </div>
             <button class="ct-submit" type="submit">Send message
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
             </button>
-            <div class="ct-msg" id="ctMsg" role="status">
+            <div class="ct-msg" id="ctMsg" data-form-status role="status">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
               <span></span>
             </div>
@@ -334,35 +352,7 @@
 
 
   <script src="/content/themes/donexa/assets/js/wef-chrome.js?v=9" defer></script>
-  <script>
-    (function () {
-      var form = document.getElementById('ctForm');
-      if (!form) return;
-      var msg = document.getElementById('ctMsg');
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var name = form.name.value.trim();
-        var email = form.email.value.trim();
-        var phone = form.phone.value.trim();
-        var topic = form.topic.value;
-        var message = form.message.value.trim();
-        if (!name || !email || !message) {
-          msg.querySelector('span').textContent = 'Please add your name, email, and a message so we can help.';
-          msg.classList.add('show');
-          return;
-        }
-        var subject = 'Website enquiry: ' + topic + ' — ' + name;
-        var body = 'Name: ' + name + '\n'
-          + 'Email: ' + email + '\n'
-          + (phone ? 'Phone: ' + phone + '\n' : '')
-          + 'Topic: ' + topic + '\n\n'
-          + message;
-        window.location.href = 'mailto:info@wefcanada.org?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-        msg.querySelector('span').textContent = 'Opening your email app with your message ready to send. If nothing happens, email us at info@wefcanada.org.';
-        msg.classList.add('show');
-      });
-    }());
-  </script>
+  <script src="/lib/supabase-forms.js" type="module"></script>
 </body>
 
 </html>
