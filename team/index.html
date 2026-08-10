@@ -332,9 +332,24 @@
         lastFocus = document.activeElement;
         nameEl.textContent = d.name;
         roleEl.textContent = d.role;
-        photoEl.innerHTML = d.photo
-          ? '<img src="' + d.photo + '" alt="' + d.name + '" />'
-          : '<div class="tm-initials"><span>' + initials(d.name) + '</span></div>';
+        // Built with DOM APIs rather than string-concatenated innerHTML: a name
+        // or photo path containing a quote would otherwise break out of the
+        // attribute it sits in. Harmless while __TEAM_BIOS is hand-written
+        // below, but this is the same data shape the Sanity team loader emits.
+        photoEl.textContent = '';
+        if (d.photo) {
+          var img = document.createElement('img');
+          img.src = d.photo;
+          img.alt = d.name;
+          photoEl.appendChild(img);
+        } else {
+          var wrap = document.createElement('div');
+          wrap.className = 'tm-initials';
+          var span = document.createElement('span');
+          span.textContent = initials(d.name);
+          wrap.appendChild(span);
+          photoEl.appendChild(wrap);
+        }
         bodyEl.innerHTML = d.bio.map(function (p) { return '<p></p>'; }).join('');
         var ps = bodyEl.querySelectorAll('p');
         d.bio.forEach(function (t, i) { if (ps[i]) ps[i].textContent = t; });
