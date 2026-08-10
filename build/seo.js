@@ -17,34 +17,11 @@ export const SITE_URL = 'https://wefcanada.org';
 /**
  * Pages that must never be indexed.
  *
- * - `blog/post`, `blog/category` are client-side templates. They render a
- *   Sanity document chosen from the URL, so on their own path they are an
- *   empty shell.
- * - `blog/list`, `blog/standard` are leftover layout demos from the purchased
- *   WordPress theme.
- * - The remaining entries are that theme's filler articles about choosing a
- *   WordPress theme. They are thin, off-topic for a charity, and link to
- *   /tag/* and /category/* pages that do not exist.
- *
- * They are excluded from the sitemap and marked noindex rather than deleted —
- * removing them is a content decision for the site owners.
+ * Empty now that the Sanity-driven blog and the purchased theme's filler
+ * articles have been removed: every remaining page is real, static content
+ * that should be in the index.
  */
-const NOINDEX_ROUTES = new Set([
-  'blog/post',
-  'blog/category',
-  'blog/list',
-  'blog/standard',
-  'blog/best-charity-theme',
-  'blog/best-ngo-theme',
-  'blog/donation-guide-beginners',
-  'blog/high-converting',
-  'blog/ngo-launch-guide',
-  'blog/nonprofit-review',
-  'blog/perfect-fundraising-choice',
-  'blog/powerful-donation',
-  'blog/top-features',
-  'blog/wordpress-theme-ngo'
-]);
+const NOINDEX_ROUTES = new Set([]);
 
 /** Priority and change frequency by route, falling back to sensible defaults. */
 function sitemapHints(route) {
@@ -52,10 +29,9 @@ function sitemapHints(route) {
   if (['pages/mission', 'pages/active-projects', 'pages/centers', 'team'].includes(route)) {
     return { priority: '0.9', changefreq: 'monthly' };
   }
-  if (['pages/contact', 'pages/gallery', 'pages/success-stories', 'pages/project-updates', 'blog'].includes(route)) {
+  if (['pages/contact', 'pages/gallery', 'pages/success-stories', 'pages/project-updates'].includes(route)) {
     return { priority: '0.8', changefreq: 'monthly' };
   }
-  if (route.startsWith('blog/category/')) return { priority: '0.6', changefreq: 'weekly' };
   return { priority: '0.7', changefreq: 'monthly' };
 }
 
@@ -129,29 +105,9 @@ export function seoPlugin() {
       }
     },
 
-    // Rollup runs closeBundle hooks in parallel unless a plugin opts out.
-    // The sitemap has to be written after the clean-urls plugin has created
-    // the blog route directories, so this one is explicitly sequential.
-    closeBundle: {
-      sequential: true,
-      async handler() {
+    closeBundle() {
       const outDir = resolve('dist');
       if (!fs.existsSync(outDir)) return;
-
-      // The clean-urls plugin adds directory-index twins for the Sanity blog
-      // routes after the HTML transform has run, so those routes are not in
-      // `routes` yet. Pick them up off disk instead.
-      for (const dir of ['blog', 'blog/category']) {
-        const full = resolve(outDir, dir);
-        if (!fs.existsSync(full)) continue;
-        for (const entry of fs.readdirSync(full, { withFileTypes: true })) {
-          if (!entry.isDirectory() || entry.name === 'category') continue;
-          if (fs.existsSync(resolve(full, entry.name, 'index.html'))) {
-            const route = `${dir}/${entry.name}`;
-            if (!NOINDEX_ROUTES.has(route)) routes.add(route);
-          }
-        }
-      }
 
       const today = new Date().toISOString().slice(0, 10);
       const sorted = [...routes].sort();
@@ -181,13 +137,6 @@ export function seoPlugin() {
           'User-agent: *',
           'Allow: /',
           '',
-          '# Client-side templates and leftover theme demo content.',
-          '# These are also marked noindex in the pages themselves.',
-          'Disallow: /blog/post',
-          'Disallow: /blog/category.html',
-          'Disallow: /blog/list',
-          'Disallow: /blog/standard',
-          '',
           `Sitemap: ${SITE_URL}/sitemap.xml`,
           ''
         ].join('\n'),
@@ -195,7 +144,6 @@ export function seoPlugin() {
       );
 
       console.log(`[seo] sitemap.xml with ${sorted.length} URLs, robots.txt written.`);
-      }
     }
   };
 }

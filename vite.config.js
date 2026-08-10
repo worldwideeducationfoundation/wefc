@@ -22,51 +22,6 @@ function getHtmlInputFiles(dir, files = {}) {
   return files;
 }
 
-// Scrape the category slugs the site actually links to. Sanity only knows the
-// categories that have been created there, but the navigation links to more
-// than that, and a linked URL should render an empty listing rather than a 404.
-function linkedCategorySlugs(dir, found = new Set()) {
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    if (entry.isDirectory()) {
-      if (!['node_modules', 'dist', '.git'].includes(entry.name) && !entry.name.startsWith('.')) {
-        linkedCategorySlugs(resolve(dir, entry.name), found);
-      }
-    } else if (entry.name.endsWith('.html')) {
-      const html = fs.readFileSync(resolve(dir, entry.name), 'utf8');
-      for (const m of html.matchAll(/href="\/blog\/category\/([a-z0-9-]+)\/?"/gi)) {
-        found.add(m[1]);
-      }
-    }
-  }
-  return found;
-}
-
-// Ask Sanity which blog post and category slugs exist, so each one can be given
-// a real file on disk. Returns empty lists rather than failing the build.
-async function fetchBlogSlugs() {
-  try {
-    const { createClient } = await import('@sanity/client');
-    const client = createClient({
-      projectId: process.env.VITE_SANITY_PROJECT_ID || 'wgy1a1gg',
-      dataset: process.env.VITE_SANITY_DATASET || 'production',
-      apiVersion: process.env.VITE_SANITY_API_VERSION || '2026-07-08',
-      useCdn: true
-    });
-    const [posts, categories] = await Promise.all([
-      client.fetch('*[_type == "post" && !(_id in path("drafts.**"))].slug.current'),
-      client.fetch('*[_type == "category"].slug.current')
-    ]);
-    return {
-      posts: (posts || []).filter(Boolean),
-      categories: (categories || []).filter(Boolean)
-    };
-  } catch (error) {
-    console.warn(`[clean-urls] Could not reach Sanity (${error.message}). ` +
-      'Blog post pages will not be pre-rendered this build.');
-    return { posts: [], categories: [] };
-  }
-}
-
 /**
  * Give every page a directory-index twin: dist/pages/contact.html is also
  * written as dist/pages/contact/index.html.
@@ -78,16 +33,11 @@ async function fetchBlogSlugs() {
  * configuration, so this makes the output portable rather than betting on
  * host-specific rewrite rules. The original .html files stay in place, so old
  * /pages/contact.html links keep working too.
- *
- * The blog's dynamic routes (/blog/<slug>, /blog/category/<slug>) get the same
- * treatment from the slug lists, since there is no file for them otherwise.
- * Both loaders read the slug off the last path segment, which a trailing-slash
- * directory URL preserves.
  */
 function cleanUrlsBuildPlugin() {
   return {
     name: 'clean-urls-build',
-    async closeBundle() {
+    closeBundle() {
       const outDir = resolve('dist');
       if (!fs.existsSync(outDir)) return;
 
@@ -115,19 +65,6 @@ function cleanUrlsBuildPlugin() {
       };
       walk(outDir);
 
-      // 2. Blog posts and category listings, which have no file of their own.
-      const postTemplate = resolve(outDir, 'blog/post.html');
-      const categoryTemplate = resolve(outDir, 'blog/category.html');
-      const { posts, categories } = await fetchBlogSlugs();
-
-      if (fs.existsSync(postTemplate)) {
-        for (const slug of posts) writeIndex(`blog/${slug}`, postTemplate);
-      }
-      if (fs.existsSync(categoryTemplate)) {
-        const slugs = new Set([...categories, ...linkedCategorySlugs(resolve('.'))]);
-        for (const slug of slugs) writeIndex(`blog/category/${slug}`, categoryTemplate);
-      }
-
       console.log(`[clean-urls] Wrote ${written.length} directory-index routes.`);
     }
   };
@@ -153,13 +90,7 @@ const cleanUrlsPlugin = {
 
       // If it's a route and doesn't have an extension (like .js, .css, .jpg)
       if (!pathname.includes('.')) {
-        // 1. Direct categories route interceptor: e.g. /blog/category/news -> /blog/category.html
-        if (pathname.startsWith('/blog/category/')) {
-          req.url = '/blog/category.html' + parsedUrl.search;
-          return next();
-        }
-
-        // 2. Direct .html mapping: e.g. /pages/about -> /pages/about.html
+        // 1. Direct .html mapping: e.g. /pages/mission -> /pages/mission.html
         const potentialHtmlFile = pathname + '.html';
         const directPath = resolve('.' + potentialHtmlFile);
         if (fs.existsSync(directPath)) {
@@ -167,17 +98,11 @@ const cleanUrlsPlugin = {
           return next();
         }
 
-        // 3. Index.html mapping inside folder: e.g. /blog -> /blog/index.html
+        // 2. Index.html mapping inside folder: e.g. /team -> /team/index.html
         const potentialIndexFile = pathname + '/index.html';
         const indexPath = resolve('.' + potentialIndexFile);
         if (fs.existsSync(indexPath)) {
           req.url = potentialIndexFile + parsedUrl.search;
-          return next();
-        }
-
-        // 4. Fallback: If it is a blog subpath (dynamic slug), route to /blog/post.html
-        if (pathname.startsWith('/blog/') && !['/blog/list', '/blog/standard'].includes(pathname)) {
-          req.url = '/blog/post.html' + parsedUrl.search;
           return next();
         }
       }

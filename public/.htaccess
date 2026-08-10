@@ -31,6 +31,24 @@
 </IfModule>
 
 # ---------------------------------------------------------------------------
+# The /blog/ section is gone. It was rendered entirely from Sanity and its three
+# real posts already exist as static pages under /pages/projects/, so those get
+# a 301. Everything else under /blog/ was filler that shipped with the purchased
+# WordPress theme; 410 tells search engines it is intentionally gone rather than
+# temporarily missing, which drops it from the index faster than a 404.
+# ---------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteRule ^blog/bright-beginnings-early-childhood-centers/?$ /pages/projects/bright-beginnings-eclc/ [L,R=301]
+  RewriteRule ^blog/herzing-daya-research-learning-hub-at-university-of-chitral/?$ /pages/projects/herzing-daya-research-hub/ [L,R=301]
+  RewriteRule ^blog/herzing-training-skills-development-program-at-university-of-chitral/?$ /pages/projects/herzing-training-skills-development/ [L,R=301]
+  RewriteRule ^blog/category/?.*$ /pages/project-updates/ [L,R=301]
+  RewriteRule ^blog/?$ /pages/project-updates/ [L,R=301]
+</IfModule>
+<IfModule mod_alias.c>
+  RedirectMatch 410 ^/blog/.+$
+</IfModule>
+
+# ---------------------------------------------------------------------------
 # Security headers
 # ---------------------------------------------------------------------------
 <IfModule mod_headers.c>
@@ -63,7 +81,6 @@
   #   unpkg.com          Leaflet (the centers map), loaded with SRI
   #   zeffy.com          donation form embed + its iframe
   #   fonts.googleapis   stylesheet / fonts.gstatic  font files
-  #   cdn.sanity.io      CMS images;  *.sanity.io  CMS API reads
   #   *.supabase.co      contact form and newsletter writes
   #   openstreetmap /
   #   arcgisonline       map tiles
@@ -75,7 +92,7 @@
   # The policy still blocks script loading from any unlisted origin, and
   # object-src/base-uri close the two most abused injection vectors outright.
   # -------------------------------------------------------------------------
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://www.zeffy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://cdn.sanity.io https://*.tile.openstreetmap.org https://server.arcgisonline.com https://unpkg.com https://www.zeffy.com; connect-src 'self' https://*.sanity.io https://*.supabase.co; frame-src 'self' https://www.zeffy.com; frame-ancestors 'self'; form-action 'self' https://www.zeffy.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://www.zeffy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://*.tile.openstreetmap.org https://server.arcgisonline.com https://unpkg.com https://www.zeffy.com; connect-src 'self' https://*.supabase.co; frame-src 'self' https://www.zeffy.com; frame-ancestors 'self'; form-action 'self' https://www.zeffy.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
 </IfModule>
 
 # ---------------------------------------------------------------------------

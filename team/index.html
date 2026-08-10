@@ -139,8 +139,7 @@
               </svg></a>
             <ul class="wef-submenu">
               <li><a href="/pages/active-projects">Active Projects</a></li>
-              <li><a href="/blog/category/completed-projects">Completed Projects</a></li>
-            </ul>
+</ul>
           </li>
           <li><a class="wef-navlink" href="/pages/gallery">Gallery</a></li>
           <li><a class="wef-navlink" href="/pages/contact">Contact</a></li>
@@ -284,8 +283,7 @@
                 rel="noopener" target="_blank">Donate</a></li>
             <li><a href="/pages/contact">Contact Us</a></li>
             <li><a href="/pages/active-projects">Active Projects</a></li>
-            <li><a href="/blog/category/completed-projects">Completed Projects</a></li>
-          </ul>
+</ul>
         </div>
         <div>
           <h4>Contact</h4>
@@ -335,7 +333,7 @@
         // Built with DOM APIs rather than string-concatenated innerHTML: a name
         // or photo path containing a quote would otherwise break out of the
         // attribute it sits in. Harmless while __TEAM_BIOS is hand-written
-        // below, but this is the same data shape the Sanity team loader emits.
+        // below, but the pattern is worth not repeating.
         photoEl.textContent = '';
         if (d.photo) {
           var img = document.createElement('img');

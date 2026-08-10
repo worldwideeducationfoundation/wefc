@@ -3,12 +3,6 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "framework": "vite",
-  "rewrites": [
-    { "source": "/blog/category/:slug", "destination": "/blog/category.html" },
-    { "source": "/blog/category/:slug/", "destination": "/blog/category.html" },
-    { "source": "/blog/:slug", "destination": "/blog/post.html" },
-    { "source": "/blog/:slug/", "destination": "/blog/post.html" }
-  ],
   "headers": [
     {
       "source": "/(.*)",
