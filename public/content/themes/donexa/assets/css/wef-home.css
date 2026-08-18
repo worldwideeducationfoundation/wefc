@@ -21,7 +21,7 @@ a{color:inherit;text-decoration:none}
 h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.01em;line-height:1.12;margin:0}
 
 .container{max-width:1200px;margin:0 auto;padding:0 28px}
-.eyebrow{font-family:var(--sans);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;margin:0 0 16px;color: var(--pine-ink)}
+.eyebrow{font-family:var(--sans);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;margin:0 0 12px;color: var(--pine-ink)}
 .eyebrow.on-dark{color:var(--forest-900)}
 
 /* ---- Buttons ---- */
@@ -117,9 +117,9 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.01em;lin
 
 /* ---- Hero intro — the headline block, now on paper instead of a dark panel ---- */
 .hero-intro{background:var(--paper);padding:clamp(30px,3.6vw,46px) 0 clamp(32px,4vw,50px);border-bottom:1px solid var(--line)}
-.hero-intro h1{font-size:clamp(2.4rem,4.4vw,3.9rem);color:var(--ink-900);margin:0 0 20px;font-weight:500;max-width:19ch}
+.hero-intro h1{font-size:clamp(2.4rem,4.4vw,3.9rem);color:var(--ink-900);margin:0 0 14px;font-weight:500;max-width:19ch}
 .hero-intro h1 em{font-style:italic;color: var(--pine-ink)}
-.hero-lead{font-size:clamp(1.06rem,1.5vw,1.24rem);line-height:1.62;color:var(--ink-600);max-width:60ch;margin:0 0 30px}
+.hero-lead{font-size:clamp(1.06rem,1.5vw,1.24rem);line-height:1.62;color:var(--ink-600);max-width:60ch;margin:0 0 24px}
 .hero-cta{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:24px}
 .hero-trust{display:flex;align-items:center;gap:9px;font-size:.88rem;color:var(--ink-600);font-weight:500;margin:0}
 .hero-trust svg{width:17px;height:17px;color: var(--pine-ink);flex-shrink:0}
@@ -150,8 +150,8 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.01em;lin
 
 /* ---- Section scaffolding ---- */
 .section{padding:var(--sec-y) 0}
-.section-head{max-width:660px;margin:0 0 clamp(24px,3vw,36px)}
-.section-head h2{font-size:clamp(2rem,3.6vw,3rem);color:var(--ink-900);margin:0 0 16px}
+.section-head{max-width:660px;margin:0 0 clamp(18px,2.4vw,28px)}
+.section-head h2{font-size:clamp(2rem,3.6vw,3rem);color:var(--ink-900);margin:0 0 12px}
 .section-head p{font-size:1.15rem;line-height:1.6;color:var(--ink-600);margin:0}
 
 /* ---- Impact stats ---- */
@@ -172,7 +172,7 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.01em;lin
 }
 
 /* ---- Program pathways (editorial, alternating) ---- */
-.programs .section-head{margin-bottom:clamp(26px,3.4vw,42px)}
+.programs .section-head{margin-bottom:clamp(20px,2.6vw,32px)}
 .program{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:center;margin-bottom:clamp(38px,5vw,62px)}
 .program:last-child{margin-bottom:0}
 .program.flip .program-media{order:2}
@@ -180,9 +180,9 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.01em;lin
 .program-media img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.03)}
 .program-media::after{content:"";position:absolute;inset:0;background:var(--pine-700);mix-blend-mode:multiply;opacity:.08;pointer-events:none}
 .program-badge{position:absolute;top:18px;left:18px;background:var(--paper);color: var(--pine-ink);font-weight:700;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;padding:8px 15px;border-radius:100px;box-shadow:0 6px 18px rgba(0,0,0,.14);z-index:1}
-.program-body h3{font-size:clamp(1.6rem,2.6vw,2.15rem);margin:0 0 14px;color:var(--ink-900)}
-.program-body .lead{font-size:1.1rem;color:var(--ink-600);line-height:1.65;margin:0 0 22px}
-.program-points{list-style:none;padding:0;margin:0 0 26px;display:grid;gap:13px}
+.program-body h3{font-size:clamp(1.6rem,2.6vw,2.15rem);margin:0 0 10px;color:var(--ink-900)}
+.program-body .lead{font-size:1.1rem;color:var(--ink-600);line-height:1.65;margin:0 0 18px}
+.program-points{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:13px}
 .program-points li{display:flex;gap:12px;align-items:flex-start;font-size:1rem;color:var(--ink-900);line-height:1.5}
 .program-points svg{width:20px;height:20px;color:var(--leaf-600);flex-shrink:0;margin-top:3px}
 .program-stats{display:flex;gap:32px;flex-wrap:wrap;padding-top:20px;border-top:1px solid var(--line)}
@@ -221,7 +221,7 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.01em;lin
 .story{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:34px 34px 28px;display:flex;flex-direction:column}
 .story:nth-child(even){transform:translateY(22px)}
 .story-quote{font-family:var(--display);font-size:3.6rem;line-height:.7;color:var(--sage-200);height:30px}
-.story-text{font-size:1.05rem;line-height:1.7;color:var(--ink-900);margin:14px 0 22px;flex-grow:1}
+.story-text{font-size:1.05rem;line-height:1.7;color:var(--ink-900);margin:12px 0 18px;flex-grow:1}
 .story-by{border-top:1px solid var(--line);padding-top:16px}
 .story-name{font-family:var(--display);font-weight:600;font-size:1.08rem;color:var(--ink-900);display:block}
 .story-role{font-size:.86rem;color: var(--pine-ink);font-weight:600;display:block;margin-top:2px}
@@ -232,8 +232,8 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.01em;lin
 .donate{background:var(--pine-700);color:var(--ink-900);position:relative;overflow:hidden}
 .donate::before{content:"";position:absolute;bottom:-180px;left:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(255,255,255,.34),transparent 70%);pointer-events:none}
 .donate-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,60px);align-items:center;position:relative}
-.donate-copy h2{color:var(--forest-900);font-size:clamp(2rem,3.4vw,2.9rem);margin:0 0 18px}
-.donate-copy p{color:rgba(23,50,16,.82);font-size:1.14rem;line-height:1.6;margin:0 0 28px}
+.donate-copy h2{color:var(--forest-900);font-size:clamp(2rem,3.4vw,2.9rem);margin:0 0 13px}
+.donate-copy p{color:rgba(23,50,16,.82);font-size:1.14rem;line-height:1.6;margin:0 0 20px}
 .trust-badges{display:flex;flex-wrap:wrap;gap:14px}
 .badge{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.45);border:1px solid rgba(23,50,16,.16);border-radius:12px;padding:12px 16px;font-size:.86rem;font-weight:500}
 .badge svg{width:20px;height:20px;color:var(--forest-900);flex-shrink:0}
@@ -290,22 +290,31 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.01em;lin
 @keyframes tickermove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* From Canada to Chitral */
-.reach{background:var(--cream)}
+/* Sits right after a .feature section, which already carries a full
+   --sec-y of bottom padding — trim our own top padding so the gap between
+   the two sections isn't a doubled-up block of empty space. */
+.reach{background:var(--cream);padding-top:var(--sec-y-sm)}
+/* min-width:0 overrides the grid default of min-width:auto — without it, the
+   map's intrinsic SVG width (from its viewBox) stops the column from ever
+   shrinking past ~580px, pushing the whole page into horizontal overflow on
+   phones. This is what was breaking the map on mobile. */
 .reach-inner{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(28px,5vw,60px);align-items:center}
-.reach-copy .flag{display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;color: var(--pine-ink);margin-bottom:16px}
+.reach-inner>*{min-width:0}
+.reach-copy .flag{display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;color: var(--pine-ink);margin-bottom:12px}
 .reach-copy .flag svg{width:20px;height:20px;fill:#C8442E}
-.reach-copy h2{font-size:clamp(1.8rem,3vw,2.5rem);margin:0 0 14px}
+.reach-copy h2{font-size:clamp(1.8rem,3vw,2.5rem);margin:0 0 10px}
 .reach-copy p{color:var(--ink-600);font-size:1.12rem;line-height:1.65;margin:0}
 .reach-map{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:30px 26px;box-shadow:0 18px 44px rgba(20,20,10,.08)}
 .reach-map svg{width:100%;height:auto;display:block;overflow:visible}
 
-/* Real geography: Canada from Natural Earth, and the Chitral district ring the
-   learning-centers map draws. Both outlines are baked into the SVG in index.html. */
+/* Real geography: Canada from Natural Earth, the Chitral district ring the
+   learning-centers map draws, and Tajikistan's national outline. All three
+   outlines are baked into the SVG in index.html. */
 .reach-land{fill:#E6F4E0;stroke:var(--pine-ink);stroke-width:1.1;stroke-opacity:.62;stroke-linejoin:round;transition:fill .45s ease,stroke-opacity .45s ease}
-/* Chitral is the destination, so it carries a little more weight than Canada. */
-.reach-land.is-chitral{fill:var(--sage-200);stroke-width:1.2;stroke-opacity:1}
+/* Chitral and Tajikistan are both destinations, so they carry a little more weight than Canada. */
+.reach-land.is-chitral,.reach-land.is-tajikistan{fill:var(--sage-200);stroke-width:1.2;stroke-opacity:1}
 .reach-region:hover .reach-land{fill:var(--sage-200);stroke-opacity:1}
-.reach-region:hover .reach-land.is-chitral{fill:#C3E7B6}
+.reach-region:hover .reach-land.is-chitral,.reach-region:hover .reach-land.is-tajikistan{fill:#C3E7B6}
 
 .reach-route{fill:none;stroke:var(--sage-200);stroke-width:1.2}
 .reach-route-flow{fill:none;stroke:var(--pine-ink);stroke-width:1.6;stroke-linecap:round;stroke-dasharray:2 10;opacity:.5;animation:dashflow 1.5s linear infinite;transition:opacity .4s ease}
@@ -336,8 +345,8 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.01em;lin
      so the rail reads as scrollable at every width. */
   --rail-card:clamp(300px,calc((100vw - var(--rail-vpad) - var(--rail-gap) - 64px)/2),580px);
   background:var(--paper);border-top:1px solid var(--line);padding:var(--sec-y) 0 calc(var(--sec-y-sm) - 20px);overflow:hidden}
-.photostrip-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin:0 0 clamp(20px,2.4vw,28px)}
-.photostrip-head .eyebrow{margin:0 0 10px}
+.photostrip-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin:0 0 clamp(16px,2vw,22px)}
+.photostrip-head .eyebrow{margin:0 0 8px}
 .photostrip-head h2{font-size:clamp(1.7rem,2.9vw,2.4rem);color:var(--ink-900);margin:0;max-width:46ch}
 .photostrip-head>div:first-child{min-width:0}
 
@@ -413,7 +422,7 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.01em;lin
 .vmb-card:nth-child(3)::before{background:var(--leaf-600)}
 .vmb-ic{width:50px;height:50px;border-radius:14px;background:var(--sage-50);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
 .vmb-ic svg{width:26px;height:26px;color: var(--pine-ink)}
-.vmb-card h2{font-size:1.5rem;margin:0 0 12px;color:var(--ink-900)}
+.vmb-card h2{font-size:1.5rem;margin:0 0 9px;color:var(--ink-900)}
 .vmb-card p{font-size:1.02rem;line-height:1.66;color:var(--ink-600);margin:0}
 @media(max-width:900px){.vmb-grid{grid-template-columns:1fr}}
 
@@ -421,8 +430,8 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.01em;lin
 .feature{padding:var(--sec-y) 0;background:var(--paper)}
 .feature:has(+ .feature){padding-bottom:var(--sec-y-sm)}
 .feature+.feature{border-top:1px solid var(--line);padding-top:var(--sec-y-sm)}
-.feature-head{max-width:720px;margin:0 0 clamp(28px,4vw,40px)}
-.feature-head h2{font-size:clamp(1.8rem,3.2vw,2.6rem);color:var(--ink-900);margin:0 0 14px}
+.feature-head{max-width:720px;margin:0 0 clamp(20px,3vw,30px)}
+.feature-head h2{font-size:clamp(1.8rem,3.2vw,2.6rem);color:var(--ink-900);margin:0 0 10px}
 .feature-head p{font-size:1.1rem;line-height:1.62;color:var(--ink-600);margin:0}
 .feature-tags{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 14px}
 .chip-status{display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-weight:700;text-transform:uppercase;letter-spacing:.09em;font-size:.68rem;color:#7A5A11;background:#FDF4DF;border:1px solid #EBD9AC;padding:5px 12px;border-radius:100px}
