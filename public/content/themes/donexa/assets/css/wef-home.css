@@ -315,9 +315,9 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.01em;lin
    outlines are baked into the SVG in index.html. */
 .reach-land{fill:#E6F4E0;stroke:var(--pine-ink);stroke-width:1.1;stroke-opacity:.62;stroke-linejoin:round;transition:fill .45s ease,stroke-opacity .45s ease}
 /* Chitral and Tajikistan are both destinations, so they carry a little more weight than Canada. */
-.reach-land.is-chitral,.reach-land.is-tajikistan{fill:var(--sage-200);stroke-width:1.2;stroke-opacity:1}
+.reach-land.is-chitral,.reach-land.is-tajikistan,.reach-land.is-kyrgyzstan{fill:var(--sage-200);stroke-width:1.2;stroke-opacity:1}
 .reach-region:hover .reach-land{fill:var(--sage-200);stroke-opacity:1}
-.reach-region:hover .reach-land.is-chitral,.reach-region:hover .reach-land.is-tajikistan{fill:#C3E7B6}
+.reach-region:hover .reach-land.is-chitral,.reach-region:hover .reach-land.is-tajikistan,.reach-region:hover .reach-land.is-kyrgyzstan{fill:#C3E7B6}
 
 .reach-route{fill:none;stroke:var(--sage-200);stroke-width:1.2}
 .reach-route-flow{fill:none;stroke:var(--pine-ink);stroke-width:1.6;stroke-linecap:round;stroke-dasharray:2 10;opacity:.5;animation:dashflow 1.5s linear infinite;transition:opacity .4s ease}
