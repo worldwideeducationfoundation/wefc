@@ -17,5 +17,8 @@ export default defineCliConfig({
      * Learn more at https://www.sanity.io/docs/studio/latest-version-of-sanity#k47faf43faf56
      */
     autoUpdates: true,
+    // Pinned so `sanity deploy` never prompts for an application id, and can
+    // never create a second application by accident.
+    appId: 'og9wypo774ys87uatw256kv4',
   },
 })
