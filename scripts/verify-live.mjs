@@ -41,6 +41,17 @@ async function check(pathname) {
   const html = await res.text();
   const notes = [];
 
+  // A CSP that omits cdn.sanity.io blocks every article image in the browser
+  // while curl still fetches them fine — curl ignores CSP. That combination
+  // reads as a caching problem and wastes an afternoon, so check it explicitly.
+  const csp = res.headers.get('content-security-policy');
+  if (csp && html.includes('cdn.sanity.io')) {
+    const imgSrc = /img-src([^;]*)/.exec(csp);
+    if (imgSrc && !imgSrc[1].includes('cdn.sanity.io')) {
+      notes.push('CSP img-src is missing cdn.sanity.io — images will be blocked in browsers');
+    }
+  }
+
   const hasStamp = html.includes(`content="${EXPECTED_SOURCE}"`);
   const sanityImages = (html.match(/cdn\.sanity\.io/g) || []).length;
   const legacyImages = (html.match(/\/content\/uploads\/wef\/(?!favico|WEFC)/g) || []).length;
@@ -53,9 +64,11 @@ async function check(pathname) {
     if (!chips) notes.push('no category filter chips');
   }
 
+  const cspBlocked = notes.some((n) => n.startsWith('CSP'));
+
   return {
     url,
-    ok: hasStamp && sanityImages > 0 && legacyImages === 0,
+    ok: hasStamp && sanityImages > 0 && legacyImages === 0 && !cspBlocked,
     notes: notes.length ? notes : [`${sanityImages} Sanity images, ${chips} category chips`],
   };
 }

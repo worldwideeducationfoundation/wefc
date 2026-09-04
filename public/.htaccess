@@ -90,6 +90,12 @@
   #   *.supabase.co      contact form and newsletter writes
   #   openstreetmap /
   #   arcgisonline       map tiles
+  #   cdn.sanity.io      every image on an article, topic or listing page.
+  #                      Article content moved into Sanity, so its images are
+  #                      served from Sanity's CDN rather than /content/uploads.
+  #                      Leaving this out blocks them in the browser while curl
+  #                      still fetches them fine (curl ignores CSP), which makes
+  #                      it look like a caching problem rather than a policy one.
   #
   # 'unsafe-inline' is present for scripts and styles because the pages carry
   # inline <script> and <style> blocks throughout. That weakens the XSS benefit
@@ -98,7 +104,7 @@
   # The policy still blocks script loading from any unlisted origin, and
   # object-src/base-uri close the two most abused injection vectors outright.
   # -------------------------------------------------------------------------
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://www.zeffy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://*.tile.openstreetmap.org https://server.arcgisonline.com https://unpkg.com https://www.zeffy.com; connect-src 'self' https://*.supabase.co; frame-src 'self' https://www.zeffy.com; frame-ancestors 'self'; form-action 'self' https://www.zeffy.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://www.zeffy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://cdn.sanity.io https://*.tile.openstreetmap.org https://server.arcgisonline.com https://unpkg.com https://www.zeffy.com; connect-src 'self' https://*.supabase.co; frame-src 'self' https://www.zeffy.com; frame-ancestors 'self'; form-action 'self' https://www.zeffy.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
 </IfModule>
 
 # ---------------------------------------------------------------------------
