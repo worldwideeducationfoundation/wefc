@@ -28,6 +28,10 @@ urls.json
 .next/
 out/
 
+# Retired Next.js scaffold. Removed from git; the directory may still linger
+# on a developer's disk with its node_modules, and must not come back.
+nextjs-wef-canada-blog/
+
 # Sanity Studio
 .sanity/
 

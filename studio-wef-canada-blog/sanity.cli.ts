@@ -5,6 +5,12 @@ export default defineCliConfig({
     projectId: 'pvj2zu1w',
     dataset: 'production'
   },
+  /**
+   * Hosted Studio address: https://wefcanada.sanity.studio
+   * Pinned here so `sanity deploy` never prompts for a hostname and can never
+   * publish to a different one by accident.
+   */
+  studioHost: 'wefcanada',
   deployment: {
     /**
      * Enable auto-updates for studios.

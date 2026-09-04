@@ -70,8 +70,14 @@ const ICONS = {
 
 const GRID_START = '<!-- sanity:cards:start -->';
 const GRID_END = '<!-- sanity:cards:end -->';
+const FILTERS_START = '<!-- sanity:filters:start -->';
+const FILTERS_END = '<!-- sanity:filters:end -->';
 
 const SITE_NAME = 'Worldwide Education Fund';
+
+/** Where a category's own page lives. The slug is the Sanity category slug. */
+const TOPIC_DIR = 'pages/topics';
+const topicHref = (slug) => `/${TOPIC_DIR}/${slug}`;
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -257,7 +263,11 @@ function renderCard(post) {
   const config = POST_TYPES[post.postType];
   const src = escapeAttr(imageUrl(post.mainImageUrl, 800));
   const alt = escapeAttr(post.mainImageAlt || '');
-  return `          <a class="ap-card" href="/${config.dir}/${post.slug}">
+  // The filter script reads these slugs; they are the Sanity category slugs,
+  // so a category renamed in the Studio changes the chip label without
+  // breaking the link between chip and card.
+  const cats = escapeAttr((post.categories || []).map((c) => c.slug).join(' '));
+  return `          <a class="ap-card" href="/${config.dir}/${post.slug}" data-categories="${cats}">
             <div class="ap-card-media">
               <img src="${src}" alt="${alt}" loading="lazy" />
             </div>
@@ -271,23 +281,91 @@ function renderCard(post) {
           </a>`;
 }
 
-/**
- * Replaces the cards between the marker comments in a listing page, leaving
- * the rest of that page (its hero copy, its own CTA) under human control.
- */
-function renderListing(file, posts) {
-  const source = fs.readFileSync(file, 'utf8');
-  const start = source.indexOf(GRID_START);
-  const end = source.indexOf(GRID_END);
+/** Replace the text between two marker comments, keeping the markers. */
+function replaceBetween(source, startMarker, endMarker, body, file) {
+  const start = source.indexOf(startMarker);
+  const end = source.indexOf(endMarker);
   if (start === -1 || end === -1) {
     throw new Error(
-      `${path.relative(ROOT, file)} is missing the ${GRID_START} / ${GRID_END} markers around its card grid.`
+      `${path.relative(ROOT, file)} is missing its ${startMarker} / ${endMarker} markers.`
     );
   }
-  const cards = posts.map(renderCard).join('\n');
-  return (
-    source.slice(0, start + GRID_START.length) + '\n' + cards + '\n          ' + source.slice(end)
+  return source.slice(0, start + startMarker.length) + body + '          ' + source.slice(end);
+}
+
+/**
+ * The chips above a listing grid: one per category that actually has a post on
+ * that page, plus an "All" chip. Each chip is a real link to the category's own
+ * page, so it works with JavaScript disabled and is crawlable; the filter
+ * script intercepts the click and filters in place instead.
+ */
+function renderFilters(categories, posts) {
+  const counts = new Map();
+  for (const post of posts) {
+    for (const cat of post.categories || []) {
+      counts.set(cat.slug, (counts.get(cat.slug) || 0) + 1);
+    }
+  }
+
+  const chips = [
+    `          <a class="ap-filter" data-category="" href="?" aria-pressed="true">All<span class="n">${posts.length}</span></a>`,
+  ];
+  for (const cat of categories) {
+    const n = counts.get(cat.slug);
+    if (!n) continue; // no post on this page carries the category
+    chips.push(
+      `          <a class="ap-filter" data-category="${escapeAttr(cat.slug)}" href="${topicHref(
+        cat.slug
+      )}" aria-pressed="false">${escapeHtml(cat.title)}<span class="n">${n}</span></a>`
+    );
+  }
+  return chips.join('\n');
+}
+
+/**
+ * Rewrites the generated regions of a listing page — the filter chips and the
+ * card grid — leaving the rest of that page (its hero copy, its own CTA) under
+ * human control.
+ */
+function renderListing(file, posts, categories) {
+  let source = fs.readFileSync(file, 'utf8');
+  source = replaceBetween(source, GRID_START, GRID_END, '\n' + posts.map(renderCard).join('\n') + '\n', file);
+  source = replaceBetween(
+    source,
+    FILTERS_START,
+    FILTERS_END,
+    '\n' + renderFilters(categories, posts) + '\n',
+    file
   );
+  return source;
+}
+
+/** A category's own page: everything tagged with it, across all three types. */
+function renderTopic(template, category, categories, posts) {
+  const mine = posts.filter((p) => (p.categories || []).some((c) => c.slug === category.slug));
+  const links = categories
+    .map((cat) => {
+      const current = cat.slug === category.slug;
+      return `          <a class="ap-filter" href="${topicHref(cat.slug)}"${
+        current ? ' aria-current="page"' : ''
+      }>${escapeHtml(cat.title)}</a>`;
+    })
+    .join('\n');
+
+  const description =
+    category.description || `Everything from WEF's work tagged ${category.title}.`;
+
+  return template
+    .replaceAll('{{SEO_TITLE}}', escapeAttr(`${category.title} — ${SITE_NAME}`))
+    .replaceAll('{{SEO_DESCRIPTION}}', escapeAttr(description))
+    .replaceAll('{{TITLE}}', escapeHtml(category.title))
+    .replaceAll('{{DESCRIPTION}}', escapeHtml(description))
+    .replaceAll(
+      '{{COUNT_LABEL}}',
+      `${mine.length} ${mine.length === 1 ? 'article' : 'articles'}`
+    )
+    .replaceAll('{{TOPIC_LINKS}}', links)
+    .replaceAll('{{CARDS}}', mine.map(renderCard).join('\n'));
 }
 
 // ---------------------------------------------------------------------------
@@ -306,11 +384,20 @@ const QUERY = `*[_type == "post" && defined(slug.current)] | order(publishedAt d
   cta,
   "mainImageUrl": mainImage.asset->url,
   "mainImageAlt": mainImage.alt,
+  "categories": categories[]->{ title, "slug": slug.current },
   "body": body[]{
     ...,
     _type == "image" => { "url": asset->url, alt }
   }
 }`;
+
+/** Every category, in the display order set in the Studio. */
+const CATEGORY_QUERY = `*[_type == "category" && defined(slug.current)]
+  | order(coalesce(order, 99) asc, title asc) {
+    title,
+    "slug": slug.current,
+    description
+  }`;
 
 /** Has a previous sync left article pages in the repo to fall back on? */
 function hasGeneratedPages() {
@@ -327,8 +414,12 @@ async function main() {
   );
 
   let posts;
+  let categories;
   try {
-    posts = await client.fetch(QUERY);
+    [posts, categories] = await Promise.all([
+      client.fetch(QUERY),
+      client.fetch(CATEGORY_QUERY),
+    ]);
   } catch (err) {
     // The generated pages are committed, so a deploy that cannot reach Sanity
     // should still ship the last known-good content rather than failing. A
@@ -379,11 +470,25 @@ async function main() {
   for (const [postType, config] of Object.entries(POST_TYPES)) {
     const listing = path.join(ROOT, config.listing);
     const ofType = posts.filter((p) => p.postType === postType);
-    writes.push([listing, renderListing(listing, ofType)]);
+    writes.push([listing, renderListing(listing, ofType, categories)]);
   }
 
-  // Article pages are generated wholesale, so a post deleted in Sanity has to
-  // take its page with it or the site keeps serving an orphan.
+  // A page per category. Only categories that actually carry a post get one —
+  // an empty topic page is a dead end for a visitor and a thin page for search.
+  const topicTemplate = fs.readFileSync(path.join(ROOT, 'build/templates/topic.html'), 'utf8');
+  const usedSlugs = new Set(posts.flatMap((p) => (p.categories || []).map((c) => c.slug)));
+  const liveCategories = categories.filter((c) => usedSlugs.has(c.slug));
+
+  for (const category of liveCategories) {
+    writes.push([
+      path.join(ROOT, TOPIC_DIR, `${category.slug}.html`),
+      renderTopic(topicTemplate, category, liveCategories, posts),
+    ]);
+  }
+
+  // Article and topic pages are generated wholesale, so a post or category
+  // deleted in Sanity has to take its page with it or the site keeps serving
+  // an orphan.
   const orphans = [];
   for (const [postType, config] of Object.entries(POST_TYPES)) {
     const dir = path.join(ROOT, config.dir);
@@ -391,6 +496,13 @@ async function main() {
     const live = new Set(posts.filter((p) => p.postType === postType).map((p) => `${p.slug}.html`));
     for (const file of fs.readdirSync(dir)) {
       if (file.endsWith('.html') && !live.has(file)) orphans.push(path.join(dir, file));
+    }
+  }
+  const topicDir = path.join(ROOT, TOPIC_DIR);
+  if (fs.existsSync(topicDir)) {
+    const live = new Set(liveCategories.map((c) => `${c.slug}.html`));
+    for (const file of fs.readdirSync(topicDir)) {
+      if (file.endsWith('.html') && !live.has(file)) orphans.push(path.join(topicDir, file));
     }
   }
 
@@ -423,9 +535,8 @@ async function main() {
     throw new Error(`${stale} generated file(s) are out of date. Run \`npm run sanity:sync\`.`);
   }
   console.log(
-    stale
-      ? `\n${posts.length} posts synced, ${stale} file(s) updated.`
-      : `\n${posts.length} posts synced, everything already up to date.`
+    `\n${posts.length} posts and ${liveCategories.length} categories synced` +
+      (stale ? `, ${stale} file(s) updated.` : ', everything already up to date.')
   );
 }
 

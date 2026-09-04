@@ -9,6 +9,7 @@
   <meta property="og:title" content="Success Stories — Worldwide Education Fund" />
   <meta property="og:description" content="Real stories from the children, students, and communities WEF's programs have reached across Chitral, Pakistan and Central Asia." />
   <meta property="og:image" content="/content/uploads/wef/WEFC%20Logo.png" />
+  <meta name="content-source" content="sanity:pvj2zu1w/production" />
   <meta property="og:type" content="website" />
   <link href="/content/uploads/wef/favico.png" rel="icon" />
   <link href="/content/uploads/wef/favico.png" rel="apple-touch-icon" />
@@ -18,6 +19,7 @@
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Jost:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
   <link href="/content/themes/donexa/assets/css/wef-chrome.css?v=9" rel="stylesheet" />
+  <link href="/content/themes/donexa/assets/css/wef-filters.css?v=1" rel="stylesheet" />
   <style>
     :root {
       --display: "Fraunces", Georgia, serif;
@@ -148,9 +150,19 @@
           <p>From a child finding his voice in Chitral to scholars pursuing MBAs abroad — read their stories in their own words.</p>
         </div>
 
-        <div class="ap-grid">
+        <nav class="ap-filters" data-filter-bar aria-label="Filter by topic">
+          <!-- sanity:filters:start -->
+          <a class="ap-filter" data-category="" href="?" aria-pressed="true">All<span class="n">4</span></a>
+          <a class="ap-filter" data-category="early-childhood-education" href="/pages/topics/early-childhood-education" aria-pressed="false">Early Childhood Education<span class="n">1</span></a>
+          <a class="ap-filter" data-category="scholarships" href="/pages/topics/scholarships" aria-pressed="false">Scholarships<span class="n">3</span></a>
+          <a class="ap-filter" data-category="higher-education" href="/pages/topics/higher-education" aria-pressed="false">Higher Education<span class="n">3</span></a>
+          <a class="ap-filter" data-category="inclusive-education" href="/pages/topics/inclusive-education" aria-pressed="false">Inclusive Education<span class="n">1</span></a>
+          <!-- sanity:filters:end -->
+        </nav>
+
+        <div class="ap-grid" data-filter-grid>
           <!-- sanity:cards:start -->
-          <a class="ap-card" href="/pages/stories/from-silence-to-confidence">
+          <a class="ap-card" href="/pages/stories/from-silence-to-confidence" data-categories="inclusive-education early-childhood-education">
             <div class="ap-card-media">
               <img src="https://cdn.sanity.io/images/pvj2zu1w/production/2afc256dd772013e5d61096e7e917a6526c3c2a8-1024x767.jpg?auto=format&amp;fit=max&amp;w=800" alt="From Silence to Confidence: A Neurodivergent Child's Transformation in Chitral" loading="lazy" />
             </div>
@@ -162,7 +174,7 @@
               </span>
             </div>
           </a>
-          <a class="ap-card" href="/pages/stories/asads-journey-hunza-to-us">
+          <a class="ap-card" href="/pages/stories/asads-journey-hunza-to-us" data-categories="scholarships higher-education">
             <div class="ap-card-media">
               <img src="https://cdn.sanity.io/images/pvj2zu1w/production/5618642bf2accdd43ca3f54adaecaf591efae817-300x183.jpg?auto=format&amp;fit=max&amp;w=800" alt="Asad's Journey from Hunza to the United States" loading="lazy" />
             </div>
@@ -174,7 +186,7 @@
               </span>
             </div>
           </a>
-          <a class="ap-card" href="/pages/stories/mehrunissa-barkatali-mba-scholar">
+          <a class="ap-card" href="/pages/stories/mehrunissa-barkatali-mba-scholar" data-categories="scholarships higher-education">
             <div class="ap-card-media">
               <img src="https://cdn.sanity.io/images/pvj2zu1w/production/195c6888d819f7666697549c23fd5e5d75db7494-300x188.jpg?auto=format&amp;fit=max&amp;w=800" alt="WEF-HU MBA Program Scholar: Mehrunissa Barkatali" loading="lazy" />
             </div>
@@ -186,7 +198,7 @@
               </span>
             </div>
           </a>
-          <a class="ap-card" href="/pages/stories/saima-shaheen-mba-scholar">
+          <a class="ap-card" href="/pages/stories/saima-shaheen-mba-scholar" data-categories="scholarships higher-education">
             <div class="ap-card-media">
               <img src="https://cdn.sanity.io/images/pvj2zu1w/production/4b8986730edd3e0090aba24d770a583c7eea8459-1536x1024.jpg?auto=format&amp;fit=max&amp;w=800" alt="WEF-HU MBA Program Scholar Saima Shaheen" loading="lazy" />
             </div>
@@ -293,6 +305,7 @@
   </footer>
 
   <script src="/content/themes/donexa/assets/js/wef-chrome.js?v=9" defer></script>
+  <script src="/content/themes/donexa/assets/js/wef-filters.js?v=1" defer></script>
 </body>
 
 </html>
