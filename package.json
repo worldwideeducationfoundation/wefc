@@ -12,7 +12,8 @@
     "sanity:import": "node scripts/sanity-import.mjs",
     "studio:dev": "npm --prefix studio-wef-canada-blog run dev",
     "studio:deploy": "npm --prefix studio-wef-canada-blog run deploy",
-    "verify:live": "node scripts/verify-live.mjs"
+    "verify:live": "node scripts/verify-live.mjs",
+    "setup:webhook": "node scripts/setup-webhook.mjs"
   },
   "devDependencies": {
     "@sanity/client": "^8.5.0",

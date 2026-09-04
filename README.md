@@ -35,11 +35,36 @@ imagery still live in `public/content/uploads/`.
 
 ### Publishing a change
 
+**Content team:** open the Studio, edit, hit Publish. That's it — the
+`sync-content` GitHub Action re-renders the pages and pushes, and Hostinger
+deploys the push. Nobody needs a terminal.
+
+**Developers**, when changing templates or the sync script:
+
 ```bash
-npm run studio:dev     # edit at http://localhost:3333
+npm run studio:dev     # edit content at http://localhost:3333
 npm run sanity:sync    # re-render the pages
 git commit && git push # deploy picks it up
 ```
+
+### The publish-to-live pipeline
+
+```
+Publish in Studio
+   -> Sanity webhook          (scripts/setup-webhook.mjs, one-time)
+   -> repository_dispatch     GitHub
+   -> sync-content.yml        re-renders pages, commits, pushes
+   -> Hostinger               deploys the push
+```
+
+`.github/workflows/sync-content.yml` also runs every 30 minutes as a safety
+net, and has a "Run workflow" button for a manual re-sync. If Hostinger does
+not auto-deploy on push, add a `HOSTINGER_DEPLOY_HOOK` repository secret and
+the workflow will call it; with no secret set that step no-ops.
+
+**Repository secret required:** `SANITY_API_TOKEN` (Viewer token), at
+Settings → Secrets and variables → Actions. Without it the workflow fails
+loudly rather than publishing an empty site.
 
 ### Scripts
 
@@ -52,6 +77,7 @@ git commit && git push # deploy picks it up
 | `npm run sanity:import` | the one-time migration; refuses to re-run |
 | `npm run verify:live` | check the **deployed** site is serving the Sanity build |
 | `npm run studio:dev` / `studio:deploy` | run / publish the Studio |
+| `npm run setup:webhook` | one-time: wire Sanity publishes to a rebuild (needs an admin token) |
 
 ---
 
@@ -167,11 +193,16 @@ was checked against the filesystem: 470 references, 0 broken.
 
 **Ranked by what actually bites first.**
 
-1. **Publishing still needs a rebuild.** An editor hits Publish in Sanity and
-   nothing changes until someone runs a build. Fix: a Sanity webhook
-   (Manage → API → Webhooks) pointing at a Hostinger deploy hook, so publishing
-   triggers a rebuild. This is the single biggest remaining gap and it is
-   mostly a dashboard task, not a code one.
+1. **Two one-time admin tasks are outstanding.** Both need the Sanity project
+   administrator (`info@wefdallas.org`); the robot token in `.env.local` has
+   editor rights only and cannot do either.
+   - **Deploy the Studio** so the content team gets a URL instead of running it
+     locally: `cd studio-wef-canada-blog && npm run studio:deploy`. The
+     hostname is pinned, so it publishes to `wefcanada-cms.sanity.studio`.
+   - **Create the publish webhook**: `npm run setup:webhook -- --sanity-token
+     <admin> --github-token <pat>`. Until this runs, the 30-minute schedule in
+     `sync-content.yml` is what carries content to the site, so a publish can
+     take up to half an hour to appear.
 
 2. **Images are not resized before upload.** Some originals are 4–6 MB
    (`IMG_3232.JPG` is 6 MB). Sanity's CDN resizes on request for article

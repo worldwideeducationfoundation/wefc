@@ -6,11 +6,11 @@ export default defineCliConfig({
     dataset: 'production'
   },
   /**
-   * Hosted Studio address: https://wefcanada.sanity.studio
+   * Hosted Studio address: https://wefcanada-cms.sanity.studio
    * Pinned here so `sanity deploy` never prompts for a hostname and can never
    * publish to a different one by accident.
    */
-  studioHost: 'wefcanada',
+  studioHost: 'wefcanada-cms',
   deployment: {
     /**
      * Enable auto-updates for studios.
