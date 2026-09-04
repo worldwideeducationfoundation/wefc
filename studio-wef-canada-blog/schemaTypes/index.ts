@@ -1,13 +1,19 @@
-import category from './category';
-import author from './author';
-import post from './post';
-import teamMember from './teamMember';
+import author from './author'
+import callToAction from './callToAction'
+import category from './category'
+import post from './post'
+import statGroup from './statGroup'
+import teamMember from './teamMember'
 
 export const schemaTypes = [
+  // Documents
+  post,
   category,
   author,
-  post,
-  teamMember
-];
+  teamMember,
+  // Reusable objects
+  callToAction,
+  statGroup,
+]
 
-export default schemaTypes;
+export default schemaTypes

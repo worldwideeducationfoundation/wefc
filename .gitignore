@@ -31,5 +31,9 @@ out/
 # Sanity Studio
 .sanity/
 
+# Local cache mapping migrated images to their uploaded Sanity asset ids.
+# Only scripts/sanity-import.mjs reads it, and the migration has already run.
+scripts/.sanity-assets.json
+
 # Vercel
 .vercel

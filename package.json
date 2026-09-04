@@ -5,10 +5,17 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "npm run sanity:sync && vite build",
+    "preview": "vite preview",
+    "sanity:sync": "node scripts/sanity-sync.mjs",
+    "sanity:check": "node scripts/sanity-sync.mjs --check",
+    "sanity:import": "node scripts/sanity-import.mjs",
+    "studio:dev": "npm --prefix studio-wef-canada-blog run dev",
+    "studio:deploy": "npm --prefix studio-wef-canada-blog run deploy"
   },
   "devDependencies": {
+    "@sanity/client": "^8.5.0",
+    "jsdom": "^29.1.1",
     "vite": "^5.2.0"
   },
   "dependencies": {
