@@ -3,6 +3,24 @@ import { resolve, extname, relative } from 'path';
 import fs from 'fs';
 import { seoPlugin } from './build/seo.js';
 
+/**
+ * Directories the page glob must never descend into.
+ *
+ * `build` matters most: it holds the article/topic scaffolds used to author new
+ * pages. They were being built and published as real routes, so
+ * /build/templates/article/ returned 200 and landed in the sitemap as thin
+ * placeholder content. The two nested projects carry their own toolchains and
+ * their own HTML, which is not part of this site.
+ */
+const SKIP_DIRS = new Set([
+  'node_modules',
+  'dist',
+  'public',
+  'build',
+  'nextjs-wef-canada-blog',
+  'studio-wef-canada-blog'
+]);
+
 // Helper to recursively find all HTML files
 function getHtmlInputFiles(dir, files = {}) {
   const list = fs.readdirSync(dir);
@@ -10,7 +28,7 @@ function getHtmlInputFiles(dir, files = {}) {
     const filePath = resolve(dir, file);
     const stat = fs.statSync(filePath);
     if (stat.isDirectory()) {
-      if (file !== 'node_modules' && file !== 'dist' && file !== 'public' && !file.startsWith('.')) {
+      if (!SKIP_DIRS.has(file) && !file.startsWith('.')) {
         getHtmlInputFiles(filePath, files);
       }
     } else if (extname(file) === '.html') {
@@ -57,7 +75,14 @@ function cleanUrlsBuildPlugin() {
           const full = resolve(dir, entry.name);
           if (entry.isDirectory()) {
             walk(full);
-          } else if (entry.name.endsWith('.html') && entry.name !== 'index.html') {
+          } else if (
+            entry.name.endsWith('.html') &&
+            entry.name !== 'index.html' &&
+            // 404.html is the host's not-found handler, not a destination.
+            // Giving it a directory twin would publish /404/ as a real route
+            // that answers 200 — the definition of a soft 404.
+            entry.name !== '404.html'
+          ) {
             const route = relative(outDir, full).replace(/\.html$/, '').replace(/\\/g, '/');
             writeIndex(route, full);
           }
