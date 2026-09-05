@@ -31,7 +31,7 @@ const NOINDEX_ROUTES = new Set(['404']);
 /** Priority and change frequency by route, falling back to sensible defaults. */
 function sitemapHints(route) {
   if (route === '') return { priority: '1.0', changefreq: 'weekly' };
-  if (['pages/mission', 'pages/active-projects', 'pages/centers', 'team'].includes(route)) {
+  if (['donate', 'pages/mission', 'pages/active-projects', 'pages/centers', 'team'].includes(route)) {
     return { priority: '0.9', changefreq: 'monthly' };
   }
   if (['pages/contact', 'pages/gallery', 'pages/success-stories', 'pages/project-updates'].includes(route)) {
@@ -91,6 +91,110 @@ function gitLastModifiedDates() {
     // No git, no history, or not a repository — fall back to the build date.
   }
   return dates;
+}
+
+const ORG_ID = `${SITE_URL}/#organization`;
+
+const MONTHS = {
+  january: '01', february: '02', march: '03', april: '04', may: '05', june: '06',
+  july: '07', august: '08', september: '09', october: '10', november: '11', december: '12'
+};
+
+/**
+ * The publication date shown to readers, from the `.proj-meta` strip at the top
+ * of an update ("February 12, 2026").
+ *
+ * Deliberately not falling back to the file's git date: that records when the
+ * page was committed to this repository, which for older updates is months
+ * after the event. A wrong datePublished is worse than none, so pages without a
+ * visible date simply don't get the property.
+ */
+function publishedDate(html) {
+  const meta = html.match(/class="proj-meta"[\s\S]{0,900}?<\/div>/i);
+  if (!meta) return null;
+  const m = meta[0].match(/>([A-Z][a-z]+) (\d{1,2}), (\d{4})</);
+  if (!m) return null;
+  const month = MONTHS[m[1].toLowerCase()];
+  if (!month) return null;
+  return `${m[3]}-${month}-${String(m[2]).padStart(2, '0')}`;
+}
+
+/** The section a page sits under, for breadcrumbs. */
+function breadcrumbParent(route) {
+  if (route.startsWith('pages/updates/')) return ['Project Updates', 'pages/project-updates'];
+  if (route.startsWith('pages/stories/')) return ['Success Stories', 'pages/success-stories'];
+  if (route.startsWith('pages/projects/')) return ['Active Projects', 'pages/active-projects'];
+  return null;
+}
+
+const decodeEntities = (s) =>
+  s.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#0?39;|&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+
+function readMeta(html) {
+  const title = (html.match(/<title>([^<]*)<\/title>/i) || [, ''])[1];
+  const description = (html.match(/<meta\s+name="description"\s*[\s\S]{0,20}?content="([^"]*)"/i) || [, ''])[1];
+  const image = (html.match(/<meta\s+property="og:image"\s+content="([^"]*)"/i) || [, ''])[1];
+  return {
+    title: decodeEntities(title),
+    // The name without the brand tail — what a breadcrumb should read.
+    shortTitle: decodeEntities(title).split(' | ')[0],
+    description: decodeEntities(description),
+    image: decodeEntities(image)
+  };
+}
+
+/**
+ * Per-page JSON-LD: a breadcrumb trail on every inner page, plus Article markup
+ * on the updates and stories. The home page already declares the NGO and
+ * WebSite nodes by hand and is skipped here; everything below points back at
+ * that organization by @id rather than restating it.
+ */
+function structuredData(route, html) {
+  if (route === '') return null;
+
+  const { title, shortTitle, description, image } = readMeta(html);
+  if (!title) return null;
+
+  const crumbs = [{ name: 'Home', url: canonicalUrl('') }];
+  const parent = breadcrumbParent(route);
+  if (parent) crumbs.push({ name: parent[0], url: canonicalUrl(parent[1]) });
+  crumbs.push({ name: shortTitle, url: canonicalUrl(route) });
+
+  const graph = [
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${canonicalUrl(route)}#breadcrumb`,
+      itemListElement: crumbs.map((c, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: c.name,
+        item: c.url
+      }))
+    }
+  ];
+
+  const isArticle = route.startsWith('pages/updates/') || route.startsWith('pages/stories/');
+  if (isArticle) {
+    const article = {
+      '@type': 'Article',
+      '@id': `${canonicalUrl(route)}#article`,
+      headline: shortTitle,
+      mainEntityOfPage: canonicalUrl(route),
+      inLanguage: 'en',
+      publisher: { '@id': ORG_ID },
+      author: { '@id': ORG_ID }
+    };
+    if (description) article.description = description;
+    if (image) article.image = image;
+    const published = publishedDate(html);
+    if (published) {
+      article.datePublished = published;
+      article.dateModified = published;
+    }
+    graph.push(article);
+  }
+
+  return { '@context': 'https://schema.org', '@graph': graph };
 }
 
 export function seoPlugin() {
@@ -158,6 +262,21 @@ export function seoPlugin() {
             attrs: { name: 'twitter:card', content: 'summary_large_image' },
             injectTo: 'head'
           });
+        }
+
+        // Breadcrumb and Article markup, derived from what the page already
+        // says. A page that ships its own JSON-LD (the home page) is left alone.
+        if (!/type=["']application\/ld\+json["']/i.test(out)) {
+          const data = structuredData(route, out);
+          if (data) {
+            tags.push({
+              tag: 'script',
+              attrs: { type: 'application/ld+json' },
+              // `</` inside a script body would close the tag early.
+              children: JSON.stringify(data, null, 2).replace(/<\//g, '<\\/'),
+              injectTo: 'head'
+            });
+          }
         }
 
         // Search Console's HTML-tag method only ever checks the home page.

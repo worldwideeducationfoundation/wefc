@@ -4,11 +4,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Page Not Found — Worldwide Education Fund Canada</title>
+  <title>Donate to Education in Chitral &amp; Central Asia | Worldwide Education Fund Canada</title>
   <meta name="description"
-    content="That page could not be found. Explore our early childhood learning centers, teacher training, and scholarship programs in Chitral, Pakistan and Central Asia." />
-  <meta property="og:title" content="Page Not Found — Worldwide Education Fund Canada" />
-  <meta property="og:description" content="That page could not be found." />
+    content="Support early childhood learning centers, teacher training and scholarships in Chitral, Pakistan and Central Asia. Worldwide Education Fund Canada is a registered Canadian charity." />
+  <meta property="og:title" content="Donate to Education in Chitral &amp; Central Asia | Worldwide Education Fund Canada" />
+  <meta property="og:description"
+    content="Support early childhood learning centers, teacher training and scholarships across Chitral, Pakistan and Central Asia." />
   <meta property="og:image" content="/content/uploads/wef/WEFC%20Logo.png" />
   <meta property="og:type" content="website" />
   <link href="/content/uploads/wef/favico.png" rel="icon" />
@@ -100,40 +101,120 @@
     @media (prefers-reduced-motion: reduce) { .ct-line, .ct-socials a, .ct-submit, .ct-review a { transition: none; } }
   </style>
   <style>
-    /* The header overlays the page, so the panel needs to clear it. Centring on
-       the viewport rather than the content keeps short and tall screens alike
-       from stranding the message against the footer. */
-    .nf {
-      min-height: 68vh;
-      display: flex;
+    /* The header overlays the page, so the opening section clears it. */
+    .give-hero { padding: 150px 0 10px; }
+    .give-hero h1 { font-size: clamp(2rem, 4.6vw, 3rem); margin: 0 0 18px; max-width: 18ch; }
+    .give-hero .intro { font-size: 1.08rem; line-height: 1.7; max-width: 60ch; margin: 0 0 26px; opacity: .88; }
+
+    .give-cta {
+      display: inline-flex;
       align-items: center;
-      padding: 160px 0 90px;
-    }
-    .nf-inner { max-width: 640px; }
-    .nf-code {
-      font-family: var(--display);
-      font-size: clamp(3.4rem, 9vw, 5.6rem);
-      line-height: 1;
-      color: var(--sage-200);
-      margin: 0 0 18px;
-    }
-    .nf h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0 0 18px; }
-    .nf p { font-size: 1.05rem; line-height: 1.7; margin: 0 0 30px; opacity: .85; }
-    .nf-links { display: flex; flex-wrap: wrap; gap: 12px; }
-    .nf-links a {
-      border: 1px solid currentColor;
+      gap: 10px;
+      background: var(--forest-800);
+      color: var(--cream);
       border-radius: 999px;
-      padding: 11px 22px;
-      font-weight: 500;
-      transition: background .18s ease, color .18s ease;
+      padding: 15px 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background .18s ease;
     }
-    .nf-links a:hover { background: var(--forest-800, #1f3d2b); color: var(--cream, #f7f4ec); }
+    .give-cta:hover { background: var(--forest-900); }
+    .give-cta svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2.2; }
+
+    .give-charity {
+      font-size: .88rem;
+      opacity: .72;
+      margin: 16px 0 0;
+    }
+
+    /* Numbers already published across the site, gathered in one place so a
+       first-time donor can see the scale before deciding. */
+    .give-figures {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      margin: 46px 0 0;
+    }
+    .give-fig { background: var(--paper); padding: 20px 22px; }
+    .give-fig .n {
+      font-family: var(--display);
+      font-size: 1.9rem;
+      line-height: 1;
+      color: var(--forest-800);
+      display: block;
+      margin-bottom: 7px;
+    }
+    .give-fig .l { font-size: .86rem; line-height: 1.4; opacity: .76; }
+
+    .give-where { padding: 62px 0 0; }
+    .give-where h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0 0 12px; }
+    .give-where > .cx > p { max-width: 62ch; line-height: 1.7; opacity: .85; margin: 0 0 30px; }
+
+    .give-programs { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+    .give-prog {
+      border-top: 2px solid var(--forest-800);
+      padding-top: 16px;
+    }
+    .give-prog h3 { font-family: var(--display); font-size: 1.15rem; font-weight: 500; margin: 0 0 8px; }
+    .give-prog p { font-size: .94rem; line-height: 1.65; opacity: .82; margin: 0 0 10px; }
+    .give-prog a { font-size: .88rem; font-weight: 600; color: var(--forest-800); border-bottom: 1px solid currentColor; }
+
+    .give-faq { padding: 62px 0 80px; }
+    .give-faq h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0 0 26px; }
+    .give-faq dl { margin: 0; display: grid; gap: 22px; max-width: 68ch; }
+    .give-faq dt { font-weight: 600; margin-bottom: 6px; }
+    .give-faq dd { margin: 0; line-height: 1.7; opacity: .85; font-size: .96rem; }
+    .give-faq a { color: var(--forest-800); border-bottom: 1px solid currentColor; }
+
+    .give-close {
+      margin-top: 40px;
+      padding: 26px 28px;
+      background: var(--sage-50);
+      border-left: 3px solid var(--forest-800);
+    }
+    .give-close p { margin: 0 0 16px; line-height: 1.7; }
+    .give-close p:last-child { margin: 0; }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://wefcanada.org/donate/",
+        "name": "Donate to Education in Chitral & Central Asia",
+        "description": "Support early childhood learning centers, teacher training and scholarships in Chitral, Pakistan and Central Asia.",
+        "inLanguage": "en",
+        "isPartOf": { "@id": "https://wefcanada.org/#website" },
+        "about": { "@id": "https://wefcanada.org/#organization" }
+      },
+      {
+        "@type": "DonateAction",
+        "name": "Donate to Worldwide Education Fund Canada",
+        "recipient": { "@id": "https://wefcanada.org/#organization" },
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.zeffy.com/en-US/donation-form/donate-now-to-support-education-for-underprivileged-children"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://wefcanada.org/donate/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://wefcanada.org/" },
+          { "@type": "ListItem", "position": 2, "name": "Donate", "item": "https://wefcanada.org/donate/" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
 
-  <header class="wef-header wef-header--overlay" id="wefHeader">
+<header class="wef-header wef-header--overlay" id="wefHeader">
     <div class="wef-header-inner">
       <a class="wef-brand" href="/" aria-label="Worldwide Education Fund Canada home"><img class="wef-brand-logo" src="/content/uploads/wef/WEFC%20Logo.png" alt="" width="1840" height="1842" /><span class="wef-brand-name" aria-hidden="true"><span class="wef-brand-line">Worldwide Education Fund</span><span class="wef-brand-sub">Canada</span></span></a>
       <nav class="wef-nav" id="wefNav" aria-label="Primary">
@@ -183,25 +264,111 @@
   </header>
 
   <main>
-    <section class="nf">
-      <div class="cx nf-inner">
-        <p class="nf-code" aria-hidden="true">404</p>
-        <h1>We couldn't find that page</h1>
-        <p>The link may be out of date, or the page may have moved. Everything we
-          do is still here — learning centers in Chitral, teacher training, and
-          scholarships across Central and South Asia.</p>
-        <div class="nf-links">
-          <a href="/">Home</a>
-          <a href="/pages/active-projects">Active Projects</a>
-          <a href="/pages/project-updates">Project Updates</a>
-          <a href="/pages/centers">Learning Centers Map</a>
-          <a href="/pages/contact">Contact Us</a>
+    <section class="give-hero">
+      <div class="cx">
+        <p class="eyebrow">Support our work</p>
+        <h1>Give a child a place to start</h1>
+        <p class="intro">Worldwide Education Fund Canada works in the mountain communities of
+          Chitral, Pakistan, and across Central Asia — places where a child's nearest classroom can
+          be hours away, and where a teacher may never have had formal training. Your gift funds the
+          learning centers, the training, and the scholarships that change that.</p>
+        <a class="give-cta" href="https://www.zeffy.com/en-US/donation-form/donate-now-to-support-education-for-underprivileged-children" rel="noopener" target="_blank">Donate now
+          <svg viewBox="0 0 24 24" aria-hidden="true" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17 17 7M9 7h8v8" />
+          </svg></a>
+        <p class="give-charity">Worldwide Education Fund Canada is a registered Canadian charity,
+          registration number 709257208. Donations are processed securely through Zeffy.</p>
+
+        <div class="give-figures">
+          <div class="give-fig"><span class="n">100+</span><span class="l">learning centers</span></div>
+          <div class="give-fig"><span class="n">52,000</span><span class="l">children in the ECD ecosystem</span></div>
+          <div class="give-fig"><span class="n">40,000+</span><span class="l">primary students reached</span></div>
+          <div class="give-fig"><span class="n">300+</span><span class="l">teachers trained</span></div>
+          <div class="give-fig"><span class="n">66</span><span class="l">university scholarships</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="give-where">
+      <div class="cx">
+        <h2>Where your gift goes</h2>
+        <p>Every donation supports one of four programs. Each one is documented on this site, with
+          the centers, partners and students it has reached.</p>
+        <div class="give-programs">
+          <div class="give-prog">
+            <h3>Early childhood learning centers</h3>
+            <p>Bright Beginnings centers give children in Upper and Lower Chitral their first
+              classroom — women-led, community-run, and built where no pre-primary education existed
+              before.</p>
+            <a href="/pages/projects/bright-beginnings-eclc">About Bright Beginnings</a>
+          </div>
+          <div class="give-prog">
+            <h3>Teacher training</h3>
+            <p>Professional development and refresher training for the educators running those
+              classrooms, delivered with the University of Chitral and our implementing partners.</p>
+            <a href="/pages/topics/teacher-training">About teacher training</a>
+          </div>
+          <div class="give-prog">
+            <h3>Scholarships</h3>
+            <p>Secondary school scholarships in Chitral, and undergraduate and graduate places at
+              universities across Pakistan, Kyrgyzstan and Tajikistan for students who would
+              otherwise stop studying.</p>
+            <a href="/pages/topics/scholarships">About scholarships</a>
+          </div>
+          <div class="give-prog">
+            <h3>Learning spaces and technology</h3>
+            <p>Refurbished classrooms, English language labs and technology-enabled learning in
+              government primary schools across the Chitral valley.</p>
+            <a href="/pages/topics/learning-spaces">About learning spaces</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="give-faq">
+      <div class="cx">
+        <h2>Before you give</h2>
+        <dl>
+          <dt>Who is Worldwide Education Fund Canada?</dt>
+          <dd>A registered Canadian charity (registration number 709257208) based in Edmonton,
+            Alberta, working to expand access to quality education for children and youth in
+            underserved communities across Central and South Asia. You can
+            <a href="/pages/mission">read our mission</a> or
+            <a href="/team/">meet the people behind it</a>.</dd>
+
+          <dt>Where does the money actually go?</dt>
+          <dd>Into the four programs above. Our <a href="/pages/centers">live learning centers
+            map</a> shows every center we support and lets you filter by funding partner, and
+            <a href="/pages/project-updates">project updates</a> document what each program has
+            delivered.</dd>
+
+          <dt>How is my donation processed?</dt>
+          <dd>Through Zeffy, a donation platform for registered charities. You will be taken to
+            Zeffy's secure form to complete your gift.</dd>
+
+          <dt>Can I give to a specific program or country?</dt>
+          <dd>Yes — <a href="/pages/contact">get in touch</a> and we will direct your gift to the
+            program you choose. This is also the route for endowments, major gifts and corporate
+            partnerships.</dd>
+
+          <dt>I have a question that isn't answered here.</dt>
+          <dd>Email <a href="mailto:info@wefcanada.org">info@wefcanada.org</a> or call
+            <a href="tel:+12145028388">+1 (214) 502-8388</a>. A person will answer.</dd>
+        </dl>
+
+        <div class="give-close">
+          <p>Talent is universal. Opportunity is not. Every child deserves the chance to learn,
+            grow and thrive — regardless of financial means, caste, religion or gender.</p>
+          <p><a class="give-cta" href="https://www.zeffy.com/en-US/donation-form/donate-now-to-support-education-for-underprivileged-children" rel="noopener" target="_blank">Donate now
+            <svg viewBox="0 0 24 24" aria-hidden="true" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17 17 7M9 7h8v8" />
+            </svg></a></p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="wef-footer">
+<footer class="wef-footer">
     <div class="wef-footer-inner">
       <div class="wef-footer-top">
         <div class="wef-footer-brand">
@@ -278,6 +445,7 @@
 
 
   <script src="/content/themes/donexa/assets/js/wef-chrome.js?v=9" defer></script>
+  <script src="/lib/supabase-forms.js" type="module"></script>
 </body>
 
 </html>
