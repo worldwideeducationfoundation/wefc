@@ -73,7 +73,138 @@ const GRID_END = '<!-- sanity:cards:end -->';
 const FILTERS_START = '<!-- sanity:filters:start -->';
 const FILTERS_END = '<!-- sanity:filters:end -->';
 
-const SITE_NAME = 'Worldwide Education Fund';
+const SITE_NAME = 'Worldwide Education Fund Canada';
+
+/**
+ * SEO title and description defaults for the generated pages.
+ *
+ * These pages are rebuilt from Sanity on every deploy, so editing the generated
+ * HTML is pointless — the next `npm run build` overwrites it. That is exactly
+ * what happened to a first pass at this: the hand-edited titles survived
+ * locally and were gone the moment Hostinger rebuilt.
+ *
+ * Precedence is Sanity first: a `seoTitle` or `seoDescription` set in the
+ * Studio always wins. This map only replaces the old fallback of
+ * "<post title> — <site name>", which produced titles up to 135 characters and
+ * carried no region keyword. Two things it fixes:
+ *
+ *   - Length. Google renders about 60 characters, and the brand suffix alone is
+ *     31, so the keyword has to come first and stay short.
+ *   - Region. "Teacher Training" competes with the world; "Teacher Training for
+ *     Schools in Chitral" competes for the searches this charity can win.
+ *
+ * Keyed by `<postType>/<slug>` because `secondary-school-scholarships` exists
+ * as both an update and a project. Every entry is a description of what the
+ * page already says — no claim here is new.
+ *
+ * These belong in the Studio's SEO fields long term. Anything moved there can
+ * be deleted from here.
+ */
+const SEO_DEFAULTS = {
+  // -- updates ------------------------------------------------------------
+  'update/advisory-board-expansion': ['Advisory Board Expansion for Early Childhood Education'],
+  'update/auca-uca-scholarship-journey': ['AUCA & UCA Scholarships in Kyrgyzstan and Tajikistan'],
+  'update/bright-beginnings-eclc-expand': ['Bright Beginnings Centers Expand to 100 in Chitral'],
+  'update/childrens-day-chitral': [
+    "Children's Day in Chitral: 5 Education Milestones",
+    "Children's Day in Chitral, Pakistan: how Worldwide Education Fund Canada and FES marked it with a structured program on education access and child development."
+  ],
+  'update/early-childhood-education-1-77-million': ["A $1.77M Investment in Chitral's Early Learning"],
+  'update/eclc-lower-chitral': ['From Language Labs to 10 Learning Centers in Chitral'],
+  'update/helping-hands-ladies-group': ['Helping Hands Ladies Group of Dallas'],
+  'update/herzing-family-1-27-million-gift': ["Herzing Family's $1.27 Million Education Endowment"],
+  'update/herzing-scholarships': [
+    'Herzing Scholarships Across Asia & West Africa',
+    "How Henry and Suzanne Herzing's giving supports the Global Virtual School, MBA scholarships and early childhood centers across Asia and West Africa."
+  ],
+  'update/inspiring-learning-spaces-government-schools': ['Transforming Government Schools in Chitral'],
+  'update/reaching-isolated-children': ["Reaching Chitral's Most Isolated Children"],
+  'update/refresher-training-university-of-chitral': [
+    '100 Educators Complete Refresher Training in Chitral',
+    '100 educators from Bright Beginnings Early Childhood Learning Centers completed a five-day refresher training at the University of Chitral, Pakistan.'
+  ],
+  'update/secondary-school-scholarships': ['Secondary School Scholarships for 115 Students'],
+
+  // -- stories ------------------------------------------------------------
+  'story/asads-journey-hunza-to-us': ["Asad's Journey from Hunza to the United States"],
+  'story/from-silence-to-confidence': ['A Neurodivergent Child Finds His Voice in Chitral'],
+  'story/mehrunissa-barkatali-mba-scholar': ['MBA Scholar Mehrunissa Barkatali, Herzing University'],
+  'story/saima-shaheen-mba-scholar': ['MBA Scholar Saima Shaheen, Herzing University'],
+
+  // -- projects -----------------------------------------------------------
+  'project/bright-beginnings-eclc': ['Bright Beginnings Early Childhood Learning Centers'],
+  'project/herzing-daya-research-hub': ['Herzing–Daya ECD Research Hub, University of Chitral'],
+  'project/herzing-training-skills-development': ['Herzing Center for Skills & Entrepreneurship, Chitral'],
+  'project/rising-stars-scholarship': ['Rising Stars Undergraduate Scholarships'],
+  'project/secondary-school-scholarships': ['Secondary School Scholarships in Chitral']
+};
+
+/** The same, for category pages. Keyed by category slug. */
+const TOPIC_SEO = {
+  'community-partnerships': [
+    'Community & Partnerships in Chitral',
+    "The implementing partners, advisory boards and communities behind Worldwide Education Fund Canada's education programs in Chitral, Pakistan and Central Asia."
+  ],
+  'early-childhood-education': [
+    'Early Childhood Education in Chitral, Pakistan',
+    'Bright Beginnings learning centers, pre-primary education and the ECD research behind them — early childhood work across Chitral, Pakistan and Central Asia.'
+  ],
+  'higher-education': [
+    'Higher Education in Pakistan & Central Asia',
+    'University partnerships, scholarships and degree programs supported by Worldwide Education Fund Canada across Pakistan, Kyrgyzstan and Tajikistan.'
+  ],
+  'inclusive-education': [
+    'Inclusive Education in Chitral, Pakistan',
+    'How Worldwide Education Fund Canada supports neurodivergent children and learners otherwise left out of education in Chitral, Pakistan.'
+  ],
+  'learning-spaces': [
+    'Building Learning Spaces in Rural Pakistan',
+    'Classroom refurbishment, English language labs and technology-enabled learning in government and community schools across Chitral, Pakistan.'
+  ],
+  philanthropy: [
+    'Philanthropy & Giving for Education in Pakistan',
+    "The endowments, major gifts and donors sustaining Worldwide Education Fund Canada's education programs in Chitral, Pakistan and Central Asia."
+  ],
+  scholarships: [
+    'Scholarships for Students in Pakistan & Central Asia',
+    'Secondary, undergraduate and graduate scholarships funded through Worldwide Education Fund Canada for students across Pakistan and Central Asia.'
+  ],
+  'teacher-training': [
+    'Teacher Training for Schools in Chitral',
+    "Professional development and refresher training for the educators running Worldwide Education Fund Canada's classrooms in Chitral, Pakistan."
+  ]
+};
+
+/** Keyword first, brand last — the brand tail is the half allowed to truncate. */
+const withBrand = (keyword) => `${keyword} | ${SITE_NAME}`;
+
+/**
+ * Remove a brand tail in any form the site has used.
+ *
+ * Every `seoTitle` in the Studio was auto-filled as "<title> — Worldwide
+ * Education Fund", so the stored value carries the US entity's name. Stripping
+ * it and re-appending through withBrand() means a title edited in the Studio
+ * can never reintroduce the wrong brand, whatever suffix the editor types.
+ */
+const stripBrand = (title = '') =>
+  String(title)
+    .replace(/\s*[—|–-]\s*Worldwide Education (Fund|Foundation)(\s+Canada)?\s*$/i, '')
+    .trim();
+
+/**
+ * width/height for a Sanity image, so the page reserves its space before the
+ * image arrives. The intrinsic size is in the asset filename (...-1024x682.jpg)
+ * and `fit=max` never upscales, so the served size is the original capped at
+ * the requested width.
+ */
+function sanityDimensions(url, requestedWidth) {
+  const m = String(url).match(/-(\d+)x(\d+)\.(?:jpg|jpeg|png|webp)/i);
+  if (!m) return '';
+  const ow = Number(m[1]);
+  const oh = Number(m[2]);
+  const w = Math.min(ow, requestedWidth);
+  return ` width="${w}" height="${Math.round((oh * w) / ow)}"`;
+}
 
 /** Where a category's own page lives. The slug is the Sanity category slug. */
 const TOPIC_DIR = 'pages/topics';
@@ -162,7 +293,7 @@ function renderBody(body = []) {
     } else if (block._type === 'image') {
       if (!block.url) continue;
       out.push(
-        `<figure>\n  <img src="${escapeAttr(imageUrl(block.url, 1200))}" alt="${escapeAttr(
+        `<figure>\n  <img src="${escapeAttr(imageUrl(block.url, 1200))}"${sanityDimensions(block.url, 1200)} decoding="async" alt="${escapeAttr(
           block.alt || ''
         )}" loading="lazy" />\n</figure>`
       );
@@ -242,8 +373,13 @@ ${actions}
 
 function renderArticle(template, post) {
   const config = POST_TYPES[post.postType];
-  const seoTitle = post.seoTitle || `${post.title} — ${SITE_NAME}`;
-  const seoDescription = post.seoDescription || post.excerpt || '';
+  const [defaultKeyword, defaultDescription] = SEO_DEFAULTS[`${post.postType}/${post.slug}`] || [];
+  // The curated keyword wins over the Studio's auto-filled seoTitle, which is
+  // just the headline plus the old brand. Delete a page's entry from
+  // SEO_DEFAULTS to hand its title back to the Studio.
+  const seoTitle = withBrand(defaultKeyword || stripBrand(post.seoTitle) || post.title);
+  const seoDescription =
+    defaultDescription || post.seoDescription || post.excerpt || '';
 
   return template
     .replaceAll('{{SEO_TITLE}}', escapeAttr(seoTitle))
@@ -269,7 +405,7 @@ function renderCard(post) {
   const cats = escapeAttr((post.categories || []).map((c) => c.slug).join(' '));
   return `          <a class="ap-card" href="/${config.dir}/${post.slug}" data-categories="${cats}">
             <div class="ap-card-media">
-              <img src="${src}" alt="${alt}" loading="lazy" />
+              <img src="${src}"${sanityDimensions(src, 800)} alt="${alt}" loading="lazy" decoding="async" />
             </div>
             <div class="ap-card-body">
               <h3>${escapeHtml(post.cardTitle || post.title)}</h3>
@@ -352,12 +488,16 @@ function renderTopic(template, category, categories, posts) {
     })
     .join('\n');
 
+  const [seoKeyword, seoDescription] = TOPIC_SEO[category.slug] || [];
+
+  // The on-page description stays the Studio's short blurb; only the meta
+  // description gets the longer, keyword-bearing version.
   const description =
     category.description || `Everything from WEF's work tagged ${category.title}.`;
 
   return template
-    .replaceAll('{{SEO_TITLE}}', escapeAttr(`${category.title} — ${SITE_NAME}`))
-    .replaceAll('{{SEO_DESCRIPTION}}', escapeAttr(description))
+    .replaceAll('{{SEO_TITLE}}', escapeAttr(withBrand(seoKeyword || category.title)))
+    .replaceAll('{{SEO_DESCRIPTION}}', escapeAttr(seoDescription || description))
     .replaceAll('{{TITLE}}', escapeHtml(category.title))
     .replaceAll('{{DESCRIPTION}}', escapeHtml(description))
     .replaceAll(
