@@ -55,6 +55,17 @@
 </IfModule>
 
 # ---------------------------------------------------------------------------
+# Not found. dist/404.html is built from the site's own header and footer and
+# carries a noindex, but the host will not use it unless it is named here: the
+# status was already a correct 404 while the body was Hostinger's generic
+# "This Page Does Not Exist" page, which is easy to mistake for working.
+#
+# The path is document-root relative, and 404.html is deliberately kept out of
+# the clean-URL twinning so /404/ never answers 200 as a page in its own right.
+# ---------------------------------------------------------------------------
+ErrorDocument 404 /404.html
+
+# ---------------------------------------------------------------------------
 # Security headers
 # ---------------------------------------------------------------------------
 <IfModule mod_headers.c>
