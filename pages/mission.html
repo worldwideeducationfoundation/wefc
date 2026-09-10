@@ -70,13 +70,13 @@
     .glance-head { text-align: center; max-width: 640px; margin: 0 auto 40px; }
     .glance-head .eyebrow { color: var(--forest-900); }
     .glance-head h2 { color: var(--forest-900); font-size: clamp(1.8rem, 3vw, 2.5rem); }
-    .glance-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border: 1px solid rgba(23, 50, 16, .3); border-radius: 18px; overflow: hidden; background: rgba(255, 255, 255, .42); }
+    .glance-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid rgba(23, 50, 16, .3); border-radius: 18px; overflow: hidden; background: rgba(255, 255, 255, .42); }
     .glance-item { padding: 26px 20px; text-align: center; border-right: 1px solid rgba(23, 50, 16, .3); }
     .glance-item:last-child { border-right: 0; }
     .glance-num { font-family: var(--display); font-weight: 600; font-size: clamp(2rem, 3.4vw, 2.9rem); line-height: 1; color: var(--forest-900); }
     .glance-num .u { color: var(--forest-900); font-size: .5em; vertical-align: super; }
     .glance-lbl { margin-top: 10px; font-size: .82rem; color: rgba(23, 50, 16, .82); line-height: 1.4; }
-    @media (max-width: 900px) { .glance-grid { grid-template-columns: 1fr 1fr; } .glance-item:nth-child(2) { border-right: 0; } .glance-item { border-bottom: 1px solid rgba(255, 255, 255, .14); } .glance-item:nth-child(5) { border-bottom: 0; } }
+    @media (max-width: 900px) { .glance-grid { grid-template-columns: 1fr 1fr; } .glance-item:nth-child(even) { border-right: 0; } .glance-item { border-bottom: 1px solid rgba(255, 255, 255, .14); } .glance-item:nth-child(n+3) { border-bottom: 0; } }
 
     /* ---- Projects ---- */
     .projects { padding: var(--sec-y) 0; }
@@ -301,10 +301,6 @@
             <div class="glance-lbl">Children in early education</div>
           </div>
           <div class="glance-item">
-            <div class="glance-num">200<span class="u">+</span></div>
-            <div class="glance-lbl">Teachers trained</div>
-          </div>
-          <div class="glance-item">
             <div class="glance-num">66</div>
             <div class="glance-lbl">University scholarships</div>
           </div>
@@ -390,7 +386,6 @@
                   <ul>
                     <li>Hosted at the University of Chitral</li>
                     <li>Serving a region home to 52,000 children aged 3–5</li>
-                    <li>40,000+ primary school students</li>
                   </ul>
                 </div>
                 <div class="pcol">
@@ -455,7 +450,6 @@
                     <li>Workforce-ready talent for high-demand sectors</li>
                     <li>Certification, hands-on training &amp; job placement</li>
                     <li>A resource platform for scholarships, employment &amp; entrepreneurship</li>
-                    <li>300+ teachers trained in 2026</li>
                   </ul>
                 </div>
               </div>
