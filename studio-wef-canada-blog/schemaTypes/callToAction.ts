@@ -32,7 +32,7 @@ export default defineType({
       title: 'Primary button link',
       type: 'string',
       initialValue:
-        'https://www.zeffy.com/en-US/donation-form/donate-now-to-support-education-for-underprivileged-children',
+        'https://www.paypal.com/donate/?hosted_button_id=7FZCRBSDLXL72',
       description: 'A full URL, or a site path such as /pages/contact.',
       validation: (Rule) => Rule.required(),
     }),

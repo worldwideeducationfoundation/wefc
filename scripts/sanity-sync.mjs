@@ -27,6 +27,21 @@ import {
 
 const CHECK_ONLY = process.argv.includes('--check');
 
+/**
+ * The site's one donation destination: a PayPal hosted donate button.
+ *
+ * Giving ran through Zeffy until it moved to PayPal, and every post's CTA
+ * carried the Zeffy form URL in Sanity. Those documents have been patched, but
+ * a draft, a restored revision or a pasted old link would otherwise walk the
+ * retired platform back into generated pages on the next sync — so any
+ * zeffy.com URL is rewritten here too, rather than trusted to stay gone.
+ */
+const DONATE_URL = 'https://www.paypal.com/donate/?hosted_button_id=7FZCRBSDLXL72';
+
+function normalizeDonateUrl(url) {
+  return url && /zeffy\.com/i.test(url) ? DONATE_URL : url;
+}
+
 /** Everything that differs between the three kinds of article page. */
 const POST_TYPES = {
   update: {
@@ -341,7 +356,8 @@ function renderMeta(post, config) {
 function renderCta(cta, config) {
   if (!cta?.heading) return '';
 
-  const button = (label, url, className) => {
+  const button = (label, rawUrl, className) => {
+    const url = normalizeDonateUrl(rawUrl);
     if (!label || !url) return '';
     const external = /^https?:/i.test(url);
     const attrs = external ? ' rel="noopener" target="_blank"' : '';

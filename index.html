@@ -23,6 +23,7 @@
   <link href="/content/themes/donexa/assets/css/wef-chrome.css?v=10" rel="stylesheet" />
   <link href="/content/themes/donexa/assets/css/wef-home.css?v=16" rel="stylesheet" />
   <link href="/content/themes/donexa/assets/css/wef-forms.css?v=1" rel="stylesheet" />
+  <link href="/content/themes/donexa/assets/css/wef-donate.css?v=1" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <link href="/content/themes/donexa/assets/css/wef-centers.css?v=9" rel="stylesheet" />
@@ -130,7 +131,7 @@
           <li><a class="wef-navlink" href="/pages/contact">Contact</a></li>
         </ul>
         <a class="wef-btn wef-btn-donate"
-          href="https://www.zeffy.com/en-US/donation-form/donate-now-to-support-education-for-underprivileged-children"
+          href="https://www.paypal.com/donate/?hosted_button_id=7FZCRBSDLXL72"
           rel="noopener" target="_blank">Donate</a>
       </nav>
       <button class="wef-nav-toggle" id="wefNavToggle" aria-label="Menu"
@@ -220,7 +221,7 @@
           Asia.</p>
         <div class="hero-cta">
           <a class="btn btn-donate"
-            href="https://www.zeffy.com/en-US/donation-form/donate-now-to-support-education-for-underprivileged-children"
+            href="https://www.paypal.com/donate/?hosted_button_id=7FZCRBSDLXL72"
             rel="noopener" target="_blank">Donate Now
             <svg viewbox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M12 21s-8-5.3-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.7-8 11-8 11z" />
@@ -476,7 +477,7 @@
 
         <div class="feature-cta reveal">
           <a class="btn btn-donate"
-            href="https://www.zeffy.com/en-US/donation-form/donate-now-to-support-education-for-underprivileged-children"
+            href="https://www.paypal.com/donate/?hosted_button_id=7FZCRBSDLXL72"
             target="_blank" rel="noopener"
             aria-label="Donate now to support Early Childhood Learning Centers (opens in a new tab)">Donate Now
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -1136,18 +1137,80 @@ l-77 12 -51 -32 c-28 -17 -58 -31 -67 -31 -30 0 -100 -34 -113 -55 -7 -11 -16
           </div>
         </div>
         <div class="donate-form reveal">
-          <div class="zwrap">
-            <div data-zeffy-embed
-              data-form-url="/embed/donation-form/donate-now-to-support-education-for-underprivileged-children"></div>
-            <div data-zeffy-embed-fallback style="display:none;">
-              <div style="position:relative;overflow:hidden;height:540px;width:100%;"><iframe
-                  title="Donation form powered by Zeffy"
-                  style="position:absolute;border:0;top:0;left:0;bottom:0;right:0;width:100%;height:100%"
-                  data-zeffy-embed-src="https://www.zeffy.com/embed/donation-form/donate-now-to-support-education-for-underprivileged-children"
-                  allowpaymentrequest="" allowtransparency="true"></iframe></div>
+          <!-- Donation widget. Amount chips are plain links carrying their own
+               &amount=, so this works with JavaScript off; wef-donate.js turns
+               them into a selector and unhides the "other amount" field. -->
+          <div class="wef-donate" data-wef-donate
+            data-donate-url="https://www.paypal.com/donate/?hosted_button_id=7FZCRBSDLXL72">
+            <div class="wef-donate-head">
+              <p class="wef-donate-eyebrow">Secure giving</p>
+              <h3 class="wef-donate-title">Choose your gift</h3>
+              <p class="wef-donate-sub">At about $12 per child, every amount below is a real number of
+                children reached. Pick one, or enter your own.</p>
             </div>
-            <script src="https://www.zeffy.com/embed/v2/zeffy-embed.js"
-              onerror="document.querySelectorAll('[data-zeffy-embed-fallback]').forEach(function(el){el.style.display='block';el.querySelectorAll('iframe[data-zeffy-embed-src]').forEach(function(f){f.src=f.getAttribute('data-zeffy-embed-src');});});"></script>
+
+            <div class="wef-donate-amounts">
+              <a class="wef-donate-chip" data-amount="36"
+                href="https://www.paypal.com/donate/?hosted_button_id=7FZCRBSDLXL72&amp;amount=36" rel="noopener"
+                target="_blank">
+                <span class="wef-donate-chip-amt">$36</span>
+                <span class="wef-donate-chip-note">Three children, a decade of learning</span>
+              </a>
+              <a class="wef-donate-chip" data-amount="120"
+                href="https://www.paypal.com/donate/?hosted_button_id=7FZCRBSDLXL72&amp;amount=120" rel="noopener"
+                target="_blank">
+                <span class="wef-donate-chip-amt">$120</span>
+                <span class="wef-donate-chip-note">Ten children through a full center cycle</span>
+              </a>
+              <a class="wef-donate-chip" data-amount="600"
+                href="https://www.paypal.com/donate/?hosted_button_id=7FZCRBSDLXL72&amp;amount=600" rel="noopener"
+                target="_blank">
+                <span class="wef-donate-chip-amt">$600</span>
+                <span class="wef-donate-chip-note">Fifty children reached</span>
+              </a>
+              <a class="wef-donate-chip" data-amount="3600"
+                href="https://www.paypal.com/donate/?hosted_button_id=7FZCRBSDLXL72&amp;amount=3600" rel="noopener"
+                target="_blank">
+                <span class="wef-donate-chip-amt">$3,600</span>
+                <span class="wef-donate-chip-note">Establishes a Bright Beginnings center</span>
+              </a>
+            </div>
+
+            <div class="wef-donate-custom" data-wef-donate-custom hidden>
+              <label class="wef-donate-custom-label" for="wefDonateAmountHome">Or enter another amount</label>
+              <div class="wef-donate-field">
+                <span class="wef-donate-currency" aria-hidden="true">$</span>
+                <input class="wef-donate-input" id="wefDonateAmountHome" data-wef-donate-input type="text"
+                  inputmode="decimal" autocomplete="off" placeholder="0.00" aria-describedby="wefDonateNoteHome" />
+              </div>
+            </div>
+
+            <a class="wef-donate-submit" data-wef-donate-link
+              href="https://www.paypal.com/donate/?hosted_button_id=7FZCRBSDLXL72" rel="noopener" target="_blank">
+              <svg viewBox="0 0 384 512" aria-hidden="true">
+                <path
+                  d="M111.4 295.9c-3.5 19.2-17.4 108.7-21.5 134-.3 1.8-1 2.5-3 2.5H12.3c-7.6 0-13.1-6.6-12.1-14.1L58.8 46.6c1.5-9.6 10.1-16.9 20-16.9 152.3 0 165.1-3.7 204 11.4 60.1 23.3 65.6 79.5 44 140.3-21.5 62.6-72.5 89.5-140.1 90.3-43.4.7-69.5-7-75.3 24.2zM357.1 152c-1.8-1.3-2.5-1.8-3 1.3-2 11.4-5.1 22.5-8.8 33.6-39.9 113.8-150.5 103.9-204.5 103.9-6.1 0-10.1 3.3-10.9 9.4-22.6 140.4-27.1 169.7-27.1 169.7-1 7.1 3.5 12.9 10.6 12.9h63.5c8.6 0 16.1-6.3 17.4-14.9.7-5.4-1.1 6.1 14.4-91.3 4.6-22 14.3-19.7 29.3-19.7 71 0 126.4-28.8 142.9-112.3 6.5-34.8 4.6-71.4-23.8-92.6z" />
+              </svg>
+              <span>Donate<span data-wef-donate-label></span> with PayPal</span>
+            </a>
+
+            <p class="wef-donate-note" id="wefDonateNoteHome">Credit card, debit card or PayPal balance — a PayPal
+              account is not required.</p>
+
+            <ul class="wef-donate-trust">
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2 4 5v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V5l-8-3z" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>Registered Canadian charity #709257208
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="11" width="18" height="11" rx="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>Payment is handled entirely on PayPal's secure checkout — we never see your card details.
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -1289,7 +1352,7 @@ l-77 12 -51 -32 c-28 -17 -58 -31 -67 -31 -30 0 -100 -34 -113 -55 -7 -11 -16
           <h2>Get Involved</h2>
           <ul>
             <li><a
-                href="https://www.zeffy.com/en-US/donation-form/donate-now-to-support-education-for-underprivileged-children"
+                href="https://www.paypal.com/donate/?hosted_button_id=7FZCRBSDLXL72"
                 rel="noopener" target="_blank">Donate</a></li>
             <li><a href="/donate/">Ways to Give</a></li>
             <li><a href="/pages/contact">Contact Us</a></li>
@@ -1445,6 +1508,7 @@ l-77 12 -51 -32 c-28 -17 -58 -31 -67 -31 -30 0 -100 -34 -113 -55 -7 -11 -16
   <script src="/content/maps/centers-data.js?v=3"></script>
   <script src="/content/themes/donexa/assets/js/wef-centers.js?v=9" defer></script>
   <script src="/content/themes/donexa/assets/js/wef-chrome.js?v=9" defer></script>
+  <script src="/content/themes/donexa/assets/js/wef-donate.js?v=1" defer></script>
   <script src="/lib/supabase-forms.js" type="module"></script>
 </body>
 

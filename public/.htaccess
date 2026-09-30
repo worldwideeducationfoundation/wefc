@@ -96,7 +96,6 @@ ErrorDocument 404 /404.html
   #                        ("This content is blocked") while the download link
   #                        still worked, since that is not a frame.
   #   unpkg.com          Leaflet (the centers map), loaded with SRI
-  #   zeffy.com          donation form embed + its iframe
   #   fonts.googleapis   stylesheet / fonts.gstatic  font files
   #   *.supabase.co      contact form and newsletter writes
   #   openstreetmap /
@@ -108,6 +107,12 @@ ErrorDocument 404 /404.html
   #                      still fetches them fine (curl ignores CSP), which makes
   #                      it look like a caching problem rather than a policy one.
   #
+  # No donation origin appears anywhere in the policy, and that is deliberate:
+  # the donation widget is a set of links out to PayPal's hosted checkout, not
+  # an embed, so there is no third-party script and no iframe to allow. If a
+  # PayPal embed is ever added, script-src and frame-src need www.paypal.com
+  # and www.paypalobjects.com.
+  #
   # 'unsafe-inline' is present for scripts and styles because the pages carry
   # inline <script> and <style> blocks throughout. That weakens the XSS benefit
   # and is an honest limitation, not an oversight: removing it means hashing or
@@ -115,7 +120,7 @@ ErrorDocument 404 /404.html
   # The policy still blocks script loading from any unlisted origin, and
   # object-src/base-uri close the two most abused injection vectors outright.
   # -------------------------------------------------------------------------
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://www.zeffy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://cdn.sanity.io https://*.tile.openstreetmap.org https://server.arcgisonline.com https://unpkg.com https://www.zeffy.com; connect-src 'self' https://*.supabase.co; frame-src 'self' https://www.zeffy.com; frame-ancestors 'self'; form-action 'self' https://www.zeffy.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://cdn.sanity.io https://*.tile.openstreetmap.org https://server.arcgisonline.com https://unpkg.com; connect-src 'self' https://*.supabase.co; frame-src 'self'; frame-ancestors 'self'; form-action 'self' https://www.paypal.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
 </IfModule>
 
 # ---------------------------------------------------------------------------
