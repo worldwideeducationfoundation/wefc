@@ -32,7 +32,7 @@ export default defineType({
       title: 'Primary button link',
       type: 'string',
       initialValue:
-        'https://www.paypal.com/donate/?hosted_button_id=7FZCRBSDLXL72',
+        'https://donorbox.org/eclc-donation',
       description: 'A full URL, or a site path such as /pages/contact.',
       validation: (Rule) => Rule.required(),
     }),

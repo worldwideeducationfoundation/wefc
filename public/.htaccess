@@ -106,12 +106,11 @@ ErrorDocument 404 /404.html
   #                      Leaving this out blocks them in the browser while curl
   #                      still fetches them fine (curl ignores CSP), which makes
   #                      it look like a caching problem rather than a policy one.
-  #
-  # No donation origin appears anywhere in the policy, and that is deliberate:
-  # the donation widget is a set of links out to PayPal's hosted checkout, not
-  # an embed, so there is no third-party script and no iframe to allow. If a
-  # PayPal embed is ever added, script-src and frame-src need www.paypal.com
-  # and www.paypalobjects.com.
+  #   donorbox.org       the donation widget: giving moved from PayPal links to
+  #                      an embedded Donorbox form, progress meter and donor
+  #                      wall (all iframes/script on the /donate page and the
+  #                      homepage), so it needs script-src, frame-src and
+  #                      form-action — this is no longer a bare outbound link.
   #
   # 'unsafe-inline' is present for scripts and styles because the pages carry
   # inline <script> and <style> blocks throughout. That weakens the XSS benefit
@@ -120,7 +119,7 @@ ErrorDocument 404 /404.html
   # The policy still blocks script loading from any unlisted origin, and
   # object-src/base-uri close the two most abused injection vectors outright.
   # -------------------------------------------------------------------------
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://cdn.sanity.io https://*.tile.openstreetmap.org https://server.arcgisonline.com https://unpkg.com; connect-src 'self' https://*.supabase.co; frame-src 'self'; frame-ancestors 'self'; form-action 'self' https://www.paypal.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://donorbox.org; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://cdn.sanity.io https://*.tile.openstreetmap.org https://server.arcgisonline.com https://unpkg.com; connect-src 'self' https://*.supabase.co https://donorbox.org; frame-src 'self' https://donorbox.org; frame-ancestors 'self'; form-action 'self' https://donorbox.org; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
 </IfModule>
 
 # ---------------------------------------------------------------------------

@@ -28,18 +28,19 @@ import {
 const CHECK_ONLY = process.argv.includes('--check');
 
 /**
- * The site's one donation destination: a PayPal hosted donate button.
+ * The site's one donation destination: the Donorbox campaign page.
  *
- * Giving ran through Zeffy until it moved to PayPal, and every post's CTA
- * carried the Zeffy form URL in Sanity. Those documents have been patched, but
- * a draft, a restored revision or a pasted old link would otherwise walk the
- * retired platform back into generated pages on the next sync — so any
- * zeffy.com URL is rewritten here too, rather than trusted to stay gone.
+ * Giving has moved twice — Zeffy, then PayPal, now Donorbox — and every
+ * post's CTA carried the old form URL in Sanity each time. Those documents
+ * have been patched, but a draft, a restored revision or a pasted old link
+ * would otherwise walk a retired platform back into generated pages on the
+ * next sync — so any zeffy.com or paypal.com URL is rewritten here too,
+ * rather than trusted to stay gone.
  */
-const DONATE_URL = 'https://www.paypal.com/donate/?hosted_button_id=7FZCRBSDLXL72';
+const DONATE_URL = 'https://donorbox.org/eclc-donation';
 
 function normalizeDonateUrl(url) {
-  return url && /zeffy\.com/i.test(url) ? DONATE_URL : url;
+  return url && /zeffy\.com|paypal\.com/i.test(url) ? DONATE_URL : url;
 }
 
 /** Everything that differs between the three kinds of article page. */
