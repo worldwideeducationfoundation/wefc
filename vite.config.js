@@ -26,7 +26,12 @@ function getHtmlInputFiles(dir, files = {}) {
   const list = fs.readdirSync(dir);
   for (const file of list) {
     const filePath = resolve(dir, file);
-    const stat = fs.statSync(filePath);
+    // throwIfNoEntry: false — Vite deletes its own transient
+    // vite.config.js.timestamp-*.mjs the moment it's done loading the config,
+    // which can happen mid-scan (this function runs while the config is being
+    // evaluated). Without this, that race throws ENOENT and kills the build.
+    const stat = fs.statSync(filePath, { throwIfNoEntry: false });
+    if (!stat) continue;
     if (stat.isDirectory()) {
       if (!SKIP_DIRS.has(file) && !file.startsWith('.')) {
         getHtmlInputFiles(filePath, files);
