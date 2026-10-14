@@ -302,15 +302,17 @@
               you can give by cheque.</p>
           </div>
 
-          <!-- Donation widget: Donorbox's own embedded form. -->
+          <!-- Donation widget: Donorbox's classic iframe embed (the web-component widget.js version loads too slowly). -->
           <div class="give-top-widget ct-form-wrap">
-            <script type="module" src="https://donorbox.org/widgets.js" async></script>
-            <dbox-widget campaign="eclc-donation" type="donation_form" enable-auto-scroll="true"></dbox-widget>
+            <script src="https://donorbox.org/widget.js" paypalexpress="false"></script>
+            <iframe src="https://donorbox.org/embed/eclc-donation?default_interval=o" name="donorbox"
+              seamless="seamless" frameborder="0" scrolling="no" height="900px" width="100%"
+              style="max-width:500px; min-width:250px; max-height:none!important" allowpaymentrequest="true"
+              title="Donation form"></iframe>
           </div>
         </div>
 
         <div class="give-meter">
-          <script src="https://donorbox.org/widget.js" paypalexpress="false"></script>
           <iframe height="93px" width="100%"
             src="https://donorbox.org/embed/eclc-donation?donation_meter_color=%232ecc71&only_donation_meter=true"
             style="max-width: 500px; min-width: 250px; min-height: 90px; max-height: none !important;"

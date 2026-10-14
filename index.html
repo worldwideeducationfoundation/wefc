@@ -1136,9 +1136,12 @@ l-77 12 -51 -32 c-28 -17 -58 -31 -67 -31 -30 0 -100 -34 -113 -55 -7 -11 -16
           </div>
         </div>
         <div class="donate-form reveal">
-          <!-- Donation widget: Donorbox's own embedded form. -->
-          <script type="module" src="https://donorbox.org/widgets.js" async></script>
-          <dbox-widget campaign="eclc-donation" type="donation_form" enable-auto-scroll="true"></dbox-widget>
+          <!-- Donation widget: Donorbox's classic iframe embed (the web-component widget.js version loads too slowly). -->
+          <script src="https://donorbox.org/widget.js" paypalexpress="false"></script>
+          <iframe src="https://donorbox.org/embed/eclc-donation?default_interval=o" name="donorbox"
+            seamless="seamless" frameborder="0" scrolling="no" height="900px" width="100%"
+            style="max-width:500px; min-width:250px; max-height:none!important" allowpaymentrequest="true"
+            title="Donation form"></iframe>
           <p class="give-charity" style="margin:16px 0 0;font-size:.88rem;opacity:.72">A registered Canadian
             charity, registration #709257208. Prefer to give by cheque? See <a href="/donate/">Ways to Give</a>.</p>
         </div>
