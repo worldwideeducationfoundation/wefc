@@ -32,7 +32,7 @@ export default defineType({
       title: 'Primary button link',
       type: 'string',
       initialValue:
-        'https://donorbox.org/eclc-donation',
+        'https://donorbox.org/bright-beginnings-early-childhood-learning-centers-eclcs',
       description: 'A full URL, or a site path such as /pages/contact.',
       validation: (Rule) => Rule.required(),
     }),

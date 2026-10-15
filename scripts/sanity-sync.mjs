@@ -37,7 +37,7 @@ const CHECK_ONLY = process.argv.includes('--check');
  * next sync — so any zeffy.com or paypal.com URL is rewritten here too,
  * rather than trusted to stay gone.
  */
-const DONATE_URL = 'https://donorbox.org/eclc-donation';
+const DONATE_URL = 'https://donorbox.org/bright-beginnings-early-childhood-learning-centers-eclcs';
 
 function normalizeDonateUrl(url) {
   return url && /zeffy\.com|paypal\.com/i.test(url) ? DONATE_URL : url;
