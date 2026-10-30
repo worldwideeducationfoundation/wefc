@@ -1,0 +1,624 @@
+/* ==========================================================================
+   WEF shared chrome — header + footer used on EVERY page.
+   Prefixed (.wef-*) and scoped so it never collides with Elementor/Bootstrap.
+   Loaded on the bespoke homepage and injected into all legacy theme pages.
+   ========================================================================== */
+:root {
+  --forest-900: #173210;
+  --forest-800: #244B1B;
+  /* --pine-ink is the green that carries TEXT: green words on a light
+     background, and green fills that keep white text on them. The bright
+     brand green below is far too light for either (1.9:1) — this is 5.4:1.
+     Do not use --pine-700 for text. */
+  --pine-ink: #3C762E;
+  /* One step below the brand green — hover/pressed state for green fills. */
+  --pine-800: #5EC445;
+  /* The bright brand green. Fills, bars, tints and graphics only; anything
+     sitting ON it must be --ink-900, which reads 8.6:1 against it. Chosen
+     bright on purpose: under red-green colour blindness it simulates to a
+     pale yellow, so it separates from every dark surface by lightness
+     alone rather than by hue. */
+  --pine-700: #77D161;
+  --leaf-600: #A0E48B;
+  --sage-200: #D2EDC9;
+  --sage-50: #EFF8EC;
+  --cream: #F7F3EA;
+  --paper: #FFFDF8;
+  --ink-900: #23201A;
+  --ink-600: #57534A;
+  --line: #E7E1D3;
+
+  /* Real rendered header height = logo height + 2 x .wef-header-inner padding.
+     Every page's hero offsets from this, so the two must stay in sync. */
+  --header-h: 94px;
+  --logo-h: 72px;
+
+  /* Shared vertical rhythm. Use these instead of ad-hoc clamps so sections
+     stack consistently across pages. Tightened ~30% — the previous 88px top
+     and bottom put ~176px of dead space between neighbouring sections, which
+     read as gaps rather than separation. */
+  --sec-y: clamp(38px, 4.4vw, 60px);
+  --sec-y-sm: clamp(28px, 3.4vw, 44px);
+}
+
+@media (max-width: 960px) {
+  :root {
+    --header-h: 78px;
+    --logo-h: 56px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --header-h: 68px;
+    --logo-h: 46px;
+  }
+}
+
+.wef-header,
+.wef-header *,
+.wef-footer,
+.wef-footer * {
+  box-sizing: border-box
+}
+
+.wef-header a,
+.wef-footer a {
+  text-decoration: none
+}
+
+/* ---------------- Header ---------------- */
+.wef-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 4px 20px rgba(20, 20, 10, .06);
+  font-family: var(--font-jost), "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  transition: background .35s ease, box-shadow .35s ease, border-color .35s ease
+}
+
+.wef-header--overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: rgba(27, 54, 22, .34);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  backdrop-filter: blur(16px) saturate(1.4);
+  border-bottom-color: rgba(255, 255, 255, .13);
+  box-shadow: none
+}
+
+.wef-header--overlay.wef-scrolled {
+  background: rgba(255, 253, 248, .92);
+  border-bottom-color: var(--line);
+  box-shadow: 0 6px 26px rgba(20, 20, 10, .08)
+}
+
+.wef-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 11px 28px;
+  display: flex;
+  align-items: center;
+  gap: 24px
+}
+
+.wef-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0
+}
+
+.wef-brand-logo {
+  height: var(--logo-h);
+  width: auto;
+  display: block;
+  transition: height .3s ease
+}
+
+/* Wordmark — sits beside the mark so the two read as one lockup. The <a>
+   carries the accessible name, so this text is presentational. */
+.wef-brand-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  line-height: 1.1;
+  color: #fff;
+  transition: color .35s ease
+}
+
+.wef-brand-line {
+  font-weight: 700;
+  font-size: clamp(.88rem, 1.1vw, 1.02rem);
+  white-space: nowrap
+}
+
+.wef-brand-sub {
+  font-weight: 600;
+  font-size: .62rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .74);
+  transition: color .35s ease
+}
+
+.wef-header:not(.wef-header--overlay) .wef-brand-name,
+.wef-header--overlay.wef-scrolled .wef-brand-name {
+  color: var(--forest-900)
+}
+
+.wef-header:not(.wef-header--overlay) .wef-brand-sub,
+.wef-header--overlay.wef-scrolled .wef-brand-sub {
+  color: var(--pine-ink)
+}
+
+.wef-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center
+}
+
+.wef-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 2px
+}
+
+.wef-menu>li {
+  position: relative
+}
+
+.wef-navlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+  font-size: .98rem;
+  color: var(--ink-900);
+  padding: 8px 14px;
+  border-radius: 8px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color .2s ease, background .2s ease
+}
+
+.wef-header--overlay:not(.wef-scrolled) .wef-navlink {
+  color: #fff
+}
+
+.wef-navlink:hover {
+  background: rgba(119, 209, 97, .16)
+}
+
+.wef-header--overlay:not(.wef-scrolled) .wef-navlink:hover {
+  background: rgba(255, 255, 255, .14)
+}
+
+.wef-caret {
+  width: 12px;
+  height: 12px;
+  transition: transform .25s ease
+}
+
+.wef-has-children:hover>.wef-navlink .wef-caret {
+  transform: rotate(180deg)
+}
+
+.wef-submenu {
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 212px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 18px 44px rgba(20, 20, 10, .14);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity .22s ease, transform .22s ease, visibility .22s;
+  z-index: 10
+}
+
+.wef-has-children:hover>.wef-submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0)
+}
+
+.wef-submenu a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 9px;
+  font-size: .94rem;
+  color: var(--ink-900);
+  transition: background .18s ease, color .18s ease
+}
+
+.wef-submenu a:hover {
+  background: var(--sage-50);
+  color: var(--pine-ink)
+}
+
+.wef-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: .94rem;
+  border-radius: 100px;
+  padding: 11px 24px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+  white-space: nowrap;
+  line-height: 1
+}
+
+.wef-btn-donate {
+  background: var(--pine-700);
+  color: var(--ink-900);
+  box-shadow: 0 8px 22px rgba(36, 75, 27, .26);
+  margin-left: 14px
+}
+
+.wef-btn-donate:hover {
+  background: var(--pine-800);
+  transform: translateY(-2px)
+}
+
+.wef-header--overlay:not(.wef-scrolled) .wef-btn-donate {
+  background: #fff;
+  color: var(--forest-800);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .22)
+}
+
+.wef-header--overlay:not(.wef-scrolled) .wef-btn-donate:hover {
+  background: var(--cream)
+}
+
+.wef-nav-toggle {
+  display: none;
+  margin-left: auto;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 10px
+}
+
+.wef-nav-toggle span {
+  display: block;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--ink-900);
+  transition: transform .3s ease, opacity .2s ease
+}
+
+.wef-header--overlay:not(.wef-scrolled) .wef-nav-toggle span {
+  background: #fff
+}
+
+.wef-nav-toggle span+span {
+  margin-top: 6px
+}
+
+.wef-nav-backdrop {
+  display: none
+}
+
+@media(max-width:960px) {
+  .wef-nav-toggle {
+    display: block
+  }
+
+  .wef-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* dvh tracks the visible viewport as mobile browser chrome hides/shows;
+       the vh line is the fallback for browsers without dvh support. */
+    height: 100vh;
+    height: 100dvh;
+    width: min(330px, 84vw);
+    background: var(--pine-700);
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: calc(var(--header-h) + 16px) 26px 40px;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform .35s cubic-bezier(.16, 1, .3, 1);
+    box-shadow: -20px 0 60px rgba(0, 0, 0, .3);
+    margin-left: 0;
+    z-index: 1001
+  }
+
+  .wef-nav.wef-open {
+    transform: translateX(0)
+  }
+
+  .wef-menu {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%
+  }
+
+  .wef-menu>li {
+    width: 100%
+  }
+
+  .wef-navlink {
+    color: var(--forest-900) !important;
+    font-size: 1.06rem;
+    padding: 14px 4px;
+    justify-content: space-between;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(23, 50, 16, .16)
+  }
+
+  .wef-navlink:hover {
+    background: rgba(255, 255, 255, .4)
+  }
+
+  .wef-submenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    padding: 0 0 8px 14px;
+    min-width: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease
+  }
+
+  .wef-has-children.wef-sub-open>.wef-submenu {
+    max-height: 420px
+  }
+
+  .wef-submenu a {
+    color: rgba(23, 50, 16, .82);
+    padding: 10px 4px
+  }
+
+  .wef-submenu a:hover {
+    background: transparent;
+    color: var(--forest-900)
+  }
+
+  .wef-has-children.wef-sub-open .wef-caret {
+    transform: rotate(180deg)
+  }
+
+  .wef-btn-donate,
+  .wef-header--overlay:not(.wef-scrolled) .wef-btn-donate {
+    margin: 18px 0 0;
+    justify-content: center;
+    background: var(--forest-900);
+    color: #fff
+  }
+
+  .wef-nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease, visibility .3s ease;
+    z-index: 1000
+  }
+
+  .wef-nav-backdrop.wef-show {
+    opacity: 1;
+    visibility: visible
+  }
+}
+
+/* ---------------- Footer ---------------- */
+.wef-footer {
+  background: var(--pine-700);
+  color: rgba(23, 50, 16, .8);
+  font-family: var(--font-jost), "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 66px 0 26px;
+  font-size: 16px;
+  line-height: 1.6
+}
+
+.wef-footer a {
+  color: rgba(23, 50, 16, .8);
+  transition: color .2s ease
+}
+
+.wef-footer a:hover {
+  color: var(--forest-900)
+}
+
+.wef-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px
+}
+
+.wef-footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+  gap: 40px;
+  padding-bottom: 42px;
+  border-bottom: 1px solid rgba(23, 50, 16, .2)
+}
+
+.wef-footer-logo {
+  height: 73px;
+  width: auto;
+  display: inline-block;
+  flex-shrink: 0
+}
+
+/* Same mark + wordmark lockup as the header, on the footer's dark ground */
+.wef-footer-lockup {
+  display: flex;
+  align-items: center;
+  gap: 13px
+}
+
+.wef-footer-lockup .wef-brand-line {
+  font-size: 1rem;
+  white-space: normal;
+  text-wrap: balance;
+  max-width: 15ch
+}
+
+.wef-footer-about {
+  margin: 18px 0 20px;
+  font-size: .92rem;
+  line-height: 1.65;
+  max-width: 34ch;
+  color: rgba(23, 50, 16, .8)
+}
+
+.wef-footer h2 {
+  font-family: inherit;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: .76rem;
+  color: var(--forest-900);
+  margin: 0 0 18px
+}
+
+.wef-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 11px
+}
+
+.wef-footer-contact li {
+  display: flex;
+  gap: 11px;
+  font-size: .92rem;
+  line-height: 1.5;
+  margin-bottom: 13px;
+  align-items: flex-start
+}
+
+.wef-footer-contact svg {
+  width: 17px;
+  height: 17px;
+  stroke: var(--sage-200);
+  fill: none;
+  flex-shrink: 0;
+  margin-top: 3px
+}
+
+.wef-socials {
+  display: flex;
+  gap: 11px;
+  margin-top: 20px
+}
+
+.wef-socials a {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s ease, transform .2s ease
+}
+
+.wef-socials a:hover {
+  background: var(--forest-900);
+  transform: translateY(-2px)
+}
+
+.wef-socials svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--forest-900)
+}
+
+.wef-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 22px;
+  font-size: .82rem;
+  color: rgba(23, 50, 16, .62)
+}
+
+@media(max-width:820px) {
+  .wef-footer-top {
+    grid-template-columns: 1fr 1fr
+  }
+}
+
+@media(max-width:520px) {
+  .wef-footer-top {
+    grid-template-columns: 1fr;
+    gap: 30px
+  }
+}
+
+/* ---------------- Brand lockup, narrower screens ---------------- */
+/* 961-1020px is the tightest band: full nav, no burger yet. */
+@media(max-width:1020px) {
+  .wef-brand-line {
+    font-size: .86rem
+  }
+
+  .wef-navlink {
+    padding: 8px 9px
+  }
+
+  .wef-brand-sub {
+    font-size: .56rem;
+    letter-spacing: .2em
+  }
+}
+
+@media(max-width:560px) {
+  .wef-brand {
+    gap: 9px
+  }
+
+  .wef-brand-name {
+    gap: 3px
+  }
+
+  .wef-brand-line {
+    font-size: .74rem
+  }
+
+  .wef-brand-sub {
+    font-size: .52rem;
+    letter-spacing: .22em
+  }
+}
+
+@media(max-width:340px) {
+  .wef-brand-name {
+    display: none
+  }
+}

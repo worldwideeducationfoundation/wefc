@@ -1,0 +1,29 @@
+{
+  "name": "donexa-clone",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run sanity:sync && vite build",
+    "preview": "vite preview",
+    "sanity:sync": "node scripts/sanity-sync.mjs",
+    "sanity:check": "node scripts/sanity-sync.mjs --check",
+    "sanity:import": "node scripts/sanity-import.mjs",
+    "studio:dev": "npm --prefix studio-wef-canada-blog run dev",
+    "studio:deploy": "npm --prefix studio-wef-canada-blog run deploy",
+    "verify:live": "node scripts/verify-live.mjs",
+    "setup:webhook": "node scripts/setup-webhook.mjs"
+  },
+  "devDependencies": {
+    "@sanity/client": "^8.5.0",
+    "jsdom": "^29.1.1",
+    "vite": "^5.2.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.0.0"
+  },
+  "overrides": {
+    "undici": "^7.29.1"
+  }
+}

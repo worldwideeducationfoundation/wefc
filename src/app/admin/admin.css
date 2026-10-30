@@ -1,0 +1,86 @@
+/* Admin-only styles: the shell's base and the rich-text editor's content.
+   Everything else is Tailwind utilities on the components. */
+
+.admin-root {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-ink);
+  background: var(--color-sand-50);
+}
+
+.admin-root h1,
+.admin-root h2,
+.admin-root h3 {
+  font-family: var(--font-ui);
+  text-wrap: balance;
+}
+
+/* ── Rich-text editor ──────────────────────────────────────────── */
+.rt-content {
+  min-height: 12rem;
+  padding: 1rem 1.25rem;
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--color-ink);
+  outline: none;
+}
+.rt-content > * + * {
+  margin-top: 0.8em;
+}
+.rt-content h2 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-forest-900);
+  line-height: 1.15;
+  margin-top: 1.2em;
+}
+.rt-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-forest-900);
+  margin-top: 1em;
+}
+.rt-content ul {
+  list-style: disc;
+  padding-left: 1.4em;
+}
+.rt-content ol {
+  list-style: decimal;
+  padding-left: 1.4em;
+}
+.rt-content li > p {
+  margin: 0;
+}
+.rt-content blockquote {
+  border-left: 3px solid var(--color-lime-500);
+  padding-left: 1em;
+  font-style: italic;
+  color: var(--color-forest-900);
+}
+.rt-content a {
+  color: var(--color-forest-900);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.rt-content hr {
+  border: 0;
+  border-top: 1px solid var(--color-sand-300);
+  margin: 1.5em 0;
+}
+.rt-content p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+  color: var(--color-sand-500);
+}
+.rt-content .ProseMirror-selectednode {
+  outline: 3px solid var(--color-lime-500);
+  outline-offset: 2px;
+}

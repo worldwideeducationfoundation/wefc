@@ -1,0 +1,187 @@
+/* ==========================================================================
+   WEF — shared form chrome (newsletter band + form status messages).
+   Prefixed .wef-* so it never collides with Elementor/Bootstrap. Load it on
+   any page that carries a [data-supabase-form]; the markup and these styles
+   are page-agnostic, so a newsletter band can be dropped anywhere.
+   ========================================================================== */
+
+/* ---- Honeypot: present for bots, invisible and unreachable for humans ---- */
+.wef-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ---- Status line shared by every Supabase-backed form ---- */
+.wef-form-status {
+  display: none;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 4px 0 0;
+  padding: 13px 16px;
+  border-radius: 12px;
+  font-size: .92rem;
+  line-height: 1.5;
+  background: rgba(255, 255, 255, .14);
+  border: 1px solid rgba(255, 255, 255, .28);
+  color: #fff;
+}
+
+.wef-form-status.show {
+  display: flex;
+}
+
+.wef-form-status.is-success {
+  background: rgba(160, 228, 139, .2);
+  border-color: rgba(160, 228, 139, .55);
+}
+
+.wef-form-status.is-error {
+  background: rgba(255, 214, 204, .18);
+  border-color: rgba(255, 170, 150, .6);
+}
+
+/* ---- Newsletter band ---- */
+.wef-news {
+  background: var(--forest-900);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.wef-news::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  right: -140px;
+  width: 540px;
+  height: 540px;
+  background: radial-gradient(circle, rgba(119, 209, 97, .26), transparent 70%);
+  pointer-events: none;
+}
+
+.wef-news-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(30px, 5vw, 64px);
+  align-items: center;
+}
+
+.wef-news-copy .eyebrow {
+  color: var(--leaf-600);
+}
+
+.wef-news-copy h2 {
+  color: #fff;
+  font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+  margin: 0 0 16px;
+}
+
+.wef-news-copy p {
+  color: rgba(255, 255, 255, .82);
+  font-size: 1.1rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.wef-news-form {
+  display: grid;
+  gap: 16px;
+}
+
+.wef-news-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.wef-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.wef-field > span {
+  font-weight: 600;
+  font-size: .82rem;
+  color: rgba(255, 255, 255, .88);
+}
+
+.wef-field .req {
+  color: var(--leaf-600);
+}
+
+.wef-field input {
+  font-family: inherit;
+  font-size: 1rem;
+  width: 100%;
+  color: var(--ink-900);
+  background: var(--paper);
+  border: 1.5px solid transparent;
+  border-radius: 12px;
+  padding: 13px 15px;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.wef-field input::placeholder {
+  color: var(--ink-600);
+  opacity: .75;
+}
+
+.wef-field input:focus {
+  outline: none;
+  border-color: var(--pine-700);
+  box-shadow: 0 0 0 3px rgba(119, 209, 97, .3);
+}
+
+.wef-news-submit {
+  justify-self: start;
+  background: var(--pine-700);
+  color: var(--ink-900);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .3);
+}
+
+.wef-news-submit:hover:not(:disabled) {
+  background: var(--pine-800);
+  transform: translateY(-2px);
+}
+
+.wef-news-submit:disabled {
+  opacity: .6;
+  cursor: progress;
+  transform: none;
+}
+
+.wef-news-note {
+  font-size: .84rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, .68);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .wef-news-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .wef-news-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .wef-news-submit {
+    justify-self: stretch;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wef-news-submit {
+    transition: none;
+  }
+}
