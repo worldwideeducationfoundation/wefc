@@ -314,6 +314,8 @@ export default async function HomePage() {
               style={{ maxWidth: 500, minWidth: 250, border: 0 }}
               allow="payment"
               title="Donation form"
+              // Far down the page: the form pulls in ~30 MB of payment scripts, so only once scrolled near.
+              loading="lazy"
             />
             <p className="give-charity" style={{ margin: "16px 0 0", fontSize: ".88rem", opacity: 0.72 }}>
               A registered Canadian charity, registration #{settings.charityNumber}. {t("donate_note")} <Link href="/donate">{t("donate_note_link")}</Link>.

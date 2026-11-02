@@ -126,6 +126,7 @@ export default async function DonatePage() {
             name="donorbox"
             scrolling="no"
             title="Donor wall"
+            loading="lazy"
           />
         </div>
       </section>
