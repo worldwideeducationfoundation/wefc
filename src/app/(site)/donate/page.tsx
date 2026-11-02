@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { JsonLd } from "@/components/JsonLd";
 import { RichText } from "@/components/RichText";
+import { faqSchema, graph } from "@/lib/schema";
 import { Emph } from "@/components/site/Emph";
 import { DonorboxScript } from "@/components/site/DonorboxScript";
 import { corePageSeo, getPageCopy } from "@/server/blocks";
@@ -19,6 +21,7 @@ export default async function DonatePage() {
 
   return (
     <div className="pg-donate">
+      {faqs.length > 0 && <JsonLd data={graph(faqSchema(faqs, "/donate"))} />}
       <DonorboxScript />
       <section className="give-hero">
         <div className="cx">

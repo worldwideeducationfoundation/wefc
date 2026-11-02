@@ -16,8 +16,8 @@ export const SETTING_FIELDS = [
     key: "short_name",
     label: "Short name",
     group: "Identity",
-    default: "Worldwide Education Fund Canada",
-    help: "Used in page titles, e.g. “Our Team | Worldwide Education Fund Canada”.",
+    default: "WEF Canada",
+    help: "Ends every page title, e.g. “Our Team | WEF Canada”. Keep it short: search results cut titles at about 60 characters.",
   },
   { key: "tagline", label: "Tagline", group: "Identity", default: "Education in Chitral & Central Asia", help: "Ends the home page's title in search results." },
   {
@@ -26,8 +26,8 @@ export const SETTING_FIELDS = [
     group: "Identity",
     type: "textarea",
     default:
-      "Worldwide Education Fund Canada is a registered Canadian charity running early childhood learning centers, teacher training and scholarships in Chitral, Pakistan and Central Asia.",
-    help: "Shown to search engines and when the site is shared on social media.",
+      "Registered Canadian charity bringing early childhood education to Chitral, Pakistan: 100+ learning centers, teacher training and scholarships. Donate today.",
+    help: "Shown to search engines and when the site is shared on social media. Under 160 characters reads in full.",
   },
   { key: "charity_number", label: "Charity registration number", group: "Identity", default: "709257208", help: "Shown in the footer, on Contact, Mission and Donate." },
   { key: "phone", label: "Phone", group: "Contact", default: "+1 (214) 502-8388" },

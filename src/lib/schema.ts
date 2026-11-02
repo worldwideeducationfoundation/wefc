@@ -1,5 +1,6 @@
+import { docToPlainText } from "./richtext";
 import { absoluteUrl, siteUrl } from "./site-url";
-import type { Post, PostCard, SiteSettings } from "./types";
+import type { Faq, Post, PostCard, SiteSettings } from "./types";
 
 /**
  * JSON-LD builders.
@@ -41,12 +42,53 @@ export function organizationSchema(siteSettings: SiteSettings, programTitles: st
       postalCode: address.postcode,
       addressCountry: "CA",
     },
-    areaServed: ["Chitral, Pakistan", "Tajikistan", "Kyrgyzstan"],
-    /* The programmes are the organisation's actual services, and they
-       are the terms people search for. */
-    ...(programTitles.length ? { knowsAbout: programTitles } : {}),
+    areaServed: [
+      {
+        "@type": "AdministrativeArea",
+        name: "Chitral",
+        containedInPlace: { "@type": "AdministrativeArea", name: "Khyber Pakhtunkhwa, Pakistan" },
+      },
+      { "@type": "Country", name: "Pakistan" },
+      { "@type": "Country", name: "Tajikistan" },
+      { "@type": "Country", name: "Kyrgyzstan" },
+    ],
+    /* What the organisation does, in the words people search with, followed
+       by the programmes, which are its actual services. */
+    knowsAbout: [...KNOWS_ABOUT, ...programTitles],
     slogan: siteSettings.tagline,
+    ...(siteSettings.donateUrl
+      ? {
+          potentialAction: {
+            "@type": "DonateAction",
+            name: "Donate to educate children in Chitral, Pakistan",
+            target: siteSettings.donateUrl,
+            recipient: { "@id": ORG_ID },
+          },
+        }
+      : {}),
     ...(siteSettings.socials.length ? { sameAs: siteSettings.socials.map((s) => s.href) } : {}),
+  };
+}
+
+const KNOWS_ABOUT = [
+  "Early childhood education",
+  "Early childhood development",
+  "Early childhood education in Pakistan",
+  "Teacher training",
+  "Scholarships",
+  "Education in Chitral",
+];
+
+/** The questions on the Donate page, as the page shows them. */
+export function faqSchema(faqs: Faq[], url: string): Json {
+  return {
+    "@type": "FAQPage",
+    "@id": `${absoluteUrl(url)}#faq`,
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: docToPlainText(f.answer) },
+    })),
   };
 }
 

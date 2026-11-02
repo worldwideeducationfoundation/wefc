@@ -37,10 +37,10 @@ const jost = localFont({ variable: "--font-jost", src: [{ path: "./fonts/jost.wo
  */
 export async function generateMetadata(): Promise<Metadata> {
   let name = "Worldwide Education Fund Canada";
-  let shortName = "Worldwide Education Fund Canada";
+  let shortName = "WEF Canada";
   let tagline = "Education in Chitral & Central Asia";
   let description =
-    "Worldwide Education Fund Canada is a registered Canadian charity running early childhood learning centers, teacher training and scholarships in Chitral, Pakistan and Central Asia.";
+    "Registered Canadian charity bringing early childhood education to Chitral, Pakistan: 100+ learning centers, teacher training and scholarships. Donate today.";
   try {
     const s = await getSiteSettings();
     ({ name, shortName, tagline, description } = s);

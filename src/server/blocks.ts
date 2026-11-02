@@ -145,9 +145,9 @@ export const CORE_PAGES = {
     description:
       "The landing page. The slideshow, program cards, figures, testimonials and map points each have their own section in the menu.",
     seo: {
-      title: "Worldwide Education Fund Canada | Education in Chitral & Central Asia",
+      title: "Early Childhood Education in Chitral, Pakistan | WEF Canada",
       description:
-        "Worldwide Education Fund Canada is a registered Canadian charity running early childhood learning centers, teacher training and scholarships in Chitral, Pakistan and Central Asia.",
+        "Donate to educate children in Chitral, Pakistan. A registered Canadian charity running 100+ early childhood learning centers, teacher training and scholarships.",
     },
     blocks: {
       intro_eyebrow: t("Small heading", "Worldwide Education Fund Canada", { group: "Opening" }),
@@ -282,9 +282,9 @@ export const CORE_PAGES = {
     canDisable: true,
     description: "Vision, figures, the active projects and where the money goes.",
     seo: {
-      title: "Our Mission",
+      title: "Our Mission: Early Education in Chitral",
       description:
-        "Worldwide Education Fund Canada invests in children and youth across Central and South Asia through early childhood development, English language learning, teacher training, research and scholarships.",
+        "How WEF Canada breaks generational poverty in Pakistan and Central Asia: early childhood education, English learning, teacher training, research and scholarships.",
     },
     blocks: {
       hero_eyebrow: t("Small heading", "Our Mission", { group: "Opening" }),
@@ -325,7 +325,7 @@ export const CORE_PAGES = {
     canDisable: true,
     description: "The people are edited under Team; the group headings under Team Groups.",
     seo: {
-      title: "Our Team",
+      title: "Our Team and Co-Founders",
       description: "Meet the co-founders guiding Worldwide Education Fund Canada's work in Chitral, Pakistan and across Central and South Asia.",
     },
     blocks: {
@@ -351,9 +351,9 @@ export const CORE_PAGES = {
     canDisable: true,
     description: "The map of every center. The centers themselves are under Learning Centers.",
     seo: {
-      title: "Learning Centers in Chitral, Pakistan",
+      title: "Early Learning Centers Map: Chitral, Pakistan",
       description:
-        "See every early childhood learning center Worldwide Education Fund Canada supports across Upper and Lower Chitral, Pakistan — on one map, filterable by funding partner.",
+        "Every early childhood learning center WEF Canada supports in Upper and Lower Chitral, Pakistan, on one map. Filter by funding partner to see where gifts go.",
     },
     blocks: {
       hero_eyebrow: t("Small heading", "Transparency you can see", { group: "Opening" }),
@@ -393,7 +393,7 @@ export const CORE_PAGES = {
     canDisable: true,
     description: "The photos are under Gallery; the filter chips under Gallery Categories.",
     seo: {
-      title: "Photos from Our Learning Centers in Chitral",
+      title: "Photos: Learning Centers in Chitral, Pakistan",
       description: "Classrooms, language labs and the students behind the numbers — photos of Worldwide Education Fund Canada's work across Chitral, Pakistan and Central Asia.",
     },
     blocks: {
@@ -414,7 +414,7 @@ export const CORE_PAGES = {
     canDisable: false,
     description: "The address, phone and email come from Settings. Messages sent from the form arrive under Messages.",
     seo: {
-      title: "Contact Us",
+      title: "Contact Us: Donate, Volunteer or Partner",
       description: "Questions about our programs, donating, volunteering or partnering with Worldwide Education Fund Canada? Get in touch.",
     },
     blocks: {
@@ -457,9 +457,9 @@ export const CORE_PAGES = {
     canDisable: false,
     description: "The donation form, progress bar and supporter wall come from Donorbox (campaign under Settings). The questions are under Donation FAQs.",
     seo: {
-      title: "Donate to Education in Chitral & Central Asia",
+      title: "Donate to Educate Children in Chitral, Pakistan",
       description:
-        "Give to Worldwide Education Fund Canada, a registered Canadian charity (709257208). Your gift funds early childhood learning centers, teacher training and scholarships. Every gift is receipted.",
+        "Sponsor a child's education in Pakistan: about $12 gives a child in Chitral a decade of early learning. Registered Canadian charity 709257208, every gift receipted.",
     },
     blocks: {
       hero_eyebrow: t("Small heading", "Support our work", { group: "Opening" }),
@@ -537,9 +537,9 @@ export const CORE_PAGES = {
     canDisable: false,
     description: "The list of Active Project posts.",
     seo: {
-      title: "Active Education Projects in Chitral & Central Asia",
+      title: "Education Projects in Chitral, Pakistan",
       description:
-        "The programs Worldwide Education Fund Canada is running now — early childhood learning centers, research hubs, training and scholarships across Chitral, Pakistan and Central Asia.",
+        "What WEF Canada runs now in Chitral, Pakistan and Central Asia: early childhood learning centers, an ECD research hub, teacher training and scholarships.",
     },
     blocks: {
       ...listHero(
@@ -564,7 +564,7 @@ export const CORE_PAGES = {
     canDisable: false,
     description: "The list of Project Update posts.",
     seo: {
-      title: "Project Updates from Chitral & Central Asia",
+      title: "News and Project Updates from Chitral, Pakistan",
       description: "The latest news, milestones and announcements from Worldwide Education Fund Canada's programs across Chitral, Pakistan and Central Asia.",
     },
     blocks: {
@@ -584,7 +584,7 @@ export const CORE_PAGES = {
     canDisable: false,
     description: "The list of Success Story posts.",
     seo: {
-      title: "Student Success Stories from Chitral",
+      title: "Student Success Stories from Chitral, Pakistan",
       description: "Behind every number is a person: stories of the children, students and communities whose lives have changed through WEF's programs.",
     },
     blocks: {
