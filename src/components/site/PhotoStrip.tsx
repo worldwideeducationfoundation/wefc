@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { responsiveImage } from "@/lib/image";
 import { useEffect, useRef, useState } from "react";
 import type { ProgramCard } from "@/lib/types";
 
@@ -93,7 +94,7 @@ export function PhotoStrip({ eyebrow, title, items }: { eyebrow: string; title: 
                 {p.image && (
                   // eslint-disable-next-line @next/next/no-img-element -- already WebP at a sensible size; the strip's CSS crops it
                   <img
-                    src={p.image.src}
+                    {...responsiveImage(p.image, "(max-width: 760px) 90vw, 580px")}
                     width={p.image.width}
                     height={p.image.height}
                     alt={p.image.alt}

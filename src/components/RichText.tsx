@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { responsiveImage } from "@/lib/image";
 import { type RichDoc, type RichMark, type RichNode, safeHref, youtubeId } from "@/lib/richtext";
 import type { MediaRef } from "@/lib/types";
 
@@ -97,7 +98,7 @@ function block(node: RichNode, key: string, ctx: Ctx): ReactNode {
       return (
         <figure key={key}>
           {/* eslint-disable-next-line @next/next/no-img-element -- stored as WebP at most 2400px; the article CSS sizes it */}
-          <img src={media.src} width={media.width} height={media.height} alt={alt} loading="lazy" decoding="async" />
+          <img {...responsiveImage(media, "(max-width: 820px) 100vw, 760px")} width={media.width} height={media.height} alt={alt} loading="lazy" decoding="async" />
           {caption && <figcaption>{caption}</figcaption>}
         </figure>
       );

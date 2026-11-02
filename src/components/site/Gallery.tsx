@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { GalleryPhoto } from "@/lib/types";
+import { responsiveImage } from "@/lib/image";
 import { ChevronLeft, ChevronRight, Close } from "./Icons";
 
 /** The Gallery page's filter chips, photo grid and lightbox. */
@@ -67,7 +68,7 @@ export function Gallery({ photos, categories, allLabel }: { photos: GalleryPhoto
               }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element -- WebP from the media library, cropped by CSS */}
-              <img src={p.src} alt={p.alt} width={p.width} height={p.height} loading={i < 2 ? undefined : "lazy"} decoding="async" />
+              <img {...responsiveImage(p, "(max-width: 520px) 100vw, (max-width: 1000px) 50vw, 400px")} alt={p.alt} width={p.width} height={p.height} loading={i < 2 ? undefined : "lazy"} decoding="async" />
               <span className="gl-overlay">
                 {p.category && <span className="gl-cat">{p.category}</span>}
                 {p.caption && <span className="gl-title">{p.caption}</span>}
@@ -90,7 +91,7 @@ export function Gallery({ photos, categories, allLabel }: { photos: GalleryPhoto
           </button>
           <div className="lb-stage">
             {/* eslint-disable-next-line @next/next/no-img-element -- full-size WebP */}
-            <img className="lb-img" src={current.src} alt={current.alt} decoding="async" />
+            <img className="lb-img" {...responsiveImage(current, "100vw")} alt={current.alt} decoding="async" />
             <div className="lb-cap">
               <div className="c">{current.caption}</div>
               <div className="d">{current.alt}</div>

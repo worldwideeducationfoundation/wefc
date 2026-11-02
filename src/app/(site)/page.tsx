@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { responsiveImage } from "@/lib/image";
 import { Fragment, type ReactNode } from "react";
 import { CentersMap } from "@/components/site/CentersMap";
 import { DonorboxScript } from "@/components/site/DonorboxScript";
@@ -139,7 +140,7 @@ export default async function HomePage() {
           {scholarship && (
             <div className="featgraphic reveal">
               {/* eslint-disable-next-line @next/next/no-img-element -- a wide graphic, stored as WebP */}
-              <img src={scholarship.src} width={scholarship.width} height={scholarship.height} alt={scholarship.alt} loading="lazy" decoding="async" />
+              <img {...responsiveImage(scholarship, "(max-width: 760px) 100vw, 50vw")} width={scholarship.width} height={scholarship.height} alt={scholarship.alt} loading="lazy" decoding="async" />
             </div>
           )}
         </div>
@@ -180,7 +181,7 @@ export default async function HomePage() {
                 {p.badge && <span className="program-badge">{p.badge}</span>}
                 {p.image && (
                   // eslint-disable-next-line @next/next/no-img-element -- WebP from the media library, cropped by CSS
-                  <img src={p.image.src} alt={p.image.alt} width={p.image.width} height={p.image.height} loading="lazy" decoding="async" />
+                  <img {...responsiveImage(p.image, "(max-width: 760px) 100vw, 45vw")} alt={p.image.alt} width={p.image.width} height={p.image.height} loading="lazy" decoding="async" />
                 )}
               </div>
               <div className="program-body">
@@ -250,7 +251,7 @@ export default async function HomePage() {
                   <div className="story-by">
                     {q.image && (
                       // eslint-disable-next-line @next/next/no-img-element -- a small portrait
-                      <img className="story-avatar" src={q.image.src} alt={q.image.alt} loading="lazy" width={q.image.width} height={q.image.height} />
+                      <img className="story-avatar" {...responsiveImage(q.image, "96px")} alt={q.image.alt} loading="lazy" width={q.image.width} height={q.image.height} />
                     )}
                     <div className="story-by-text">
                       {q.name && <span className="story-name">{q.href ? <Link href={q.href}>{q.name}</Link> : q.name}</span>}

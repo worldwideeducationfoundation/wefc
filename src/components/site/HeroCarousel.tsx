@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { type CSSProperties, useCallback, useEffect, useRef, useState } from "react";
+import { imageUrl } from "@/lib/image";
 import type { HeroSlideContent } from "@/lib/types";
 import { ChevronLeft, ChevronRight } from "./Icons";
 
@@ -48,7 +49,18 @@ export function HeroCarousel({ slides }: { slides: HeroSlideContent[] }) {
             <figure key={s.id} className={`hero-slide${idx === i ? " is-active" : ""}`} aria-hidden={idx !== i}>
               <div
                 className="hero-slide-img"
-                style={s.image ? { backgroundImage: `url('${s.image.src}')` } : undefined}
+                style={
+                  /* Only the slides around the current one carry a photo (the
+                     one fading out, the one showing, the next, and the last
+                     for a wrap-around), so a visitor who never waits for
+                     slide 7 never downloads it. */
+                  s.image && (Math.abs(idx - i) <= 1 || idx === n - 1)
+                    ? ({
+                        "--hero-sm": `url('${imageUrl(s.image.src, 768)}')`,
+                        "--hero-lg": `url('${imageUrl(s.image.src, 1920)}')`,
+                      } as CSSProperties)
+                    : undefined
+                }
                 role="img"
                 aria-label={s.image?.alt || s.description}
               />

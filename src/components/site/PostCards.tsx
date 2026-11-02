@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { PostCard } from "@/lib/types";
+import { responsiveImage } from "@/lib/image";
 import { ArrowRight } from "./Icons";
 
 /** One card on the list and topic pages: the old site's `.ap-card`. */
@@ -9,7 +10,7 @@ export function PostCardView({ post, readMore }: { post: PostCard; readMore: str
       <div className="ap-card-media">
         {post.image && (
           // eslint-disable-next-line @next/next/no-img-element -- stored as WebP; the card's CSS crops it
-          <img src={post.image.src} width={post.image.width} height={post.image.height} alt={post.image.alt} loading="lazy" decoding="async" />
+          <img {...responsiveImage(post.image, "(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 400px")} width={post.image.width} height={post.image.height} alt={post.image.alt} loading="lazy" decoding="async" />
         )}
       </div>
       <div className="ap-card-body">

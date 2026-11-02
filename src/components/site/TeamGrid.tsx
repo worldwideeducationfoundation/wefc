@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { TeamMember } from "@/lib/types";
+import { responsiveImage } from "@/lib/image";
 import { ArrowRight, Close } from "./Icons";
 
 const initials = (name: string) => {
@@ -12,7 +13,7 @@ const initials = (name: string) => {
 function Photo({ m, eager }: { m: TeamMember; eager?: boolean }) {
   return m.image ? (
     // eslint-disable-next-line @next/next/no-img-element -- WebP portrait, cropped by CSS
-    <img className="tm-photo-img" src={m.image.src} alt={m.name} width={m.image.width} height={m.image.height} loading={eager ? undefined : "lazy"} decoding="async" />
+    <img className="tm-photo-img" {...responsiveImage(m.image, "(max-width: 520px) 100vw, 320px")} alt={m.name} width={m.image.width} height={m.image.height} loading={eager ? undefined : "lazy"} decoding="async" />
   ) : (
     <div className="tm-initials">
       <span>{initials(m.name)}</span>

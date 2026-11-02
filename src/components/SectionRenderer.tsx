@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { responsiveImage } from "@/lib/image";
 import { collectMediaIds } from "@/lib/richtext";
 import type { Section as PageSection } from "@/lib/sections";
 import { getPostCards, getStats } from "@/server/content";
@@ -58,14 +59,14 @@ export async function SectionRenderer({ sections }: { sections: PageSection[] })
               {image && s.imageSide === "left" && (
                 <figure>
                   {/* eslint-disable-next-line @next/next/no-img-element -- WebP from the media library */}
-                  <img src={image.src} width={image.width} height={image.height} alt={image.alt} loading="lazy" />
+                  <img {...responsiveImage(image, "(max-width: 760px) 100vw, 50vw")} width={image.width} height={image.height} alt={image.alt} loading="lazy" />
                 </figure>
               )}
               <RichText doc={s.body} media={media} />
               {image && s.imageSide !== "left" && (
                 <figure>
                   {/* eslint-disable-next-line @next/next/no-img-element -- WebP from the media library */}
-                  <img src={image.src} width={image.width} height={image.height} alt={image.alt} loading="lazy" />
+                  <img {...responsiveImage(image, "(max-width: 760px) 100vw, 50vw")} width={image.width} height={image.height} alt={image.alt} loading="lazy" />
                 </figure>
               )}
             </>,
@@ -94,7 +95,7 @@ export async function SectionRenderer({ sections }: { sections: PageSection[] })
                   // eslint-disable-next-line @next/next/no-img-element -- WebP from the media library
                   <img
                     key={i}
-                    src={m.src}
+                    {...responsiveImage(m, "(max-width: 760px) 100vw, 33vw")}
                     width={m.width}
                     height={m.height}
                     alt={m.alt}
