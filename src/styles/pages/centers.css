@@ -25,7 +25,7 @@
     .pg-centers .centers-hero .cx { position: relative; z-index: 1; }
     .pg-centers .centers-eyebrow {
       display: inline-flex; align-items: center; gap: 9px; font-weight: 700; text-transform: uppercase;
-      letter-spacing: .16em; font-size: .74rem; color: var(--sage-200); margin: 0 0 18px;
+      letter-spacing: .16em; font-size: .75rem; color: var(--sage-200); margin: 0 0 18px;
     }
     .pg-centers .centers-eyebrow svg { width: 16px; height: 16px; }
     .pg-centers .centers-hero h1 {

@@ -122,7 +122,7 @@ export default async function DonatePage() {
             height="93px"
             width="100%"
             src={`${embed}?donor_wall_color=%232ecc71&only_donor_wall=true`}
-            style={{ width: "100%", maxWidth: 500, minWidth: 310, minHeight: 345, border: 0 }}
+            style={{ width: "100%", maxWidth: 500, minWidth: 250, minHeight: 345, border: 0 }}
             name="donorbox"
             scrolling="no"
             title="Donor wall"

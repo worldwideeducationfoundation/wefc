@@ -114,10 +114,12 @@
 .pg-home .hero-nav svg{width:20px;height:20px}
 .pg-home .hero-nav.prev{right:74px}
 .pg-home .hero-nav.next{right:18px}
-.pg-home .hero-dots{position:absolute;bottom:32px;left:clamp(16px,2.6vw,32px);display:flex;gap:15px;z-index:4}
-.pg-home .hero-dot{position:relative;width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.5);border:0;cursor:pointer;padding:0;transition:background .25s ease,width .25s ease}
-.pg-home .hero-dot::after{content:"";position:absolute;inset:-7.5px}
-.pg-home .hero-dot.is-active{background:#fff;width:26px;border-radius:6px}
+/* Each dot is a 24px button (WCAG 2.5.8 target size); the visible dot is drawn inside it. */
+.pg-home .hero-dots{position:absolute;bottom:24.5px;left:clamp(8px,calc(2.6vw - 7.5px),24.5px);display:flex;z-index:4}
+.pg-home .hero-dot{position:relative;width:24px;height:24px;border:0;padding:0;background:none;cursor:pointer;transition:width .25s ease}
+.pg-home .hero-dot::before{content:"";position:absolute;left:50%;top:50%;width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.5);transform:translate(-50%,-50%);transition:background .25s ease,width .25s ease}
+.pg-home .hero-dot.is-active{width:41px}
+.pg-home .hero-dot.is-active::before{background:#fff;width:26px;border-radius:6px}
 
 /* ---- Hero intro — the headline block, now on paper instead of a dark panel ---- */
 .pg-home .hero-intro{background:var(--paper);padding:clamp(30px,3.6vw,46px) 0 clamp(32px,4vw,50px);border-bottom:1px solid var(--line)}
@@ -150,6 +152,10 @@
 }
 @media(max-width:520px){
   .pg-home .hero-cta .btn{flex:1 1 100%;justify-content:center}
+}
+/* The narrowest phones: buttons may wrap rather than push the page sideways. */
+@media(max-width:380px){
+  .pg-home .btn{padding:14px 20px;white-space:normal;text-align:center}
 }
 
 /* ---- Section scaffolding ---- */
@@ -184,7 +190,7 @@
 .pg-home .program-media{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:5/4;box-shadow:0 26px 64px rgba(20,20,10,.16)}
 .pg-home .program-media img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.03)}
 .pg-home .program-media::after{content:"";position:absolute;inset:0;background:var(--pine-700);mix-blend-mode:multiply;opacity:.08;pointer-events:none}
-.pg-home .program-badge{position:absolute;top:18px;left:18px;background:var(--paper);color: var(--pine-ink);font-weight:700;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;padding:8px 15px;border-radius:100px;box-shadow:0 6px 18px rgba(0,0,0,.14);z-index:1}
+.pg-home .program-badge{position:absolute;top:18px;left:18px;background:var(--paper);color: var(--pine-ink);font-weight:700;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;padding:8px 15px;border-radius:100px;box-shadow:0 6px 18px rgba(0,0,0,.14);z-index:1}
 .pg-home .program-body h3{font-size:clamp(1.6rem,2.6vw,2.15rem);margin:0 0 10px;color:var(--ink-900)}
 .pg-home .program-body .lead{font-size:1.1rem;color:var(--ink-600);line-height:1.65;margin:0 0 18px}
 .pg-home .program-points{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:13px}
@@ -339,7 +345,7 @@
 .pg-home .reach-sub{font-family:var(--sans);font-weight:500;font-size:10px;letter-spacing:.03em;fill:var(--ink-600)}
 @media(max-width:760px){.pg-home .reach-inner{grid-template-columns:1fr}}
 /* The viewBox scales the labels down with the card, so lift them back up on phones. */
-@media(max-width:560px){.pg-home .reach-label{font-size:14px}.pg-home .reach-sub{font-size:11.5px}}
+@media(max-width:560px){.pg-home .reach-label{font-size:14px}.pg-home .reach-sub{font-size:12px}}
 
 /* ============ Featured photo strip ============ */
 .pg-home .photostrip{--rail-gap:20px;
@@ -384,7 +390,7 @@
 .pg-home .pstrip-item:hover .pstrip-fig img{transform:scale(1.06)}
 .pg-home .pstrip-fig::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(16,34,13,.86) 0%,rgba(16,34,13,.52) 34%,rgba(16,34,13,.06) 62%,transparent 100%);pointer-events:none}
 
-.pg-home .pstrip-num{position:absolute;top:16px;left:18px;z-index:2;font-family:var(--sans);font-weight:700;font-size:.72rem;letter-spacing:.1em;color:#fff;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.28);padding:5px 11px;border-radius:100px}
+.pg-home .pstrip-num{position:absolute;top:16px;left:18px;z-index:2;font-family:var(--sans);font-weight:700;font-size:.75rem;letter-spacing:.1em;color:#fff;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.28);padding:5px 11px;border-radius:100px}
 
 .pg-home .pstrip-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:24px clamp(20px,2.4vw,28px);color:#fff}
 .pg-home .pstrip-cap h3{font-family:var(--display);font-weight:600;font-size:clamp(1.15rem,1.7vw,1.5rem);line-height:1.2;margin:0 0 7px;color:#fff}

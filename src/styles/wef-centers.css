@@ -61,7 +61,7 @@
 }
 .wef-centers-legend h4{
   margin:0 0 8px;font-family:inherit;font-weight:700;text-transform:uppercase;
-  letter-spacing:.1em;font-size: .7rem;color:var(--ink-600)
+  letter-spacing:.1em;font-size: .75rem;color:var(--ink-600)
 }
 .wef-legend-items{display:flex;flex-direction:column;gap:3px}
 .wef-legend-item{
