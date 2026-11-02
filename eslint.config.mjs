@@ -14,7 +14,6 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // Local working files.
     "storage/**",
-    "nextjs-wef-canada-blog/**",
   ]),
 ]);
 

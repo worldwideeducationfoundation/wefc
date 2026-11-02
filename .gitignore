@@ -30,8 +30,9 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files (.env.example is the committed template)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -40,16 +41,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Screenshots from scripts/shoot.mjs
-/.shots/
-
 # Uploaded images in local development (UPLOAD_DIR defaults here). On the
 # server they live outside the app folder; they never belong in git.
 /storage/
-
-
-
-# Retired Next.js scaffold
-/nextjs-wef-canada-blog/
-/dist/
-!.env.example

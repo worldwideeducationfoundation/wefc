@@ -59,12 +59,16 @@ GitHub (code)  ──push──►  Hostinger Node.js app  ──►  MySQL data
 7. Check the site, add other people under **Users & Roles**, and remove
    `ADMIN_SETUP_KEY` from the environment variables.
 
-8. **Move the domain.** The old static site serves wefcanada.org today.
-   Once the new app checks out: in hPanel, move `wefcanada.org` to the
-   Node.js app (back up and then delete the old static website; the domain
-   and email stay), install SSL for `wefcanada.org` and `www.wefcanada.org`,
-   set `NEXT_PUBLIC_SITE_URL=https://wefcanada.org` and redeploy. Every old
-   `/pages/...` address 301-redirects to its new one (`next.config.ts`).
+8. **Domain.** wefcanada.org deploys the `rebuild` branch as a Next.js app
+   (Node 22, build script `build`, no output directory) with
+   `NEXT_PUBLIC_SITE_URL=https://wefcanada.org`. Every old `/pages/...`
+   address 301-redirects to its new one (`next.config.ts`).
+
+   `public_html/.htaccess` must hold only Hostinger's `Passenger…` and
+   `SetEnv` lines (plus `Options -Indexes`). The app sets its own security
+   headers and redirects; any `Header always set` line there overrides them —
+   the old static site's file did exactly that, blocking YouTube embeds and
+   Apple Pay / Google Pay in the Donorbox form.
 
 ## Where the content came from
 

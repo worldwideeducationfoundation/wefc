@@ -6,11 +6,12 @@ scholarships in Chitral, Pakistan and Central Asia.
 
 Next.js 16 (App Router, RSC, TypeScript). The public pages keep the old
 static site's design and stylesheets (`src/styles/`); the admin uses
-Tailwind CSS v4. Built from `ADMIN_BLUEPRINT.md`.
+Tailwind CSS v4.
 
 All content is managed in the built-in admin at **`/admin`** and stored in
 MySQL; uploaded images are stored on the server (`UPLOAD_DIR`), never in
-git. See **`DEPLOYMENT.md`** for how it runs on Hostinger.
+git. See **`DEPLOYMENT.md`** for how it runs on Hostinger and
+**`CONTENT_API.md`** for adding content from scripts or Claude.
 
 ---
 
@@ -22,15 +23,17 @@ git. See **`DEPLOYMENT.md`** for how it runs on Hostinger.
 ├── src/
 │   ├── app/(site)/      the public website
 │   ├── app/admin/       the admin
+│   ├── app/api/v1/      the Content API
 │   ├── components/      shared UI (components/admin/ for the admin)
 │   ├── lib/             shared types and helpers
-│   └── server/          database, content reads, auth, media, Content API
-├── public/brand/        logo and favicon
-└── scripts/             build + audit tooling
+│   ├── server/          database, content reads, auth, media
+│   └── styles/          the public site's stylesheets
+├── public/              logo, favicon, social card
+└── scripts/             build and audit tooling
 ```
 
-The Next.js app is at the repository root **on purpose** so the host
-builds from the root with no subdirectory configuration. See `NOTES.md`.
+The app sits at the repository root so the host builds it with no
+subdirectory configuration.
 
 ---
 
@@ -57,16 +60,14 @@ Restore with a backup downloaded from another copy.
 | `npm start` | Serve the production build |
 | `npm run typecheck` | `tsc --noEmit` |
 | `npm run lint` | ESLint |
-| `node scripts/audit.mjs` | Accessibility / contrast / structure gate — **server must be running** |
-| `node scripts/shoot.mjs` | Screenshot key routes at 360 / 1440 |
-| `node scripts/build-brand-assets.mjs` | Regenerate logo SVGs from the source PNG |
+| `node scripts/audit.mjs` | Quality gate over every page in the sitemap — set `BASE` to test the live site |
 
 ---
 
 ## Environment variables
 
-See `.env.example` for the full list. Never commit real
-values — `.gitignore` covers `.env*`.
+See `.env.example` for the full list. Never commit real values —
+`.gitignore` covers `.env*`.
 
 | Variable | Notes |
 |---|---|
@@ -74,6 +75,7 @@ values — `.gitignore` covers `.env*`.
 | `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD` | The MySQL database (or one `DATABASE_URL`) |
 | `UPLOAD_DIR` | Where uploaded images are stored — outside the app folder in production |
 | `ADMIN_SETUP_KEY` | Required to create the first admin account at `/admin/setup` |
+| `NEXT_SERVER_ACTIONS_ENCRYPTION_KEY` | Keeps admin forms working across redeploys |
 
 ---
 
@@ -83,29 +85,20 @@ Hosted on Hostinger as a Node.js app that deploys from GitHub. Step-by-step
 instructions, including the first-run setup and content import, are in
 **`DEPLOYMENT.md`**.
 
-## Accessibility
+## Quality bar
 
-Non-negotiable, enforced by `scripts/audit.mjs`:
+Enforced by `scripts/audit.mjs` on every page in the sitemap:
 
-- Pinch-zoom is never disabled — no `maximum-scale`, no `user-scalable=0`
-- Exactly one `<h1>` per page; heading levels never skip
-- Visible focus on every interactive element
-- `prefers-reduced-motion` respected by both marquees
-- Real alt text on every image
-- Contrast measured against the palette rules in `NOTES.md`
+- WCAG 2.1 AA (axe-core): no violations
+- Exactly one `<h1>` per page; heading levels never skip; every image has alt text
+- Pinch-zoom is never disabled
+- No sideways scrolling on iPhone SE, iPhone 13, Pixel 7 or a 320px Android,
+  in both WebKit (iOS Safari) and Chromium (Android)
+- Every control at least 24×24 CSS px on a phone (WCAG 2.5.8), and no text
+  under 12px
+- Search: titles ≤65 and descriptions ≤165 characters, all unique, with a
+  canonical URL and social image on every page
 
-**Lime `#9EC009` is a surface colour, never text on a light background**
-(2.1:1). The only approved text-on-lime pairing is forest `#0F2E22` at
-7.0:1. `ActionLink`'s `primary` variant is the only lime button, and it
-is rationed to one per page.
-
-Also enforced: no horizontal overflow on **any route at any of 11 real
-device widths** (320 → 1920), and every control at least 24×24 CSS px
-on a phone (WCAG 2.5.8).
-
-The landing carousel auto-advances every second, so it carries a pause
-button, stops on hover and focus, and does not move at all under
-`prefers-reduced-motion` (WCAG 2.2.2). The gate asserts each of those.
-
-Current gate results: 12 routes, 0 axe violations, 131 text nodes
-measured, tightest contrast 6.4:1, no overflow at any width.
+Images from the media library are served through Next's optimiser
+(`src/lib/image.ts`) with a `srcset`, so phones download a copy sized for
+their screen rather than the 2400px original.

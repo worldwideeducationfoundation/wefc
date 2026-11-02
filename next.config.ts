@@ -87,7 +87,7 @@ const nextConfig: NextConfig = {
     /* Every image is local: the brand files in public/ and the media
        library served from /uploads (stored on the server, not in git). */
     formats: ["image/avif", "image/webp"],
-    // Tuned for the breakpoints we actually test at (§9) rather than
+    // Tuned for the breakpoints we actually test at rather than
     // Next's defaults — matters on mobile connections in Chitral.
     deviceSizes: [360, 480, 768, 1024, 1280, 1440, 1920],
     imageSizes: [64, 128, 256, 384],
