@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run sanity:sync && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "sanity:sync": "node scripts/sanity-sync.mjs",
     "sanity:check": "node scripts/sanity-sync.mjs --check",
