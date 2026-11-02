@@ -68,17 +68,9 @@ GitHub (code)  ──push──►  Hostinger Node.js app  ──►  MySQL data
 
 ## Where the content came from
 
-`scripts/legacy/` holds the one-off importer. It read the old site's Sanity
-project (posts, topics, author and their images) and the hand-written pages
-in `legacy/` (program cards, figures, map centers, team, gallery, FAQs),
-loaded them into a local database exactly as the admin would store them, and
-wrote the backup file. It is kept for reference; content is now edited in
-`/admin`.
-
-Not migrated: contact-form messages and newsletter sign-ups that the old site
-stored in **Supabase**. Export them from the Supabase dashboard (Table Editor
-→ `contact_messages`, `newsletter_subscribers` → Export CSV) if you want to
-keep them.
+`wefc-content-backup.tar.gz` holds everything the old site published: posts,
+topics, program cards, figures, map centers, team, gallery, FAQs and their
+images. Once it is restored, all content is edited in `/admin`.
 
 ## Everyday use
 
@@ -106,7 +98,6 @@ keep them.
 | `src/server/` | Everything that touches the database: content reads (`content.ts`), editable page copy (`blocks.ts`), settings, media storage, auth |
 | `src/server/admin/resources.ts` | The content types the admin manages — adding a field or a type starts here |
 | `src/app/(site)/` | The public website |
-| `src/styles/` | The old site's stylesheets; `pages/*.css` are generated per page by `scripts/legacy/scope-css.mjs` |
+| `src/styles/` | The old site's stylesheets; `pages/*.css` hold each page's styles |
 | `src/app/admin/` | The admin |
 | `src/app/api/v1/` and `CONTENT_API.md` | The Content API, for adding content from Claude or other tools |
-| `legacy/` | The old static site, for reference only |

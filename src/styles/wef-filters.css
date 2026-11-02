@@ -1,7 +1,5 @@
 /* Category filter chips on the listing pages, and the topic-page nav.
-   Loaded by pages/project-updates, pages/success-stories, pages/active-projects
-   and every generated pages/topics/* page. Categories come from Sanity; the
-   chip's data-category is the Sanity category slug. */
+   The chip's data-category is the category slug set in the admin. */
 
 .ap-filters {
   display: flex;

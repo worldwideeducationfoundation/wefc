@@ -26,7 +26,6 @@ git. See **`DEPLOYMENT.md`** for how it runs on Hostinger.
 │   ├── lib/             shared types and helpers
 │   └── server/          database, content reads, auth, media, Content API
 ├── public/brand/        logo and favicon
-├── legacy/              the old static site, for reference only
 └── scripts/             build + audit tooling
 ```
 
@@ -66,7 +65,7 @@ Restore with a backup downloaded from another copy.
 
 ## Environment variables
 
-See `.env.example` for the full list with explanations. Never commit real
+See `.env.example` for the full list. Never commit real
 values — `.gitignore` covers `.env*`.
 
 | Variable | Notes |

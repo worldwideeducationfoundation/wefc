@@ -30,9 +30,5 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  /* The Studio (`fes-pakistan-blog/`) is a separate npm package with its
-     own tsconfig and its own dependencies, which this app's install does
-     not fetch. Type-checking it from here fails the production build on
-     imports like `@sanity/vision`; it is checked inside its own package. */
   "exclude": ["node_modules", "**/node_modules", "wef-export", "WEF-website-main"]
 }

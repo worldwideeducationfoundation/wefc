@@ -12,8 +12,7 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
-    // The old static site, kept for reference, and local working files.
-    "legacy/**",
+    // Local working files.
     "storage/**",
     "nextjs-wef-canada-blog/**",
   ]),

@@ -49,10 +49,7 @@ next-env.d.ts
 
 
 
-# Retired Next.js scaffold and Sanity Studio build output
+# Retired Next.js scaffold
 /nextjs-wef-canada-blog/
-/legacy/studio-wef-canada-blog/node_modules/
-/legacy/studio-wef-canada-blog/dist/
 /dist/
-/legacy/scripts/.sanity-assets.json
 !.env.example
