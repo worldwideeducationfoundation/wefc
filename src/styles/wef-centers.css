@@ -59,7 +59,7 @@
   border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px rgba(20,20,10,.16);
   padding:11px 13px;max-width:min(280px,calc(100% - 28px));
 }
-.wef-centers-legend h4{
+.wef-centers-legend h3{
   margin:0 0 8px;font-family:inherit;font-weight:700;text-transform:uppercase;
   letter-spacing:.1em;font-size: .75rem;color:var(--ink-600)
 }

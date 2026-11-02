@@ -43,7 +43,11 @@ const seo = [];
   const page = await ctx.newPage();
   for (const route of ROUTES) {
     await page.goto(BASE + route, { waitUntil: "load" });
-    const { violations } = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"]).analyze();
+    // Donorbox's frames are its own code and colours (set in the Donorbox campaign), not this site's.
+    const { violations } = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
+      .exclude('iframe[src*="donorbox.org"]')
+      .analyze();
     for (const v of violations) fail(`${route} [${v.impact}] ${v.id}: ${v.help} (${v.nodes.length})`);
 
     const r = await page.evaluate(() => {

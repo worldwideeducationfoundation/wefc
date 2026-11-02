@@ -44,7 +44,12 @@
 .ap-filter .n {
   font-size: .78rem;
   font-weight: 700;
-  opacity: .6;
+  opacity: .75;
+}
+
+.ap-filter[aria-pressed="true"] .n,
+.ap-filter[aria-current] .n {
+  opacity: 1;
 }
 
 /* Hidden by the filter script rather than removed, so the grid keeps its

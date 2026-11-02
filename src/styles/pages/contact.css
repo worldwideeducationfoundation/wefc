@@ -67,11 +67,11 @@
 
     /* Review CTA */
     .pg-contact .ct-review { background: var(--pine-ink); padding: clamp(48px, 6vw, 64px) 24px; }
-    .pg-contact .ct-review-inner { max-width: 720px; margin: 0 auto; text-align: center; color: var(--forest-900); }
+    .pg-contact .ct-review-inner { max-width: 720px; margin: 0 auto; text-align: center; color: #fff; }
     .pg-contact .ct-stars { display: inline-flex; gap: 4px; margin-bottom: 18px; }
     .pg-contact .ct-stars svg { width: 26px; height: 26px; fill: #F5C94E; }
-    .pg-contact .ct-review h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); color: var(--forest-900); margin: 0 0 12px; }
-    .pg-contact .ct-review p { font-size: 1.05rem; line-height: 1.6; color: rgba(23, 50, 16, .92); margin: 0 0 26px; }
+    .pg-contact .ct-review h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); color: #fff; margin: 0 0 12px; }
+    .pg-contact .ct-review p { font-size: 1.05rem; line-height: 1.6; color: rgba(255, 255, 255, .94); margin: 0 0 26px; }
     .pg-contact .ct-review a { display: inline-flex; align-items: center; gap: 9px; background: #fff; color: var(--pine-ink); font-weight: 600; padding: 14px 28px; border-radius: 100px; transition: transform .2s ease; }
     .pg-contact .ct-review a:hover { transform: translateY(-2px); }
     .pg-contact .ct-review a svg { width: 18px; height: 18px; }

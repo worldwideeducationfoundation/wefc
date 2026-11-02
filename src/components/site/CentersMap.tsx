@@ -224,7 +224,7 @@ export function CentersMap({ centers, compact = false }: { centers: LearningCent
           aria-label="Interactive map of WEF learning centers in Chitral, Pakistan"
         />
         <div className="wef-centers-legend" aria-label="Center types">
-          <h4>Center type — tap to filter</h4>
+          <h3>Center type — tap to filter</h3>
           <div className="wef-legend-items">
             {models.map((m) => (
               <button

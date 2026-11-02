@@ -35,7 +35,8 @@ export function Header({ nav, siteName, donateUrl, donateLabel }: { nav: NavLink
   const [brandLine, brandSub] = siteName.endsWith(" Canada") ? [siteName.slice(0, -7), "Canada"] : [siteName, ""];
 
   return (
-    <header className={`wef-header wef-header--overlay${scrolled ? " wef-scrolled" : ""}`} id="wefHeader">
+    // Donate opens on a light band, where white header text cannot be read: it starts solid.
+    <header className={`wef-header wef-header--overlay${scrolled || pathname === "/donate" ? " wef-scrolled" : ""}`} id="wefHeader">
       <div className="wef-header-inner">
         <Link className="wef-brand" href="/" aria-label={`${siteName} home`}>
           {/* eslint-disable-next-line @next/next/no-img-element -- a 240px brand mark; the optimiser adds nothing */}

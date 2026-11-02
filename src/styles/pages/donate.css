@@ -5,7 +5,7 @@
     .pg-donate a { color: inherit; text-decoration: none; }
     .pg-donate h1, .pg-donate h2, .pg-donate h3 { font-family: var(--display); font-weight: 500; letter-spacing: -.01em; line-height: 1.12; margin: 0; }
     .pg-donate .cx { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
-    .pg-donate .eyebrow { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .15em; font-size: .75rem; color: var(--sage-200); margin: 0 0 16px; }
+    .pg-donate .eyebrow { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .15em; font-size: .75rem; color: var(--pine-ink); margin: 0 0 16px; }
 
     .pg-donate .ct-hero { position: relative; overflow: hidden; color: var(--forest-900); background: linear-gradient(152deg, var(--pine-800) 0%, var(--pine-700) 46%, var(--leaf-600) 100%); padding: calc(var(--header-h) + 40px) 0 56px; }
     .pg-donate .ct-hero::before { content: ""; position: absolute; top: -170px; right: -120px; width: 520px; height: 520px; background: radial-gradient(circle, rgba(160, 228, 139, .4), transparent 70%); }
