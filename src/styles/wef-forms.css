@@ -1,7 +1,7 @@
 /* ==========================================================================
    WEF — shared form chrome (newsletter band + form status messages).
    Prefixed .wef-* so it never collides with Elementor/Bootstrap. Load it on
-   any page that carries a [data-supabase-form]; the markup and these styles
+   any page that carries a site form; the markup and these styles
    are page-agnostic, so a newsletter band can be dropped anywhere.
    ========================================================================== */
 
@@ -14,7 +14,7 @@
   overflow: hidden;
 }
 
-/* ---- Status line shared by every Supabase-backed form ---- */
+/* ---- Status line shared by every site form ---- */
 .wef-form-status {
   display: none;
   align-items: flex-start;
