@@ -10,7 +10,7 @@
     .pg-mission a { color: inherit; }
     .pg-mission h1, .pg-mission h2, .pg-mission h3, .pg-mission h4 { font-family: var(--display); font-weight: 500; letter-spacing: -.01em; line-height: 1.12; margin: 0; }
     .pg-mission .cx { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
-    .pg-mission .eyebrow { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .15em; font-size: .74rem; color: var(--pine-ink); margin: 0 0 16px; }
+    .pg-mission .eyebrow { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .15em; font-size: .75rem; color: var(--pine-ink); margin: 0 0 16px; }
 
     /* ---- Hero ---- */
     .pg-mission .mhero {
@@ -91,19 +91,19 @@
     .pg-mission .prow-year { position: absolute; z-index: 2; top: 16px; left: 16px; font-family: var(--sans); font-weight: 600; font-size: .74rem; color: var(--ink-900); background: rgba(255, 253, 248, .92); border: 1px solid var(--line); padding: 5px 12px; border-radius: 100px; }
 
     .pg-mission .prow-body { padding: clamp(24px, 2.6vw, 34px); display: flex; flex-direction: column; }
-    .pg-mission .prow-cat { align-self: flex-start; font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .09em; font-size: .7rem; color: #fff; background: var(--accent); padding: 4px 11px; border-radius: 100px; margin-bottom: 13px; }
+    .pg-mission .prow-cat { align-self: flex-start; font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .09em; font-size: .75rem; color: #fff; background: var(--accent); padding: 4px 11px; border-radius: 100px; margin-bottom: 13px; }
     .pg-mission .prow-body h3 { font-size: clamp(1.34rem, 2vw, 1.68rem); color: var(--ink-900); margin: 0 0 9px; line-height: 1.18; }
     .pg-mission .prow-model { font-size: 1rem; line-height: 1.6; color: var(--ink-600); margin: 0; }
 
     .pg-mission .pcols { display: grid; grid-template-columns: repeat(auto-fit, minmax(178px, 1fr)); gap: 20px 26px; margin-top: 22px; padding-top: 21px; border-top: 1px solid var(--line); }
-    .pg-mission .pcol h4 { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: .7rem; color: var(--accent); margin: 0 0 9px; }
+    .pg-mission .pcol h4 { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: .75rem; color: var(--accent); margin: 0 0 9px; }
     .pg-mission .pcol ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
     .pg-mission .pcol li { position: relative; padding-left: 17px; font-size: .93rem; line-height: 1.5; color: var(--ink-900); }
     .pg-mission .pcol li::before { content: ""; position: absolute; left: 0; top: .5em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); opacity: .55; }
 
     .pg-mission .pnotes { margin-top: auto; padding-top: 20px; }
     .pg-mission .pnotes-inner { background: var(--sage-50); border: 1px solid var(--line); border-radius: 14px; padding: 15px 18px; }
-    .pg-mission .pnotes h4 { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: .7rem; color: var(--ink-600); margin: 0 0 9px; }
+    .pg-mission .pnotes h4 { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: .75rem; color: var(--ink-600); margin: 0 0 9px; }
     .pg-mission .pnotes ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
     .pg-mission .pnotes li { position: relative; padding-left: 16px; font-size: .86rem; line-height: 1.5; color: var(--ink-600); }
     .pg-mission .pnotes li::before { content: "\2192"; position: absolute; left: 0; top: 0; color: var(--accent); font-size: .8rem; }

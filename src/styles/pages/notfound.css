@@ -5,7 +5,7 @@
     .pg-notfound a { color: inherit; text-decoration: none; }
     .pg-notfound h1, .pg-notfound h2, .pg-notfound h3 { font-family: var(--display); font-weight: 500; letter-spacing: -.01em; line-height: 1.12; margin: 0; }
     .pg-notfound .cx { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
-    .pg-notfound .eyebrow { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .15em; font-size: .74rem; color: var(--sage-200); margin: 0 0 16px; }
+    .pg-notfound .eyebrow { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .15em; font-size: .75rem; color: var(--sage-200); margin: 0 0 16px; }
 
     .pg-notfound .ct-hero { position: relative; overflow: hidden; color: var(--forest-900); background: linear-gradient(152deg, var(--pine-800) 0%, var(--pine-700) 46%, var(--leaf-600) 100%); padding: calc(var(--header-h) + 40px) 0 56px; }
     .pg-notfound .ct-hero::before { content: ""; position: absolute; top: -170px; right: -120px; width: 520px; height: 520px; background: radial-gradient(circle, rgba(160, 228, 139, .4), transparent 70%); }
@@ -26,10 +26,10 @@
     .pg-notfound .ct-ic { width: 42px; height: 42px; flex-shrink: 0; border-radius: 11px; background: var(--sage-50); display: flex; align-items: center; justify-content: center; }
     .pg-notfound .ct-ic svg { width: 20px; height: 20px; color: var(--pine-ink); }
     .pg-notfound .ct-line > span:last-child { display: flex; flex-direction: column; min-width: 0; }
-    .pg-notfound .ct-line .k { display: block; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: .7rem; color: var(--ink-600); }
+    .pg-notfound .ct-line .k { display: block; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: .75rem; color: var(--ink-600); }
     .pg-notfound .ct-line .v { display: block; font-size: 1rem; color: var(--ink-900); margin-top: 3px; line-height: 1.4; word-break: break-word; }
 
-    .pg-notfound .ct-social-label { font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: .7rem; color: var(--pine-ink); margin: 0 0 12px; }
+    .pg-notfound .ct-social-label { font-weight: 700; text-transform: uppercase; letter-spacing: .1em; font-size: .75rem; color: var(--pine-ink); margin: 0 0 12px; }
     .pg-notfound .ct-socials { display: flex; gap: 11px; flex-wrap: wrap; }
     .pg-notfound .ct-socials a { width: 42px; height: 42px; border-radius: 12px; background: var(--paper); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; transition: background .2s ease, transform .2s ease, border-color .2s ease; }
     .pg-notfound .ct-socials a:hover { background: var(--pine-ink); border-color: var(--pine-ink); transform: translateY(-2px); }

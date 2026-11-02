@@ -521,6 +521,11 @@
   align-items: flex-start
 }
 
+.wef-footer-contact a {
+  display: inline-block;
+  padding: 1px 0
+}
+
 .wef-footer-contact svg {
   width: 17px;
   height: 17px;

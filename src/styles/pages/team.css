@@ -10,7 +10,7 @@
     .pg-team a { color: inherit; }
     .pg-team h1, .pg-team h2, .pg-team h3, .pg-team h4 { font-family: var(--display); font-weight: 500; letter-spacing: -.01em; line-height: 1.12; margin: 0; }
     .pg-team .cx { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
-    .pg-team .eyebrow { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .15em; font-size: .74rem; color: var(--pine-ink); margin: 0 0 16px; }
+    .pg-team .eyebrow { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .15em; font-size: .75rem; color: var(--pine-ink); margin: 0 0 16px; }
 
     /* ---- Hero ---- */
     .pg-team .tm-hero { position: relative; overflow: hidden; color: var(--forest-900); background: linear-gradient(152deg, var(--pine-800) 0%, var(--pine-700) 46%, var(--leaf-600) 100%); padding: calc(var(--header-h) + 44px) 0 62px; }
@@ -41,7 +41,7 @@
     .pg-team .tm-info { padding: 18px 20px 20px; }
     .pg-team .tm-info h3 { font-size: 1.14rem; color: var(--ink-900); margin: 0 0 4px; line-height: 1.2; }
     .pg-team .tm-role { font-size: .88rem; color: var(--pine-ink); font-weight: 600; line-height: 1.4; margin: 0; }
-    .pg-team .tm-bio-btn { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; background: none; border: 0; padding: 0; cursor: pointer; font-family: var(--sans); font-weight: 600; font-size: .84rem; color: var(--ink-900); transition: gap .18s ease, color .18s ease; }
+    .pg-team .tm-bio-btn { display: inline-flex; align-items: center; min-height: 24px; gap: 6px; margin-top: 14px; background: none; border: 0; padding: 0; cursor: pointer; font-family: var(--sans); font-weight: 600; font-size: .84rem; color: var(--ink-900); transition: gap .18s ease, color .18s ease; }
     .pg-team .tm-bio-btn svg { width: 14px; height: 14px; }
     .pg-team .tm-bio-btn:hover { color: var(--pine-ink); gap: 10px; }
 

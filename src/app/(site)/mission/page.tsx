@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { responsiveImage } from "@/lib/image";
 import { Emph } from "@/components/site/Emph";
 import { ArrowRight, Eye, Heart, HeartLine, Shield } from "@/components/site/Icons";
 import type { ProgramCard } from "@/lib/types";
@@ -140,7 +141,7 @@ export default async function MissionPage() {
                 <div className="prow-media">
                   {p.image && (
                     // eslint-disable-next-line @next/next/no-img-element -- WebP from the media library, cropped by CSS
-                    <img src={p.image.src} alt={p.image.alt} width={p.image.width} height={p.image.height} loading={i === 0 ? undefined : "lazy"} decoding="async" />
+                    <img {...responsiveImage(p.image, "(max-width: 760px) 100vw, 45vw")} alt={p.image.alt} width={p.image.width} height={p.image.height} loading={i === 0 ? undefined : "lazy"} decoding="async" />
                   )}
                   {p.badge && <span className="prow-year">{p.badge}</span>}
                 </div>

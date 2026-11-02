@@ -10,7 +10,7 @@
     .pg-list a { color: inherit; }
     .pg-list h1, .pg-list h2, .pg-list h3, .pg-list h4 { font-family: var(--display); font-weight: 500; letter-spacing: -.01em; line-height: 1.12; margin: 0; }
     .pg-list .cx { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
-    .pg-list .eyebrow { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .15em; font-size: .74rem; color: var(--pine-ink); margin: 0 0 16px; }
+    .pg-list .eyebrow { font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: .15em; font-size: .75rem; color: var(--pine-ink); margin: 0 0 16px; }
 
     /* ---- Hero ---- */
     .pg-list .ap-hero { position: relative; overflow: hidden; color: var(--forest-900); background: linear-gradient(152deg, var(--pine-800) 0%, var(--pine-700) 46%, var(--leaf-600) 100%); padding: calc(var(--header-h) + 44px) 0 62px; }
@@ -28,7 +28,7 @@
     .pg-list .ap-head p { font-size: 1.08rem; line-height: 1.6; color: var(--ink-600); margin: 0; }
 
     /* ---- Grid ---- */
-    .pg-list .ap-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 26px; }
+    .pg-list .ap-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 26px; }
     .pg-list .ap-card { display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(20, 20, 10, .05); transition: transform .25s ease, box-shadow .25s ease; text-decoration: none; }
     .pg-list .ap-card:hover { transform: translateY(-4px); box-shadow: 0 22px 50px rgba(20, 20, 10, .12); }
     .pg-list .ap-card-media { aspect-ratio: 16 / 11; overflow: hidden; background: var(--sage-50); position: relative; }
