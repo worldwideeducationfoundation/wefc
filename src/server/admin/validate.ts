@@ -1,6 +1,6 @@
 import "server-only";
 import { type FieldDef, SLUG_PATTERN } from "@/lib/admin-fields";
-import { parseRichDoc, youtubeId } from "@/lib/richtext";
+import { parseRichDoc, safeHref, youtubeId } from "@/lib/richtext";
 
 /**
  * Turns a submitted form into a row, following the field definitions.
@@ -62,6 +62,8 @@ export function parseFields(
               : trimmed;
         if (f.required && !value) fail(`${f.label} is required.`);
         else if ([...value].length > max) fail(`${f.label} must be at most ${max} characters.`);
+        // Button links: a page on this site (/donate) or a full web address.
+        else if (f.name.endsWith("_url") && value && !safeHref(value)) fail(`${f.label} must be /a-page or a full https:// address.`);
         out.data[f.name] = value || null;
         break;
       }

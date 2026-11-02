@@ -1,7 +1,7 @@
 import "server-only";
 import { formatFigure } from "@/lib/format";
 import { postHref } from "@/lib/post-href";
-import { collectMediaIds, parseRichDoc } from "@/lib/richtext";
+import { collectMediaIds, parseRichDoc, safeHref } from "@/lib/richtext";
 import type {
   CategoryRef,
   Faq,
@@ -392,9 +392,9 @@ export async function getPost(section: PostSection, slug: string, { allowDraft =
         heading: row.cta_heading ?? undefined,
         text: row.cta_text ?? undefined,
         primaryLabel: row.cta_primary_label ?? undefined,
-        primaryUrl: row.cta_primary_url ?? undefined,
+        primaryUrl: safeHref(row.cta_primary_url) ?? undefined,
         secondaryLabel: row.cta_secondary_label,
-        secondaryUrl: row.cta_secondary_url,
+        secondaryUrl: safeHref(row.cta_secondary_url),
       },
       seo: { title: row.seo_title, description: row.seo_description },
     } satisfies Post;

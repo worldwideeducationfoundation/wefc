@@ -1,4 +1,4 @@
-import { type RichDoc, parseRichDoc, youtubeId } from "./richtext";
+import { type RichDoc, parseRichDoc, safeHref, youtubeId } from "./richtext";
 
 /**
  * Sections of a page built in Admin -> Pages.
@@ -175,9 +175,10 @@ export function normalizeSections(input: unknown): Section[] {
           type: "cta",
           body: optStr(s.body, 1000),
           actionLabel: str(s.actionLabel, 80) || "Contact us",
-          actionHref: str(s.actionHref, 500) || "/contact",
+          // "donate" is the stand-in for the site's donation link.
+          actionHref: (s.actionHref === "donate" ? "donate" : safeHref(str(s.actionHref, 500))) || "/contact",
           secondaryLabel: optStr(s.secondaryLabel, 80),
-          secondaryHref: optStr(s.secondaryHref, 500),
+          secondaryHref: safeHref(optStr(s.secondaryHref, 500)) ?? undefined,
         });
         break;
     }
