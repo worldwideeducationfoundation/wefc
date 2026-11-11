@@ -167,7 +167,7 @@
 /* ---- Impact stats ---- */
 .pg-home .impact{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .pg-home .impact .container{padding-top:clamp(32px,3.8vw,46px);padding-bottom:clamp(32px,3.8vw,46px)}
-.pg-home .impact-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.pg-home .impact-grid{display:grid;grid-auto-flow:column;grid-auto-columns:1fr}
 .pg-home .impact-item{padding:12px 24px;border-right:1px solid var(--line)}
 .pg-home .impact-item:first-child{padding-left:0}
 .pg-home .impact-item:last-child{border-right:0}
@@ -177,7 +177,7 @@
 .pg-home .impact-cap{margin-top:10px;font-weight:600;color:var(--ink-900);font-size:1rem}
 .pg-home .impact-sub{margin-top:2px;font-size:.82rem;color:var(--ink-600)}
 @media(max-width:760px){
-  .pg-home .impact-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 0}
+  .pg-home .impact-grid{grid-auto-flow:row;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 0}
   .pg-home .impact-item:nth-child(2){border-right:0}
   .pg-home .impact-item:nth-child(1),.pg-home .impact-item:nth-child(2){border-bottom:1px solid var(--line);padding-bottom:26px}
 }
@@ -324,13 +324,13 @@
 .pg-home .reach-map svg{width:100%;height:auto;display:block;overflow:visible}
 
 /* Real geography: Canada from Natural Earth, the Chitral district ring the
-   learning-centers map draws, and Tajikistan's national outline. All three
-   outlines are baked into the SVG in index.html. */
+   learning-centers map draws. Both outlines are
+   drawn inline in ReachMap.tsx. */
 .pg-home .reach-land{fill:#E6F4E0;stroke:var(--pine-ink);stroke-width:1.1;stroke-opacity:.62;stroke-linejoin:round;transition:fill .45s ease,stroke-opacity .45s ease}
-/* Chitral and Tajikistan are both destinations, so they carry a little more weight than Canada. */
-.pg-home .reach-land.is-chitral,.pg-home .reach-land.is-tajikistan,.pg-home .reach-land.is-kyrgyzstan{fill:var(--sage-200);stroke-width:1.2;stroke-opacity:1}
+/* Chitral is the destination, so it carries a little more weight than Canada. */
+.pg-home .reach-land.is-chitral{fill:var(--sage-200);stroke-width:1.2;stroke-opacity:1}
 .pg-home .reach-region:hover .reach-land{fill:var(--sage-200);stroke-opacity:1}
-.pg-home .reach-region:hover .reach-land.is-chitral,.pg-home .reach-region:hover .reach-land.is-tajikistan,.pg-home .reach-region:hover .reach-land.is-kyrgyzstan{fill:#C3E7B6}
+.pg-home .reach-region:hover .reach-land.is-chitral{fill:#C3E7B6}
 
 .pg-home .reach-route{fill:none;stroke:var(--sage-200);stroke-width:1.2}
 .pg-home .reach-route-flow{fill:none;stroke:var(--pine-ink);stroke-width:1.6;stroke-linecap:round;stroke-dasharray:2 10;opacity:.5;animation:dashflow 1.5s linear infinite;transition:opacity .4s ease}

@@ -65,6 +65,7 @@ const lines = (label: string, def: string, extra: Partial<BlockDef> = {}): Block
  * "Every child deserves a *bright beginning.*" — see <Emph>.
  */
 const EMPH = "Put *asterisks* around the words shown in green italics.";
+const BOLD = "Put **double asterisks** around words to show them in bold.";
 
 /** The home page's sections below the opening, in their default order. */
 export const HOME_SECTIONS = [
@@ -120,7 +121,8 @@ export const CORE_PAGES = {
       belief_heading: t("Belief heading", "Our Belief"),
       belief: ta(
         "Belief",
-        "We believe talent is universal, but opportunity is not. Every child deserves the chance to learn, grow, and thrive, regardless of financial means, caste, religion, or gender, because education unlocks human potential and creates lasting change.",
+        "We believe **talent is universal, but opportunity is not.** Every child deserves the chance to learn, grow, and thrive, regardless of financial means, caste, religion, or gender, because education unlocks human potential and creates lasting change.",
+        { help: BOLD },
       ),
     },
   },
@@ -147,14 +149,14 @@ export const CORE_PAGES = {
     seo: {
       title: "Early Childhood Education in Chitral, Pakistan | WEF Canada",
       description:
-        "Donate to educate children in Chitral, Pakistan. A registered Canadian charity running 100+ early childhood learning centers, teacher training and scholarships.",
+        "Donate to educate children in Chitral, Pakistan. A registered Canadian charity running 100+ early childhood learning centers and scholarships.",
     },
     blocks: {
       intro_eyebrow: t("Small heading", "Worldwide Education Fund Canada", { group: "Opening" }),
       intro_title: t("Headline", "Every child deserves a *bright beginning.*", { group: "Opening", help: EMPH }),
       intro_text: ta(
         "Introduction",
-        "We break the cycle of generational poverty through early childhood education, teacher training, and scholarships, with roots in Chitral, Pakistan and a growing reach across Central and South Asia.",
+        "We break the cycle of generational poverty through early childhood education and scholarships, with roots in Chitral, Pakistan and a growing reach across Central and South Asia.",
         { group: "Opening" },
       ),
       intro_donate: t("Donate button", "Donate Now", { group: "Opening" }),
@@ -169,7 +171,7 @@ export const CORE_PAGES = {
         options: HOME_SECTIONS.map((s) => ({ ...s })),
       },
       ...Object.fromEntries(HOME_SECTIONS.map((s) => [`show_${s.value}`, on(`Show: ${s.label}`, { group: "Layout" })])),
-      ticker: lines("Ticker phrases", "100+ learning centers\n52,000 children in the ECD ecosystem\n66 university scholarships\nRegistered Canadian charity", {
+      ticker: lines("Ticker phrases", "100+ learning centers\n52,000 children in the ECD ecosystem\nRegistered Canadian charity", {
         group: "Scrolling ticker",
       }),
       strip_eyebrow: t("Small heading", "Our work in pictures", { group: "Photo strip" }),
@@ -205,7 +207,7 @@ export const CORE_PAGES = {
       reach_title: t("Heading", "Rooted in Canada, reaching the valleys of Chitral", { group: "Canada to Chitral map" }),
       reach_text: ta(
         "Text",
-        "Worldwide Education Fund Canada raises awareness, mobilizes community support, and channels funds directly into early childhood centers, teacher training, and scholarships across Pakistan, Tajikistan, and Kyrgyzstan — where the need is greatest.",
+        "Worldwide Education Fund Canada raises awareness, mobilizes community support, and channels funds directly into early childhood centers and scholarships in Chitral, Pakistan — where the need is greatest.",
         { group: "Canada to Chitral map" },
       ),
       programs_eyebrow: t("Small heading", "Our Programs", { group: "Our Programs" }),
@@ -220,8 +222,9 @@ export const CORE_PAGES = {
       ),
       values_eyebrow: t("Small heading", "What guides us", { group: "Values" }),
       values_title: t("Heading", "Values we build every classroom on", { group: "Values" }),
-      values_text: ta("Text", "Talent is universal, but opportunity is not. These convictions shape every center we open and every scholar we support.", {
+      values_text: ta("Text", "**Talent is universal, but opportunity is not.** These convictions shape every center we open and every scholar we support.", {
         group: "Values",
+        help: BOLD,
       }),
       value_1_title: t("1 · Title", "Empowerment", { group: "Values" }),
       value_1_text: ta("1 · Text", "We equip local women and educators with credentials and tools, creating sustainable livelihoods and community leadership.", {
@@ -247,7 +250,7 @@ export const CORE_PAGES = {
       donate_title: t("Heading", "$12 gives a child a decade of learning", { group: "Donation band" }),
       donate_text: ta(
         "Text",
-        "A $3,600 CAD gift establishes a Bright Beginnings center that reaches 300 children over ten years — about $12 per child. Your gift funds early education, teacher training, and scholarships on the ground.",
+        "A $3,600 CAD gift establishes a Bright Beginnings center that reaches 300 children over ten years — about $12 per child. Your gift funds early education and scholarships on the ground.",
         { group: "Donation band" },
       ),
       donate_badge_secure: t("Second badge", "Secure online giving", { group: "Donation band" }),
@@ -284,7 +287,7 @@ export const CORE_PAGES = {
     seo: {
       title: "Our Mission: Early Education in Chitral",
       description:
-        "How WEF Canada breaks generational poverty in Pakistan and Central Asia: early childhood education, English learning, teacher training, research and scholarships.",
+        "How WEF Canada breaks generational poverty in Pakistan and Central Asia: early childhood education, English learning, research and scholarships.",
     },
     blocks: {
       hero_eyebrow: t("Small heading", "Our Mission", { group: "Opening" }),
@@ -292,7 +295,7 @@ export const CORE_PAGES = {
       hero_title: t("Heading", "Talent is universal. *Opportunity* is not.", { group: "Opening", help: EMPH }),
       hero_text: ta(
         "Introduction",
-        "We invest in the potential of children and youth across underserved communities in Central and South Asia — opening doors through early childhood development, English language learning, teacher training, research, and scholarships, so every young learner can transform their life and uplift their community.",
+        "We invest in the potential of children and youth across underserved communities in Central and South Asia — opening doors through early childhood development, English language learning, research, and scholarships, so every young learner can transform their life and uplift their community.",
         { group: "Opening" },
       ),
       glance_eyebrow: t("Small heading", "WEF at a glance", { group: "At a glance", help: "The figures are under Figures, “Mission — at a glance”." }),
@@ -304,7 +307,7 @@ export const CORE_PAGES = {
       }),
       projects_text: ta(
         "Text",
-        "From Montessori learning centers to university scholarships, every WEF program is built around one belief — that the right support, in the right place, changes a child's whole trajectory.",
+        "From Montessori learning centers to professional diplomas, every WEF program is built around one belief — that the right support, in the right place, changes a child's whole trajectory.",
         { group: "Active projects" },
       ),
       money_badge: t("Badge", "Where your money goes", { group: "Where the money goes" }),
@@ -477,7 +480,7 @@ export const CORE_PAGES = {
       where_title: t("Heading", "Where your gift goes", { group: "Where your gift goes" }),
       where_text: ta(
         "Text",
-        "Every donation supports one of four programs. Each one is documented on this site, with the centers, partners and students it has reached.",
+        "Every donation supports one of three programs. Each one is documented on this site, with the centers, partners and students it has reached.",
         { group: "Where your gift goes" },
       ),
       ...Object.fromEntries(
@@ -490,14 +493,8 @@ export const CORE_PAGES = {
               "/projects/bright-beginnings-eclc",
             ],
             [
-              "Teacher training",
-              "Professional development and refresher training for the educators running those classrooms, delivered with the University of Chitral and our implementing partners.",
-              "About teacher training",
-              "/topics/teacher-training",
-            ],
-            [
               "Scholarships",
-              "Secondary school scholarships in Chitral, and undergraduate and graduate places at universities across Pakistan, Kyrgyzstan and Tajikistan for students who would otherwise stop studying.",
+              "Graduate and diploma places in Pakistan and Canada for students from Chitral who would otherwise stop studying.",
               "About scholarships",
               "/topics/scholarships",
             ],
@@ -539,7 +536,7 @@ export const CORE_PAGES = {
     seo: {
       title: "Education Projects in Chitral, Pakistan",
       description:
-        "What WEF Canada runs now in Chitral, Pakistan and Central Asia: early childhood learning centers, an ECD research hub, teacher training and scholarships.",
+        "What WEF Canada runs now in Chitral, Pakistan and Central Asia: early childhood learning centers, an ECD research hub, skills training and scholarships.",
     },
     blocks: {
       ...listHero(
@@ -630,7 +627,7 @@ export const CORE_PAGES = {
       eyebrow_story: t("Label on stories", "Success Story", { group: "Labels" }),
       eyebrow_project: t("Label on projects", "Active Project", { group: "Labels" }),
       cta_heading: t("Heading", "Help us reach more children", { group: "Standard closing band" }),
-      cta_text: ta("Text", "Your gift funds learning centers, teacher training and scholarships across Chitral and Central Asia.", {
+      cta_text: ta("Text", "Your gift funds learning centers and scholarships across Chitral and Central Asia.", {
         group: "Standard closing band",
       }),
       cta_primary_label: t("First button", "Support our work", { group: "Standard closing band" }),
@@ -648,7 +645,7 @@ export const CORE_PAGES = {
       title: t("Heading", "We couldn't find that page"),
       text: ta(
         "Text",
-        "The link may be out of date, or the page may have moved. Everything we do is still here — learning centers in Chitral, teacher training, and scholarships across Central and South Asia.",
+        "The link may be out of date, or the page may have moved. Everything we do is still here — learning centers in Chitral and scholarships across Central and South Asia.",
       ),
       links: lines(
         "Links",

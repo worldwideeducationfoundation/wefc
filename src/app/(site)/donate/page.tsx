@@ -76,7 +76,7 @@ export default async function DonatePage() {
           <h2>{t("where_title")}</h2>
           <p>{t("where_text")}</p>
           <div className="give-programs">
-            {[1, 2, 3, 4].map((n) => (
+            {[1, 2, 3].map((n) => (
               <div key={n} className="give-prog">
                 <h3>{t(`where_${n}_title`)}</h3>
                 <p>{t(`where_${n}_text`)}</p>

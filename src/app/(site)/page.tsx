@@ -4,7 +4,7 @@ import { responsiveImage } from "@/lib/image";
 import { Fragment, type ReactNode } from "react";
 import { CentersMap } from "@/components/site/CentersMap";
 import { DonorboxScript } from "@/components/site/DonorboxScript";
-import { Emph } from "@/components/site/Emph";
+import { Bold, Emph } from "@/components/site/Emph";
 import { HeroCarousel } from "@/components/site/HeroCarousel";
 import { ArrowRight, Check, Dot, External, Eye, Heart, HeartLine, Lock, Shield, VALUE_ICONS } from "@/components/site/Icons";
 import { NewsletterForm } from "@/components/site/NewsletterForm";
@@ -66,7 +66,7 @@ export default async function HomePage() {
             <div key={k} className="vmb-card reveal">
               <div className="vmb-ic">{icon}</div>
               <h2>{org.t(`${k}_heading`)}</h2>
-              <p>{org.t(k)}</p>
+              <p><Bold text={org.t(k)} /></p>
             </div>
           ))}
         </div>
@@ -220,7 +220,7 @@ export default async function HomePage() {
           <div className="section-head reveal">
             <p className="eyebrow on-dark">{t("values_eyebrow")}</p>
             <h2>{t("values_title")}</h2>
-            <p>{t("values_text")}</p>
+            <p><Bold text={t("values_text")} /></p>
           </div>
           <div className="values-grid">
             {[1, 2, 3, 4].map((n) => (

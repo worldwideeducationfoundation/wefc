@@ -74,7 +74,6 @@ const KNOWS_ABOUT = [
   "Early childhood education",
   "Early childhood development",
   "Early childhood education in Pakistan",
-  "Teacher training",
   "Scholarships",
   "Education in Chitral",
 ];

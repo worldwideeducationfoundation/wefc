@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { responsiveImage } from "@/lib/image";
-import { Emph } from "@/components/site/Emph";
+import { Bold, Emph } from "@/components/site/Emph";
 import { ArrowRight, Eye, Heart, HeartLine, Shield } from "@/components/site/Icons";
 import type { ProgramCard } from "@/lib/types";
 import { assertCorePageEnabled, corePageSeo, getPageCopy } from "@/server/blocks";
@@ -101,7 +101,7 @@ export default async function MissionPage() {
             <div key={k} className="vmb-card">
               <div className="vmb-ic">{icon}</div>
               <h2>{org.t(`${k}_heading`)}</h2>
-              <p>{org.t(k)}</p>
+              <p><Bold text={org.t(k)} /></p>
             </div>
           ))}
         </div>

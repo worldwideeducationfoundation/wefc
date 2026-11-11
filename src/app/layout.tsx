@@ -40,7 +40,7 @@ export async function generateMetadata(): Promise<Metadata> {
   let shortName = "WEF Canada";
   let tagline = "Education in Chitral & Central Asia";
   let description =
-    "Registered Canadian charity bringing early childhood education to Chitral, Pakistan: 100+ learning centers, teacher training and scholarships. Donate today.";
+    "Registered Canadian charity bringing early childhood education to Chitral, Pakistan: 100+ learning centers and scholarships. Donate today.";
   try {
     const s = await getSiteSettings();
     ({ name, shortName, tagline, description } = s);

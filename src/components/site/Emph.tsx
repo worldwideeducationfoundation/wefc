@@ -18,3 +18,16 @@ export function Emph({ text }: { text: string }) {
 export function linkProps(href: string) {
   return /^https?:/i.test(href) ? { href, rel: "noopener", target: "_blank" } : { href };
 }
+
+/**
+ * Text with **double-asterisk** bold, as the page-copy editor writes it: the
+ * marked words render in <strong>. Everything else is plain text, never HTML.
+ */
+export function Bold({ text }: { text: string }) {
+  const parts = text.split(/\*\*([^*]+)\*\*/g);
+  return (
+    <>
+      {parts.map((part, i) => (i % 2 === 1 ? <strong key={i}>{part}</strong> : <Fragment key={i}>{part}</Fragment>))}
+    </>
+  );
+}
